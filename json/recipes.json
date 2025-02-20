@@ -1,0 +1,27 @@
+[
+    {
+        "id" : "12312312312312",
+        "title": "Banana Bread",
+        "rating" : 3.5,
+        "reviews" : [
+            {
+                "id" : "4555e6a3-e39c-4efa-a59c-749aa68bdc12",
+                "rating" : 4,
+                "comment": "Almost awesome"
+            },
+            {
+                "id" : "2d973ec1-c931-4aa8-a341-aecf37829d32",
+                "rating" : 3,
+                "comment": "I like it a bit"
+            }
+
+        ],
+        "author": "3f620884-5e8c-478e-a808-a6c924966eb6",
+        "ingredients" : ["sugar", "flour", "almond butter"],
+        "directions" : ["add a cup of flour"],
+        "calories" : 15,
+        "category" : "Breakfast",
+        "restrictions" : ["kosher", "vegan"],
+        "similar" : []
+    }
+]

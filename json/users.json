@@ -1,0 +1,19 @@
+[
+    {
+        "id" : "4555e6a3-e39c-4efa-a59c-749aa68bdc12",
+        "type" : "u",
+        "firstName" : "Amy",
+        "lastName" : "Smith",
+        "userName" : "asmith",
+        "email" : "asmith@gmail.com",
+        "favoriteRecipes" : ""
+    },
+    {
+        "id" : "2d973ec1-c931-4aa8-a341-aecf37829d32",
+        "type" : "u"
+    },
+    {
+        "id" : "3f620884-5e8c-478e-a808-a6c924966eb6",
+        "type": "a"
+    }
+]
