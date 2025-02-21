@@ -1,0 +1,54 @@
+[
+    {
+        "id": "bef5b1da-7a29-44b5-b672-b8ad689a78bf",
+        "title": "Basics",
+        "lessons": [
+            {
+                "title": "Lesson 1",
+                "educationalMaterial": "A music lesson typically begins with warm-ups, such as scales or rhythm exercises, to develop technique. The instructor then reviews previous material and introduces new concepts, such as chords, sight-reading, or music theory. Students practice pieces suited to their skill level, receiving feedback on tone, timing, and expression.",
+                "visualAid": "VisualAid1.png",
+                "completed": true
+            },
+            {
+                "title": "Lesson 2",
+                "educationalMaterial": "Depending on the instrument, lessons may focus on finger positioning, breath control, or bowing techniques. Ear training and improvisation can also be included. Regular practice is essential for progress. The lesson ends with a summary of key points and assignments for the next session, helping students refine their musical abilities.",
+                "visualAid" : "VisualAid2.png",
+                "compelted": false
+            },
+            {
+                "title": "Lesson 3",
+                "educationalMaterial": "A music lesson is a structured session where students develop their musical skills through guided instruction. It often begins with warm-up exercises, such as scales, rhythm drills, or vocal warm-ups, to improve technique and dexterity.",
+                "visualAid" : "VisualAid3.png",
+                "compelted": false
+            }
+        ],
+        "songs": ["3617a6b9-7170-49db-945f-1cf6eb816c3f"],
+        "progress": 0.75
+    },
+    {
+        "id": "e5c2814f-7b9c-49b9-9b9b-f0f92dc14980",
+        "title": "Intermediate",
+        "lessons": [
+            {
+                "title": "Lesson 1",
+                "educationalMaterial": "A music lesson at an advanced level focuses on refining technique, interpretation, and musical expression. The session typically begins with technical exercises such as complex scales, arpeggios, or études tailored to the instrument.",
+                "visualAid": "VisualAid4.png",
+                "completed": true
+            },
+            {
+                "title": "Lesson 2",
+                "educationalMaterial": "The instructor provides in-depth feedback on phrasing, articulation, tone production, and dynamic control. Advanced theoretical concepts, such as harmonic analysis, counterpoint, and modal interchange, may be discussed to deepen musical understanding.",
+                "visualAid" : "VisualAid5.png",
+                "compelted": false
+            },
+            {
+                "title": "Lesson 3",
+                "educationalMaterial": "Sight-reading and ear training exercises enhance adaptability, while improvisation and stylistic interpretation help develop artistic individuality. The lesson often includes repertoire analysis, emphasizing historical context and performance practice. Consistent, deliberate practice is essential for mastery.",
+                "visualAid" : "VisualAid6.png",
+                "compelted": false
+            }
+        ],
+        "songs": ["d1d720f5-4e57-4644-abf8-6a2174c7e056"],
+        "progress": 0.40
+    }
+]
