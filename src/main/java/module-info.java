@@ -1,7 +1,8 @@
-module grass {
+module com {
     requires javafx.controls;
     requires javafx.fxml;
     requires json.simple;
+    requires jfugue;
 
     opens grass to javafx.fxml;
     exports grass;
