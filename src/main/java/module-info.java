@@ -8,4 +8,7 @@ module grass {
 
     opens model to javafx.fxml;
     exports model;
+
+    opens com.program to javafx.fxml;
+    exports com.program;
 }
