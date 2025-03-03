@@ -5,9 +5,9 @@ public enum Experience {
     INTERMEDIATE("Intermediate"),
     ADVANCED("Advanced");
     
-    private final String experienceLevel;
+    private final String label;
     
-    private Experience(String experienceLevel) {
-        this.experienceLevel = experienceLevel;
+    private Experience(String label) {
+        this.label = label;
     }
 }
