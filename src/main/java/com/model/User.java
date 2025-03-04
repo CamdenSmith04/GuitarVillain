@@ -30,13 +30,39 @@ public class User {
         this.experience = experience;
     }
 
+    public String getUsername() {
+        return this.username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        // TODO: Add password requirements.
+        this.password = password;
+    }
+
+    public UUID getId() {
+        return this.id;
+    }
+
     public void setPassword(SecurityQuestion securityQuestion, String securityAnswer, String password) {
         this.securityQuestion = securityQuestion;
         this.securityAnswer = securityAnswer;
         this.password = password;
     }
 
-    public User isMatch(String username, String password) {
-        return null;
+    public boolean isMatch(User user) {
+        return this.id.equals(user.getId());
+    }
+
+    @Override
+    public String toString() {
+        return this.username + " " + this.id;
     }
 }
