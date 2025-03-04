@@ -5,11 +5,10 @@ import java.util.ArrayList;
 public class UserList {
     
     private static UserList userList;
-
-    private ArrayList<Lesson> users;
+    private ArrayList<User> users;
 
     private UserList(){
-    
+        users = new ArrayList<User>();
     }
 
     public static UserList getInstance(){
@@ -19,25 +18,34 @@ public class UserList {
         return userList;
     }
 
-    public void createUser(User user){
-        
+    // TODO: Make sure user can be created :)
+    public void addUser(User user){
+        users.add(user);
     }
 
-    public User getUser(String username, String password){
-        // TODO: FIX
+    public User getUser(User user){
+        for(User current : users) {
+            if(current.isMatch(user)) {
+                return current;
+            }
+        }
         return null;
     }
 
     public ArrayList<User> getUsers(){
-        // TODO: FIX
-        return null;
+        return users;
     }
-    public void UpdateUser(User user){
 
+    public void UpdateUser(User user){
+        
     }
 
     public void deleteUser(User user){
-
+        for(User current : users) {
+            if(current.isMatch(user)) {
+                users.remove(current);
+            }
+        }
     }
 
     public void save(){
