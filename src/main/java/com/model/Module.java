@@ -28,8 +28,8 @@ public class Module {
     }
 
     //TODO: Fix
-    public User isMatch(String title) {
-        return null;
+    public boolean isMatch(UUID id) {
+        return this.id.equals(id);
     }
 
     public Lesson getLesson(Lesson lesson) {

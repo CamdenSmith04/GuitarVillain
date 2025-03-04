@@ -38,4 +38,8 @@ public class Song {
     public void addLyric(String lyric){
         this.lyrics.add(lyric);
     }
+
+    public boolean isMatch(UUID id) {
+        return this.id.equals(id);
+    }
 }

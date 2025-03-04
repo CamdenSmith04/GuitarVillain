@@ -44,5 +44,9 @@ public class Course {
     public void removeSong(Song song) {
         this.assignedSongs.remove(song);
     }
+
+    public boolean isMatch(UUID id) {
+        return this.id.equals(id);
+    }
 }
 
