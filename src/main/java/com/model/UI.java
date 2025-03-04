@@ -1,5 +1,5 @@
 package com.model;
 
-public class DataLoader {
+public class UI {
     
 }
