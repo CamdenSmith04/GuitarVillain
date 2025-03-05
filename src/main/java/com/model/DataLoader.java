@@ -12,7 +12,7 @@ import javafx.scene.image.Image;
 
 public class DataLoader extends DataConstants{
 
-    public ArrayList<Song> getSongs(){
+    public static ArrayList<Song> getSongs(){
         ArrayList<Song> songs = new ArrayList<Song>();
     
         try {
@@ -32,7 +32,7 @@ public class DataLoader extends DataConstants{
         }
         return songs;
     }
-    public ArrayList<User> getUsers(){
+    public static ArrayList<User> getUsers(){
         ArrayList<User> users = new ArrayList<User>();
         try {
             FileReader reader = new FileReader(USER_FILE_NAME);
@@ -52,7 +52,7 @@ public class DataLoader extends DataConstants{
         }
         return users;
     }
-    public ArrayList<Module> getModules(){
+    public static ArrayList<Module> getModules(){
         ArrayList<Module> modules = new ArrayList<Module>();
         try{
             FileReader reader = new FileReader(MODULE_FILE_NAME);
@@ -91,7 +91,7 @@ public class DataLoader extends DataConstants{
         }
         return modules;
     } 
-    public ArrayList<Course> getCourses() {
+    public static ArrayList<Course> getCourses() {
         ArrayList<Course> courses = new ArrayList<>();
 
         try {
@@ -112,7 +112,7 @@ public class DataLoader extends DataConstants{
         return courses;
     }
 
-    public ArrayList<Lesson> getLessons() {
+    public static ArrayList<Lesson> getLessons() {
         ArrayList<Lesson> lessons = new ArrayList<>();
 
         try {
