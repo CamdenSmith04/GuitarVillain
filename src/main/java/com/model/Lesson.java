@@ -28,8 +28,40 @@ public class Lesson {
         return this.id.equals(lesson.getId());
     }
 
+    public String getTitle() {
+        return this.title;
+    }
+
+    public String getEducationalMaterial() {
+        return this.educationalMaterial;
+    }
+
+    public String getVisualAid() {
+        return this.visualAid;
+    }
+
+    public boolean getCompleted() {
+        return this.completed;
+    }
+
     public UUID getId() {
         return this.id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setEducationalMaterial(String educationalMaterial) {
+        this.educationalMaterial = educationalMaterial;
+    }
+
+    public void setVisualAid(String visualAid) {
+        this.visualAid = visualAid;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 }
 
