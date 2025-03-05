@@ -2,6 +2,10 @@ package com.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
+/**
+ * TODO: ADD JAVADOC AND AUTHOR
+ * @author 
+ */
 
 public class Song {
     
@@ -42,4 +46,6 @@ public class Song {
     public boolean isMatch(UUID id) {
         return this.id.equals(id);
     }
+
+    // TODO: ADD GETTERS AND SETTERS!!!
 }
