@@ -33,7 +33,11 @@ public class Module {
     }
 
     public Lesson getLesson(Lesson lesson) {
-        //TODO: Fix
+        for (Lesson match: this.lessons) {
+            if (match.getId() == lesson.getId()){
+                return match;
+            }
+        }
         return null;
     }
 
@@ -51,5 +55,9 @@ public class Module {
 
     public void removeSong(Song song) {
         this.songs.add(song);
+    }
+
+    public UUID getId() {
+        return this.id;
     }
 }
