@@ -2,34 +2,30 @@ package com.model;
 
 import java.util.UUID;
 
-import javafx.scene.image.Image;
-
 public class Lesson {
     
     private String title;
     private String educationalMaterial;
-    // TODO: Fix
-    // private Image visualAid
+    private String visualAid;
     private boolean completed;
     private UUID id;
 
-    // TODO: Fix image
-    public Lesson(String title, String educationalMaterial, Image visualAid) {
+    public Lesson(String title, String educationalMaterial, String visualAid) {
         this.title = title;
         this.educationalMaterial = educationalMaterial;
         this.visualAid = visualAid;
         this.id = UUID.randomUUID();
     }
 
-    public Lesson(String title, String educationalMaterial, Image visualAid, UUID id) {
+    public Lesson(String title, String educationalMaterial, String visualAid, UUID id) {
         this.title = title;
         this.educationalMaterial = educationalMaterial;
         this.visualAid = visualAid;
         this.id = id;
     }
 
-    public Lesson isMatch(String title) {
-        return null;
+    public boolean isMatch(Lesson lesson) {
+        return this.id.equals(lesson.getId());
     }
 
     public UUID getId() {

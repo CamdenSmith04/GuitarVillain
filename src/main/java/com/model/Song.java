@@ -31,6 +31,10 @@ public class Song {
         this.author = author;
     }
 
+    public boolean isMatch(Song song) {
+        return this.id.equals(song.getId());
+    }
+
     public void addGenres(Genre genre) {
         this.genres.add(genre);
     }
