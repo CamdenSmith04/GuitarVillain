@@ -2,12 +2,12 @@ package com.model;
 
 import java.util.ArrayList;
 
-public class Student {
+public class Student extends User{
     
     private ArrayList<Course> courses;
 
-    public Student(User user) {
-
+    public Student() {
+        
     }
 
     public void beginLesson(Lesson lesson) {
@@ -18,4 +18,7 @@ public class Student {
         
     }
 
+    public boolean isMatch(Course course) {
+        return this.id.equals(course.getId());
+    }
 }
