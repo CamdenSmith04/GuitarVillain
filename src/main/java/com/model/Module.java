@@ -27,9 +27,8 @@ public class Module {
         this.progress = 0.0;
     }
 
-    //TODO: Fix
-    public boolean isMatch(UUID id) {
-        return this.id.equals(id);
+    public boolean isMatch(Module module) {
+        return this.id.equals(module.getId());
     }
 
     public Lesson getLesson(Lesson lesson) {

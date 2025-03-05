@@ -45,8 +45,12 @@ public class Course {
         this.assignedSongs.remove(song);
     }
 
-    public boolean isMatch(UUID id) {
-        return this.id.equals(id);
+    public boolean isMatch(Course course) {
+        return this.id.equals(course.getId());
+    }
+
+    public UUID getId() {
+        return this.id;
     }
 }
 
