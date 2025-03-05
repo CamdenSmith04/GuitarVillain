@@ -2,6 +2,8 @@ package com.model;
 
 import java.util.UUID;
 
+import javafx.scene.image.Image;
+
 public class Lesson {
     
     private String title;
@@ -28,6 +30,10 @@ public class Lesson {
 
     public Lesson isMatch(String title) {
         return null;
+    }
+
+    public UUID getId() {
+        return this.id;
     }
 }
 
