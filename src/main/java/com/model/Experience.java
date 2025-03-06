@@ -1,22 +1,17 @@
 package com.model;
 
-<<<<<<< HEAD
-import java.util.Enumeration;
-
-=======
->>>>>>> 1d256fa (Add enums)
 public enum Experience {
     BEGINNER("Beginner"),
     INTERMEDIATE("Intermediate"),
     ADVANCED("Advanced");
     
-<<<<<<< HEAD
     private final String label;
     
     private Experience(String label) {
         this.label = label;
     }
 
+    @Override
     public String toString() {
         return label;
     }
@@ -32,11 +27,4 @@ public enum Experience {
     }
 
 
-=======
-    private final String experienceLevel;
-    
-    private Experience(String experienceLevel) {
-        this.experienceLevel = experienceLevel;
-    }
->>>>>>> 1d256fa (Add enums)
 }
