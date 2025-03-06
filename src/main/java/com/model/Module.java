@@ -27,13 +27,16 @@ public class Module {
         this.progress = 0.0;
     }
 
-    //TODO: Fix
-    public boolean isMatch(UUID id) {
-        return this.id.equals(id);
+    public boolean isMatch(Module module) {
+        return this.id.equals(module.getId());
     }
 
     public Lesson getLesson(Lesson lesson) {
-        //TODO: Fix
+        for (Lesson match: this.lessons) {
+            if (match.getId() == lesson.getId()){
+                return match;
+            }
+        }
         return null;
     }
 
@@ -45,11 +48,56 @@ public class Module {
         this.lessons.remove(lesson);
     }
 
+    public Song getSong(Song song) {
+        for (Song match: this.songs) {
+            if (match.getId() == song.getId()){
+                return match;
+            }
+        }
+        return null;
+    }
+
     public void addSong(Song song) {
         this.songs.add(song);
     }
 
     public void removeSong(Song song) {
         this.songs.add(song);
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public ArrayList<Lesson> getLessons() {
+        return this.lessons;
+    }
+
+    public ArrayList<Song> getSongs() {
+        return this.songs;
+    }
+
+    public double getProgress() {
+        return this.progress;
+    }
+
+    public UUID getId() {
+        return this.id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setLessons(ArrayList<Lesson> lessons) {
+        this.lessons = lessons;
+    }
+
+    public void setSongs(ArrayList<Song> songs) {
+        this.songs = songs;
+    }
+
+    public void setProgress(double progress) {
+        this.progress = progress;
     }
 }
