@@ -5,11 +5,10 @@ import java.util.ArrayList;
 public class ModuleList {
     
     private static ModuleList moduleList;
-
     private ArrayList<Module> modules;
 
     private ModuleList(){
-
+        modules = new ArrayList<>();
     }
 
     public static ModuleList getInstance() {
@@ -19,12 +18,17 @@ public class ModuleList {
         return moduleList;
     }
 
-    public void createModule(Module module) {
-
+    // TODO: Make sure user can be created :)
+    public void addModule(Module module) {
+        modules.add(module);
     }
 
     public Module getModule(String title) {
-        // TODO: Fix
+        for(Module current : modules) {
+            if(current.getTitle().equals(title)) {
+                return current;
+            }
+        }
         return null;
     }
 
@@ -33,7 +37,12 @@ public class ModuleList {
     }
 
     public void deleteModule(Module module) {
-
+        for(Module current : modules) {
+            if(current.isMatch(module)) {
+                modules.remove(current);
+                return;
+            }
+        }
     }
 
     public void save() {

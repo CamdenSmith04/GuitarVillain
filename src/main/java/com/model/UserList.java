@@ -8,7 +8,7 @@ public class UserList {
     private ArrayList<User> users;
 
     private UserList(){
-        users = new ArrayList<User>();
+        users = new ArrayList<>();
     }
 
     public static UserList getInstance(){
@@ -48,12 +48,9 @@ public class UserList {
         for(User current : users) {
             if(current.isMatch(user)) {
                 users.remove(current);
+                return;
             }
         }
     }
 
-    public void save(){
-        
-    }
-
-}
+    public void save()
