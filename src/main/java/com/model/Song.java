@@ -2,6 +2,10 @@ package com.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
+/**
+ * TODO: ADD JAVADOC AND AUTHOR
+ * @author 
+ */
 
 public class Song {
     
@@ -31,11 +35,136 @@ public class Song {
         this.author = author;
     }
 
-    public void addMeasure(Measure measure){
+    public boolean isMatch(Song song) {
+        return this.id.equals(song.getId());
+    }
+
+    public void addGenres(Genre genre) {
+        this.genres.add(genre);
+    }
+
+    public void addMeasure(Measure measure) {
         this.measures.add(measure);
     }
 
-    public void addLyric(String lyric){
+    public void addLyric(String lyric) {
         this.lyrics.add(lyric);
     }
+
+    public void removeGenres(Genre genre) {
+        this.genres.remove(genre);
+    }
+
+    public void removeMeasure(Measure measure) {
+        this.measures.remove(measure);
+    }
+
+    public void removeLyric(String lyric) {
+        this.lyrics.remove(lyric);
+    }
+
+    public boolean isMatch(UUID id) {
+        return this.id.equals(id);
+    }
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+    
+    public double getRating() {
+        return this.rating;
+    }
+
+    public ArrayList<Genre> getGenres() {
+        return this.genres;
+    }
+
+    public Instrument getInstrument() {
+        return this.instrument;
+    }
+
+    public Visibility getVisibility() {
+        return this.visibility;
+    }
+
+    public int getBeatsPerMinute() {
+        return this.beatsPerMinute;
+    }
+
+    public TimeSignature getTimeSignature() {
+        return this.timeSignature;
+    }
+
+    public ArrayList<Measure> getMeasures() {
+        return this.measures;
+    }
+
+    public ArrayList<String> getLyrics() {
+        return this.lyrics;
+    }
+
+    public double getSpeed() {
+        return this.speed;
+    }
+
+    public boolean getCompleted() {
+        return this.completed;
+    }
+
+    public UUID getId() {
+        return this.id;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public void setGenres(ArrayList<Genre> genres) {
+        this.genres = genres;
+    }
+
+    public void setInstrument(Instrument instrument) {
+        this.instrument = instrument;
+    }
+
+    public void setVisibility(Visibility visibility) {
+        this.visibility = visibility;
+    }
+
+    public void setBeatsPerMinute(int beatsPerMinute) {
+        this.beatsPerMinute = beatsPerMinute;
+    }
+
+    public void setTimeSignature(TimeSignature timeSignature) {
+        this.timeSignature = timeSignature;
+    }
+
+    public void setMeasures(ArrayList<Measure> measures) {
+        this.measures = measures;
+    }
+
+    public void setLyrics(ArrayList<String> lyrics) {
+        this.lyrics = lyrics;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
 }

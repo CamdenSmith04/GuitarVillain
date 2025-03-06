@@ -22,6 +22,13 @@ public class User {
         this.password = password;
         this.experience = experience;
     }
+
+    public User(String username, String password, String experience) {
+        this.id = UUID.randomUUID();
+        this.username = username;
+        this.password = password;
+        this.experience = Experience.getExperience(experience);
+    }
     
     public User(UUID id, String username, String password, Experience experience) {
         this.id = id;
