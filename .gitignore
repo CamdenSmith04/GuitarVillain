@@ -1,2 +1,3 @@
-﻿src/main/java/com/data/*.json
-target/classes/com/*.class
+﻿*.json
+*.class
+target
