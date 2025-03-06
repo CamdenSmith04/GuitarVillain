@@ -5,11 +5,10 @@ import java.util.ArrayList;
 public class SongList {
     
     private static SongList songList;
-
     private ArrayList<Song> songs;
 
     private SongList() {
-
+        songs = new ArrayList<Song>();
     }
 
     public static SongList getInstance() {
@@ -19,12 +18,17 @@ public class SongList {
         return songList;
     }
 
-    public void createSong(Song song) {
-
+    // TODO: Make sure song can be created :)
+    public void addSong(Song song) {
+        songs.add(song);
     }
 
     public Song getSong(String title) {
-        //TODO: Fix
+        for(Song current : songs) {
+            if(current.getTitle().equals(title)) {
+                return current;
+            }
+        }
         return null;
     }
 
@@ -33,22 +37,43 @@ public class SongList {
     }
 
     public void deleteSong(Song song) {
-
+        for(Song current : songs) {
+            if(current.isMatch(song)) {
+                songs.remove(current);
+            }
+        }
     }
 
     public ArrayList<Song> searchTitle(String title) {
-        //TODO: Fix
-        return null;
+        ArrayList<Song> returnArray = new ArrayList<>();
+        for(Song song : songs) {
+            if(song.getTitle().equals(title)) {
+                returnArray.add(song);
+            }
+        }
+        return returnArray;
     }
 
     public ArrayList<Song> seachGenre(Genre genre) {
-        //TODO: Fix
-        return null;
+        ArrayList<Song> returnArray = new ArrayList<>();
+        for(Song song : songs) {
+            for(Genre current : song.getGenres()) {
+                if(current == genre) {
+                    returnArray.add(song);
+                }
+            }
+        }
+        return returnArray;
     }
 
     public ArrayList<Song> searchAuthor(String author) {
-        //TODO: Fix
-        return null;
+        ArrayList<Song> returnArray = new ArrayList<>();
+        for(Song song : songs) {
+            if(song.getAuthor().equals(author)) {
+                returnArray.add(song);
+            }
+        }
+        return returnArray;
     }
 
     public void save() {
