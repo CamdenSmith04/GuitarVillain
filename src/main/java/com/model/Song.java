@@ -39,7 +39,7 @@ public class Song {
         return this.id.equals(song.getId());
     }
 
-    public void addGenres(Genre genre) {
+    public void addGenre(Genre genre) {
         this.genres.add(genre);
     }
 
@@ -51,7 +51,7 @@ public class Song {
         this.lyrics.add(lyric);
     }
 
-    public void removeGenres(Genre genre) {
+    public void removeGenre(Genre genre) {
         this.genres.remove(genre);
     }
 
