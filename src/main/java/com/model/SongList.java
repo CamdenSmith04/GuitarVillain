@@ -45,7 +45,7 @@ public class SongList {
     }
 
     public ArrayList<Song> searchTitle(String title) {
-        ArrayList<Song> returnArray = new ArrayList<Song>();
+        ArrayList<Song> returnArray = new ArrayList<>();
         for(Song song : songs) {
             if(song.getTitle().equals(title)) {
                 returnArray.add(song);
@@ -55,17 +55,19 @@ public class SongList {
     }
 
     public ArrayList<Song> seachGenre(Genre genre) {
-        ArrayList<Song> returnArray = new ArrayList<Song>();
+        ArrayList<Song> returnArray = new ArrayList<>();
         for(Song song : songs) {
-            if(song.getGenre() == genre) {
-                returnArray.add(song);
+            for(Genre current : song.getGenres()) {
+                if(current == genre) {
+                    returnArray.add(song);
+                }
             }
         }
         return returnArray;
     }
 
     public ArrayList<Song> searchAuthor(String author) {
-        ArrayList<Song> returnArray = new ArrayList<Song>();
+        ArrayList<Song> returnArray = new ArrayList<>();
         for(Song song : songs) {
             if(song.getAuthor().equals(author)) {
                 returnArray.add(song);
