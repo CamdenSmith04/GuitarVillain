@@ -15,4 +15,28 @@ public class Note {
         this.string = string;
         this.fret = fret;
     }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public void setString(char string) {
+        this.string = string;
+    }
+
+    public void setFret(int fret) {
+        this.fret = fret;
+    }
+
+    public int getTime() {
+        return this.time;
+    }
+
+    public char getString() {
+        return this.string;
+    }
+
+    public int getFret() {
+        return this.fret;
+    }
 }

@@ -19,4 +19,20 @@ public class Measure {
     public void removeChord(Chord chord) {
         this.chords.remove(chord);
     }
+
+    public int getLength() {
+        return this.length;
+    }
+
+    public ArrayList<Chord> getChords() {
+        return this.chords;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public void setChords(ArrayList<Chord> chords) {
+        this.chords = chords;
+    }
 }
