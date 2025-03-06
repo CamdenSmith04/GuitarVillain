@@ -1,0 +1,10 @@
+Update UML for List classes setting constructor not to static
+but get instance to static
+
+Update UML for LessonList to be lower case lessonList: LessonList
+Update UML for ModuleList to be lower case moduleList: ModuleList
+^ Same as above for update method (make it update<Whatever>)
+
+Update UML for SongList search method to be searchTitle for consistency
+
+Fix for CourseList too also fix ArrayList capitalization <course> -> Course

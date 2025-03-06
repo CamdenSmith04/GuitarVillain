@@ -1,0 +1,150 @@
+[
+    {
+        "id": "3617a6b9-7170-49db-945f-1cf6eb816c3f",
+        "author": "DJ Android",
+        "title": "The Distance",
+        "rating": 3.46,
+        "genres": ["Pop", "Funk"],
+        "instrument": "Guitar",
+        "visibility": "Private",
+        "beatsPerMinute": 100,
+        "timeSignature": "4/4",
+        "measures": [
+            {
+                "length": 4,
+                "chords": {
+                    "name": "E",
+                    "notes": [
+                        {
+                            "time": 8,
+                            "string": "e",
+                            "fret": 12
+                        },
+                        {
+                            "time": 16,
+                            "string": "b",
+                            "fret": 8
+                        },
+                        {
+                            "time": 8,
+                            "string": "a",
+                            "fret": 10
+                        }
+                    ],
+                    "chordShape": "chord1.png"
+                }
+            },
+            {
+                "length": 4,
+                "chords": {
+                    "name": "Am",
+                    "notes": [
+                        {
+                            "time": 8,
+                            "string": "a",
+                            "fret": 16
+                        },
+                        {
+                            "time": 16,
+                            "string": "a",
+                            "fret": 14
+                        },
+                        {
+                            "time": 8,
+                            "string": "c",
+                            "fret": 12
+                        }
+                    ],
+                    "chordShape": "chord1.png"
+                }
+            }
+        ],
+        "lyrics": ["Reluctantly crouched at the starting line",
+                    "Engines pumping and thumping in time",
+                    "The green light flashes, the flags go up",
+                    "Churning and burning, they yearn for the cup",
+                    "They deftly maneuver and muscle for rank",
+                    "Fuel burning fast on an empty tank",
+                    "Reckless and wild, they pour through the turns",
+                    "Their prowess is potent and secretly stern",
+                    "As they speed through the finish, the flags go down",
+                    "The fans get up and they get out of town",
+                    "The arena is empty, except for one man",
+                    "Still driving and striving as fast as he can"],
+        "speed": 1.00,
+        "completed": true
+    },
+    {
+        "id": "d1d720f5-4e57-4644-abf8-6a2174c7e056",
+        "author": "DJ Dauphin",
+        "title": "Surround Sound",
+        "rating": 4.88,
+        "genres": ["Rap"],
+        "instrument": "Bass",
+        "visibility": "Public",
+        "beatsPerMinute": 120,
+        "timeSignature": "4/4",
+        "measures": [
+            {
+                "length": 4,
+                "chords": {
+                    "name": "E",
+                    "notes": [
+                        {
+                            "time": 8,
+                            "string": "e",
+                            "fret": 12
+                        },
+                        {
+                            "time": 16,
+                            "string": "b",
+                            "fret": 8
+                        },
+                        {
+                            "time": 8,
+                            "string": "a",
+                            "fret": 10
+                        }
+                    ],
+                    "chordShape": "chord1.png"
+                }
+            },
+            {
+                "name": "A",
+                "length": 4,
+                "chords": {
+                    "notes": [
+                        {
+                            "time": 8,
+                            "string": "a",
+                            "fret": 16
+                        },
+                        {
+                            "time": 16,
+                            "string": "a",
+                            "fret": 14
+                        },
+                        {
+                            "time": 8,
+                            "string": "c",
+                            "fret": 12
+                        }
+                    ],
+                    "chordShape": "chord2.png"
+                }
+            }
+        ],
+        "lyrics": ["Couple kids with Alzheimer's, something on his side",
+                    "Boy you Mike Alstott, he on the block violent",
+                    "Robbin' guys at my home and then swap genres",
+                    "Green light, line a man up, stop sign him",
+                    "Keep drivin', you will not find him",
+                    "I'm a, I'm a, I'm a normal anomaly, I turned into a rapper ironically",
+                    "And ran the bag up, back up, man is onto me",
+                    "Man should honor me, if you think that I'm a wannabe",
+                    "It's pretty comedy, I'm melancholy and cool",
+                    "So calmly bustin' moves, my truths carry velocity"],
+        "speed": 1.25,
+        "completed": false
+    }
+]
