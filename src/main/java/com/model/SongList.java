@@ -8,7 +8,7 @@ public class SongList {
     private ArrayList<Song> songs;
 
     private SongList() {
-        songs = new ArrayList<Song>();
+        songs = new ArrayList<>();
     }
 
     public static SongList getInstance() {
@@ -40,6 +40,7 @@ public class SongList {
         for(Song current : songs) {
             if(current.isMatch(song)) {
                 songs.remove(current);
+                return;
             }
         }
     }
