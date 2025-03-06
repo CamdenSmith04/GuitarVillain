@@ -4,11 +4,10 @@ import java.util.ArrayList;
 public class LessonList {
 
     private static LessonList lessonList;
-
     private ArrayList<Lesson> lessons;
 
     private LessonList(){
-    
+        lessons = new ArrayList<>();
     }
 
     public static LessonList getInstance(){
@@ -18,12 +17,17 @@ public class LessonList {
         return lessonList;
     }
 
-    public void createLesson(Lesson lesson){
-        
+    // TODO: Make sure lesson can be created :)
+    public void addLesson(Lesson lesson){
+        lessons.add(lesson);
     }
 
     public Lesson getLesson(String title){
-        // TODO: FIX
+        for(Lesson current : lessons) {
+            if(current.getTitle().equals(title)) {
+                return current;
+            }
+        }
         return null;
     }
 
@@ -32,7 +36,12 @@ public class LessonList {
     }
 
     public void deleteLesson(Lesson lesson){
-
+        for(Lesson current : lessons) {
+            if(current.isMatch(lesson)) {
+                lessons.remove(current);
+                return;
+            }
+        }
     }
 
     public void save(){
