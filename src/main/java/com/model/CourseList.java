@@ -5,11 +5,10 @@ import java.util.ArrayList;
 public class CourseList {
     
     private static CourseList courseList;
-
     private ArrayList<Course> courses;
 
     private CourseList(){
-
+        courses = new ArrayList<>();
     }
 
     public static CourseList getInstance() {
@@ -19,12 +18,17 @@ public class CourseList {
         return courseList;
     }
 
-    public void createCourse(Course course) {
-
+    // TODO: Make sure lesson can be created :)
+    public void addCourse(Course course) {
+        courses.add(course);
     }
 
     public Course getCourse(String title) {
-        //TODO: Fix
+        for(Course current : courses) {
+            if(current.getTitle().equals(title)) {
+                return current;
+            }
+        }
         return null;
     }
 
@@ -33,7 +37,12 @@ public class CourseList {
     }
 
     public void deleteCourse(Course course) {
-        
+        for(Course current : courses) {
+            if(current.isMatch(course)) {
+                courses.remove(current);
+                return;
+            }
+        }
     }
 
     public void save() {
