@@ -8,7 +8,7 @@ public class Lesson {
     private String educationalMaterial;
     private String visualAid;
     private boolean completed;
-    private UUID id;
+    private final UUID id;
 
     public Lesson(String title, String educationalMaterial, String visualAid) {
         this.title = title;

@@ -1,31 +1,48 @@
 package com.model;
 
+import java.util.ArrayList;
+
 public class MusicAppFacade {
+
+    private ArrayList<User> users;
+    private ArrayList<Song> songs;
+    private ArrayList<Module> modules;
+    private ArrayList<Lesson> lessons;
+    private ArrayList<Course> courses;
     
     private User currentUser;
     private Course currentCourse;
     private Lesson currentLesson;
     private Song currentSong;
 
+    // need to figure out how we want to do setters since this is facade
+
     public MusicAppFacade() {
 
     }
 
-    // Add getters and setters
-
     public User login(String username, String password) {
 
-        // This should return the user that gets logged in, if no user is found return null
+        for (User user : this.users) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+               return user;
+            }
+        }
         return null;
     }
 
-    public User signUp(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
-        // This should create a User and add them to the User list
-        // Signup followed by login should never return null
+    public User signUp() {
+
+        // Need to figure out how to create a new user from input?
+
+        this.users.add(new User("username", "password", Experience.BEGINNER, SecurityQuestion.ELEMENTARY_SCHOOL, "securityAnswer"));
+        
         return null;
     }
 
     public void resetPassword() {
+
+        // Match security question and answer and then use resetPassword method for user
 
     }
 
@@ -39,27 +56,32 @@ public class MusicAppFacade {
     }
 
     public void logout() {
-        // 
-        
+        this.currentUser = null;
     }
 
     public void browseSongs() {
-        // print out the song list
-
+        for (Song song : this.songs) {
+            System.out.println(song.toString());
+        }
     }
 
     public void browseLessons() {
-        // print out the lesson lsit
-
+        for (Lesson lesson : this.lessons) {
+            System.out.println(lesson.toString());
+        }
     }
 
     public void browseMyCourses() {
-        // print out the users courses
-
+        for (Course course : this.courses) {
+            System.out.println(course.toString());
+        }
     }
 
     public void browseFriends() {
-        // print out the users friends - convert Id to names
+
+        for (User friend : this.currentUser.getFriends()){
+            System.out.println(friend.toString());
+        }
 
     }
 
@@ -92,36 +114,36 @@ public class MusicAppFacade {
         // needs to ask the user for course details and what not
 
     }
-    // TODO: String name or course
-    public void deleteCourse(String name) {
-        // call courelist deletecourse
+   
+    public void deleteCourse(Course course) {
+        this.courses.remove(course);
     }
-    // TODO: String name or course
-    public void addStudent(String username) {
-        // call course add student
+   
+    public void addStudent(Student student) {
+        this.currentCourse.addStudent(student);
 
     }
-    // TODO: String name or course
-    public void removeStudent(String username) {
-        // call course remove student
+    
+    public void removeStudent(Student student) {
+        this.currentCourse.removeStudent(student);
 
     }
-    // TODO: String name or course
-    public void assignLesson(String name) {
-        // call course assignlesson
+    
+    public void assignLesson(Lesson lesson) {
+        this.currentCourse.addLesson(lesson);
 
     }
-    // TODO: String name or course
-    public void removeLesson(String name) {
-        // call course removelesson
+    
+    public void removeLesson(Lesson lesson) {
+        this.currentCourse.removeLesson(lesson);
     }
-    // TODO: String name or course
-    public void assignSong(String title) {
-        // call course assignsong
+    
+    public void assignSong(Song song) {
+        this.currentCourse.addSong(song);
     }
-    // TODO: String name or course
-    public void removeSong(String title) {
-        // call course removelesson
+    
+    public void removeSong(Song song) {
+        this.currentCourse.removeSong(song);
     }
     // TODO: String name or course
     public void beginLesson(String name) {
@@ -132,5 +154,40 @@ public class MusicAppFacade {
         // This will call play method in song/chord? not sure
     }
 
+    public ArrayList<User> getUsers() {
+        return this.users;
+    }
+
+    public ArrayList<Song> getSongs() {
+        return this.songs;
+    }
+
+    public ArrayList<Module> getModules() {
+        return this.modules;
+    }
+
+    public ArrayList<Lesson> getLessons() {
+        return this.lessons;
+    }
+
+    public ArrayList<Course> getCourses() {
+        return this.courses;
+    }
+
+    public User getCurrentUser() {
+        return this.currentUser;
+    }
+
+    public Course getCurrentCourse() {
+        return this.currentCourse;
+    }
+
+    public Lesson getCurrentLesson() {
+        return this.currentLesson;
+    }
+
+    public Song getCurrentSong() {
+        return this.currentSong;
+    }
 
 }
