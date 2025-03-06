@@ -15,6 +15,7 @@ public class DataWriter extends DataConstants {
     public static void saveSongs() {
 
     }
+
     public static void saveUsers() {
         UserList users = UserList.getInstance();
         ArrayList<User> userList = users.getUsers();
@@ -47,12 +48,17 @@ public class DataWriter extends DataConstants {
         JSONObject objectDetails = new JSONObject();
         try {
             Class<?> objectClass = object.getClass();
-            Field[] instanceVariables = objectClass.getDeclaredFields();
+            Field[] fields = objectClass.getDeclaredFields();
 
-            for (Field instanceVariable : instanceVariables) {
+            for (Field field : fields) {
                 // TODO can you ignore setAccessible?????
-                instanceVariable.setAccessible(true); // Allow access to private fields
-                objectDetails.put(instanceVariable.getName(), instanceVariable.get(object)); // Put field name & value in JSON
+                field.setAccessible(true); // Allow access to private fields
+                
+                Object value = (field.get(object));
+                if (value instanceof Number)
+                    objectDetails.put(field.getName(), value);
+                else
+                    objectDetails.put(field.getName(), String.valueOf(value)); // Put field name & value in JSON
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -61,13 +67,4 @@ public class DataWriter extends DataConstants {
         return objectDetails;
     }
 
-    public static void main(String[] args) {
-        ArrayList<User> users = DataLoader.getUsers();
-
-        for (User user : users) {
-            System.out.println(user);
-        }
-        
-        
-    }
 }
