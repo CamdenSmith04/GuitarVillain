@@ -3,9 +3,9 @@ package com.model;
 import java.util.ArrayList;
 
 public class Chord {
+
     private ArrayList<Note> notes;
-    // TODO: Fix
-    // private image chordShape;
+    private String chordShape;
     private String name;
 
     public Chord() {
@@ -23,5 +23,29 @@ public class Chord {
     // TODO: Not sure what this is supposed to be
     public void play(Instrument instrument, int octave) {
 
+    }
+
+    public void setNotes(ArrayList<Note> notes) {
+        this.notes = notes;
+    }
+
+    public void setChordShape(String chordShape) {
+        this.chordShape = chordShape;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<Note> getNotes() {
+        return this.notes;
+    }
+
+    public String getChordShape() {
+        return this.chordShape;
+    }
+
+    public String getName() {
+        return this.name;
     }
 }

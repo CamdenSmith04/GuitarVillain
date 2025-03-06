@@ -17,4 +17,8 @@ public class Teacher {
     public void deleteCourse(Course course) {
         this.courses.remove(course);
     }
+
+    public boolean isMatch(Course course) {
+        return this.id.equals(course.getId());
+    }
 }
