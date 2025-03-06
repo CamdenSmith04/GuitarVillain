@@ -5,19 +5,19 @@ import java.util.UUID;
 
 public class Course {
     
-    private String name;
+    private String title;
     private ArrayList<Student> students;
     private ArrayList<Lesson> assignedLessons;
     private ArrayList<Song> assignedSongs;
     private UUID id;
 
-    public Course(String name) {
-        this.name = name;
+    public Course(String title) {
+        this.title = title;
         this.id = UUID.randomUUID();
     }
 
-    public Course(String name, UUID id) {
-        this.name = name;
+    public Course(String title, UUID id) {
+        this.title = title;
         this.id = id;
     }
 
@@ -76,8 +76,8 @@ public class Course {
         return this.id.equals(course.getId());
     }
 
-    public String getName() {
-        return this.name;
+    public String getTitle() {
+        return this.title;
     }
 
     public ArrayList<Student> getStudents() {
@@ -96,11 +96,11 @@ public class Course {
         return this.id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setStudents( ArrayList<Student> students) {
+    public void setStudents(ArrayList<Student> students) {
         this.students = students;
     }
 
