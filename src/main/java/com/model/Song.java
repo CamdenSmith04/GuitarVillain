@@ -23,6 +23,10 @@ public class Song {
     private boolean completed;
     private UUID id;
 
+    public Song() {
+        this.id = UUID.randomUUID();
+    }
+
     public Song(String title, String author) {
         this.id = UUID.randomUUID();
         this.title = title;

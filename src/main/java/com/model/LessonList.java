@@ -31,6 +31,10 @@ public class LessonList {
         return null;
     }
 
+    public ArrayList<Lesson> getLessons() {
+        return lessons;
+    }
+
     public void updateLesson(Lesson lesson){
 
     }
