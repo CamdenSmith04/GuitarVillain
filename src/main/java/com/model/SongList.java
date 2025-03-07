@@ -32,6 +32,10 @@ public class SongList {
         return null;
     }
 
+    public ArrayList<Song> getSongs() {
+        return songs;
+    }
+
     public void updateSong(Song song) {
 
     }

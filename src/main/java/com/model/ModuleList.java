@@ -32,6 +32,10 @@ public class ModuleList {
         return null;
     }
 
+    public ArrayList<Module> getModules() {
+        return modules;
+    }
+
     public void updateModule(Module module) {
 
     }

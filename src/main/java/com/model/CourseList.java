@@ -32,6 +32,10 @@ public class CourseList {
         return null;
     }
 
+    public ArrayList<Course> getCourses() {
+        return courses;
+    }
+
     public void updateCourse(Course course) {
 
     }
