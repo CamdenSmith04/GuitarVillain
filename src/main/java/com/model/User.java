@@ -5,16 +5,50 @@ import java.util.UUID;
 
 public class User {
     
-    private String username;
-    private String password;
-    private Experience experience;
-    private int points;
-    private int streak;
-    private SecurityQuestion securityQuestion;
-    private String securityAnswer;
-    private ArrayList<User> friends;
-    private ArrayList<Song> songs;
-    private final UUID id;
+    protected String username;
+    protected String password;
+    protected Experience experience;
+    protected int points;
+    protected int streak;
+    protected SecurityQuestion securityQuestion;
+    protected String securityAnswer;
+    protected ArrayList<User> friends;
+    protected ArrayList<Song> songs;
+    protected final UUID id;
+
+    public User() {
+        this.id = UUID.randomUUID();
+    }
+
+    public User(String username, String password, Experience experience, int points, 
+                    int streak, SecurityQuestion securityQuestion, String securityAnswer, 
+                    ArrayList<User> friends, ArrayList<Song> songs) {
+        this.id = UUID.randomUUID();
+        this.username = username;
+        this.password = password;
+        this.experience = experience;
+        this.points = points;
+        this.streak = streak;
+        this.securityQuestion = securityQuestion;
+        this.securityAnswer = securityAnswer;
+        this.friends = friends;
+        this.songs = songs;
+    }
+
+    public User(UUID id, String username, String password, Experience experience, int points, 
+                    int streak, SecurityQuestion securityQuestion, String securityAnswer, 
+                    ArrayList<User> friends, ArrayList<Song> songs) {
+        this.username = username;
+        this.password = password;
+        this.experience = experience;
+        this.points = points;
+        this.streak = streak;
+        this.securityQuestion = securityQuestion;
+        this.securityAnswer = securityAnswer;
+        this.friends = friends;
+        this.songs = songs;
+        this.id = id;
+    }
 
     public User(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
         this.id = UUID.randomUUID();
@@ -34,6 +68,13 @@ public class User {
         this.securityAnswer = securityAnswer;
     }
     
+    public User(String username, String password, Experience experience) {
+        this.id = UUID.randomUUID();
+        this.username = username;
+        this.password = password;
+        this.experience = experience;
+    }
+
     public User(UUID id, String username, String password, Experience experience) {
         this.id = id;
         this.username = username;

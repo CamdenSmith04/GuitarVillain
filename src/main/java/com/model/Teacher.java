@@ -2,12 +2,17 @@ package com.model;
 
 import java.util.ArrayList;
 
-public class Teacher {
+public class Teacher extends User {
     
     private ArrayList<Course> courses;
 
-    public Teacher(User user){
+    public Teacher(){
+        super();
+    }
 
+    public Teacher(ArrayList<Course> courses){
+        super();
+        this.courses = courses;
     }
 
     public void makeCourse(String name) {
