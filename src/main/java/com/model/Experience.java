@@ -1,7 +1,5 @@
 package com.model;
 
-import java.util.Enumeration;
-
 public enum Experience {
     BEGINNER("Beginner"),
     INTERMEDIATE("Intermediate"),
@@ -13,6 +11,7 @@ public enum Experience {
         this.label = label;
     }
 
+    @Override
     public String toString() {
         return label;
     }
