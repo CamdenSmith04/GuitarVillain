@@ -16,25 +16,6 @@ public class User {
     protected ArrayList<Song> songs;
     protected final UUID id;
 
-    public User() {
-        this.id = UUID.randomUUID();
-    }
-
-    public User(String username, String password, Experience experience, int points, 
-                    int streak, SecurityQuestion securityQuestion, String securityAnswer, 
-                    ArrayList<User> friends, ArrayList<Song> songs) {
-        this.id = UUID.randomUUID();
-        this.username = username;
-        this.password = password;
-        this.experience = experience;
-        this.points = points;
-        this.streak = streak;
-        this.securityQuestion = securityQuestion;
-        this.securityAnswer = securityAnswer;
-        this.friends = friends;
-        this.songs = songs;
-    }
-
     public User(UUID id, String username, String password, Experience experience, int points, 
                     int streak, SecurityQuestion securityQuestion, String securityAnswer, 
                     ArrayList<User> friends, ArrayList<Song> songs) {
@@ -57,43 +38,6 @@ public class User {
         this.experience = experience;
         this.securityQuestion = securityQuestion;
         this.securityAnswer = securityAnswer;
-        points = 0;
-        streak = 0;
-        friends = new ArrayList<User>();
-        songs = new ArrayList<Song>();
-    }
-
-    public User(UUID id, String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.experience = experience;
-        this.securityQuestion = securityQuestion;
-        this.securityAnswer = securityAnswer;
-        points = 0;
-        streak = 0;
-        friends = new ArrayList<User>();
-        songs = new ArrayList<Song>();
-    }
-    
-    public User(String username, String password, Experience experience) {
-        this.id = UUID.randomUUID();
-        this.username = username;
-        this.password = password;
-        this.experience = experience;
-        this.securityQuestion = SecurityQuestion.ELEMENTARY_SCHOOL;
-        points = 0;
-        streak = 0;
-        friends = new ArrayList<User>();
-        songs = new ArrayList<Song>();
-    }
-
-    public User(UUID id, String username, String password, Experience experience) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.experience = experience;
-        this.securityQuestion = SecurityQuestion.ELEMENTARY_SCHOOL;
         points = 0;
         streak = 0;
         friends = new ArrayList<User>();
@@ -137,14 +81,6 @@ public class User {
 
     public boolean idIsMatch(UUID id) {
         return this.id == id;
-    }
-
-    public static void main(String[] args) {
-        User user1 = new User();
-        UUID id1 = user1.getId();
-        UUID id2 = UUID.randomUUID();
-        System.out.println(user1.idIsMatch(id1));
-        System.out.println(user1.idIsMatch(id2));
     }
 
     @Override
