@@ -11,20 +11,18 @@ public enum Experience {
         this.label = label;
     }
 
-    @Override
-    public String toString() {
-        return label;
+    public String getLabel() {
+        return this.label;
     }
 
     public static Experience getExperience(String label) {
-        if (BEGINNER.label.equalsIgnoreCase(label))
+        if (label.equals(BEGINNER.label))
             return BEGINNER;
-        if (INTERMEDIATE.label.equalsIgnoreCase(label))
+        if (label.equals(INTERMEDIATE.label))
             return INTERMEDIATE;
-        if (ADVANCED.label.equalsIgnoreCase(label))
+        if (label.equals(ADVANCED.label))
             return ADVANCED;
         return null;
+
     }
-
-
 }

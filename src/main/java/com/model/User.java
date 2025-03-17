@@ -57,6 +57,10 @@ public class User {
         this.experience = experience;
         this.securityQuestion = securityQuestion;
         this.securityAnswer = securityAnswer;
+        points = 0;
+        streak = 0;
+        friends = new ArrayList<User>();
+        songs = new ArrayList<Song>();
     }
 
     public User(UUID id, String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
@@ -66,6 +70,10 @@ public class User {
         this.experience = experience;
         this.securityQuestion = securityQuestion;
         this.securityAnswer = securityAnswer;
+        points = 0;
+        streak = 0;
+        friends = new ArrayList<User>();
+        songs = new ArrayList<Song>();
     }
     
     public User(String username, String password, Experience experience) {
@@ -73,6 +81,11 @@ public class User {
         this.username = username;
         this.password = password;
         this.experience = experience;
+        this.securityQuestion = SecurityQuestion.ELEMENTARY_SCHOOL;
+        points = 0;
+        streak = 0;
+        friends = new ArrayList<User>();
+        songs = new ArrayList<Song>();
     }
 
     public User(UUID id, String username, String password, Experience experience) {
@@ -80,6 +93,11 @@ public class User {
         this.username = username;
         this.password = password;
         this.experience = experience;
+        this.securityQuestion = SecurityQuestion.ELEMENTARY_SCHOOL;
+        points = 0;
+        streak = 0;
+        friends = new ArrayList<User>();
+        songs = new ArrayList<Song>();
     }
 
     public String getUsername() {
@@ -109,8 +127,24 @@ public class User {
         this.password = password;
     }
 
-    public boolean isMatch(User user) {
-        return this.id.equals(user.getId());
+    public boolean userIsMatch(String username) {
+        return this.username.equals(username);
+    }
+
+    public boolean loginIsMatch(String username, String password) {
+        return this.username.equals(username) && this.password.equals(password);
+    }
+
+    public boolean idIsMatch(UUID id) {
+        return this.id == id;
+    }
+
+    public static void main(String[] args) {
+        User user1 = new User();
+        UUID id1 = user1.getId();
+        UUID id2 = UUID.randomUUID();
+        System.out.println(user1.idIsMatch(id1));
+        System.out.println(user1.idIsMatch(id2));
     }
 
     @Override
