@@ -8,7 +8,13 @@ public class UserList {
     private ArrayList<User> users;
 
     private UserList(){
-        users = new ArrayList<>();
+        users = DataLoader.getUsers();
+    }
+
+    public User signUp(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
+        User ret = new User(username, password, experience, securityQuestion, securityAnswer);
+        UserList.getInstance().addUser(ret);
+        return ret;
     }
 
     public static UserList getInstance(){
@@ -25,7 +31,16 @@ public class UserList {
 
     public User getUser(User user){
         for(User current : users) {
-            if(current.isMatch(user)) {
+            if(current.idIsMatch(user.getId())) {
+                return current;
+            }
+        }
+        return null;
+    }
+
+    public User getUser(String username, String password){
+        for(User current : users) {
+            if(current.getUsername().equals(username) && current.getPassword().equals(password)) {
                 return current;
             }
         }

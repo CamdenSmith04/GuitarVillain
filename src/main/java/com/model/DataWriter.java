@@ -48,6 +48,14 @@ public class DataWriter extends DataConstants {
         saveObjects(users.getUsers(), USER_FILE_NAME);
     }
 
+    public static void save() {
+        saveCourses();
+        saveLessons();
+        saveModules();
+        saveSongs();
+        saveUsers();
+    }
+
     /**
      * Manages JSONArray of objectList and writes to JSON for any object type.
      */

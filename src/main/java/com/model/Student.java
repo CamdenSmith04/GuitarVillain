@@ -6,12 +6,8 @@ public class Student extends User{
     
     private ArrayList<Course> courses;
 
-    public Student() {
-        super();
-    }
-
-    public Student(ArrayList<Course> courses) {
-        super();
+    public Student(User user, ArrayList<Course> courses) {
+        super(user.getId(), user.getUsername(), user.getPassword(), user.getExperience(), user.getPoints(), user.getStreak(), user.getSecurityQuestion(), user.getSecurityAnswer(), user.getFriends(), user.getSongs());
         this.courses = courses;
     }
 

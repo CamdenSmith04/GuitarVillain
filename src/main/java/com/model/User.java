@@ -61,6 +61,14 @@ public class User {
         this.password = password;
     }
 
+    public boolean resetPassword(String securityAnswer, String newPassword) {
+        if (this.securityAnswer.equalsIgnoreCase(securityAnswer)) {
+            this.password = newPassword;
+            return true;
+        }
+            return false;
+    }
+
     public UUID getId() {
         return this.id;
     }
@@ -128,4 +136,21 @@ public class User {
         this.songs = songs;
     }
 
+    public SecurityQuestion getSecurityQuestion() {
+        return securityQuestion;
+    }
+
+    public void setSecurityQuestion(SecurityQuestion securityQuestion) {
+        this.securityQuestion = securityQuestion;
+    }
+
+    public String getSecurityAnswer() {
+        return securityAnswer;
+    }
+
+    public void setSecurityAnswer(String securityAnswer) {
+        this.securityAnswer = securityAnswer;
+    }
+
+    
 }

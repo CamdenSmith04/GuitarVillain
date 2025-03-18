@@ -1,16 +1,13 @@
 package com.model;
 
 import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.Scanner;
 
 public class Facade {
 
-    private ArrayList<User> users;
-    private ArrayList<Song> songs;
-    private ArrayList<Module> modules;
-    private ArrayList<Lesson> lessons;
-    private ArrayList<Course> courses;
+    private UserList userList;
+    private SongList songList;
+    private ModuleList moduleList;
+    private CourseList courseList;
     
     private User currentUser;
     private Course currentCourse;
@@ -20,179 +17,82 @@ public class Facade {
     // need to figure out how we want to do setters since this is facade
 
     public Facade() {
-        users = DataLoader.getUsers();
-        songs = DataLoader.getSongs();
-        modules = DataLoader.getModules();
-        lessons = DataLoader.getLessons();
-        courses = DataLoader.getCourses();
+        userList = UserList.getInstance();
+        songList = SongList.getInstance();
+        moduleList = ModuleList.getInstance();
+        courseList = CourseList.getInstance();
     } 
-
-    /**
-     * Gives user options to log in or sign up
-     */
-    public void signIn() {
-        System.out.println("Welcome to GuitarVillain!");
-        Scanner keyboard = new Scanner(System.in);
-        String input;
-        for (boolean cont = true; cont;) {
-            System.out.println("Would you like to:\n"
-                + "(1) Log in\n"
-                + "(2) Sign up");
-            input = keyboard.nextLine();
-            input = input.trim();
-            switch (input) {
-                case "1": { // Log in
-                    currentUser = logIn();
-                    if (currentUser==null)
-                        System.out.println("Sorry, we could not find a match. Please sign in again.");
-                    else
-                        cont = false;
-                    break;
-                }
-                case "2": { // Sign up
-                    currentUser = signUp();
-                    cont = false;
-                    break;
-                }
-                default:
-                    System.out.println("Sorry, I didn't understand that. Please enter 1 or 2");
-            } 
-        }
-        keyboard.close();
-    }
 
     /**
      * Logs in existing user
      */
-    public User logIn() {
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("What is your login information?");
-        System.out.print("Username: ");
-        String username = keyboard.nextLine();
-        System.out.print("Password: ");
-        String password = keyboard.nextLine();
-        for (User user : users) {
-            if (user.loginIsMatch(username, password)) {
-                return user;
-            }
-        }
-        keyboard.close();
-        return null;
+    public User logIn(String username, String password) {
+        return currentUser = userList.getUser(username, password);
     }
 
     /**
      * Creates new user
      */
-    public User signUp() {
-        Scanner keyboard = new Scanner(System.in);
-        System.out.print("Enter your username: ");
-        String username = keyboard.nextLine();
-        System.out.print("Enter your password: ");
-        String password = keyboard.nextLine();
-        System.out.println("What is your level of experience in guitar?");
-        Experience experience = null;
-        for (boolean cont = true; cont;) {
-            for (Experience exp : EnumSet.allOf(Experience.class)) {
-                System.out.println(exp);
-            }
-            String experienceStr = keyboard.nextLine();
-            experienceStr = experienceStr.trim();
-            experienceStr = experienceStr.toUpperCase();
-            try {
-                experience = Experience.valueOf(experienceStr);
-                cont = false;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Please enter a valid string of one of the following options (e.g. \"EASY\")");
-            }
-        }
-        System.out.println("Would you like to set a Security Question to reset your password later?");
-        System.out.println("YES or NO");
-        String securityAnswer = keyboard.nextLine();
-        SecurityQuestion securityQuestion = null;
-        if (securityAnswer.equalsIgnoreCase("YES")) {
-            System.out.println("Which question would you like to answer?");
-            for (boolean cont = true; cont;) {
-                for (SecurityQuestion secQ : EnumSet.allOf(SecurityQuestion.class)) {
-                    System.out.println(secQ + ": " + secQ.getLabel());
-                }
-                securityAnswer = keyboard.nextLine();
-                securityAnswer = securityAnswer.trim();
-                securityAnswer = securityAnswer.toUpperCase();
-                securityAnswer = securityAnswer.replaceAll(" ", "_");
-                try {
-                    securityQuestion = SecurityQuestion.valueOf(securityAnswer);
-                    cont = false;
-                } catch (IllegalArgumentException e) {
-                    System.out.println("Please enter a valid string of one of the following options (e.g. \"PET_NAME\")");
-                }
-            }
-            for (boolean cont = true; cont;) {
-                System.out.println("What is your answer to the question: " + securityQuestion.getLabel());
-                securityAnswer = keyboard.nextLine();
-                System.out.println("Your answer was:\n" + securityAnswer + "\nIs this right?\nYES or NO");
-                String input = keyboard.nextLine();
-                if (input.equalsIgnoreCase("YES"))
-                    cont = false;
-                else
-                    System.out.println("All right. Please try again.");
-            }
-        }
-        else {
-            securityAnswer = null;
-        }
-
-        User retUser = new User(username, password, experience, securityQuestion, securityAnswer);
-        this.users.add(retUser);
-
-        System.out.println("User " + username + " successfully created!");
-
-        keyboard.close();
-        return retUser;
+    public User signUp(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
+        return currentUser = userList.signUp(username, password, experience, securityQuestion, securityAnswer);
     }
 
-    public void resetPassword() {
-
-        // Match security question and answer and then use resetPassword method for user
-
+    /**
+     * Resets password if user correctly answers security question
+     * @param securityAnswer Answer to security question
+     * @param newPassword New password
+     * @return True if operation is successful
+     */
+    public boolean resetPassword(String securityAnswer, String newPassword) {
+        return currentUser.resetPassword(securityAnswer, newPassword);
     }
 
+    /**
+     * Makes user a new teacher
+     */
     public void becomeTeacher() {
-        // decorator class
-
+        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student))
+            currentUser = new Teacher(currentUser, null);
     }
 
+    /**
+     * Makes user a new student
+     */
     public void becomeStudent() {
-        // decorator class
+        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student))
+            currentUser = new Student(currentUser, null);
     }
 
+    /**
+     * Logs user out
+     */
     public void logout() {
+        DataWriter.save();
         this.currentUser = null;
     }
 
     public void browseSongs() {
-        for (Song song : this.songs) {
+        for (Song song : songList.getSongs()) {
             System.out.println(song.toString());
         }
     }
 
     public void browseLessons() {
-        for (Lesson lesson : this.lessons) {
+        for (Lesson lesson : lessonList.getLessons()) {
             System.out.println(lesson.toString());
         }
     }
 
     public void browseMyCourses() {
-        for (Course course : this.courses) {
+        for (Course course : courseList.getCourses()) {
             System.out.println(course.toString());
         }
     }
 
     public void browseFriends() {
-
-        for (User friend : this.currentUser.getFriends()){
+        for (User friend : currentUser.getFriends()){
             System.out.println(friend.toString());
         }
-
     }
 
     public void playSong() {
@@ -226,7 +126,7 @@ public class Facade {
     }
    
     public void deleteCourse(Course course) {
-        this.courses.remove(course);
+        courseList.remove(course);
     }
    
     public void addStudent(Student student) {
