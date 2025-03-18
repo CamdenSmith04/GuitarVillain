@@ -27,16 +27,36 @@ public class Song {
         this.id = UUID.randomUUID();
     }
 
-    public Song(String title, String author) {
+    public Song(String title, String author, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
         this.id = UUID.randomUUID();
         this.title = title;
         this.author = author;
+        this.rating = rating;
+        this.genres = genres;
+        this.instrument = instrument;
+        this.visibility = visibility;
+        this.beatsPerMinute = beatsPerMinute;
+        this.timeSignature = timeSignature;
+        this.measures = measures;
+        this.lyrics = lyrics;
+        this.speed = speed;
+        this.completed = completed;
     }
 
-    public Song(UUID id, String title, String author) {
+    public Song(UUID id, String title, String author, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
         this.id = id;
         this.title = title;
         this.author = author;
+        this.rating = rating;
+        this.genres = genres;
+        this.instrument = instrument;
+        this.visibility = visibility;
+        this.beatsPerMinute = beatsPerMinute;
+        this.timeSignature = timeSignature;
+        this.measures = measures;
+        this.lyrics = lyrics;
+        this.speed = speed;
+        this.completed = completed;
     }
 
     public boolean isMatch(Song song) {

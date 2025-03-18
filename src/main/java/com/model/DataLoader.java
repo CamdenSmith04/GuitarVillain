@@ -24,8 +24,18 @@ public class DataLoader extends DataConstants{
                 UUID id = UUID.fromString((String)songJSON.get(SONG_ID));
                 String title = (String)songJSON.get(SONG_TITLE);
                 String author = (String)songJSON.get(SONG_AUTHOR);
-
-                songs.add(new Song(id, title, author));
+                double rating = (double)songJSON.get(SONG_RATING);
+                ArrayList<Genre> genres = (ArrayList<Genre>)songJSON.get(SONG_GENRES);
+                Instrument instrument = (Instrument)songJSON.get(SONG_INSTRUMENT);
+                Visibility visibility = (Visibility)songJSON.get(SONG_VISIBILITY);
+                int beatsPerMinute = (int)songsJSON.get(SONG_BEATS_PER_MINUTE);
+                TimeSignature timeSignature = (TimeSignature)songsJSON.get(SONG_TIME_SIGNATURE);
+                ArrayList<Measure> measures = (ArrayList<Measure>)songsJSON.get(SONG_MEASURES);
+                ArrayList<String> lyrics = (ArrayList<String>)songJSON.get(SONG_LYRICS);
+                double speed = (double)songJSON.get(SONG_SPEED);
+                boolean completed = (boolean)songJSON.get(SONG_COMPLETED);
+                
+                songs.add(new Song(id, title, author, rating, genres, instrument, visibility, beatsPerMinute,timeSignature,measures,lyrics,speed,completed));
             }
         } catch (Exception e) {
             e.printStackTrace();
