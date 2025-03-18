@@ -54,8 +54,17 @@ public class DataLoader extends DataConstants{
                 String username = (String)userJSON.get(USER_USERNAME);
                 String password = (String)userJSON.get(USER_PASSWORD);
                 Experience experience = Experience.getExperience((String)userJSON.get(USER_EXPERIENCE));
+                SecurityQuestion securityQuestion = (SecurityQuestion)userJSON.get(USER_SECURITY_QUESTION);
+                String securityAnswer = (String)userJSON.get(USER_SECURITY_ANSWER);
+
+                int points = (int)userJSON.get(USER_POINTS);
+                int streak = (int)userJSON.get(USER_STREAK);
+
+                /*UUID id, String username, String password, Experience experience, int points, 
+                    int streak, SecurityQuestion securityQuestion, String securityAnswer, 
+                    ArrayList<User> friends, ArrayList<Song> songs) */
                 //TODO: Fill out constructor!!!
-                users.add(new User(id, username, password, experience,0,0,null,null,null,null));
+                users.add(new User(id, username, password, experience,points,streak,securityQuestion,securityAnswer,null,null));
             }
         } catch (Exception e) {
             e.printStackTrace();
