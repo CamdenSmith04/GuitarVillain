@@ -8,7 +8,7 @@ public class SongList {
     private ArrayList<Song> songs;
 
     private SongList() {
-        songs = new ArrayList<>();
+        songs = DataLoader.getSongs();
     }
 
     public static SongList getInstance() {
@@ -32,6 +32,12 @@ public class SongList {
         return null;
     }
 
+    public void browseSongs() {
+        for (Song song : songs) {
+            System.out.println(song.getLyrics());
+        }
+    }
+
     public ArrayList<Song> getSongs() {
         return songs;
     }
@@ -41,7 +47,7 @@ public class SongList {
     }
 
     public void deleteSong(Song song) {
-        for(Song current : songs) {
+        for(Song current : this.songs) {
             if(current.isMatch(song)) {
                 songs.remove(current);
                 return;
