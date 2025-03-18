@@ -7,6 +7,7 @@ public class Facade {
     private UserList userList;
     private SongList songList;
     private ModuleList moduleList;
+    private LessonList lessonList;
     private CourseList courseList;
     
     private User currentUser;
@@ -17,6 +18,17 @@ public class Facade {
     // need to figure out how we want to do setters since this is facade
 
     public Facade() {
+        userList = UserList.getInstance();
+        songList = SongList.getInstance();
+        moduleList = ModuleList.getInstance();
+        lessonList = LessonList.getInstance();
+        courseList = CourseList.getInstance();
+    } 
+
+    /**
+     * Gives user options to log in or sign up
+     */
+    public void signIn() {
         userList = UserList.getInstance();
         songList = SongList.getInstance();
         moduleList = ModuleList.getInstance();
@@ -72,9 +84,7 @@ public class Facade {
     }
 
     public void browseSongs() {
-        for (Song song : songList.getSongs()) {
-            System.out.println(song.toString());
-        }
+        songList.browseSongs();
     }
 
     public void browseLessons() {

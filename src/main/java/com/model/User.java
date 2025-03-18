@@ -79,15 +79,7 @@ public class User {
         this.password = password;
     }
 
-    public boolean userIsMatch(String username) {
-        return this.username.equals(username);
-    }
-
-    public boolean loginIsMatch(String username, String password) {
-        return this.username.equals(username) && this.password.equals(password);
-    }
-
-    public boolean idIsMatch(UUID id) {
+    public boolean isMatch(UUID id) {
         return this.id == id;
     }
 
