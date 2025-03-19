@@ -12,13 +12,13 @@ public class User {
     protected int streak;
     protected SecurityQuestion securityQuestion;
     protected String securityAnswer;
-    protected ArrayList<User> friends;
+    protected ArrayList<UUID> friends;
     protected ArrayList<Song> songs;
     protected final UUID id;
 
     public User(UUID id, String username, String password, Experience experience, int points, 
                     int streak, SecurityQuestion securityQuestion, String securityAnswer, 
-                    ArrayList<User> friends, ArrayList<Song> songs) {
+                    ArrayList<UUID> friends, ArrayList<Song> songs) {
         this.username = username;
         this.password = password;
         this.experience = experience;
@@ -40,7 +40,7 @@ public class User {
         this.securityAnswer = securityAnswer;
         points = 0;
         streak = 0;
-        friends = new ArrayList<User>();
+        friends = new ArrayList<UUID>();
         songs = new ArrayList<Song>();
     }
 
@@ -87,8 +87,6 @@ public class User {
         return this.id == id;
     }
 
-    public
-
     @Override
     public String toString() {
         return this.username + " " + this.id;
@@ -106,8 +104,8 @@ public class User {
         return this.streak;
     }
 
-    public ArrayList<User> getFriends() {
-        return this.friends;
+    public ArrayList<UUID> getFriends() {
+        return friends;
     }
 
     public ArrayList<Song> getSongs() {
@@ -127,7 +125,7 @@ public class User {
     }
 
     public void setFriends(ArrayList<User> friends) {
-        this.friends = friends;
+        // this.friends = friends;
     }
 
     public void setSongs(ArrayList<Song> songs) {

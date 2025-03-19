@@ -13,9 +13,9 @@ public class DataConstants {
     protected static final String SONG_GENRES = "genres";
     protected static final String SONG_INSTRUMENT = "instrument";
     protected static final String SONG_VISIBILITY = "visibility";
-    protected static final int SONG_BEATS_PER_MINUTE = "beatsPerMinute";
-    protected static final int SONG_TIME_SIGNATURE = "timeSignature";
-    protected static final int SONG_MEASURES = "measures";
+    protected static final String SONG_BEATS_PER_MINUTE = "beatsPerMinute";
+    protected static final String SONG_TIME_SIGNATURE = "timeSignature";
+    protected static final String SONG_MEASURES = "measures";
     protected static final String SONG_LYRICS = "lyrics";
     protected static final String SONG_SPEED = "speed";
     protected static final String SONG_COMPLETED = "completed";

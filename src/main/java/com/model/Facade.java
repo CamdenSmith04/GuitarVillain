@@ -1,5 +1,5 @@
 package com.model;
-
+import java.util.UUID;
 import java.util.ArrayList;
 
 public class Facade {
@@ -100,13 +100,15 @@ public class Facade {
     }
 
     public void browseFriends() {
+        /*
         for (User friend : currentUser.getFriends()){
             System.out.println(friend.toString());
         }
+            */
     }
 
-    public void playSong() {
-
+    public void playSong(UUID id) {
+        songList.getSong("Fur Elise");
     }
 
     // TODO: Should this be a lesson rather than string name
@@ -136,7 +138,7 @@ public class Facade {
     }
    
     public void deleteCourse(Course course) {
-        courseList.remove(course);
+        //courseList.remove(course);
     }
    
     public void addStudent(Student student) {
@@ -171,27 +173,27 @@ public class Facade {
     }
     // TODO: String name or course
     public void beginSong(String title) {
-        // This will call play method in song/chord? not sure
+        songList.getSong(title).play();
     }
 
     public ArrayList<User> getUsers() {
-        return this.users;
+        return userList.getUsers();
     }
 
     public ArrayList<Song> getSongs() {
-        return this.songs;
+        return songList.getSongs();
     }
 
     public ArrayList<Module> getModules() {
-        return this.modules;
+        return moduleList.getModules();
     }
 
     public ArrayList<Lesson> getLessons() {
-        return this.lessons;
+        return lessonList.getLessons();
     }
 
     public ArrayList<Course> getCourses() {
-        return this.courses;
+        return courseList.getCourses();
     }
 
     public User getCurrentUser() {
