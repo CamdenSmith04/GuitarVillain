@@ -72,6 +72,7 @@ public class Song {
             for(Chord chord : measure.getChords()){
                 for(Note note : chord.getNotes()){
                     player.play(note.getNoteName());
+                    System.out.print(note.getNoteName());
                 }
             }
         }
@@ -83,6 +84,10 @@ public class Song {
 
     public void addMeasure(Measure measure) {
         this.measures.add(measure);
+    }
+
+    public String toString(){
+        return this.author + " - " + this.title;
     }
 
     public void addLyric(String lyric) {

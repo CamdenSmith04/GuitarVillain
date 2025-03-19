@@ -4,59 +4,63 @@
         "author": "DJ Android",
         "title": "The Distance",
         "rating": 3.46,
-        "genres": ["Pop", "Funk"],
+        "genres": ["ROCK", "JAZZ"],
         "instrument": "Guitar",
         "visibility": "Private",
         "beatsPerMinute": 100,
-        "timeSignature": "4/4",
+        "timeSignature": [4,4],
         "measures": [
             {
                 "length": 4,
-                "chords": {
-                    "name": "E",
-                    "notes": [
-                        {
-                            "time": 8,
-                            "string": "e",
-                            "fret": 12
-                        },
-                        {
-                            "time": 16,
-                            "string": "b",
-                            "fret": 8
-                        },
-                        {
-                            "time": 8,
-                            "string": "a",
-                            "fret": 10
-                        }
-                    ],
-                    "chordShape": "chord1.png"
-                }
+                "chords": [
+                    {
+                        "name": "E",
+                        "notes": [
+                            {
+                                "time": 8,
+                                "string": "e",
+                                "fret": 12
+                            },
+                            {
+                                "time": 16,
+                                "string": "b",
+                                "fret": 8
+                            },
+                            {
+                                "time": 8,
+                                "string": "a",
+                                "fret": 10
+                            }
+                        ],
+                        "chordShape": "chord1.png"
+                    }
+                ]
             },
             {
                 "length": 4,
-                "chords": {
-                    "name": "Am",
-                    "notes": [
-                        {
-                            "time": 8,
-                            "string": "a",
-                            "fret": 16
-                        },
-                        {
-                            "time": 16,
-                            "string": "a",
-                            "fret": 14
-                        },
-                        {
-                            "time": 8,
-                            "string": "c",
-                            "fret": 12
-                        }
-                    ],
-                    "chordShape": "chord1.png"
-                }
+                "chords": [
+                    {
+                        "name": "Am",
+                        "notes": [
+                            {
+                                "time": 8,
+                                "string": "a",
+                                "fret": 16
+                            },
+                            {
+                                "time": 16,
+                                "string": "a",
+                                "fret": 14
+                            },
+                            {
+                                "time": 8,
+                                "string": "c",
+                                "fret": 12
+                            }
+                        ],
+                        "chordShape": "chord1.png"
+                    }
+                ]
             }
         ],
         "lyrics": ["Reluctantly crouched at the starting line",
@@ -79,59 +83,63 @@
         "author": "DJ Dauphin",
         "title": "Surround Sound",
         "rating": 4.88,
-        "genres": ["Rap"],
+        "genres": ["HIP_HOP"],
         "instrument": "Bass",
         "visibility": "Public",
         "beatsPerMinute": 120,
-        "timeSignature": "4/4",
+        "timeSignature": [4,4],
         "measures": [
             {
                 "length": 4,
-                "chords": {
-                    "name": "E",
-                    "notes": [
-                        {
-                            "time": 8,
-                            "string": "e",
-                            "fret": 12
-                        },
-                        {
-                            "time": 16,
-                            "string": "b",
-                            "fret": 8
-                        },
-                        {
-                            "time": 8,
-                            "string": "a",
-                            "fret": 10
-                        }
-                    ],
-                    "chordShape": "chord1.png"
-                }
+                "chords": [
+                    {
+                        "name": "E",
+                        "notes": [
+                            {
+                                "time": 8,
+                                "string": "e",
+                                "fret": 12
+                            },
+                            {
+                                "time": 16,
+                                "string": "b",
+                                "fret": 8
+                            },
+                            {
+                                "time": 8,
+                                "string": "a",
+                                "fret": 10
+                            }
+                        ],
+                        "chordShape": "chord1.png"
+                    }
+                ]
             },
             {
-                "name": "A",
                 "length": 4,
-                "chords": {
-                    "notes": [
-                        {
-                            "time": 8,
-                            "string": "a",
-                            "fret": 16
-                        },
-                        {
-                            "time": 16,
-                            "string": "a",
-                            "fret": 14
-                        },
-                        {
-                            "time": 8,
-                            "string": "c",
-                            "fret": 12
-                        }
-                    ],
-                    "chordShape": "chord2.png"
-                }
+                "chords": [
+                    {
+                        "name": "A",
+                        "notes": [
+                            {
+                                "time": 8,
+                                "string": "a",
+                                "fret": 16
+                            },
+                            {
+                                "time": 16,
+                                "string": "a",
+                                "fret": 14
+                            },
+                            {
+                                "time": 8,
+                                "string": "c",
+                                "fret": 12
+                            }
+                        ],
+                        "chordShape": "chord2.png"
+                    }
+                ]
             }
         ],
         "lyrics": ["Couple kids with Alzheimer's, something on his side",
@@ -146,5 +154,125 @@
                     "So calmly bustin' moves, my truths carry velocity"],
         "speed": 1.25,
         "completed": false
-    }
+    },
+    {
+        "id": "e4f2b9c0-3a58-4c7d-b1d3-6f8e7a2b5c9d",
+        "author": "Ludwig van Beethoven",
+        "title": "Fur Elise",
+        "rating": 4.95,
+        "genres": ["JAZZ"],
+        "instrument": "Guitar",
+        "visibility": "Public",
+        "beatsPerMinute": 72,
+        "timeSignature": [3,4],
+        "measures": [
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "Em",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "e",
+                                "fret": 0
+                            },
+                            {
+                                "time": 2,
+                                "string": "d",
+                                "fret": 2
+                            },
+                            {
+                                "time": 3,
+                                "string": "e",
+                                "fret": 0
+                            }
+                        ],
+                        "chordShape": "chord1.png"
+                    }
+                ]
+            },
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "Am",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "d",
+                                "fret": 2
+                            },
+                            {
+                                "time": 2,
+                                "string": "c",
+                                "fret": 1
+                            },
+                            {
+                                "time": 3,
+                                "string": "b",
+                                "fret": 0
+                            }
+                        ],
+                        "chordShape": "chord2.png"
+                    }
+                ]
+            },
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "C",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "e",
+                                "fret": 0
+                            },
+                            {
+                                "time": 2,
+                                "string": "d",
+                                "fret": 2
+                            },
+                            {
+                                "time": 3,
+                                "string": "e",
+                                "fret": 0
+                            }
+                        ],
+                        "chordShape": "chord3.png"
+                    }
+                ]
+            },
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "B7",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "c",
+                                "fret": 1
+                            },
+                            {
+                                "time": 2,
+                                "string": "b",
+                                "fret": 0
+                            },
+                            {
+                                "time": 3,
+                                "string": "e",
+                                "fret": 0
+                            }
+                        ],
+                        "chordShape": "chord4.png"
+                    }
+                ]
+            }
+        ],
+        "lyrics": [],
+        "speed": 1.0,
+        "completed": true
+     }
 ]

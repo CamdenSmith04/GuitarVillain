@@ -65,6 +65,12 @@ public class SongList {
         return returnArray;
     }
 
+    public void printSongs(){
+        for(Song song : songs){
+            System.out.println(song.toString());
+        }
+    }
+
     public ArrayList<Song> seachGenre(Genre genre) {
         ArrayList<Song> returnArray = new ArrayList<>();
         for(Song song : songs) {

@@ -63,6 +63,7 @@ public class DataConstants {
     protected static final String MEASURE_CHORDS = "chords";
     protected static final String MEASURE_CHORD_SHAPE = "chordShape";
     protected static final String MEASURE_NOTES = "notes";
+    protected static final String MEASURE_TIMESIG = "timeSignature";
 
     // Note Constatns
     protected static final String NOTE_TIME = "time";

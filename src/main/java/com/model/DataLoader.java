@@ -40,7 +40,7 @@ public class DataLoader extends DataConstants{
     }
 
     public static Measure parseMeasure(JSONObject measureJSON){
-        int measureLength = (int)measureJSON.get(MEASURE_LENGTH);
+        int measureLength = ((Number)measureJSON.get(MEASURE_LENGTH)).intValue();
 
         ArrayList<Chord> chords = new ArrayList<Chord>();
         JSONArray chordsArray = (JSONArray) measureJSON.get(MEASURE_CHORDS);
@@ -60,13 +60,20 @@ public class DataLoader extends DataConstants{
         JSONArray genresArray = (JSONArray) songJSON.get(SONG_GENRES);
 
         for (Object genreObj : genresArray) {
-            genres.add(Genre.valueOf((String) genreObj));
+            //genres.add(Genre.valueOf((String) genreObj));
         }
 
-        Instrument instrument = (Instrument)songJSON.get(SONG_INSTRUMENT);
-        Visibility visibility = (Visibility)songJSON.get(SONG_VISIBILITY);
-        int beatsPerMinute = (int)songJSON.get(SONG_BEATS_PER_MINUTE);
-        TimeSignature timeSignature = (TimeSignature)songJSON.get(SONG_TIME_SIGNATURE);
+        Instrument instrument = null; //(Instrument)songJSON.get(SONG_INSTRUMENT);
+        Visibility visibility = null; //(Visibility)songJSON.get(SONG_VISIBILITY);
+        int beatsPerMinute = ((Number) songJSON.get(SONG_BEATS_PER_MINUTE)).intValue();   
+
+        JSONArray timeArray = (JSONArray) songJSON.get(MEASURE_TIMESIG);
+        
+        int topNum = ((Number)timeArray.get(0)).intValue();
+        int botNum = ((Number)timeArray.get(1)).intValue();
+
+        TimeSignature timeSignature = new TimeSignature(topNum, botNum);
+
         ArrayList<Measure> measures = new ArrayList<>();
         JSONArray measuresArray = (JSONArray) songJSON.get(SONG_MEASURES);
         for (Object measureObj : measuresArray) {
@@ -126,9 +133,9 @@ public class DataLoader extends DataConstants{
     }
 
     public static Note parseNote(JSONObject noteJSON){
-        int time = (int)noteJSON.get(NOTE_TIME);
-        char string = (char)noteJSON.get(NOTE_STRING);
-        int fret = (int)noteJSON.get(NOTE_FRET);
+        int time = ((Number)noteJSON.get(NOTE_TIME)).intValue();
+        char string = ((String)noteJSON.get(NOTE_STRING)).charAt(0);
+        int fret = ((Number)noteJSON.get(NOTE_FRET)).intValue();
         return new Note(time, string, fret);
 
     }
