@@ -1,9 +1,9 @@
 package com.model;
 
 public enum Genre {
-    ROCK("Rock"),
+    ROCK("ROCK"),
     JAZZ("JAZZ"),
-    HIP_HOP("Hip-Hop");
+    HIP_HOP("HIP-HOP");
     
     private final String label;
     

@@ -60,7 +60,9 @@ public class DataLoader extends DataConstants{
         JSONArray genresArray = (JSONArray) songJSON.get(SONG_GENRES);
 
         for (Object genreObj : genresArray) {
-            genres.add(Genre.valueOf((String) genreObj));
+            String genre = (String)genreObj;
+            genre = genre.toUpperCase();
+            genres.add(Genre.valueOf(genre));
         }
 
         Instrument instrument = (Instrument)songJSON.get(SONG_INSTRUMENT);
@@ -94,8 +96,9 @@ public class DataLoader extends DataConstants{
         SecurityQuestion securityQuestion = (SecurityQuestion)userJSON.get(USER_SECURITY_QUESTION);
         String securityAnswer = (String)userJSON.get(USER_SECURITY_ANSWER);
 
-        int points = (int)userJSON.get(USER_POINTS);
-        int streak = (int)userJSON.get(USER_STREAK);
+        //TODO fix
+        int points = 10;
+        int streak = 10;
 
         ArrayList<Song> songs = new ArrayList<>();
         JSONArray songsJSON = (JSONArray)userJSON.get(USER_SONGS);
@@ -145,6 +148,8 @@ public class DataLoader extends DataConstants{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.print("Songs: ");
+        System.out.print(songs);
         return songs;
     }
 
