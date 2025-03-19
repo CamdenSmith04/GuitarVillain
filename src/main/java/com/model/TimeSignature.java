@@ -9,4 +9,12 @@ public class TimeSignature {
         this.topNumber = topNumber;
         this.bottomNumber = bottomNumber;
     }
+
+    public int getTopNumber(){
+        return topNumber;
+    }
+
+    public int getBottomeNumber(){
+        return bottomNumber;
+    }
 }

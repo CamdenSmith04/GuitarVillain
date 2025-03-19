@@ -2,6 +2,8 @@ package com.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
+import org.jfugue.player.Player;
+
 /**
  * TODO: ADD JAVADOC AND AUTHOR
  * @author 
@@ -61,6 +63,18 @@ public class Song {
 
     public boolean isMatch(Song song) {
         return this.id.equals(song.getId());
+    }
+
+    Player player = new Player();
+
+    public void play(){
+        for(Measure measure : measures){
+            for(Chord chord : measure.getChords()){
+                for(Note note : chord.getNotes()){
+                    player.play(note.getNoteName());
+                }
+            }
+        }
     }
 
     public void addGenre(Genre genre) {
