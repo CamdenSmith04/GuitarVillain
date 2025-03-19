@@ -24,18 +24,8 @@ public class DataLoader extends DataConstants{
                 UUID id = UUID.fromString((String)songJSON.get(SONG_ID));
                 String title = (String)songJSON.get(SONG_TITLE);
                 String author = (String)songJSON.get(SONG_AUTHOR);
-                double rating = (double)songJSON.get(SONG_RATING);
-                ArrayList<Genre> genres = (ArrayList<Genre>)songJSON.get(SONG_GENRES);
-                Instrument instrument = (Instrument)songJSON.get(SONG_INSTRUMENT);
-                Visibility visibility = (Visibility)songJSON.get(SONG_VISIBILITY);
-                int beatsPerMinute = (int)songsJSON.get(SONG_BEATS_PER_MINUTE);
-                TimeSignature timeSignature = (TimeSignature)songsJSON.get(SONG_TIME_SIGNATURE);
-                ArrayList<Measure> measures = (ArrayList<Measure>)songsJSON.get(SONG_MEASURES);
-                ArrayList<String> lyrics = (ArrayList<String>)songJSON.get(SONG_LYRICS);
-                double speed = (double)songJSON.get(SONG_SPEED);
-                boolean completed = (boolean)songJSON.get(SONG_COMPLETED);
-                
-                songs.add(new Song(id, title, author, rating, genres, instrument, visibility, beatsPerMinute,timeSignature,measures,lyrics,speed,completed));
+
+                songs.add(new Song(id, title, author));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -60,11 +50,80 @@ public class DataLoader extends DataConstants{
                 int points = (int)userJSON.get(USER_POINTS);
                 int streak = (int)userJSON.get(USER_STREAK);
 
-                /*UUID id, String username, String password, Experience experience, int points, 
-                    int streak, SecurityQuestion securityQuestion, String securityAnswer, 
-                    ArrayList<User> friends, ArrayList<Song> songs) */
-                //TODO: Fill out constructor!!!
-                users.add(new User(id, username, password, experience,points,streak,securityQuestion,securityAnswer,null,null));
+                
+
+                ArrayList<User> friends = new ArrayList<>();
+
+                ArrayList<Song> songs = new ArrayList<>();
+                JSONArray songsJSON = (JSONArray) userJSON.get(USER_SONGS);
+
+                for (Object songObj : songsJSON) {
+                    JSONObject songJSON = (JSONObject) songObj;
+                    UUID songId = UUID.fromString((String) songJSON.get(SONG_ID));
+                    String songTitle = (String) songJSON.get(SONG_TITLE);
+                    String songAuthor = (String) songJSON.get(SONG_AUTHOR);
+                    double songRating = ((Number) songJSON.get(SONG_RATING)).doubleValue();
+                    
+                    ArrayList<Genre> genres = new ArrayList<>();
+                    JSONArray genresArray = (JSONArray) songJSON.get(SONG_GENRES);
+                    for (Object genreObj : genresArray) {
+                        genres.add(Genre.valueOf((String) genreObj));
+                    }
+                    
+                    Instrument instrument = (Instrument)songJSON.get(SONG_INSTRUMENT);
+                    Visibility visibility = (Visibility)songJSON.get(SONG_VISIBILITY);
+                    int beatsPerMinute = (int)songJSON.get(SONG_BEATS_PER_MINUTE);
+                    TimeSignature timeSignature = (TimeSignature)songJSON.get(SONG_TIME_SIGNATURE);
+                    
+                    ArrayList<Measure> measures = new ArrayList<>();
+                    JSONArray measuresArray = (JSONArray) songJSON.get(SONG_MEASURES);
+                    for (Object measureObj : measuresArray) {
+                        JSONObject measureJSON = (JSONObject) measureObj;
+                        int measureLength = (int)measureJSON.get(MEASURE_LENGTH);
+
+                        ArrayList<Chord> chords = new ArrayList<Chord>();
+                        JSONArray chordsArray = (JSONArray) songJSON.get(MEASURE_CHORDS);
+                        for(Object chordObj : chordsArray){
+
+                            JSONObject chordJSON = (JSONObject) chordObj;
+                            
+                            ArrayList<Note> notes = new ArrayList<Note>();
+                            JSONArray notesArray = (JSONArray) chordJSON.get(CHORD_NOTES);
+                            for(Object noteObj:notesArray){
+                                JSONObject noteJSON = (JSONObject) noteObj;
+
+                                int time = (int)noteJSON.get(NOTE_TIME);
+                                char string = (char)noteJSON.get(NOTE_STRING);
+                                int fret = (int)noteJSON.get(NOTE_FRET);
+
+                                notes.add(new Note(time, string, fret));
+                            }
+
+                            /*
+                             * ArrayList<Note> notes, String chordShape, String name
+                             */
+                            String name = (String)chordJSON.get(CHORD_NAME);
+                            String chordShape = (String)chordJSON.get(CHORD_SHAPE);
+
+                            chords.add(new Chord(notes, chordShape, name));
+                        }
+                        measures.add(new Measure(measureLength, chords));
+                    }
+                    ArrayList<String> lyrics = new ArrayList<>();
+                    JSONArray lyricsArray = (JSONArray) songJSON.get(SONG_LYRICS);
+                    for (Object lyricObj : lyricsArray) {
+                        lyrics.add((String) lyricObj);
+                    }
+                    
+                    double speed = ((Number) songJSON.get(SONG_SPEED)).doubleValue();
+                    boolean completed = (boolean) songJSON.get(SONG_COMPLETED);
+                    
+                    songs.add(new Song(songId, songTitle, songAuthor, songRating, genres, instrument, visibility, 
+                                beatsPerMinute, timeSignature, measures, lyrics, speed, completed));
+                 }
+
+
+                users.add(new User(id, username, password, experience,points,streak,securityQuestion,securityAnswer,null,songs));
             }
         } catch (Exception e) {
             e.printStackTrace();

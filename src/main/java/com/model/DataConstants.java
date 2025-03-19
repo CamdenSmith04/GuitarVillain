@@ -57,4 +57,15 @@ public class DataConstants {
     protected static final String LESSON_EDUCATIONAL_MATERIAL = "educationalMaterial";
     protected static final String LESSON_VISUAL_AID = "visualAid";
     protected static final String LESSON_COMPLETED = "completed"; 
+
+    // Measure Constants
+    protected static final String MEASURE_LENGTH = "length";
+    protected static final String MEASURE_CHORDS = "chords";
+    protected static final String MEASURE_CHORD_SHAPE = "chordShape";
+    protected static final String MEASURE_NOTES = "notes";
+
+    // Note Constatns
+    protected static final String NOTE_TIME = "time";
+    protected static final String NOTE_STRING = "string";
+    protected static final String NOTE_FRET = "fret";
 }

@@ -8,8 +8,10 @@ public class Chord {
     private String chordShape;
     private String name;
 
-    public Chord() {
-
+    public Chord(ArrayList<Note> notes, String chordShape, String name) {
+        this.notes = notes;
+        this.chordShape = chordShape;
+        this.name = name;
     }
 
     public void addNote(Note note) {
