@@ -1,6 +1,8 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.UUID;
+
 
 public class UserList {
     
@@ -41,6 +43,15 @@ public class UserList {
     public User getUser(String username, String password){
         for(User current : users) {
             if(current.getUsername().equals(username) && current.getPassword().equals(password)) {
+                return current;
+            }
+        }
+        return null;
+    }
+
+    public User getUser(UUID id){
+        for(User current : users) {
+            if(current.idIsMatch(id)) {
                 return current;
             }
         }

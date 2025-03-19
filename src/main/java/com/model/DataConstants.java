@@ -68,4 +68,10 @@ public class DataConstants {
     protected static final String NOTE_TIME = "time";
     protected static final String NOTE_STRING = "string";
     protected static final String NOTE_FRET = "fret";
+
+    // Chord constatns
+    protected static final String CHORD_NOTES = "notes";
+    protected static final String CHORD_SHAPE = "chordShape";
+    protected static final String CHORD_NAME = "name";
+
 }

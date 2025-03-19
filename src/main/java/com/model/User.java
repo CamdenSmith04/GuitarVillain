@@ -79,9 +79,15 @@ public class User {
         this.password = password;
     }
 
-    public boolean isMatch(UUID id) {
+    public boolean isMatch(User user) {
+        return this.isMatch(user);
+    }
+
+    public boolean idIsMatch(UUID id){
         return this.id == id;
     }
+
+    public
 
     @Override
     public String toString() {
