@@ -4,15 +4,16 @@
         "author": "DJ Android",
         "title": "The Distance",
         "rating": 3.46,
-        "genres": ["Pop", "Funk"],
-        "instrument": "Guitar",
-        "visibility": "Private",
+        "genres": ["POP", "FUNK"],
+        "instrument": "GUITAR",
+        "visibility": "PRIVATE",
         "beatsPerMinute": 100,
         "timeSignature": "4/4",
         "measures": [
             {
                 "length": 4,
-                "chords": {
+                "chords": [
+                    {
                     "name": "E",
                     "notes": [
                         {
@@ -32,11 +33,13 @@
                         }
                     ],
                     "chordShape": "chord1.png"
-                }
+                    }
+                ]
             },
             {
                 "length": 4,
-                "chords": {
+                "chords": [
+                    {
                     "name": "Am",
                     "notes": [
                         {
@@ -56,7 +59,8 @@
                         }
                     ],
                     "chordShape": "chord1.png"
-                }
+                    }
+                ]
             }
         ],
         "lyrics": ["Reluctantly crouched at the starting line",
@@ -79,15 +83,16 @@
         "author": "DJ Dauphin",
         "title": "Surround Sound",
         "rating": 4.88,
-        "genres": ["Rap"],
-        "instrument": "Bass",
-        "visibility": "Public",
+        "genres": ["RAP"],
+        "instrument": "BASS",
+        "visibility": "PUBLIC",
         "beatsPerMinute": 120,
         "timeSignature": "4/4",
         "measures": [
             {
                 "length": 4,
-                "chords": {
+                "chords": [
+                    {
                     "name": "E",
                     "notes": [
                         {
@@ -107,12 +112,14 @@
                         }
                     ],
                     "chordShape": "chord1.png"
-                }
+                    }
+                ]
             },
             {
                 "name": "A",
                 "length": 4,
-                "chords": {
+                "chords": [
+                    {
                     "notes": [
                         {
                             "time": 8,
@@ -131,7 +138,8 @@
                         }
                     ],
                     "chordShape": "chord2.png"
-                }
+                    }
+                ]
             }
         ],
         "lyrics": ["Couple kids with Alzheimer's, something on his side",
@@ -148,83 +156,358 @@
         "completed": false
     },
     {
-        "id": "",
+        "id": "33370c1f-29ae-43ad-8a51-4c0c9b79dae1",
         "author": "Ludwig van Beethoven",
         "title": "Fur Elise",
         "rating": 5.0,
-        "genres": ["Classical"],
-        "instrument": "Piano",
-        "visibility": "Public",
+        "genres": ["CLASSICAL"],
+        "instrument": "GUITAR",
+        "visibility": "PUBLIC",
         "beatsPerMinute": 120,
         "timeSignature": "3/8",
         "measures": [
-          {
-            "length": 3,
-            "notes": [
-              { "time": 1, "note": "E5" },
-              { "time": 2, "note": "D#5" },
-              { "time": 3, "note": "E5" }
-            ]
-          },
-          {
-            "length": 3,
-            "notes": [
-              { "time": 1, "note": "D#5" },
-              { "time": 2, "note": "E5" },
-              { "time": 3, "note": "B4" }
-            ]
-          },
-          {
-            "length": 3,
-            "notes": [
-              { "time": 1, "note": "D5" },
-              { "time": 2, "note": "C5" },
-              { "time": 3, "note": "A4" }
-            ]
-          },
-          {
-            "length": 3,
-            "notes": [
-              { "time": 1, "note": "A4" },
-              { "time": 2, "note": "C5" },
-              { "time": 3, "note": "E5" }
-            ]
-          },
-          {
-            "length": 3,
-            "notes": [
-              { "time": 1, "note": "A4" },
-              { "time": 2, "note": "B4" },
-              { "time": 3, "note": "C5" }
-            ]
-          },
-          {
-            "length": 3,
-            "notes": [
-              { "time": 1, "note": "D5" },
-              { "time": 2, "note": "E5" },
-              { "time": 3, "note": "F5" }
-            ]
-          },
-          {
-            "length": 3,
-            "notes": [
-              { "time": 1, "note": "G5" },
-              { "time": 2, "note": "F#5" },
-              { "time": 3, "note": "E5" }
-            ]
-          },
-          {
-            "length": 3,
-            "notes": [
-              { "time": 1, "note": "D5" },
-              { "time": 2, "note": "C5" },
-              { "time": 3, "note": "B4" }
-            ]
-          }
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "A Minor",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "e",
+                                "fret": 12
+                            },
+                            {
+                                "time": 2,
+                                "string": "d",
+                                "fret": 10
+                            },
+                            {
+                                "time": 3,
+                                "string": "b",
+                                "fret": 8
+                            }
+                        ],
+                        "chordShape": "am_shape.png"
+                    }
+                ]
+            },
+            {
+                "name": "E Major",
+                "length": 3,
+                "chords": [
+                    {
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "g",
+                                "fret": 9
+                            },
+                            {
+                                "time": 2,
+                                "string": "b",
+                                "fret": 7
+                            },
+                            {
+                                "time": 3,
+                                "string": "e",
+                                "fret": 5
+                            }
+                        ],
+                        "chordShape": "e_shape.png"
+                    }
+                ]
+            },
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "A Minor",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "e",
+                                "fret": 12
+                            },
+                            {
+                                "time": 2,
+                                "string": "d",
+                                "fret": 10
+                            },
+                            {
+                                "time": 3,
+                                "string": "b",
+                                "fret": 8
+                            }
+                        ],
+                        "chordShape": "am_shape.png"
+                    }
+                ]
+            },
+            {
+                "name": "E Major",
+                "length": 3,
+                "chords": [
+                    {
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "g",
+                                "fret": 9
+                            },
+                            {
+                                "time": 2,
+                                "string": "b",
+                                "fret": 7
+                            },
+                            {
+                                "time": 3,
+                                "string": "e",
+                                "fret": 5
+                            }
+                        ],
+                        "chordShape": "e_shape.png"
+                    }
+                ]
+            },
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "A Minor",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "e",
+                                "fret": 12
+                            },
+                            {
+                                "time": 2,
+                                "string": "d",
+                                "fret": 10
+                            },
+                            {
+                                "time": 3,
+                                "string": "b",
+                                "fret": 8
+                            }
+                        ],
+                        "chordShape": "am_shape.png"
+                    }
+                ]
+            },
+            {
+                "name": "E Major",
+                "length": 3,
+                "chords": [
+                    {
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "g",
+                                "fret": 9
+                            },
+                            {
+                                "time": 2,
+                                "string": "b",
+                                "fret": 7
+                            },
+                            {
+                                "time": 3,
+                                "string": "e",
+                                "fret": 5
+                            }
+                        ],
+                        "chordShape": "e_shape.png"
+                    }
+                ]
+            },
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "A Minor",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "e",
+                                "fret": 12
+                            },
+                            {
+                                "time": 2,
+                                "string": "d",
+                                "fret": 10
+                            },
+                            {
+                                "time": 3,
+                                "string": "b",
+                                "fret": 8
+                            }
+                        ],
+                        "chordShape": "am_shape.png"
+                    }
+                ]
+            },
+            {
+                "name": "E Major",
+                "length": 3,
+                "chords": [
+                    {
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "g",
+                                "fret": 9
+                            },
+                            {
+                                "time": 2,
+                                "string": "b",
+                                "fret": 7
+                            },
+                            {
+                                "time": 3,
+                                "string": "e",
+                                "fret": 5
+                            }
+                        ],
+                        "chordShape": "e_shape.png"
+                    }
+                ]
+            },
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "A Minor",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "e",
+                                "fret": 12
+                            },
+                            {
+                                "time": 2,
+                                "string": "d",
+                                "fret": 10
+                            },
+                            {
+                                "time": 3,
+                                "string": "b",
+                                "fret": 8
+                            }
+                        ],
+                        "chordShape": "am_shape.png"
+                    }
+                ]
+            },
+            {
+                "name": "E Major",
+                "length": 3,
+                "chords": [
+                    {
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "g",
+                                "fret": 9
+                            },
+                            {
+                                "time": 2,
+                                "string": "b",
+                                "fret": 7
+                            },
+                            {
+                                "time": 3,
+                                "string": "e",
+                                "fret": 5
+                            }
+                        ],
+                        "chordShape": "e_shape.png"
+                    }
+                ]
+            },
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "A Minor",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "e",
+                                "fret": 12
+                            },
+                            {
+                                "time": 2,
+                                "string": "d",
+                                "fret": 10
+                            },
+                            {
+                                "time": 3,
+                                "string": "b",
+                                "fret": 8
+                            }
+                        ],
+                        "chordShape": "am_shape.png"
+                    }
+                ]
+            },
+            {
+                "name": "E Major",
+                "length": 3,
+                "chords": [
+                    {
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "g",
+                                "fret": 9
+                            },
+                            {
+                                "time": 2,
+                                "string": "b",
+                                "fret": 7
+                            },
+                            {
+                                "time": 3,
+                                "string": "e",
+                                "fret": 5
+                            }
+                        ],
+                        "chordShape": "e_shape.png"
+                    }
+                ]
+            },
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "name": "A Minor",
+                        "notes": [
+                            {
+                                "time": 1,
+                                "string": "e",
+                                "fret": 12
+                            },
+                            {
+                                "time": 2,
+                                "string": "d",
+                                "fret": 10
+                            },
+                            {
+                                "time": 3,
+                                "string": "b",
+                                "fret": 8
+                            }
+                        ],
+                        "chordShape": "am_shape.png"
+                    }
+                ]
+            }
         ],
         "lyrics": [],
         "speed": 1.0,
         "completed": true
-      }
+    }    
+
 ]
