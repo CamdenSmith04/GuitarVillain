@@ -110,20 +110,21 @@ public class DataLoader extends DataConstants{
         SecurityQuestion securityQuestion = (SecurityQuestion)userJSON.get(USER_SECURITY_QUESTION);
         String securityAnswer = (String)userJSON.get(USER_SECURITY_ANSWER);
 
-        //TODO fix
-        int points = 10;
-        int streak = 10;
+        int points = ((Number)userJSON.get(USER_POINTS)).intValue();
+        int streak = ((Number)userJSON.get(USER_STREAK)).intValue();
 
         ArrayList<Song> songs = new ArrayList<>();
+        /* 
         JSONArray songsJSON = (JSONArray)userJSON.get(USER_SONGS);
         for (Object songObj : songsJSON) {
             songs.add(parseSong((JSONObject) songObj));
         }
+        */
 
         ArrayList<UUID> friends = new ArrayList<>();
         JSONArray friendsJSON = (JSONArray)userJSON.get(USER_FRIENDS);
         for (Object friendObj : friendsJSON) {
-            friends.add((UUID)friendObj);
+            UUID friendUUID = UUID.fromString((String)friendObj);
         }
 
 
