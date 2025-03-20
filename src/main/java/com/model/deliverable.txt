@@ -1,0 +1,5 @@
+- register a new user (JSON). Login
+- Play a song -> If not awesome -> Lessons or questions
+- Create a new song (Show that it's in JSON) -> play that song
+- connect between songs and people
+- Show me all the songs that I've authored
