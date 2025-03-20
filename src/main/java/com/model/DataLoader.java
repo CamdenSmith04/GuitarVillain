@@ -156,7 +156,6 @@ public class DataLoader extends DataConstants{
         try {
             FileReader reader = new FileReader(SONG_FILE_NAME);
             JSONArray songsJSON = (JSONArray)new JSONParser().parse(reader);
-            System.out.println(parseSong((JSONObject)songsJSON.get(0)));
             for(int i = 0; i<songsJSON.size(); i++){
                 songs.add(parseSong((JSONObject)songsJSON.get(i)));
             }
@@ -164,12 +163,9 @@ public class DataLoader extends DataConstants{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.print("Songs: ");
-        System.out.print(songs);
         return songs;
     }
 
-    //all of these nested for loops are bad and I (andrew) need to get rid of them
     public static ArrayList<User> getUsers(){
         ArrayList<User> users = new ArrayList<User>();
         try {
