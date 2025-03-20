@@ -5,67 +5,75 @@ import java.util.UUID;
 
 public class Course {
     
-    private String title;
-    private ArrayList<Student> students;
-    private ArrayList<Lesson> assignedLessons;
-    private ArrayList<Song> assignedSongs;
+    private String name;
+    private ArrayList<UUID> students;
+    private ArrayList<UUID> assignedLessons;
+    private ArrayList<UUID> assignedSongs;
     private UUID id;
 
-    public Course(String title) {
-        this.title = title;
+    public Course(String name) {
+        this.name = name;
         this.id = UUID.randomUUID();
     }
 
-    public Course(String title, UUID id) {
-        this.title = title;
+    public Course(String name, UUID id) {
+        this.name = name;
         this.id = id;
     }
 
-    public void addStudent(Student student) {
+    public Course(String name, ArrayList<UUID> students, ArrayList<UUID> assignedLessons, ArrayList<UUID> assignedSongs, UUID id){
+        this.name = name;
+        this.students = students;
+        this.assignedLessons = assignedLessons;
+        this.assignedSongs = assignedSongs;
+        this.id = id;
+    }
+
+    public void addStudent(UUID student) {
         this.students.add(student);
     }
 
-    public void removeStudent(Student student) {
+    public void removeStudent(UUID student) {
         this.students.remove(student);
     }
 
-    public Student getStudent(Student student) {
-        for (Student match: this.students) {
-            if (match.getId() == student.getId()){
+    public UUID getStudent(UUID student) {
+        for (UUID match: this.students) {
+            if (match == student){
                 return match;
             }
         }
         return null;
     }
 
-    public void addLesson(Lesson lesson) {
+    public void addLesson(UUID lesson) {
         this.assignedLessons.add(lesson);
     }
 
-    public void removeLesson(Lesson lesson) {
+    public void removeLesson(UUID lesson) {
         this.assignedLessons.remove(lesson);
     }
 
-    public Lesson getLesson(Lesson lesson) {
-        for (Lesson match : this.assignedLessons) {
-            if (match.getId() == lesson.getId()){
+    public UUID getLesson(UUID lesson) {
+        for (UUID match : this.assignedLessons) {
+            if (match == lesson){
                 return match;
             }
         }
         return null;
     }
 
-    public void addSong(Song song) {
+    public void addSong(UUID song) {
         this.assignedSongs.add(song);
     }
 
-    public void removeSong(Song song) {
+    public void removeSong(UUID song) {
         this.assignedSongs.remove(song);
     }
 
-    public Song getSong(Song song) {
-        for (Song match: this.assignedSongs) {
-            if (match.getId() == song.getId()){
+    public UUID getSong(UUID song) {
+        for (UUID match: this.assignedSongs) {
+            if (match == song){
                 return match;
             }
         }
@@ -76,19 +84,19 @@ public class Course {
         return this.id.equals(course.getId());
     }
 
-    public String getTitle() {
-        return this.title;
+    public String getName() {
+        return this.name;
     }
 
-    public ArrayList<Student> getStudents() {
+    public ArrayList<UUID> getStudents() {
         return  this.students;
     }
 
-    public ArrayList<Lesson> getAssignedLessons() {
+    public ArrayList<UUID> getAssignedLessons() {
         return  this.assignedLessons;
     }
 
-    public ArrayList<Song> getAssignedSongs() {
+    public ArrayList<UUID> getAssignedSongs() {
         return this.assignedSongs;
     }
 
@@ -96,19 +104,19 @@ public class Course {
         return this.id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setStudents(ArrayList<Student> students) {
+    public void setStudents(ArrayList<UUID> students) {
         this.students = students;
     }
 
-    public void getAssignedLessons(ArrayList<Lesson> lessons) {
+    public void setAssignedLessons(ArrayList<UUID> lessons) {
         this.assignedLessons = lessons;
     }
 
-    public void getAssignedSongs(ArrayList<Song> songs) {
+    public void setAssignedSongs(ArrayList<UUID> songs) {
         this.assignedSongs = songs;
     }
 }

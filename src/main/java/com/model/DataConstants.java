@@ -9,7 +9,7 @@ public class DataConstants {
     protected static final String SONG_FILE_NAME = "src/main/java/com/data/songs.json";
     protected static final String SONG_AUTHOR = "author";
     protected static final String SONG_TITLE = "title";
-    protected static final String SONG_USER_CREATED = "userCreated";
+    protected static final String SONG_AUTHOR_ID = "authorId";
     protected static final String SONG_RATING = "rating";
     protected static final String SONG_GENRES = "genres";
     protected static final String SONG_INSTRUMENT = "instrument";
@@ -30,8 +30,8 @@ public class DataConstants {
     protected static final String USER_EXPERIENCE = "experience";
     protected static final String USER_POINTS = "points";
     protected static final String USER_STREAK = "streak";
-    protected static final String USER_SECURITY_QUESTION = "question";
-    protected static final String USER_SECURITY_ANSWER = "answer";
+    protected static final String USER_SECURITY_QUESTION = "securityQuestion";
+    protected static final String USER_SECURITY_ANSWER = "securityAnswer";
     protected static final String USER_FRIENDS = "friends";
     protected static final String USER_SONGS = "songs";
     
@@ -49,7 +49,7 @@ public class DataConstants {
     protected static final String COURSE_NAME = "name";
     protected static final String COURSE_STUDENTS = "students";
     protected static final String COURSE_ASSIGNED_LESSONS = "assignedLessons";
-    protected static final String COURSE_ASSIGNED_SONGS = "songs"; 
+    protected static final String COURSE_ASSIGNED_SONGS = "assignedSongs"; 
     
     // Lesson Constants
     protected static final String LESSON_FILE_NAME = "src/main/java/com/data/lessons.json";

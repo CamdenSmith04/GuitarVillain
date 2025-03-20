@@ -14,7 +14,7 @@ public class Song {
     
     private String author;
     private String title;
-    private UUID userCreated;
+    private UUID authorId;
     private double rating;
     private ArrayList<Genre> genres;
     private Instrument instrument;
@@ -31,11 +31,11 @@ public class Song {
         this.id = UUID.randomUUID();
     }
 
-    public Song(String title, String author, UUID userCreated, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
+    public Song(String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
         this.id = UUID.randomUUID();
         this.title = title;
         this.author = author;
-        this.userCreated = userCreated;
+        this.authorId = authorId;
         this.rating = rating;
         this.genres = genres;
         this.instrument = instrument;
@@ -48,11 +48,11 @@ public class Song {
         this.completed = completed;
     }
 
-    public Song(UUID id, String title, String author, UUID userCreated, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
+    public Song(UUID id, String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
         this.id = id;
         this.title = title;
         this.author = author;
-        this.userCreated = userCreated;
+        this.authorId = authorId;
         this.rating = rating;
         this.genres = genres;
         this.instrument = instrument;
@@ -117,8 +117,8 @@ public class Song {
         return this.title;
     }
 
-    public UUID getUserCreated() {
-        return this.userCreated;
+    public UUID getAuthorId() {
+        return this.authorId;
     }
     
     public double getRating() {
@@ -173,8 +173,8 @@ public class Song {
         this.title = title;
     }
 
-    public void setUserCreated(UUID userCreated) {
-        this.userCreated = userCreated;
+    public void setUserCreated(UUID authorId) {
+        this.authorId = authorId;
     }
     
     public void setRating(double rating) {

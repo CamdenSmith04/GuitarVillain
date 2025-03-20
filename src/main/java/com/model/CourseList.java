@@ -8,7 +8,7 @@ public class CourseList {
     private ArrayList<Course> courses;
 
     private CourseList(){
-        courses = new ArrayList<>();
+        courses = DataLoader.getCourses();
     }
 
     public static CourseList getInstance() {
@@ -25,7 +25,7 @@ public class CourseList {
 
     public Course getCourse(String title) {
         for(Course current : courses) {
-            if(current.getTitle().equals(title)) {
+            if(current.getName().equals(title)) {
                 return current;
             }
         }
