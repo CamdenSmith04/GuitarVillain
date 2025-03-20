@@ -1,4 +1,5 @@
 package com.model;
+import org.jfugue.player.Player;
 
 public class Note {
     
@@ -6,6 +7,7 @@ public class Note {
     private char string;
     private int fret;
     private String note;
+    private Player player;
 
     
     private static final String[] NOTES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
@@ -52,11 +54,15 @@ public class Note {
 
     }
 
+    public void play(){
+        player.play(this.getNoteName());
+    }
+
     public Note(int time, char string, int fret) {
         this.time = time;
         this.string = string;
         this.fret = fret;
-        
+        player = new Player();
     }
 
     public void setTime(int time) {

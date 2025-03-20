@@ -69,13 +69,11 @@ public class Song {
         return this.id.equals(song.getId());
     }
 
-    Player player = new Player();
-
     public void play(){
         for(Measure measure : measures){
             for(Chord chord : measure.getChords()){
                 for(Note note : chord.getNotes()){
-                    player.play(note.getNoteName());
+                    note.play();
                 }
             }
         }
