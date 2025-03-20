@@ -55,7 +55,10 @@ public class DataLoader extends DataConstants{
         UUID songId = UUID.fromString((String) songJSON.get(SONG_ID));
         String songTitle = (String) songJSON.get(SONG_TITLE);
         String songAuthor = (String) songJSON.get(SONG_AUTHOR);
-        UUID userCreated = UUID.fromString((String) songJSON.get(SONG_USER_CREATED));
+        UUID userCreated = null;
+        if ( songJSON.get(SONG_USER_CREATED) != null ){
+            userCreated = UUID.fromString((String) songJSON.get(SONG_USER_CREATED));
+        }
         double songRating = ((Number) songJSON.get(SONG_RATING)).doubleValue();
         ArrayList<Genre> genres = new ArrayList<>();
         JSONArray genresArray = (JSONArray) songJSON.get(SONG_GENRES);
