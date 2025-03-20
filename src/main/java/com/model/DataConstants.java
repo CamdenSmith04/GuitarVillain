@@ -9,6 +9,7 @@ public class DataConstants {
     protected static final String SONG_FILE_NAME = "src/main/java/com/data/songs.json";
     protected static final String SONG_AUTHOR = "author";
     protected static final String SONG_TITLE = "title";
+    protected static final String SONG_USER_CREATED = "userCreated";
     protected static final String SONG_RATING = "rating";
     protected static final String SONG_GENRES = "genres";
     protected static final String SONG_INSTRUMENT = "instrument";
