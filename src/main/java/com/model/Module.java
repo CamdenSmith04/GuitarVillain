@@ -6,12 +6,12 @@ import java.util.UUID;
 public class Module {
 
     private String title;
-    private ArrayList<Lesson> lessons;
-    private ArrayList<Song> songs;
+    private ArrayList<UUID> lessons;
+    private ArrayList<UUID> songs;
     private double progress;
     private UUID id;
 
-    public Module(String title, ArrayList<Lesson> lessons, ArrayList<Song> songs) {
+    public Module(String title, ArrayList<UUID> lessons, ArrayList<UUID> songs) {
         this.id = UUID.randomUUID();
         this.title = title;
         this.lessons = lessons;
@@ -19,28 +19,28 @@ public class Module {
         this.progress = 0.0;
     }
     
-    public Module(UUID id, String title, ArrayList<Lesson> lessons, ArrayList<Song> songs) {
+    public Module(UUID id, String title, ArrayList<UUID> lessons, ArrayList<UUID> songs, double progress) {
         this.id = id;
         this.title = title;
         this.lessons = lessons;
         this.songs = songs;
-        this.progress = 0.0;
+        this.progress = progress;
     }
 
     public boolean isMatch(Module module) {
         return this.id.equals(module.getId());
     }
 
-    public Lesson getLesson(Lesson lesson) {
-        for (Lesson match: this.lessons) {
-            if (match.getId() == lesson.getId()){
+    public UUID getLessonById(UUID lesson) {
+        for (UUID match: this.lessons) {
+            if (match == lesson){
                 return match;
             }
         }
         return null;
     }
 
-    public void addLesson(Lesson lesson) {
+    public void addLesson(UUID lesson) {
         this.lessons.add(lesson);
     }
 
@@ -48,20 +48,20 @@ public class Module {
         this.lessons.remove(lesson);
     }
 
-    public Song getSong(Song song) {
-        for (Song match: this.songs) {
-            if (match.getId() == song.getId()){
+    public UUID getSongById(UUID song) {
+        for (UUID match: this.songs) {
+            if (match == song){
                 return match;
             }
         }
         return null;
     }
 
-    public void addSong(Song song) {
+    public void addSong(UUID song) {
         this.songs.add(song);
     }
 
-    public void removeSong(Song song) {
+    public void removeSong(UUID song) {
         this.songs.add(song);
     }
 
@@ -69,11 +69,11 @@ public class Module {
         return this.title;
     }
 
-    public ArrayList<Lesson> getLessons() {
+    public ArrayList<UUID> getLessons() {
         return this.lessons;
     }
 
-    public ArrayList<Song> getSongs() {
+    public ArrayList<UUID> getSongs() {
         return this.songs;
     }
 
@@ -89,11 +89,11 @@ public class Module {
         this.title = title;
     }
 
-    public void setLessons(ArrayList<Lesson> lessons) {
+    public void setLessons(ArrayList<UUID> lessons) {
         this.lessons = lessons;
     }
 
-    public void setSongs(ArrayList<Song> songs) {
+    public void setSongs(ArrayList<UUID> songs) {
         this.songs = songs;
     }
 

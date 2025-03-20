@@ -13,12 +13,12 @@ public class User {
     protected SecurityQuestion securityQuestion;
     protected String securityAnswer;
     protected ArrayList<UUID> friends;
-    protected ArrayList<Song> songs;
+    protected ArrayList<UUID> songs;
     protected final UUID id;
 
     public User(UUID id, String username, String password, Experience experience, int points, 
                     int streak, SecurityQuestion securityQuestion, String securityAnswer, 
-                    ArrayList<UUID> friends, ArrayList<Song> songs) {
+                    ArrayList<UUID> friends, ArrayList<UUID> songs) {
         this.username = username;
         this.password = password;
         this.experience = experience;
@@ -41,7 +41,7 @@ public class User {
         points = 0;
         streak = 0;
         friends = new ArrayList<UUID>();
-        songs = new ArrayList<Song>();
+        songs = new ArrayList<UUID>();
     }
 
     public String getUsername() {
@@ -108,7 +108,7 @@ public class User {
         return friends;
     }
 
-    public ArrayList<Song> getSongs() {
+    public ArrayList<UUID> getSongs() {
         return this.songs;
     }
 
@@ -124,16 +124,16 @@ public class User {
         this.streak = streak;
     }
 
-    public void setFriends(ArrayList<User> friends) {
-        // this.friends = friends;
+    public void setFriends(ArrayList<UUID> friends) {
+        this.friends = friends;
     }
 
-    public void setSongs(ArrayList<Song> songs) {
+    public void setSongs(ArrayList<UUID> songs) {
         this.songs = songs;
     }
 
     public SecurityQuestion getSecurityQuestion() {
-        return securityQuestion;
+        return this.securityQuestion;
     }
 
     public void setSecurityQuestion(SecurityQuestion securityQuestion) {
@@ -141,7 +141,7 @@ public class User {
     }
 
     public String getSecurityAnswer() {
-        return securityAnswer;
+        return this.securityAnswer;
     }
 
     public void setSecurityAnswer(String securityAnswer) {

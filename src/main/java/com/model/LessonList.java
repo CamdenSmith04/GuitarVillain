@@ -7,7 +7,7 @@ public class LessonList {
     private ArrayList<Lesson> lessons;
 
     private LessonList(){
-        lessons = new ArrayList<>();
+        lessons = DataLoader.getLessons();
     }
 
     public static LessonList getInstance(){

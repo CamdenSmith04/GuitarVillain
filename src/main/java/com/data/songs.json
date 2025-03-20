@@ -2,7 +2,7 @@
     {
         "id": "3617a6b9-7170-49db-945f-1cf6eb816c3f",
         "author": "DJ Android",
-        "userCreated": null,
+        "authorId": null,
         "title": "The Distance",
         "rating": 3.46,
         "genres": ["POP", "FUNK"],
@@ -82,7 +82,7 @@
     {
         "id": "d1d720f5-4e57-4644-abf8-6a2174c7e056",
         "author": "DJ Dauphin",
-        "userCreated": null,
+        "authorId": null,
         "title": "Surround Sound",
         "rating": 4.88,
         "genres": ["RAP"],
@@ -160,7 +160,7 @@
     {
         "id": "33370c1f-29ae-43ad-8a51-4c0c9b79dae1",
         "author": "Ludwig van Beethoven",
-        "userCreated": null,
+        "authorId": null,
         "title": "Fur Elise",
         "rating": 5.0,
         "genres": ["CLASSICAL"],

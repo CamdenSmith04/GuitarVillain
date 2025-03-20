@@ -141,30 +141,30 @@ public class Facade {
         //courseList.remove(course);
     }
    
-    public void addStudent(Student student) {
+    public void addStudent(UUID student) {
         this.currentCourse.addStudent(student);
 
     }
     
-    public void removeStudent(Student student) {
+    public void removeStudent(UUID student) {
         this.currentCourse.removeStudent(student);
 
     }
     
-    public void assignLesson(Lesson lesson) {
+    public void assignLesson(UUID lesson) {
         this.currentCourse.addLesson(lesson);
 
     }
     
-    public void removeLesson(Lesson lesson) {
+    public void removeLesson(UUID lesson) {
         this.currentCourse.removeLesson(lesson);
     }
     
-    public void assignSong(Song song) {
+    public void assignSong(UUID song) {
         this.currentCourse.addSong(song);
     }
     
-    public void removeSong(Song song) {
+    public void removeSong(UUID song) {
         this.currentCourse.removeSong(song);
     }
     // TODO: String name or course
