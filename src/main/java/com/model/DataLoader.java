@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.UUID;
 import java.io.File;
 import java.io.FileReader;
+import java.util.jar.Attributes;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -40,11 +42,9 @@ public class DataLoader extends DataConstants{
     }
 
     public static Measure parseMeasure(JSONObject measureJSON){
-        int measureLength = (int)measureJSON.get(MEASURE_LENGTH);
-
+        int measureLength = ((Number) measureJSON.get(MEASURE_LENGTH)).intValue();
         ArrayList<Chord> chords = new ArrayList<Chord>();
         JSONArray chordsArray = (JSONArray) measureJSON.get(MEASURE_CHORDS);
-
         for(Object chordObj : chordsArray){
             chords.add(parseChord((JSONObject)chordObj));
         }
@@ -65,25 +65,39 @@ public class DataLoader extends DataConstants{
             genres.add(Genre.valueOf(genre));
         }
 
-        Instrument instrument = (Instrument)songJSON.get(SONG_INSTRUMENT);
-        Visibility visibility = (Visibility)songJSON.get(SONG_VISIBILITY);
-        int beatsPerMinute = (int)songJSON.get(SONG_BEATS_PER_MINUTE);
-        TimeSignature timeSignature = (TimeSignature)songJSON.get(SONG_TIME_SIGNATURE);
-        ArrayList<Measure> measures = new ArrayList<>();
-        JSONArray measuresArray = (JSONArray) songJSON.get(SONG_MEASURES);
-        for (Object measureObj : measuresArray) {
-            JSONObject measureJSON = (JSONObject) measureObj;    
-            measures.add(parseMeasure(measureJSON));
+        // Converts name enum to String to be passed to instrument
+        Name name = Name.valueOf((String) songJSON.get(SONG_INSTRUMENT));
+        String instrumentName = name.toString();
+        Instrument instrument = new Instrument(instrumentName);
+
+        Visibility visibility = Visibility.valueOf((String) songJSON.get(SONG_VISIBILITY));
+        int beatsPerMinute = ((Number) songJSON.get(SONG_BEATS_PER_MINUTE)).intValue();
+        
+        // Constructs timeSignature
+        String timeSignatureFull = (String) songJSON.get(SONG_TIME_SIGNATURE);
+        ArrayList<String> parts = new ArrayList<String>();
+        for (String part: timeSignatureFull.split("/")) {
+            parts.add(part);
         }
+        TimeSignature timeSignature = new TimeSignature(Integer.parseInt(parts.get(0)), Integer.parseInt(parts.get(1)));
+
+        double speed = ((Number) songJSON.get(SONG_SPEED)).doubleValue();
+        boolean completed = (boolean) songJSON.get(SONG_COMPLETED);
+        
         ArrayList<String> lyrics = new ArrayList<>();
         JSONArray lyricsArray = (JSONArray) songJSON.get(SONG_LYRICS);
         for (Object lyricObj : lyricsArray) {
             lyrics.add((String) lyricObj);
         }
-        
-        double speed = ((Number) songJSON.get(SONG_SPEED)).doubleValue();
-        boolean completed = (boolean) songJSON.get(SONG_COMPLETED);
-        
+
+        ArrayList<Measure> measures = new ArrayList<>();
+        JSONArray measuresArray = (JSONArray) songJSON.get(SONG_MEASURES);
+        for (Object measureObj : measuresArray) {
+            JSONObject measureJSON = (JSONObject) measureObj;   
+            measures.add(parseMeasure(measureJSON));
+        }
+    
+
         return(new Song(songId, songTitle, songAuthor, songRating, genres, instrument, visibility, 
                     beatsPerMinute, timeSignature, measures, lyrics, speed, completed));
     }
@@ -129,11 +143,11 @@ public class DataLoader extends DataConstants{
     }
 
     public static Note parseNote(JSONObject noteJSON){
-        int time = (int)noteJSON.get(NOTE_TIME);
-        char string = (char)noteJSON.get(NOTE_STRING);
-        int fret = (int)noteJSON.get(NOTE_FRET);
+        int time = ((Number) noteJSON.get(NOTE_TIME)).intValue();
+        String noteString = (String) noteJSON.get(NOTE_STRING);
+        char string = noteString.charAt(0);
+        int fret = ((Number) noteJSON.get(NOTE_FRET)).intValue();
         return new Note(time, string, fret);
-
     }
 
     public static ArrayList<Song> getSongs(){
@@ -141,6 +155,7 @@ public class DataLoader extends DataConstants{
         try {
             FileReader reader = new FileReader(SONG_FILE_NAME);
             JSONArray songsJSON = (JSONArray)new JSONParser().parse(reader);
+            System.out.println(parseSong((JSONObject)songsJSON.get(0)));
             for(int i = 0; i<songsJSON.size(); i++){
                 songs.add(parseSong((JSONObject)songsJSON.get(i)));
             }
