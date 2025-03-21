@@ -25,14 +25,14 @@ public class Song {
     private ArrayList<String> lyrics;
     private double speed;
     private boolean completed;
-    private UUID id;
+    private final UUID id;
 
     public Song(UUID authorId) {
         this.id = UUID.randomUUID();
         this.authorId = authorId;
-        this.genres = new ArrayList<Genre>();
-        this.lyrics = new ArrayList<String>();
-        this.measures = new ArrayList<Measure>();
+        this.genres = new ArrayList<>();
+        this.lyrics = new ArrayList<>();
+        this.measures = new ArrayList<>();
     }
 
     public Song(String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
@@ -221,6 +221,7 @@ public class Song {
         this.completed = completed;
     }
 
+    @Override
     public String toString() {
         return ("Author: " + this.author + "\n" + 
                 "Title: " + this.title + "\n" +
