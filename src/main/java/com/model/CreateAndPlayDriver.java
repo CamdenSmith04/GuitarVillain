@@ -43,6 +43,7 @@ public class CreateAndPlayDriver {
         // 1 Measure - 3 Chords - 9 Notes
         ArrayList<Chord> chords = new ArrayList<>();
         ArrayList<Note> notes = new ArrayList<>();
+
         notes.add(new Note(1, 'a', 3));
         notes.add(new Note(2, 'b', 3));
         notes.add(new Note(1, 'a', 3));
@@ -90,11 +91,12 @@ public class CreateAndPlayDriver {
 
         newSong.addMeasure(new Measure(3, chords));
 
-
         System.out.println(newSong.toString());
 
-        facade.getSongs().add(newSong);
+        // Add song to songList
+        facade.addSong(newSong);
 
+        // Play song
         facade.beginSong("Cool New Song");
 
         // facade.logout();
