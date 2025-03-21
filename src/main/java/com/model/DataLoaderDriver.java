@@ -1,11 +1,15 @@
 package com.model;
 
+
+/**
+ * This driver is used to show that the dataLoader is correctly working to pull
+ * all fields from all json files. All outputs should have some type of value. No 
+ * null values or errors are expected.
+ */
+
 public class DataLoaderDriver {
     public static void main(String[] args) {
         Facade facade = new Facade();
-
-        // Working
-
         
         System.out.println("---------------------------");
         System.out.println("*******");
@@ -92,7 +96,5 @@ public class DataLoaderDriver {
             System.out.println("Completed: " +lesson.getCompleted());
             System.out.println("---------------------------");
         }
-
     }
-
 }
