@@ -39,6 +39,9 @@ public class Facade {
 
     /**
      * Logs in existing user
+     * @param username User's username
+     * @param password User's password
+     * @return User if found
      */
     public User logIn(String username, String password) {
         return currentUser = userList.getUser(username, password);
@@ -131,6 +134,10 @@ public class Facade {
         Song newSong = new Song(currentUser.getId());
         currentUser.addSong(newSong);
         return newSong;
+    }
+
+    public void addSong(Song song) {
+        this.songList.addSong(song);
     }
 
     // TODO: String name or course
