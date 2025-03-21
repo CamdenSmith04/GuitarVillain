@@ -9,7 +9,7 @@ public class Module {
     private ArrayList<UUID> lessons;
     private ArrayList<UUID> songs;
     private double progress;
-    private UUID id;
+    private final UUID id;
 
     public Module(String title, ArrayList<UUID> lessons, ArrayList<UUID> songs) {
         this.id = UUID.randomUUID();
@@ -44,7 +44,7 @@ public class Module {
         this.lessons.add(lesson);
     }
 
-    public void removeLesson(Lesson lesson) {
+    public void removeLesson(UUID lesson) {
         this.lessons.remove(lesson);
     }
 
