@@ -84,7 +84,7 @@ public class User {
     }
 
     public boolean idIsMatch(UUID id){
-        return this.id == id;
+        return this.id.equals(id);
     }
 
     @Override
@@ -130,6 +130,10 @@ public class User {
 
     public void setSongs(ArrayList<UUID> songs) {
         this.songs = songs;
+    }
+
+    public void addSong(Song song){
+        this.songs.add(song.getId());
     }
 
     public SecurityQuestion getSecurityQuestion() {

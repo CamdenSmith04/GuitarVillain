@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 import java.io.File;
 import java.io.FileReader;
+import java.lang.module.ModuleDescriptor;
 import java.util.jar.Attributes;
 
 import org.json.simple.JSONArray;
@@ -13,7 +14,6 @@ import javafx.scene.image.Image;
 
 
 public class DataLoader extends DataConstants{
-
     public static Module parseModule(JSONObject moduleJSON){
         UUID id = UUID.fromString((String)moduleJSON.get(MODULE_ID));
         String title = (String)moduleJSON.get(MODULE_TITLE);
@@ -105,8 +105,7 @@ public class DataLoader extends DataConstants{
 
         // Converts name enum to String to be passed to instrument
         Name name = Name.valueOf((String) songJSON.get(SONG_INSTRUMENT));
-        String instrumentName = name.toString();
-        Instrument instrument = new Instrument(instrumentName);
+        Instrument instrument = new Instrument(name);
 
         Visibility visibility = Visibility.valueOf((String) songJSON.get(SONG_VISIBILITY));
         int beatsPerMinute = ((Number) songJSON.get(SONG_BEATS_PER_MINUTE)).intValue();

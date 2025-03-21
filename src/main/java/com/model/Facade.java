@@ -14,6 +14,7 @@ public class Facade {
     private Course currentCourse;
     private Lesson currentLesson;
     private Song currentSong;
+    private Module currentModule;
 
     // need to figure out how we want to do setters since this is facade
 
@@ -33,6 +34,7 @@ public class Facade {
         songList = SongList.getInstance();
         moduleList = ModuleList.getInstance();
         courseList = CourseList.getInstance();
+        lessonList = LessonList.getInstance();
     } 
 
     /**
@@ -125,9 +127,10 @@ public class Facade {
         // display public friend user information by UUID?
     }
 
-    public void composeSong(String title) {
-        // this should make a new empty song constructor
-        // needs to ask the user for song details and what not
+    public Song composeSong() {
+        Song newSong = new Song(currentUser.getId());
+        currentUser.addSong(newSong);
+        return newSong;
     }
 
     // TODO: String name or course
@@ -210,6 +213,10 @@ public class Facade {
 
     public Song getCurrentSong() {
         return this.currentSong;
+    }
+
+    public Module getCurrentModule() {
+        return this.currentModule;
     }
 
 }

@@ -17,4 +17,8 @@ public class TimeSignature {
     public int getBottomeNumber(){
         return bottomNumber;
     }
+
+    public String toString(){
+        return Integer.toString(topNumber) + "/" + Integer.toString(bottomNumber);
+    }
 }

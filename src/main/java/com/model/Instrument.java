@@ -7,12 +7,16 @@ public class Instrument {
     // private int volume;
     // // private final static String SOUND_LIBRARY_NAME;
 
-    public Instrument(String name) {
-        this.name = (Name.valueOf((String) name));
+    public Instrument(Name name) {
+        this.name = name;
     }
 
     public void playSelectedChord(String soundLibrary) {
         
+    }
+
+    public Name getName() {
+        return this.name;
     }
 
 }
