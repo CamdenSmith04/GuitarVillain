@@ -27,8 +27,12 @@ public class Song {
     private boolean completed;
     private UUID id;
 
-    public Song() {
+    public Song(UUID authorId) {
         this.id = UUID.randomUUID();
+        this.authorId = authorId;
+        this.genres = new ArrayList<Genre>();
+        this.lyrics = new ArrayList<String>();
+        this.measures = new ArrayList<Measure>();
     }
 
     public Song(String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
@@ -215,6 +219,24 @@ public class Song {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    public String toString() {
+        return ("Author: " + this.author + "\n" + 
+                "Title: " + this.title + "\n" +
+                "AuthorId: " + this.authorId + "\n" + 
+                "Rating: " + this.rating + "\n" + 
+                "Genres: " + this.genres + "\n" + 
+                "Instrument: " + this.instrument.getName() + "\n" + 
+                "Visibility: " + this.visibility +  "\n" +
+                "BPM: " + this.beatsPerMinute + "\n" + 
+                "Time Signature: " + this.timeSignature.toString() + "\n" +
+                "Measures: " + this.measures + "\n" + 
+                "Lyrics: " + this.lyrics + "\n" + 
+                "Speed: " + this.speed + "\n" + 
+                "Completed: " + this.completed + "\n" +
+                "Id: " + this.id);
+
     }
 
 }

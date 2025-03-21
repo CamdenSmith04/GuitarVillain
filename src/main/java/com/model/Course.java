@@ -9,7 +9,7 @@ public class Course {
     private ArrayList<UUID> students;
     private ArrayList<UUID> assignedLessons;
     private ArrayList<UUID> assignedSongs;
-    private UUID id;
+    private final UUID id;
 
     public Course(String name) {
         this.name = name;
