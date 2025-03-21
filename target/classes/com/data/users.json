@@ -21,7 +21,7 @@
         "securityQuestion": "What was the name of your elementary school?",
         "securityAnswer": "Denver Elementary",
         "friends": ["d0c52973-7f9b-483e-80e3-48681ea68674", "8d377a72-5657-4c13-a54e-d5e695c13bf6"],
-        "songs" : []
+        "songs" : ["c6e8e20f-f010-44b5-91f6-2aec36629f83"]
     },
     {
         "id": "8d377a72-5657-4c13-a54e-d5e695c13bf6",

@@ -1,6 +1,7 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class SongList {
     
@@ -26,6 +27,15 @@ public class SongList {
     public Song getSong(String title) {
         for(Song current : songs) {
             if(current.getTitle().equals(title)) {
+                return current;
+            }
+        }
+        return null;
+    }
+
+    public Song getSongByID(UUID song) {
+        for (Song current: songs) {
+            if(current.getId().equals(song)) {
                 return current;
             }
         }
