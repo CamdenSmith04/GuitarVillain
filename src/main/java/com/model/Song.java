@@ -231,7 +231,7 @@ public class Song {
                 "Visibility: " + this.visibility +  "\n" +
                 "BPM: " + this.beatsPerMinute + "\n" + 
                 "Time Signature: " + this.timeSignature.toString() + "\n" +
-                "Measures: " + this.measures + "\n" + 
+                "Measures: " + this.measures.toString() + "\n" + 
                 "Lyrics: " + this.lyrics + "\n" + 
                 "Speed: " + this.speed + "\n" + 
                 "Completed: " + this.completed + "\n" +

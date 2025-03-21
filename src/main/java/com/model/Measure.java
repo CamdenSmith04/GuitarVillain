@@ -35,4 +35,5 @@ public class Measure {
     public void setChords(ArrayList<Chord> chords) {
         this.chords = chords;
     }
+
 }
