@@ -93,6 +93,10 @@ public class CreateAndPlayDriver {
 
         System.out.println(newSong.toString());
 
+        facade.getSongs().add(newSong);
+
+        facade.beginSong("Cool New Song");
+
         // facade.logout();
         
     }
