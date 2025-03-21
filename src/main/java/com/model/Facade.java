@@ -194,6 +194,10 @@ public class Facade {
         return songList.getSongs();
     }
 
+    public Song getSongById(UUID song) {
+        return songList.getSongByID(song);
+    }
+
     public ArrayList<Module> getModules() {
         return moduleList.getModules();
     }
@@ -224,6 +228,10 @@ public class Facade {
 
     public Module getCurrentModule() {
         return this.currentModule;
+    }
+
+    public void setCurrentSong(Song song) {
+        this.currentSong = song;
     }
 
 }

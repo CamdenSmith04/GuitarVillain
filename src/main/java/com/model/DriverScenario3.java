@@ -2,7 +2,7 @@ package com.model;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class CreateAndPlayDriver {
+public class DriverScenario3 {
 
     public static void main(String[] args) {
         Facade facade = new Facade();
