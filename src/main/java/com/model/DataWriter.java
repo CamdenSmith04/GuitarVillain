@@ -13,6 +13,7 @@ import org.json.simple.JSONObject;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
+import org.jfugue.player.Player;
 
 /**
  * Writes data to json files
@@ -111,6 +112,7 @@ public class DataWriter extends DataConstants {
             field.setAccessible(true);
             try {
                 Object name = field.getName();
+                if (isIgnore(name)) continue;
                 Object value = field.get(object);
                 jsonObject.put(name, handleValue(value));
 
@@ -130,9 +132,17 @@ public class DataWriter extends DataConstants {
             return collectionToJsonArray((Collection<?>) value);
         } else if (isNestedObject(value)) {
             return objectToJson(value);
+        } else if (value instanceof Instrument) {
+            Instrument instrument = (Instrument)value;
+            return instrument.getName().toString();
         } else {
             return value.toString();
         }
+    }
+
+    private static boolean isIgnore(Object name) {
+        return name.equals("NOTES") ||
+                name.equals("player");
     }
 
     private static boolean isPrimitive(Object object) {
@@ -150,10 +160,6 @@ public class DataWriter extends DataConstants {
         return object instanceof Measure ||
                 object instanceof Chord ||
                 object instanceof Note;
-    }
-
-    private static boolean isDoNotWrite(Object object) {
-        
     }
 
     @SuppressWarnings("unchecked")

@@ -1,0 +1,143 @@
+{
+        "visibility": "PUBLIC",
+        "author": "Ludwig van Beethoven",
+        "rating": 5.0,
+        "instrument": "GUITAR",
+        "completed": true,
+        "title": "Fur Elise",
+        "authorId": null,
+        "timeSignature": null,
+        "speed": 1.0,
+        "measures": [
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "notes": [
+                            {
+                                "note": null,
+                                "NOTES": [
+                                    "C",
+                                    "C#",
+                                    "D",
+                                    "D#",
+                                    "E",
+                                    "F",
+                                    "F#",
+                                    "G",
+                                    "G#",
+                                    "A",
+                                    "A#",
+                                    "B"
+                                ],
+                                "string": "e",
+                                "time": 1,
+                                "fret": 12
+                            },
+                            {
+                                "note": null,
+                                "NOTES": [
+                                    "C",
+                                    "C#",
+                                    "D",
+                                    "D#",
+                                    "E",
+                                    "F",
+                                    "F#",
+                                    "G",
+                                    "G#",
+                                    "A",
+                                    "A#",
+                                    "B"
+                                ],
+                                "string": "d",
+                                "time": 2,
+                                "fret": 10
+                            },
+                            {
+                                "note": null,
+                                "NOTES": [
+                                    "C",
+                                    "C#",
+                                    "D",
+                                    "D#",
+                                    "E",
+                                    "F",
+                                    "F#",
+                                    "G",
+                                    "G#",
+                                    "A",
+                                    "A#",
+                                    "B"
+                                ],
+                                "string": "b",
+                                "time": 3,
+                                "fret": 8
+                            }
+                        ],
+                        "chordShape": "am_shape.png",
+                        "name": "A Minor"
+                    }
+                ]
+            },
+            {
+                "length": 3,
+                "chords": [
+                    {
+                        "notes": [
+                            {
+                                "note": null,
+                                "NOTES": [
+                                    "C",
+                                    "C#",
+                                    "D",
+                                    "D#",
+                                    "E",
+                                    "F",
+                                    "F#",
+                                    "G",
+                                    "G#",
+                                    "A",
+                                    "A#",
+                                    "B"
+                                ],
+                                "string": "g",
+                                "time": 1,
+                                "fret": 9
+                            },
+                            {
+                                "note": null,
+                                "NOTES": [
+                                    "C",
+                                    "C#",
+                                    "D",
+                                    "D#",
+                                    "E",
+                                    "F",
+                                    "F#",
+                                    "G",
+                                    "G#",
+                                    "A",
+                                    "A#",
+                                    "B"
+                                ],
+                                "string": "b",
+                                "time": 2,
+                                "fret": 7
+                            },
+                            {
+                                "note": null,
+                                "NOTES": [
+                                    "C",
+                                    "C#",
+                                    "D",
+                                    "D#",
+                                    "E",
+                                    "F",
+                                    "F#",
+                                    "G",
+                                    "G#",
+                                    "A",
+                                    "A#",
+                                    "B"
+                                ],

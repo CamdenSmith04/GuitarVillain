@@ -143,8 +143,8 @@ public class DataLoader extends DataConstants{
         UUID id = UUID.fromString((String)userJSON.get(SONG_ID));
         String username = (String)userJSON.get(USER_USERNAME);
         String password = (String)userJSON.get(USER_PASSWORD);
-        Experience experience = Experience.getExperience((String)userJSON.get(USER_EXPERIENCE));
-        SecurityQuestion securityQuestion = SecurityQuestion.getSecurityQuestion((String)userJSON.get(USER_SECURITY_QUESTION));
+        Experience experience = Experience.valueOf((String)userJSON.get(USER_EXPERIENCE));
+        SecurityQuestion securityQuestion = SecurityQuestion.valueOf((String)userJSON.get(USER_SECURITY_QUESTION));
         String securityAnswer = (String)userJSON.get(USER_SECURITY_ANSWER);
         
         int points = ((Number)userJSON.get(USER_POINTS)).intValue();
@@ -192,16 +192,15 @@ public class DataLoader extends DataConstants{
         try {
             FileReader reader = new FileReader(SONG_FILE_NAME);
             JSONArray songsJSON = (JSONArray)new JSONParser().parse(reader);
-            System.out.println(parseSong((JSONObject)songsJSON.get(0)));
+            //System.out.println(parseSong((JSONObject)songsJSON.get(0)));
             for(int i = 0; i<songsJSON.size(); i++){
                 songs.add(parseSong((JSONObject)songsJSON.get(i)));
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.print("Songs: ");
-        System.out.print(songs);
+        //System.out.print("Songs: ");
+        // System.out.print(songs);
         return songs;
     }
 

@@ -26,12 +26,15 @@ public class HoldcraftDriver {
 
         // facade.logout();
 
-        SongList songList = SongList.getInstance();
-        ArrayList<String> lyrics = new ArrayList<>();
-        lyrics.add("line 1");
-        lyrics.add("line 2");
-        songList.addSong(new Song("newSong", "myUser", 4.2, null, new Instrument("GUITAR"), Visibility.FRIENDS_ONLY, 100, new TimeSignature(4, 4), null, lyrics, 5, false));
-        DataWriter.saveSongs();
+        // SongList songList = SongList.getInstance();
+        
+        // DataWriter.saveSongs();
+
+        Facade facade = new Facade();
+        
+        facade.beginSong("Fur Elise");
+        DataWriter.save();
+
 
 
     }
