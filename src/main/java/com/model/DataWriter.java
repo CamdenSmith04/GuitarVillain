@@ -3,8 +3,15 @@ package com.model;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.IdentityHashMap;
+import java.util.Set;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 
 /**
@@ -65,7 +72,7 @@ public class DataWriter extends DataConstants {
 
         // Create all json objects
         for (int i = 0; i < objectList.size(); i++) {
-            jsonObjects.add(getJSON(objectList.get(i)));
+            jsonObjects.add(objectToJson(objectList.get(i)));
         }
 
         // Write JSON File
@@ -77,30 +84,96 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    private static Set<Object> visited = Collections.newSetFromMap(new IdentityHashMap<>());
+
     /**
      * Converts inputted object into JSONObject
      * @param object Object to be converted
      * @return Object as type JSONObject
      */
     @SuppressWarnings("unchecked")
-    private static JSONObject getJSON(Object object) {
-        JSONObject objectDetails = new JSONObject();
-        try {
-            Class<?> objectClass = object.getClass();
-            Field[] fields = objectClass.getDeclaredFields();
+    private static JSONObject objectToJson(Object object) {
+        if (object == null)
+            return null;
 
-            for (Field field : fields) {
-                Object value = (field.get(object));
-                if (value instanceof Number)
-                    objectDetails.put(field.getName(), value);
-                else
-                    objectDetails.put(field.getName(), String.valueOf(value)); // Put field name & value in JSON
-                
-            }
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-            objectDetails = null;
+        JSONObject jsonObject = new JSONObject();
+
+        if (visited.contains(object)) {
+            jsonObject.put("circularReference", true);
+            return jsonObject;
         }
-        return objectDetails;
+        visited.add(object);
+
+        Class<?> objectClass = object.getClass();
+        Field[] fields = objectClass.getDeclaredFields();
+
+        for (Field field : fields) {
+            field.setAccessible(true);
+            try {
+                Object name = field.getName();
+                Object value = field.get(object);
+                jsonObject.put(name, handleValue(value));
+
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return jsonObject;
     }
+    
+    private static Object handleValue(Object value) {
+        if (value == null || (isPrimitive(value) && value.getClass() != char.class)) {
+            return value;
+        } else if (value.getClass().isArray()) {
+            return arrayToJsonArray(value);
+        } else if (value instanceof Collection<?>) {
+            return collectionToJsonArray((Collection<?>) value);
+        } else if (isNestedObject(value)) {
+            return objectToJson(value);
+        } else {
+            return value.toString();
+        }
+    }
+
+    private static boolean isPrimitive(Object object) {
+        return object instanceof Integer ||
+                object instanceof Double ||
+                object instanceof Boolean ||
+                object instanceof Byte ||
+                object instanceof Short ||
+                object instanceof Long ||
+                object instanceof Float ||
+                object.getClass().isPrimitive();
+    }
+
+    private static boolean isNestedObject(Object object) {
+        return object instanceof Measure ||
+                object instanceof Chord ||
+                object instanceof Note;
+    }
+
+    private static boolean isDoNotWrite(Object object) {
+        
+    }
+
+    @SuppressWarnings("unchecked")
+    private static JSONArray arrayToJsonArray(Object array) {
+        JSONArray jsonArray = new JSONArray();
+        int length = Array.getLength(array);
+        for (int i = 0; i < length; i++) {
+            Object element = Array.get(array, i);
+            jsonArray.add(handleValue(element));
+        }
+        return jsonArray;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static JSONArray collectionToJsonArray(Collection<?> collection) {
+        JSONArray jsonArray = new JSONArray();
+        for (Object item : collection) {
+            jsonArray.add(handleValue(item));
+        }
+        return jsonArray;
+    }
+
 }

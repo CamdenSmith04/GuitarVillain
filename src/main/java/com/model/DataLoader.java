@@ -125,6 +125,7 @@ public class DataLoader extends DataConstants{
         JSONArray friendsJSON = (JSONArray)userJSON.get(USER_FRIENDS);
         for (Object friendObj : friendsJSON) {
             UUID friendUUID = UUID.fromString((String)friendObj);
+            friends.add(friendUUID);
         }
 
 
@@ -156,7 +157,7 @@ public class DataLoader extends DataConstants{
         try {
             FileReader reader = new FileReader(SONG_FILE_NAME);
             JSONArray songsJSON = (JSONArray)new JSONParser().parse(reader);
-            System.out.println(parseSong((JSONObject)songsJSON.get(0)));
+            // System.out.println(parseSong((JSONObject)songsJSON.get(0)));
             for(int i = 0; i<songsJSON.size(); i++){
                 songs.add(parseSong((JSONObject)songsJSON.get(i)));
             }
@@ -164,8 +165,8 @@ public class DataLoader extends DataConstants{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.print("Songs: ");
-        System.out.print(songs);
+        // System.out.print("Songs: ");
+        // System.out.print(songs);
         return songs;
     }
 

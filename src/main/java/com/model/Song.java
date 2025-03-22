@@ -205,4 +205,9 @@ public class Song {
         this.completed = completed;
     }
 
+    public String toString() {
+        return this.title + " by " + this.author 
+            + "\nID: " + this.id;
+    }
+
 }
