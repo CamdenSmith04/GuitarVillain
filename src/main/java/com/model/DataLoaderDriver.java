@@ -18,6 +18,7 @@ public class DataLoaderDriver {
         System.out.println("---------------------------");
         for (Course course : facade.getCourses()) {
             System.out.println("ID: " + course.getId());
+            System.out.println("Teachers: " + course.getTeachers());
             System.out.println("Name: " + course.getName());
             System.out.println("Students: " + course.getStudents());
             System.out.println("Lessons: " + course.getAssignedLessons());

@@ -19,7 +19,6 @@ public class SongList {
         return songList;
     }
 
-    // TODO: Make sure song can be created :)
     public void addSong(Song song) {
         songs.add(song);
     }

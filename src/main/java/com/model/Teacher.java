@@ -17,7 +17,7 @@ public class Teacher extends User {
                     int streak, SecurityQuestion securityQuestion, String securityAnswer, 
                     ArrayList<UUID> friends, ArrayList<Song> songs */
 
-    public void makeCourse(String name) {
+    public void makeCourse() {
 
     }
 

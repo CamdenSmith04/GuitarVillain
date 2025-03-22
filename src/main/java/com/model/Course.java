@@ -10,6 +10,11 @@ import java.util.UUID;
 public class Course {
     
     /**
+     * This is the UUID of the teacher.
+     */
+    private ArrayList<UUID> teachers;
+
+    /**
      * This is the name of the course.
      */
     private String name;
@@ -36,9 +41,10 @@ public class Course {
 
     /**
      * This is a constructor for a new Course. 
-     * @param name the name the user wants the course to have.
+     * @param teacher the UUID of the teacher.
      */
-    public Course(String name) {
+    public Course(ArrayList<UUID> teachers, String name) {
+        this.teachers = teachers;
         this.name = name;
         this.students = new ArrayList<>();
         this.assignedLessons = new ArrayList<>();
@@ -48,18 +54,28 @@ public class Course {
 
     /**
      * This constructor is used to instantiate an existing course from a JSON.
+     * @param teacher the UUID of the teacher.
      * @param name the name of the course.
      * @param students the students in the course.
      * @param assignedLessons the lessons in the course.
      * @param assignedSongs the songs in the course.
      * @param id the course's UUID.
      */
-    public Course(String name, ArrayList<UUID> students, ArrayList<UUID> assignedLessons, ArrayList<UUID> assignedSongs, UUID id){
+    public Course(ArrayList<UUID> teachers, String name, ArrayList<UUID> students, ArrayList<UUID> assignedLessons, ArrayList<UUID> assignedSongs, UUID id){
+        this.teachers = teachers;
         this.name = name;
         this.students = students;
         this.assignedLessons = assignedLessons;
         this.assignedSongs = assignedSongs;
         this.id = id;
+    }
+
+    /**
+     * This method is used to add a teacher to the course.
+     * @param teacher the UUID of a teacher to be added to a course.
+     */
+    public void addTeacher(UUID teacher) {
+        this.teachers.add(teacher);
     }
 
     /**
@@ -162,6 +178,14 @@ public class Course {
     }
 
     /**
+     * This is a getter for the teacher of the course.
+     * @return the teacher's UUID
+     */
+    public ArrayList<UUID> getTeachers() {
+        return this.teachers;
+    }
+
+    /**
      * This is a getter for the name of the course.
      * @return the course's name.
      */
@@ -231,6 +255,21 @@ public class Course {
      */
     public void setAssignedSongs(ArrayList<UUID> songs) {
         this.assignedSongs = songs;
+    }
+
+    /**
+     * This method makes it easy to visualize all the components of a course.
+     * @return a string of all the course's values.
+     */
+    @Override
+    public String toString() {
+        return ("Teachers: " + this.teachers + "\n" + 
+                "Name: " + this.name + "\n" +
+                "Students: " + this.students + "\n" + 
+                "Assigned Lessons: " + this.assignedLessons + "\n" + 
+                "Assigned Songs: " + this.assignedSongs + "\n" +
+                "Id: " + this.id);
+
     }
 }
 
