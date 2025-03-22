@@ -1,7 +1,5 @@
 package com.model;
 
-import java.util.EnumSet;
-
 public enum SecurityQuestion {
     PET_NAME("What was your first pet's name?"),
     MOTHER_MAIDEN_NAME("What is your mother's maiden name?"),
@@ -17,11 +15,17 @@ public enum SecurityQuestion {
         return this.label;
     }
 
-    public static void main(String[] args) {
-        
-        for (SecurityQuestion securityQuestion : EnumSet.allOf(SecurityQuestion.class)) {
-            System.out.println(securityQuestion + ": " + securityQuestion.getLabel());
+    public static SecurityQuestion getSecurityQuestion(String label) {
+        if (label.equals(PET_NAME.label)){
+            return PET_NAME;
         }
+        if (label.equals(MOTHER_MAIDEN_NAME.label)){
+            return MOTHER_MAIDEN_NAME;
+        }
+        if (label.equals(ELEMENTARY_SCHOOL.label)){
+            return ELEMENTARY_SCHOOL;
+        }
+        return null;
     }
 
 }

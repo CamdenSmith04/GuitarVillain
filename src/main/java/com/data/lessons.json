@@ -11,13 +11,13 @@
         "title": "Lesson 2",
         "educationalMaterial": "Depending on the instrument, lessons may focus on finger positioning, breath control, or bowing techniques. Ear training and improvisation can also be included. Regular practice is essential for progress. The lesson ends with a summary of key points and assignments for the next session, helping students refine their musical abilities.",
         "visualAid" : "VisualAid2.png",
-        "compelted": false
+        "completed": false
     },
     {
         "id": "9586960f-1bf0-465c-97c4-a1a980b7b52f",
         "title": "Lesson 3",
         "educationalMaterial": "A music lesson is a structured session where students develop their musical skills through guided instruction. It often begins with warm-up exercises, such as scales, rhythm drills, or vocal warm-ups, to improve technique and dexterity.",
         "visualAid" : "VisualAid3.png",
-        "compelted": false
+        "completed": false
     }
 ]

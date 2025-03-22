@@ -17,11 +17,12 @@ public class Lesson {
         this.id = UUID.randomUUID();
     }
 
-    public Lesson(String title, String educationalMaterial, String visualAid, UUID id) {
+    public Lesson(String title, String educationalMaterial, String visualAid, UUID id, boolean completed) {
         this.title = title;
         this.educationalMaterial = educationalMaterial;
         this.visualAid = visualAid;
         this.id = id;
+        this.completed = completed;
     }
 
     public boolean isMatch(Lesson lesson) {

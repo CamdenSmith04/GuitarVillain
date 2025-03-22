@@ -2,6 +2,7 @@ package com.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
+
 import org.jfugue.player.Player;
 
 /**
@@ -13,6 +14,7 @@ public class Song {
     
     private String author;
     private String title;
+    private UUID authorId;
     private double rating;
     private ArrayList<Genre> genres;
     private Instrument instrument;
@@ -23,16 +25,21 @@ public class Song {
     private ArrayList<String> lyrics;
     private double speed;
     private boolean completed;
-    private UUID id;
+    private final UUID id;
 
-    public Song() {
+    public Song(UUID authorId) {
         this.id = UUID.randomUUID();
+        this.authorId = authorId;
+        this.genres = new ArrayList<>();
+        this.lyrics = new ArrayList<>();
+        this.measures = new ArrayList<>();
     }
 
-    public Song(String title, String author, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
+    public Song(String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
         this.id = UUID.randomUUID();
         this.title = title;
         this.author = author;
+        this.authorId = authorId;
         this.rating = rating;
         this.genres = genres;
         this.instrument = instrument;
@@ -45,10 +52,11 @@ public class Song {
         this.completed = completed;
     }
 
-    public Song(UUID id, String title, String author, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
+    public Song(UUID id, String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
         this.id = id;
         this.title = title;
         this.author = author;
+        this.authorId = authorId;
         this.rating = rating;
         this.genres = genres;
         this.instrument = instrument;
@@ -112,6 +120,10 @@ public class Song {
     public String getTitle() {
         return this.title;
     }
+
+    public UUID getAuthorId() {
+        return this.authorId;
+    }
     
     public double getRating() {
         return this.rating;
@@ -164,6 +176,10 @@ public class Song {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public void setUserCreated(UUID authorId) {
+        this.authorId = authorId;
+    }
     
     public void setRating(double rating) {
         this.rating = rating;
@@ -205,9 +221,23 @@ public class Song {
         this.completed = completed;
     }
 
+    @Override
     public String toString() {
-        return this.title + " by " + this.author 
-            + "\nID: " + this.id;
+        return ("Author: " + this.author + "\n" + 
+                "Title: " + this.title + "\n" +
+                "AuthorId: " + this.authorId + "\n" + 
+                "Rating: " + this.rating + "\n" + 
+                "Genres: " + this.genres + "\n" + 
+                "Instrument: " + this.instrument.getName() + "\n" + 
+                "Visibility: " + this.visibility +  "\n" +
+                "BPM: " + this.beatsPerMinute + "\n" + 
+                "Time Signature: " + this.timeSignature.toString() + "\n" +
+                "Measures: " + this.measures.toString() + "\n" + 
+                "Lyrics: " + this.lyrics + "\n" + 
+                "Speed: " + this.speed + "\n" + 
+                "Completed: " + this.completed + "\n" +
+                "Id: " + this.id);
+
     }
 
 }

@@ -2,6 +2,7 @@
     {
         "id": "3617a6b9-7170-49db-945f-1cf6eb816c3f",
         "author": "DJ Android",
+        "authorId": null,
         "title": "The Distance",
         "rating": 3.46,
         "genres": ["POP", "FUNK"],
@@ -81,6 +82,7 @@
     {
         "id": "d1d720f5-4e57-4644-abf8-6a2174c7e056",
         "author": "DJ Dauphin",
+        "authorId": null,
         "title": "Surround Sound",
         "rating": 4.88,
         "genres": ["RAP"],
@@ -158,6 +160,7 @@
     {
         "id": "33370c1f-29ae-43ad-8a51-4c0c9b79dae1",
         "author": "Ludwig van Beethoven",
+        "authorId": null,
         "title": "Fur Elise",
         "rating": 5.0,
         "genres": ["CLASSICAL"],
@@ -508,6 +511,79 @@
         "lyrics": [],
         "speed": 1.0,
         "completed": true
-    }    
+    },
+    {
+        "id": "c6e8e20f-f010-44b5-91f6-2aec36629f83",
+        "author": "bradleyalford",
+        "authorId": "f151895e-d2ac-42b1-826a-cfff30f9bd64",
+        "title": "The Wish",
+        "rating": 4.49,
+        "genres": ["POP", "ROCK"],
+        "instrument": "GUITAR",
+        "visibility": "PUBLIC",
+        "beatsPerMinute": 120,
+        "timeSignature": "4/4",
+        "measures": [
+            {
+                "length": 4,
+                "chords": [
+                    {
+                    "name": "C Major",
+                    "notes": [
+                        {
+                            "time": 8,
+                            "string": "c",
+                            "fret": 12
+                        },
+                        {
+                            "time": 16,
+                            "string": "e",
+                            "fret": 8
+                        },
+                        {
+                            "time": 8,
+                            "string": "g",
+                            "fret": 10
+                        }
+                    ],
+                    "chordShape": "chord1.png"
+                    }
+                ]
+            },
+            {
+                "length": 4,
+                "chords": [
+                    {
+                    "name": "A Major",
+                    "notes": [
+                        {
+                            "time": 8,
+                            "string": "a",
+                            "fret": 16
+                        },
+                        {
+                            "time": 16,
+                            "string": "d",
+                            "fret": 14
+                        },
+                        {
+                            "time": 8,
+                            "string": "a",
+                            "fret": 12
+                        }
+                    ],
+                    "chordShape": "chord1.png"
+                    }
+                ]
+            }
+        ],
+        "lyrics": ["I wish I could be a cool boy",
+                    "I wish so much to be so cool",
+                    "My wish is to be the best of all",
+                    "To code as great as the grass touchers",
+                    "for they are the best that ever wassssss"],
+        "speed": 1.00,
+        "completed": true
+    }   
 
 ]

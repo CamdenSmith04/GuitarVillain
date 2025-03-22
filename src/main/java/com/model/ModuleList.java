@@ -8,7 +8,7 @@ public class ModuleList {
     private ArrayList<Module> modules;
 
     private ModuleList(){
-        modules = new ArrayList<>();
+        modules = DataLoader.getModules();
     }
 
     public static ModuleList getInstance() {

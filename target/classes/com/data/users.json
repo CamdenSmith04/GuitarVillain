@@ -6,9 +6,10 @@
         "experience": "Beginner",
         "points": 100,
         "streak": 5,
-        "securityQuestion": "What was the name of your first pet?",
+        "securityQuestion": "What was your first pet's name?",
         "securityAnswer": "Baxter",
-        "friends": ["8d377a72-5657-4c13-a54e-d5e695c13bf6"]
+        "friends": ["8d377a72-5657-4c13-a54e-d5e695c13bf6"],
+        "songs" : []
     },
     {
         "id": "f151895e-d2ac-42b1-826a-cfff30f9bd64",
@@ -17,9 +18,10 @@
         "experience": "Advanced",
         "points": 50,
         "streak": 25,
-        "securityQuestion": "What city did you go to elementary school in?",
-        "securityAnswer": "Denver",
-        "friends": ["d0c52973-7f9b-483e-80e3-48681ea68674", "8d377a72-5657-4c13-a54e-d5e695c13bf6"]
+        "securityQuestion": "What was the name of your elementary school?",
+        "securityAnswer": "Denver Elementary",
+        "friends": ["d0c52973-7f9b-483e-80e3-48681ea68674", "8d377a72-5657-4c13-a54e-d5e695c13bf6"],
+        "songs" : ["c6e8e20f-f010-44b5-91f6-2aec36629f83"]
     },
     {
         "id": "8d377a72-5657-4c13-a54e-d5e695c13bf6",
@@ -28,9 +30,10 @@
         "experience": "Intermediate",
         "points": 150,
         "streak": 50,
-        "securityQuestion": "What city did your parents meet?",
-        "securityAnswer": "Columbia",
-        "friends": ["55decc95-e79f-4f38-8da6-1afd17e4375a"]
+        "securityQuestion": "What is your mother's maiden name?",
+        "securityAnswer": "Johnson",
+        "friends": ["55decc95-e79f-4f38-8da6-1afd17e4375a"],
+        "songs" : []
     },
     {
         "id": "55decc95-e79f-4f38-8da6-1afd17e4375a",
@@ -39,9 +42,10 @@
         "experience": "Advanced",
         "points": 2000,
         "streak": 2000,
-        "securityQuestion": "What city was the first concert you attended in?",
-        "securityAnswer": "Atlanta",
-        "friends": ["d0c52973-7f9b-483e-80e3-48681ea68674", "8d377a72-5657-4c13-a54e-d5e695c13bf6"]
+        "securityQuestion": "What was your first pet's name?",
+        "securityAnswer": "Rex",
+        "friends": ["d0c52973-7f9b-483e-80e3-48681ea68674", "8d377a72-5657-4c13-a54e-d5e695c13bf6"],
+        "songs" : []
     }
     
 ]

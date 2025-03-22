@@ -14,6 +14,7 @@ public class Facade {
     private Course currentCourse;
     private Lesson currentLesson;
     private Song currentSong;
+    private Module currentModule;
 
     // need to figure out how we want to do setters since this is facade
 
@@ -33,10 +34,14 @@ public class Facade {
         songList = SongList.getInstance();
         moduleList = ModuleList.getInstance();
         courseList = CourseList.getInstance();
+        lessonList = LessonList.getInstance();
     } 
 
     /**
      * Logs in existing user
+     * @param username User's username
+     * @param password User's password
+     * @return User if found
      */
     public User logIn(String username, String password) {
         return currentUser = userList.getUser(username, password);
@@ -125,9 +130,14 @@ public class Facade {
         // display public friend user information by UUID?
     }
 
-    public void composeSong(String title) {
-        // this should make a new empty song constructor
-        // needs to ask the user for song details and what not
+    public Song composeSong() {
+        Song newSong = new Song(currentUser.getId());
+        currentUser.addSong(newSong);
+        return newSong;
+    }
+
+    public void addSong(Song song) {
+        this.songList.addSong(song);
     }
 
     // TODO: String name or course
@@ -141,30 +151,30 @@ public class Facade {
         //courseList.remove(course);
     }
    
-    public void addStudent(Student student) {
+    public void addStudent(UUID student) {
         this.currentCourse.addStudent(student);
 
     }
     
-    public void removeStudent(Student student) {
+    public void removeStudent(UUID student) {
         this.currentCourse.removeStudent(student);
 
     }
     
-    public void assignLesson(Lesson lesson) {
+    public void assignLesson(UUID lesson) {
         this.currentCourse.addLesson(lesson);
 
     }
     
-    public void removeLesson(Lesson lesson) {
+    public void removeLesson(UUID lesson) {
         this.currentCourse.removeLesson(lesson);
     }
     
-    public void assignSong(Song song) {
+    public void assignSong(UUID song) {
         this.currentCourse.addSong(song);
     }
     
-    public void removeSong(Song song) {
+    public void removeSong(UUID song) {
         this.currentCourse.removeSong(song);
     }
     // TODO: String name or course
@@ -182,6 +192,10 @@ public class Facade {
 
     public ArrayList<Song> getSongs() {
         return songList.getSongs();
+    }
+
+    public Song getSongById(UUID song) {
+        return songList.getSongByID(song);
     }
 
     public ArrayList<Module> getModules() {
@@ -210,6 +224,14 @@ public class Facade {
 
     public Song getCurrentSong() {
         return this.currentSong;
+    }
+
+    public Module getCurrentModule() {
+        return this.currentModule;
+    }
+
+    public void setCurrentSong(Song song) {
+        this.currentSong = song;
     }
 
 }
