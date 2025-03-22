@@ -42,6 +42,13 @@ public class DataLoader extends DataConstants{
         UUID id = UUID.fromString((String) courseJSON.get(COURSE_ID));
         String name = (String)courseJSON.get(COURSE_NAME);
 
+        ArrayList<UUID> teachers = new ArrayList<>();
+        JSONArray teachersJSON = (JSONArray) courseJSON.get(COURSE_TEACHERS);
+        for (Object obj: teachersJSON) {
+            UUID teacherId = UUID.fromString((String) obj);
+            teachers.add(teacherId);
+        }
+
         ArrayList<UUID> students = new ArrayList<>();
         JSONArray studentsJSON = (JSONArray) courseJSON.get(COURSE_STUDENTS);
         for (Object obj: studentsJSON) {
@@ -63,7 +70,7 @@ public class DataLoader extends DataConstants{
             songs.add(songId);
         }
 
-        return new Course(name, students, lessons, songs, id);
+        return new Course(teachers, name, students, lessons, songs, id);
 
     }
 

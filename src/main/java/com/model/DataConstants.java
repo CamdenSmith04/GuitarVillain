@@ -54,6 +54,7 @@ public class DataConstants {
      */
     protected static final String COURSE_FILE_NAME = "src/main/java/com/data/courses.json";
     protected static final String COURSE_ID = "id";
+    protected static final String COURSE_TEACHERS = "teachers";
     protected static final String COURSE_NAME = "name";
     protected static final String COURSE_STUDENTS = "students";
     protected static final String COURSE_ASSIGNED_LESSONS = "assignedLessons";

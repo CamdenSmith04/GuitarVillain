@@ -112,9 +112,9 @@ public class Facade {
             */
     }
 
-    public void playSong(UUID id) {
-        songList.getSong("Fur Elise");
-    }
+    // public void playSong(UUID id) {
+    //     songList.getSong("Fur Elise");
+    // }
 
     // TODO: Should this be a lesson rather than string name
     public void enterLesson(Lesson lesson) { 
@@ -140,11 +140,15 @@ public class Facade {
         this.songList.addSong(song);
     }
 
-    // TODO: String name or course
-    public void makeCourse(String name) {
-        // this should make a new empty song constructor
-        // needs to ask the user for course details and what not
+    public Course makeCourse(String name) {
+        ArrayList<UUID> teachers = new ArrayList<>();
+        teachers.add(currentUser.getId());
+        Course newCourse = new Course(teachers, name);
+        return newCourse;
+    }
 
+    public void addCourse(Course course) {
+        this.courseList.addCourse(course);
     }
    
     public void deleteCourse(Course course) {
