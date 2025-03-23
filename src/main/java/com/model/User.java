@@ -80,7 +80,7 @@ public class User {
     }
 
     public boolean isMatch(User user) {
-        return this.isMatch(user);
+        return this.id.equals(user.getId());
     }
 
     public boolean idIsMatch(UUID id){

@@ -49,7 +49,7 @@ public class UserList {
         return null;
     }
 
-    public User getUser(UUID id){
+    public User getUserById(UUID id){
         for(User current : users) {
             if(current.idIsMatch(id)) {
                 return current;
@@ -66,10 +66,6 @@ public class UserList {
         this.users = users;
     }
 
-    public void UpdateUser(User user){
-        
-    }
-
     public void deleteUser(User user){
         for(User current : users) {
             if(current.isMatch(user)) {
@@ -80,6 +76,10 @@ public class UserList {
     }
 
     public void save(){
+        
+    }
+
+    public void UpdateUser(User user){
         
     }
 
