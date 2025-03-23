@@ -194,24 +194,40 @@ public class Facade {
         return userList.getUsers();
     }
 
+    public User getUserById(UUID user) {
+        return userList.getUserById(user);
+    }
+
     public ArrayList<Song> getSongs() {
         return songList.getSongs();
     }
 
     public Song getSongById(UUID song) {
-        return songList.getSongByID(song);
+        return songList.getSongById(song);
     }
 
     public ArrayList<Module> getModules() {
         return moduleList.getModules();
     }
 
+    public Module getModuleById(UUID module) {
+        return moduleList.getModuleById(module);
+    }
+
     public ArrayList<Lesson> getLessons() {
         return lessonList.getLessons();
     }
 
+    public Lesson getLessonById(UUID lesson) {
+        return lessonList.getLessonById(lesson);
+    }
+
     public ArrayList<Course> getCourses() {
         return courseList.getCourses();
+    }
+
+    public Course getCourseById(UUID course) {
+        return courseList.getCourseById(course);
     }
 
     public User getCurrentUser() {

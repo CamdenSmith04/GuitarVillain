@@ -41,7 +41,8 @@ public class Course {
 
     /**
      * This is a constructor for a new Course. 
-     * @param teacher the UUID of the teacher.
+     * @param teachers the list of UUIDs of the teachers.
+     * @param name the name of the course.
      */
     public Course(ArrayList<UUID> teachers, String name) {
         this.teachers = teachers;
@@ -54,7 +55,7 @@ public class Course {
 
     /**
      * This constructor is used to instantiate an existing course from a JSON.
-     * @param teacher the UUID of the teacher.
+     * @param teacher the list of UUIDs of the teachers.
      * @param name the name of the course.
      * @param students the students in the course.
      * @param assignedLessons the lessons in the course.
@@ -139,7 +140,7 @@ public class Course {
     }
 
     /**
-     * This method is used to add songss to a course.
+     * This method is used to add songs to a course.
      * @param song the UUID of a song to be added to a course.
      */
     public void addSong(UUID song) {
@@ -157,7 +158,7 @@ public class Course {
     /**
      * This method is used to get a song from a course.
      * @param song the UUID of a song being searched for.
-     * @return the UUID of the song if they are found in the class, if not the return is a null UUID.
+     * @return the UUID of the song if they are found in the course, if not the return is a null UUID.
      */
     public UUID getSong(UUID song) {
         for (UUID match: this.assignedSongs) {
@@ -169,11 +170,20 @@ public class Course {
     }
 
     /**
+     * This method is used to see if the course is a match.
+     * @param course the course being compared to this course.
+     * @return true if the courses are a match, otherwise false.
+     */
+    public boolean isMatch(Course course) {
+        return this.id.equals(course.getId());
+    }
+
+    /**
      * This method is used to see if the UUID of this course is a match.
      * @param course the UUID of a course being compared to this course.
      * @return true if the courses have the same UUID, otherwise false.
      */
-    public boolean isMatch(UUID course) {
+    public boolean idIsMatch(UUID course) {
         return this.id.equals(course);
     }
 

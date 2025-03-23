@@ -32,9 +32,9 @@ public class SongList {
         return null;
     }
 
-    public Song getSongByID(UUID song) {
+    public Song getSongById(UUID song) {
         for (Song current: songs) {
-            if(current.getId().equals(song)) {
+            if(current.idIsMatch(song)) {
                 return current;
             }
         }
@@ -51,10 +51,10 @@ public class SongList {
         return songs;
     }
 
-    public void updateSong(Song song) {
-
-    }
-
+    /**
+     * This method deletes/removes a song from the song list if it is found.
+     * @param song the song object to be deleted/removed.
+     */
     public void deleteSong(Song song) {
         for(Song current : this.songs) {
             if(current.isMatch(song)) {
@@ -94,6 +94,10 @@ public class SongList {
             }
         }
         return returnArray;
+    }
+
+    public void updateSong(Song song) {
+
     }
 
     public void save() {

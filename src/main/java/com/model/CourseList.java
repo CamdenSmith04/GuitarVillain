@@ -1,9 +1,11 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * This class keeps track of all the courses in the program and represents the list of courses.
+ * @author Camden Smith
  */
 public class CourseList {
     
@@ -58,6 +60,20 @@ public class CourseList {
     }
 
     /**
+     * This method gets a Course from the list of courses by Id.
+     * @param course the UUID of the course being searched for.
+     * @return the course if it is found in the list of courses.
+     */
+    public Course getCourseById(UUID course) {
+        for (Course current : courses) {
+            if (current.idIsMatch(course)) {
+                return current;
+            }
+        }
+        return null;
+    }
+
+    /**
      * This is a getter method to get the list of courses in the courseList object.
      * @return the list of courses.
      */
@@ -66,24 +82,24 @@ public class CourseList {
     }
 
     /**
-     * TODO: Determine what this method does
-     * @param course
-     */
-    public void updateCourse(Course course) {
-        this.save();
-    }
-
-    /**
      * This method deletes/removes a course from the course list if it is found.
      * @param course the course object to be deleted/removed.
      */
     public void deleteCourse(Course course) {
         for(Course current : courses) {
-            if(current.isMatch(course.getId())) {
+            if(current.isMatch(course)) {
                 courses.remove(current);
                 return;
             }
         }
+    }
+
+    /**
+     * TODO: Determine what this method does
+     * @param course
+     */
+    public void updateCourse(Course course) {
+        this.save();
     }
 
     /**

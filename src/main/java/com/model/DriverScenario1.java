@@ -38,6 +38,9 @@ public class DriverScenario1 {
             userNumber += 1;
         }
 
+        // Remain commented under this is ran for real
+        // facade.logout();
+
 
     }
 
