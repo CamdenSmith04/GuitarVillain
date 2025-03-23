@@ -132,7 +132,7 @@ public class Facade {
 
     public Song composeSong() {
         Song newSong = new Song(currentUser.getId());
-        currentUser.addSong(newSong);
+        currentUser.addSong(newSong.getId());
         return newSong;
     }
 
@@ -187,7 +187,7 @@ public class Facade {
     }
     // TODO: String name or course
     public void beginSong(String title) {
-        songList.getSong(title).play();
+        songList.getSongByTitle(title).play();
     }
 
     public ArrayList<User> getUsers() {

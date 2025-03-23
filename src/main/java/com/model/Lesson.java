@@ -152,5 +152,16 @@ public class Lesson {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
+
+    @Override
+    public String toString() {
+        return ("Title: " + this.title + "\n" + 
+        "Id: " + this.id + "\n" +
+        "Educational Material: " + this.educationalMaterial + "\n" + 
+        "Visual Aid: " + this.visualAid + "\n" + 
+        "Completed: " + this.completed);
+
+    }
+
 }
 
