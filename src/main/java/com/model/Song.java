@@ -7,7 +7,7 @@ import org.jfugue.player.Player;
 
 /**
  * This class represents a Song.
- * @author Camden Smith
+ * @author Andrew Goad
  */
 public class Song {
     
