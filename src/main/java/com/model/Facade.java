@@ -70,12 +70,12 @@ public class Facade {
     public void becomeTeacher() {
         if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)) {
 
-            ArrayList<Course> courses = new ArrayList<>();
+            ArrayList<UUID> courses = new ArrayList<>();
 
             for (Course course : courseList.getCourses()) {
                 for (UUID match : course.getTeachers()){
                     if (currentUser.idIsMatch(match)){
-                        courses.add(course);
+                        courses.add(course.getId());
                     }
                 }
             }
@@ -90,12 +90,12 @@ public class Facade {
     public void becomeStudent() {
         if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)){
 
-            ArrayList<Course> courses = new ArrayList<>();
+            ArrayList<UUID> courses = new ArrayList<>();
 
             for (Course course : courseList.getCourses()) {
                 for (UUID match : course.getStudents()){
                     if (currentUser.idIsMatch(match)){
-                        courses.add(course);
+                        courses.add(course.getId());
                     }
                 }
             }

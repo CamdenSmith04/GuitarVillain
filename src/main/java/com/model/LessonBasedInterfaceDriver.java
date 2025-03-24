@@ -58,9 +58,9 @@ public class LessonBasedInterfaceDriver {
 
         facade.becomeStudent();
 
-        for (Course match : ((Student) facade.getCurrentUser()).getCourses()) {
-            if (match.getName().equals("Music for the Non-major")) {
-                for (UUID lesson : match.getAssignedLessons()) {
+        for (UUID match : ((Student) facade.getCurrentUser()).getCourses()) {
+            if (facade.getCourseById(match).getName().equals("Music for the Non-major")) {
+                for (UUID lesson : facade.getCourseById(match).getAssignedLessons()) {
                     Lesson currLesson = facade.getLessonById(lesson);
                     ((Student) facade.getCurrentUser()).beginLesson(currLesson);
                     System.out.println();
@@ -68,36 +68,7 @@ public class LessonBasedInterfaceDriver {
             }
         }
 
-
-        
-        // ArrayList<Course> courses = facade.getCourses();
-
-        // for (Course match : courses) {
-        //     if (match.getName().equals("Music for the Non-major")){
-        //         facade.setCurrentCourse(match);
-        //     }
-        // }
-
-        // ArrayList<Lesson> assignedLessons = facade.getLessons();
-
-        // for (Lesson match : assignedLessons) {
-        //     facade.getCurrentUser().beginLesson(match);
-        // }
-
-        // ArrayList<UUID> assignedSongs = facade.getCurrentCourse().getAssignedSongs();
-        // for (UUID match : assignedSongs) {
-        //     if (facade.getSongById(match).getTitle().equals("The Distance")){
-        //         facade.setCurrentSong(facade.getSongById(match));
-        //     }
-        // }
-
-        // System.out.println("Playing: " + facade.getCurrentSong().getTitle());
-        // facade.beginSong(facade.getCurrentSong().getTitle());
-        
-        // System.out.println(newCourse.toString());
-
-
-        // facade.logout();
+        facade.logout();
     }
     
 }
