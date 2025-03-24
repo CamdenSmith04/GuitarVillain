@@ -20,8 +20,7 @@ public class DriverScenario2 {
 
         facade.logIn("camdensmith", "password123");
 
-        // TODO
-        // Convert user to teacher - make sure makeCourse in facade ties to teacher class if user is a teacher (method specific to teacher)
+        facade.becomeTeacher();
 
         Course newCourse = facade.makeCourse("Music for the Non-major");
 
@@ -51,7 +50,7 @@ public class DriverScenario2 {
 
         ArrayList<Song> songs = facade.getSongs();
 
-        String songToBeAdded = "Cool New Song";
+        String songToBeAdded = "Fur Elise";
 
         for (Song match : songs) {
             if (match.getTitle().equals(songToBeAdded)) {
@@ -61,20 +60,24 @@ public class DriverScenario2 {
 
         System.out.println(newCourse.toString());
 
-        // facade.logout();
+        facade.logout();
 
-        // facade.logIn("abbyholdcraft", "thegrasstoucher");
+        facade.logIn("abbyholdcraft", "thegrasstoucher");
 
-        // TODO: Have this user be a student so they can access their courses.
-        // Access the course they are in
+        facade.becomeStudent();
+        facade.viewCourse(newCourse);
 
-        // TODO: Play the song from their course.
-        // Play the song
 
-        // TODO: Mark the song as completed.
-        // Mark the song as completed.
+        for (Song match : songs) {
+            if (match.getTitle().equals("Fur Elise")) {
+                // How do you get a song with an ID?
+                // facade.setCurrentSong(facade.getCurrentCourse().getSong(songs.get(0).getId()));
+            }
+        }
+        facade.beginSong(facade.getCurrentSong().getTitle());
+        facade.getCurrentSong().setCompleted(true);
 
-        // facade.logout();
+        facade.logout();
 
     }
 
