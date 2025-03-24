@@ -54,21 +54,21 @@ public class LessonBasedInterfaceDriver {
 
         facade.logout();
 
-        facade.logIn("abbyholdcraft", "thegrasstoucher");
+        // facade.logIn("abbyholdcraft", "thegrasstoucher");
 
-        facade.becomeStudent();
+        // facade.becomeStudent();
 
-        for (UUID match : ((Student) facade.getCurrentUser()).getCourses()) {
-            if (facade.getCourseById(match).getName().equals("Music for the Non-major")) {
-                for (UUID lesson : facade.getCourseById(match).getAssignedLessons()) {
-                    Lesson currLesson = facade.getLessonById(lesson);
-                    ((Student) facade.getCurrentUser()).beginLesson(currLesson);
-                    System.out.println();
-                }
-            }
-        }
+        // for (UUID match : ((Student) facade.getCurrentUser()).getCourses()) {
+        //     if (facade.getCourseById(match).getName().equals("Music for the Non-major")) {
+        //         for (UUID lesson : facade.getCourseById(match).getAssignedLessons()) {
+        //             Lesson currLesson = facade.getLessonById(lesson);
+        //             ((Student) facade.getCurrentUser()).beginLesson(currLesson);
+        //             System.out.println();
+        //         }
+        //     }
+        // }
 
-        facade.logout();
+        // facade.logout();
     }
     
 }
