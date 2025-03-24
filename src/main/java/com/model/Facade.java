@@ -68,16 +68,39 @@ public class Facade {
      * Makes user a new teacher
      */
     public void becomeTeacher() {
-        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student))
-            currentUser = new Teacher(currentUser, null);
+        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)) {
+
+            ArrayList<Course> courses = new ArrayList<>();
+
+            for (Course course : courseList.getCourses()) {
+                for (UUID match : course.getTeachers()){
+                    if (currentUser.idIsMatch(match)){
+                        courses.add(course);
+                    }
+                }
+            }
+
+            this.currentUser = new Teacher(currentUser, courses);
+        }
     }
 
     /**
      * Makes user a new student
      */
     public void becomeStudent() {
-        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student))
-            currentUser = new Student(currentUser, null);
+        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)){
+
+            ArrayList<Course> courses = new ArrayList<>();
+
+            for (Course course : courseList.getCourses()) {
+                for (UUID match : course.getStudents()){
+                    if (currentUser.idIsMatch(match)){
+                        courses.add(course);
+                    }
+                }
+            }
+            this.currentUser = new Student(currentUser, courses);
+        }
     }
 
     /**
@@ -147,6 +170,12 @@ public class Facade {
     }
 
     public void addCourse(Course course) {
+        for (Course match : this.courseList.getCourses()) {
+            if (match.getName().equals(course.getName())) {
+                System.out.println("Course with this name already exists.");
+                return;
+            }
+        }
         this.courseList.addCourse(course);
     }
    
@@ -251,6 +280,10 @@ public class Facade {
 
     public void setCurrentSong(Song song) {
         this.currentSong = song;
+    }
+
+    public void setCurrentCourse(Course course) {
+        this.currentCourse = course;
     }
 
 }
