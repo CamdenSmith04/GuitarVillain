@@ -67,14 +67,9 @@ public class DriverScenario2 {
         facade.becomeStudent();
         facade.viewCourse(newCourse);
 
-
-        for (Song match : songs) {
-            if (match.getTitle().equals("Fur Elise")) {
-                // How do you get a song with an ID?
-                // facade.setCurrentSong(facade.getCurrentCourse().getSong(songs.get(0).getId()));
-            }
-        }
-        facade.beginSong(facade.getCurrentSong().getTitle());
+        System.out.println("Playing: Fur Elise");
+        facade.beginSong("Fur Elise");
+        
         facade.getCurrentSong().setCompleted(true);
 
         facade.logout();

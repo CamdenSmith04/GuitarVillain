@@ -132,7 +132,7 @@ public class DataWriter extends DataConstants {
             return objectToJson(value);
         } else if (value instanceof Instrument) {
             Instrument instrument = (Instrument)value;
-            return instrument.getName().toString();
+            return instrument.toString();
         } else {
             return value.toString();
         }

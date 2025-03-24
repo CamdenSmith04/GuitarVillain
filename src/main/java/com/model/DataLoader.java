@@ -109,10 +109,7 @@ public class DataLoader extends DataConstants{
             String genre = (String)genreObj;
             genres.add(Genre.valueOf(genre));
         }
-
-        // Converts name enum to String to be passed to instrument
-        Name name = Name.valueOf((String) songJSON.get(SONG_INSTRUMENT));
-        Instrument instrument = new Instrument(name);
+        Instrument instrument = Instrument.valueOf((String) songJSON.get(SONG_INSTRUMENT));
 
         Visibility visibility = Visibility.valueOf((String) songJSON.get(SONG_VISIBILITY));
         int beatsPerMinute = ((Number) songJSON.get(SONG_BEATS_PER_MINUTE)).intValue();
