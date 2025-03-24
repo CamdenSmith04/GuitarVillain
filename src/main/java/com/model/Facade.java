@@ -121,9 +121,8 @@ public class Facade {
 
     }
 
-    // TODO: Should this be a course rather than a string name
     public void viewCourse(Course course) {
-
+        this.currentCourse = course;
     }
 
     public void viewFriendProfile(User user) {
