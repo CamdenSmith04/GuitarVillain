@@ -45,4 +45,8 @@ public class Student extends User{
     public boolean isMatch(Course course) {
         return this.id.equals(course.getId());
     }
+
+    public ArrayList<Course> getCourses() {
+        return this.courses;
+    }
 }
