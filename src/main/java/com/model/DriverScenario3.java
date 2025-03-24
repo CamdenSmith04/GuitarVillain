@@ -15,7 +15,7 @@ public class DriverScenario3 {
         for (UUID friend : current_user.getFriends()) {
             for (User user : users) { 
                 if (user.idIsMatch(friend)) {
-                    System.out.println(user.getUsername());
+                    System.out.println("Friend: " + user.getUsername());
                 }
             }
         }
@@ -29,7 +29,7 @@ public class DriverScenario3 {
         newSong.setRating(5.00);
         newSong.addGenre(Genre.POP);
         newSong.addGenre(Genre.ROCK);
-        newSong.setInstrument(new Instrument(Name.GUITAR));
+        newSong.setInstrument(Instrument.GUITAR);
         newSong.setVisibility(Visibility.PUBLIC);
         newSong.setBeatsPerMinute(120);
         newSong.setTimeSignature(new TimeSignature(4,4));
@@ -96,8 +96,12 @@ public class DriverScenario3 {
         // Add song to songList
         facade.addSong(newSong);
 
+        System.out.println();
+
         // Play song
-        facade.beginSong("Cool New Song");
+        String song = "Cool New Song";
+        System.out.println("Now playing: "+ song);
+        facade.beginSong(song);
 
         // facade.logout();
         

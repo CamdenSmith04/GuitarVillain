@@ -431,7 +431,7 @@ public class Song {
                 "AuthorId: " + this.authorId + "\n" + 
                 "Rating: " + this.rating + "\n" + 
                 "Genres: " + this.genres + "\n" + 
-                "Instrument: " + this.instrument.getName() + "\n" + 
+                "Instrument: " + this.instrument + "\n" + 
                 "Visibility: " + this.visibility +  "\n" +
                 "BPM: " + this.beatsPerMinute + "\n" + 
                 "Time Signature: " + this.timeSignature.toString() + "\n" +
