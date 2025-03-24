@@ -1,1 +1,23 @@
-[{"educationalMaterial":"A music lesson typically begins with warm-ups, such as scales or rhythm exercises, to develop technique. The instructor then reviews previous material and introduces new concepts, such as chords, sight-reading, or music theory. Students practice pieces suited to their skill level, receiving feedback on tone, timing, and expression.","completed":true,"id":"e8810e9c-9eed-4ee3-8c14-fc22a5bfc289","title":"Lesson 1","visualAid":"VisualAid1.png"},{"educationalMaterial":"Depending on the instrument, lessons may focus on finger positioning, breath control, or bowing techniques. Ear training and improvisation can also be included. Regular practice is essential for progress. The lesson ends with a summary of key points and assignments for the next session, helping students refine their musical abilities.","completed":false,"id":"c09443ad-877e-4e4d-abd4-65d9e9dd1dee","title":"Lesson 2","visualAid":"VisualAid2.png"},{"educationalMaterial":"A music lesson is a structured session where students develop their musical skills through guided instruction. It often begins with warm-up exercises, such as scales, rhythm drills, or vocal warm-ups, to improve technique and dexterity.","completed":false,"id":"9586960f-1bf0-465c-97c4-a1a980b7b52f","title":"Lesson 3","visualAid":"VisualAid3.png"}]
+[
+    {
+        "educationalMaterial": "A music lesson typically begins with warm-ups, such as scales or rhythm exercises, to develop technique. The instructor then reviews previous material and introduces new concepts, such as chords, sight-reading, or music theory. Students practice pieces suited to their skill level, receiving feedback on tone, timing, and expression.",
+        "completed": true,
+        "id": "e8810e9c-9eed-4ee3-8c14-fc22a5bfc289",
+        "title": "Lesson 1",
+        "visualAid": "VisualAid1.png"
+    },
+    {
+        "educationalMaterial": "Depending on the instrument, lessons may focus on finger positioning, breath control, or bowing techniques. Ear training and improvisation can also be included. Regular practice is essential for progress. The lesson ends with a summary of key points and assignments for the next session, helping students refine their musical abilities.",
+        "completed": false,
+        "id": "c09443ad-877e-4e4d-abd4-65d9e9dd1dee",
+        "title": "Lesson 2",
+        "visualAid": "VisualAid2.png"
+    },
+    {
+        "educationalMaterial": "A music lesson is a structured session where students develop their musical skills through guided instruction. It often begins with warm-up exercises, such as scales, rhythm drills, or vocal warm-ups, to improve technique and dexterity.",
+        "completed": false,
+        "id": "9586960f-1bf0-465c-97c4-a1a980b7b52f",
+        "title": "Lesson 3",
+        "visualAid": "VisualAid3.png"
+    }
+]

@@ -1,6 +1,7 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.UUID;
 /**
  * This class represents a student.
  * @author Bradley Alford
@@ -10,14 +11,14 @@ public class Student extends User{
     /**
      * This is the list of courses of which the student is a member.
      */
-    private ArrayList<Course> courses;
+    private ArrayList<UUID> courses;
 
     /**
      * This is a constructor for a new student.
      * @param user The base user created before assigning as student.
      * @param courses The list of courses for the student.
      */
-    public Student(User user, ArrayList<Course> courses) {
+    public Student(User user, ArrayList<UUID> courses) {
         super(user.getId(), user.getUsername(), user.getPassword(), user.getExperience(), user.getPoints(), user.getStreak(), user.getSecurityQuestion(), user.getSecurityAnswer(), user.getFriends(), user.getSongs());
         this.courses = courses;
     }
@@ -46,7 +47,7 @@ public class Student extends User{
         return this.id.equals(course.getId());
     }
 
-    public ArrayList<Course> getCourses() {
+    public ArrayList<UUID> getCourses() {
         return this.courses;
     }
 }

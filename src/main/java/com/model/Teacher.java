@@ -11,14 +11,14 @@ public class Teacher extends User {
     /**
      * The list of courses the teacher is a member of.
      */
-    private ArrayList<Course> courses;
+    private ArrayList<UUID> courses;
 
     /**
      * A constructor for a teacher.
      * @param user The user the teacher is based on.
      * @param courses The courses of which the teacher is a member.
      */
-    public Teacher(User user, ArrayList<Course> courses){
+    public Teacher(User user, ArrayList<UUID> courses){
         super(user.getId(), user.getUsername(), user.getPassword(), user.getExperience(), 
         user.getPoints(), user.getStreak(), user.getSecurityQuestion(), user.getSecurityAnswer(), 
         user.getFriends(), user.getSongs());
@@ -31,19 +31,20 @@ public class Teacher extends User {
      * @param name The name of the course.
      */
     public void makeCourse(ArrayList<UUID> teachers, String name) {
-        this.courses.add(new Course(teachers, name));
+        Course newCourse = new Course(teachers, name);
+        this.courses.add(newCourse.getId());
     }
 
     /**
      * The teacher deletes a course.
      * @param course The course to be deleted.
      */
-    public void deleteCourse(Course course) {
+    public void deleteCourse(UUID course) {
         this.courses.remove(course);
     }
 
     // Remove? Do we need one seperate from User's?
-    public boolean isMatch(Course course) {
-        return this.id.equals(course.getId());
+    public boolean isMatch(UUID course) {
+        return this.id.equals(course);
     }
 }
