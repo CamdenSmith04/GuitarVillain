@@ -1,31 +1,50 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
+/**
+ * This class represents a teacher.
+ * @author Bradley Alford
+ */
 public class Teacher extends User {
-    
-    private ArrayList<Course> courses;
+    /**
+     * The list of courses the teacher is a member of.
+     */
+    private ArrayList<UUID> courses;
 
-    public Teacher(User user, ArrayList<Course> courses){
+    /**
+     * A constructor for a teacher.
+     * @param user The user the teacher is based on.
+     * @param courses The courses of which the teacher is a member.
+     */
+    public Teacher(User user, ArrayList<UUID> courses){
         super(user.getId(), user.getUsername(), user.getPassword(), user.getExperience(), 
         user.getPoints(), user.getStreak(), user.getSecurityQuestion(), user.getSecurityAnswer(), 
         user.getFriends(), user.getSongs());
         this.courses = courses;
     }
 
-    /*UUID id, String username, String password, Experience experience, int points, 
-                    int streak, SecurityQuestion securityQuestion, String securityAnswer, 
-                    ArrayList<UUID> friends, ArrayList<Song> songs */
-
-    public void makeCourse(String name) {
-
+    /**
+     * This creates a cnew course.
+     * @param teachers The teachers for the course.
+     * @param name The name of the course.
+     */
+    public void makeCourse(ArrayList<UUID> teachers, String name) {
+        Course newCourse = new Course(teachers, name);
+        this.courses.add(newCourse.getId());
     }
 
-    public void deleteCourse(Course course) {
+    /**
+     * The teacher deletes a course.
+     * @param course The course to be deleted.
+     */
+    public void deleteCourse(UUID course) {
         this.courses.remove(course);
     }
 
-    public boolean isMatch(Course course) {
-        return this.id.equals(course.getId());
+    // Remove? Do we need one seperate from User's?
+    public boolean isMatch(UUID course) {
+        return this.id.equals(course);
     }
 }

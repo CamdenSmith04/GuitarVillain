@@ -7,6 +7,7 @@ public class Chord {
     private ArrayList<Note> notes;
     private String chordShape;
     private String name;
+    
 
     public Chord(ArrayList<Note> notes, String chordShape, String name) {
         this.notes = notes;
@@ -22,7 +23,6 @@ public class Chord {
         this.notes.remove(note);
     }
 
-    // TODO: Not sure what this is supposed to be
     public void play(Instrument instrument, int octave) {
 
     }

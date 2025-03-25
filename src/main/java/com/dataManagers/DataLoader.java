@@ -1,36 +1,80 @@
-package com.model;
+package com.dataManagers;
 import java.util.ArrayList;
 import java.util.UUID;
 import java.io.File;
 import java.io.FileReader;
+import java.lang.module.ModuleDescriptor;
 import java.util.jar.Attributes;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import com.model.*;
+import com.model.Module;
+
 import javafx.scene.image.Image;
 
 
 public class DataLoader extends DataConstants{
-
     public static Module parseModule(JSONObject moduleJSON){
-        UUID id = UUID.fromString((String)moduleJSON.get(SONG_ID));
-        String title = (String)moduleJSON.get(SONG_TITLE);
+        UUID id = UUID.fromString((String)moduleJSON.get(MODULE_ID));
+        String title = (String)moduleJSON.get(MODULE_TITLE);
+
+      
+        ArrayList<UUID> lessons = new ArrayList<>();
         JSONArray lessonsJSON = (JSONArray) moduleJSON.get(MODULE_LESSONS);
-        ArrayList<Lesson> lessons = new ArrayList<>();
-        ArrayList<Song> songs = new ArrayList<>();
+        for (Object obj: lessonsJSON) {
+            UUID lessonId = UUID.fromString((String) obj);
+            lessons.add(lessonId);
+        }
+
+        ArrayList<UUID> songs = new ArrayList<>();
         JSONArray songsJSON = (JSONArray) moduleJSON.get(MODULE_SONGS);
-
-        for (Object lessonObj : lessonsJSON) {
-            lessons.add(parseLesson((JSONObject) lessonObj));
-            
-        }
-        for (Object songObj : songsJSON) {
-            songs.add(parseSong((JSONObject) songObj));
+        for (Object obj: songsJSON) {
+            UUID songId = UUID.fromString((String) obj);
+            songs.add(songId);
         }
 
-        return new Module(id, title, lessons, songsJSON);
+        double progress = ((Number) moduleJSON.get(MODULE_PROGRESS)).doubleValue();
+
+        return new Module(id, title, lessons, songs, progress);
+    }
+
+    public static Course parseCourse(JSONObject courseJSON){
+        UUID id = UUID.fromString((String) courseJSON.get(COURSE_ID));
+        String name = (String)courseJSON.get(COURSE_NAME);
+
+        ArrayList<UUID> teachers = new ArrayList<>();
+        JSONArray teachersJSON = (JSONArray) courseJSON.get(COURSE_TEACHERS);
+        for (Object obj: teachersJSON) {
+            UUID teacherId = UUID.fromString((String) obj);
+            teachers.add(teacherId);
+        }
+
+        ArrayList<UUID> students = new ArrayList<>();
+        JSONArray studentsJSON = (JSONArray) courseJSON.get(COURSE_STUDENTS);
+        for (Object obj: studentsJSON) {
+            UUID studentId = UUID.fromString((String) obj);
+            students.add(studentId);
+        }
+
+        ArrayList<UUID> lessons = new ArrayList<>();
+        JSONArray assignedLessons = (JSONArray) courseJSON.get(COURSE_ASSIGNED_LESSONS);
+        for (Object obj: assignedLessons) {
+            UUID lessonId = UUID.fromString((String) obj);
+            lessons.add(lessonId);
+        }
+
+        ArrayList<UUID> songs = new ArrayList<>();
+        JSONArray assignedSongs = (JSONArray) courseJSON.get(COURSE_ASSIGNED_SONGS);
+        for (Object obj: assignedSongs) {
+            UUID songId = UUID.fromString((String) obj);
+            songs.add(songId);
+        }
+
+        return new Course(teachers, name, students, lessons, songs, id);
+
     }
 
     public static Lesson parseLesson(JSONObject lessonJSON){
@@ -38,7 +82,8 @@ public class DataLoader extends DataConstants{
         String title = (String) lessonJSON.get(LESSON_TITLE);
         String educationalMaterial = (String) lessonJSON.get(LESSON_EDUCATIONAL_MATERIAL);
         String visualAidPath = (String) lessonJSON.get(LESSON_VISUAL_AID);
-        return new Lesson(title, educationalMaterial, visualAidPath, id);
+        boolean completed = (boolean) lessonJSON.get(LESSON_COMPLETED);
+        return new Lesson(title, educationalMaterial, visualAidPath, id, completed);
     }
 
     public static Measure parseMeasure(JSONObject measureJSON){
@@ -55,9 +100,9 @@ public class DataLoader extends DataConstants{
         UUID songId = UUID.fromString((String) songJSON.get(SONG_ID));
         String songTitle = (String) songJSON.get(SONG_TITLE);
         String songAuthor = (String) songJSON.get(SONG_AUTHOR);
-        UUID userCreated = null;
-        if ( songJSON.get(SONG_USER_CREATED) != null ){
-            userCreated = UUID.fromString((String) songJSON.get(SONG_USER_CREATED));
+        UUID authorId = null;
+        if ( songJSON.get(SONG_AUTHOR_ID) != null ){
+            authorId = UUID.fromString((String) songJSON.get(SONG_AUTHOR_ID));
         }
         double songRating = ((Number) songJSON.get(SONG_RATING)).doubleValue();
         ArrayList<Genre> genres = new ArrayList<>();
@@ -65,14 +110,9 @@ public class DataLoader extends DataConstants{
 
         for (Object genreObj : genresArray) {
             String genre = (String)genreObj;
-            genre = genre.toUpperCase();
             genres.add(Genre.valueOf(genre));
         }
-
-        // Converts name enum to String to be passed to instrument
-        Name name = Name.valueOf((String) songJSON.get(SONG_INSTRUMENT));
-        String instrumentName = name.toString();
-        Instrument instrument = new Instrument(instrumentName);
+        Instrument instrument = Instrument.valueOf((String) songJSON.get(SONG_INSTRUMENT));
 
         Visibility visibility = Visibility.valueOf((String) songJSON.get(SONG_VISIBILITY));
         int beatsPerMinute = ((Number) songJSON.get(SONG_BEATS_PER_MINUTE)).intValue();
@@ -102,7 +142,7 @@ public class DataLoader extends DataConstants{
         }
     
 
-        return(new Song(songId, songTitle, songAuthor, userCreated, songRating, genres, instrument, visibility, 
+        return(new Song(songId, songTitle, songAuthor, authorId, songRating, genres, instrument, visibility, 
                     beatsPerMinute, timeSignature, measures, lyrics, speed, completed));
     }
 
@@ -110,27 +150,26 @@ public class DataLoader extends DataConstants{
         UUID id = UUID.fromString((String)userJSON.get(SONG_ID));
         String username = (String)userJSON.get(USER_USERNAME);
         String password = (String)userJSON.get(USER_PASSWORD);
-        Experience experience = Experience.getExperience((String)userJSON.get(USER_EXPERIENCE));
-        SecurityQuestion securityQuestion = (SecurityQuestion)userJSON.get(USER_SECURITY_QUESTION);
+        Experience experience = Experience.valueOf((String)userJSON.get(USER_EXPERIENCE));
+        SecurityQuestion securityQuestion = SecurityQuestion.valueOf((String)userJSON.get(USER_SECURITY_QUESTION));
         String securityAnswer = (String)userJSON.get(USER_SECURITY_ANSWER);
-
+        
         int points = ((Number)userJSON.get(USER_POINTS)).intValue();
         int streak = ((Number)userJSON.get(USER_STREAK)).intValue();
 
-        ArrayList<Song> songs = new ArrayList<>();
-        /* 
-        JSONArray songsJSON = (JSONArray)userJSON.get(USER_SONGS);
-        for (Object songObj : songsJSON) {
-            songs.add(parseSong((JSONObject) songObj));
-        }
-        */
-
         ArrayList<UUID> friends = new ArrayList<>();
         JSONArray friendsJSON = (JSONArray)userJSON.get(USER_FRIENDS);
-        for (Object friendObj : friendsJSON) {
-            UUID friendUUID = UUID.fromString((String)friendObj);
+        for (Object obj: friendsJSON) {
+            UUID friendId = UUID.fromString((String) obj);
+            friends.add(friendId);
         }
 
+        ArrayList<UUID> songs = new ArrayList<>();
+        JSONArray songsJSON = (JSONArray)userJSON.get(USER_SONGS);
+        for (Object obj: songsJSON) {
+            UUID song = UUID.fromString((String) obj);
+            songs.add(song);
+        }
 
         return new User(id, username, password, experience, points, streak, securityQuestion, securityAnswer, friends, songs);
     }
@@ -160,13 +199,15 @@ public class DataLoader extends DataConstants{
         try {
             FileReader reader = new FileReader(SONG_FILE_NAME);
             JSONArray songsJSON = (JSONArray)new JSONParser().parse(reader);
+            //System.out.println(parseSong((JSONObject)songsJSON.get(0)));
             for(int i = 0; i<songsJSON.size(); i++){
                 songs.add(parseSong((JSONObject)songsJSON.get(i)));
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
+        //System.out.print("Songs: ");
+        // System.out.print(songs);
         return songs;
     }
 
@@ -190,8 +231,9 @@ public class DataLoader extends DataConstants{
             FileReader reader = new FileReader(MODULE_FILE_NAME);
             JSONArray modulesJSON = (JSONArray)new JSONParser().parse(reader);
             
-            for(int i = 0; i<modulesJSON.size(); i++){
-                modules.add(parseModule((JSONObject)modulesJSON.get(i)));
+            for(Object obj : modulesJSON){
+                JSONObject moduleJSON = (JSONObject) obj;
+                modules.add(parseModule(moduleJSON));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -206,9 +248,7 @@ public class DataLoader extends DataConstants{
 
             for (Object obj : coursesJSON) {
                 JSONObject courseJSON = (JSONObject) obj;
-                UUID id = UUID.fromString((String) courseJSON.get(COURSE_ID));
-                String name = (String) courseJSON.get(COURSE_NAME);
-                courses.add(new Course(name, id));
+                courses.add(parseCourse(courseJSON));
             }
         } catch (Exception e) {
             e.printStackTrace();
