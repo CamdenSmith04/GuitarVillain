@@ -125,6 +125,13 @@ public class UserList {
         }
     }
 
+    /**
+     * This method will reset a users password.
+     * @param username the user of the user
+     * @param securityAnswer the answer the to user's security question
+     * @param newPassword the user's new password
+     * @return the user whose password was changed.
+     */
     public User resetPassword(String username, String securityAnswer, String newPassword) {
         for (User user : users) {
             if (user.isMatch(username)) {
