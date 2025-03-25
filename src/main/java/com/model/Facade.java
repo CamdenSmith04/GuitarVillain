@@ -111,6 +111,7 @@ public class Facade {
 
     /**
      * This method makes a user a teacher class.
+     * @return true or false if was successful
      */
     public boolean becomeTeacher() {
         if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)) {
@@ -132,6 +133,7 @@ public class Facade {
 
     /**
      * This method makes a user a student class.
+     * @return true or false if successful
      */
     public boolean becomeStudent() {
         if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)){
@@ -152,6 +154,7 @@ public class Facade {
 
     /**
      * This method logs the user out and clears all the stored information.
+     * @return true or false if logout was successful or not.
      */
     public boolean logout() {
         try {
