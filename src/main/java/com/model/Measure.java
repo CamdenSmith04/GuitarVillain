@@ -1,17 +1,20 @@
 package com.model;
 
 import java.util.ArrayList;
+
 /**
-* @author Andrew Goad
-* This class represents a measure in a song
-*/
+ * This class represents a measure in a song.
+ * @author Andrew Goad
+ */
 public class Measure {
+    
     /**
-    * length of the measure in eighth notes 
-    */    
+     * This represents the length of a measure.
+     */
     private int length;
+
     /**
-     * array of chords to be played in the measure
+     * This represents the list of chords in a measure.
      */
     private ArrayList<Chord> chords;
 
@@ -54,6 +57,10 @@ public class Measure {
      * @return ArrayList of chords in the measure
      */
 
+    /**
+     * This method gets the array list of chords of a measure.
+     * @return the chords in a measure.
+     */
     public ArrayList<Chord> getChords() {
         return this.chords;
     }
@@ -71,6 +78,10 @@ public class Measure {
      * @param chords new chords arraylist
      */
 
+    /**
+     * This method sets the list of chords of a measure.
+     * @param chords the list of chords that will be set.
+     */
     public void setChords(ArrayList<Chord> chords) {
         this.chords = chords;
     }

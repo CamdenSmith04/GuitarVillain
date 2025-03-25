@@ -80,6 +80,28 @@ public class Course {
     }
 
     /**
+     * This method is used to remove a teacher from a course.
+     * @param teacher the UUID of a user to be removed from a course.
+     */
+    public void removeTeacher(UUID teacher) {
+        this.teachers.remove(teacher);
+    }
+
+     /**
+     * This method is used to get a teacher from a course.
+     * @param teacher the UUID of a teacher being searched for.
+     * @return the UUID of the teacher if they are found in the class, if not the return is a null UUID.
+     */
+    public UUID getTeacher(UUID teacher) {
+        for (UUID match: this.teachers) {
+            if (match == teacher){
+                return match;
+            }
+        }
+        return null;
+    }
+
+    /**
      * This method is used to add students to a course.
      * @param student the UUID of a user to be added to a course.
      */
