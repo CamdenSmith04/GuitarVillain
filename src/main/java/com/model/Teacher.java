@@ -42,9 +42,4 @@ public class Teacher extends User {
     public void deleteCourse(UUID course) {
         this.courses.remove(course);
     }
-
-    // Remove? Do we need one seperate from User's?
-    public boolean isMatch(UUID course) {
-        return this.id.equals(course);
-    }
 }
