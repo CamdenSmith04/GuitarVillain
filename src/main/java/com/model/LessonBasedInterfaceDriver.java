@@ -1,21 +1,9 @@
-package com.scenarios;
+package com.model;
+
 import java.util.ArrayList;
+import java.util.UUID;
 
-import com.facade.*;
-import com.model.*;
-
-public class DriverScenario2 {
-    
-    // Log-in as teacher
-    // Create a course
-    // Add students to the course
-    // Assign a song to students
-    // Log-out
-
-    // Log-in as student
-    // Access the song through the course
-    // Play the song
-    // Mark song as completed in course
+public class LessonBasedInterfaceDriver {
 
     public static void main(String[] args) {
         
@@ -41,6 +29,7 @@ public class DriverScenario2 {
 
         ArrayList<String> lessonsToBeAdded = new ArrayList<>();
         lessonsToBeAdded.add("Lesson 1");
+        lessonsToBeAdded.add("Lesson 2");
         lessonsToBeAdded.add("Lesson 3");
 
         for (Lesson lesson : lessons) {
@@ -53,7 +42,7 @@ public class DriverScenario2 {
 
         ArrayList<Song> songs = facade.getSongs();
 
-        String songToBeAdded = "Fur Elise";
+        String songToBeAdded = "The Distance";
 
         for (Song match : songs) {
             if (match.getTitle().equals(songToBeAdded)) {
@@ -61,22 +50,25 @@ public class DriverScenario2 {
             }
         }
 
-        System.out.println(newCourse.toString());
+        facade.addCourse(newCourse);
 
         facade.logout();
 
-        facade.logIn("abbyholdcraft", "thegrasstoucher");
+        // facade.logIn("abbyholdcraft", "thegrasstoucher");
 
-        facade.becomeStudent();
-        facade.viewCourse(newCourse);
+        // facade.becomeStudent();
 
-        System.out.println("Playing: Fur Elise");
-        facade.beginSong("Fur Elise");
-        
-        facade.getCurrentSong().setCompleted(true);
+        // for (UUID match : ((Student) facade.getCurrentUser()).getCourses()) {
+        //     if (facade.getCourseById(match).getName().equals("Music for the Non-major")) {
+        //         for (UUID lesson : facade.getCourseById(match).getAssignedLessons()) {
+        //             Lesson currLesson = facade.getLessonById(lesson);
+        //             ((Student) facade.getCurrentUser()).beginLesson(currLesson);
+        //             System.out.println();
+        //         }
+        //     }
+        // }
 
-        facade.logout();
-
+        // facade.logout();
     }
-
+    
 }

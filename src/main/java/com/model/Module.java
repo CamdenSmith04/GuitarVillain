@@ -212,4 +212,14 @@ public class Module {
     public void setProgress(double progress) {
         this.progress = progress;
     }
+
+    @Override
+    public String toString() {
+        return ("Title: " + this.title + "\n" + 
+        "Id: " + this.id + "\n" +
+        "Lessons: " + this.lessons + "\n" + 
+        "Songs: " + this.songs + "\n" + 
+        "Progress: " + this.progress);
+    }
+
 }

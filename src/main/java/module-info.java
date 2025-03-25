@@ -3,6 +3,7 @@ module com.music {
     requires javafx.fxml;
     requires json.simple;
     requires jfugue;
+    requires java.desktop;
 
     opens com.program to javafx.fxml;
     exports com.program;

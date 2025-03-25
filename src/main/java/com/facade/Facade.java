@@ -67,9 +67,19 @@ public class Facade {
      * Makes user a new teacher
      */
     public void becomeTeacher() {
-        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)){
-            currentUser = new Teacher(currentUser, null);
-            
+        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)) {
+
+            ArrayList<UUID> courses = new ArrayList<>();
+
+            for (Course course : courseList.getCourses()) {
+                for (UUID match : course.getTeachers()){
+                    if (currentUser.idIsMatch(match)){
+                        courses.add(course.getId());
+                    }
+                }
+            }
+
+            this.currentUser = new Teacher(currentUser, courses);
         }
     }
 
@@ -77,8 +87,19 @@ public class Facade {
      * Makes user a new student
      */
     public void becomeStudent() {
-        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student))
-            currentUser = new Student(currentUser, null);
+        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)){
+
+            ArrayList<UUID> courses = new ArrayList<>();
+
+            for (Course course : courseList.getCourses()) {
+                for (UUID match : course.getStudents()){
+                    if (currentUser.idIsMatch(match)){
+                        courses.add(course.getId());
+                    }
+                }
+            }
+            this.currentUser = new Student(currentUser, courses);
+        }
     }
 
     /**
@@ -120,9 +141,8 @@ public class Facade {
 
     }
 
-    // TODO: Should this be a course rather than a string name
     public void viewCourse(Course course) {
-
+        this.currentCourse = course;
     }
 
     public void viewFriendProfile(User user) {
@@ -131,7 +151,7 @@ public class Facade {
 
     public Song composeSong() {
         Song newSong = new Song(currentUser.getId());
-        currentUser.addSong(newSong);
+        currentUser.addSong(newSong.getId());
         return newSong;
     }
 
@@ -147,6 +167,12 @@ public class Facade {
     }
 
     public void addCourse(Course course) {
+        for (Course match : this.courseList.getCourses()) {
+            if (match.getName().equals(course.getName())) {
+                System.out.println("Course with this name already exists.");
+                return;
+            }
+        }
         this.courseList.addCourse(course);
     }
    
@@ -186,7 +212,7 @@ public class Facade {
     }
     // TODO: String name or course
     public void beginSong(String title) {
-        songList.getSong(title).play();
+        songList.getSongByTitle(title).play();
     }
 
     public void beginSong(UUID id) {
@@ -257,10 +283,13 @@ public class Facade {
         this.currentSong = song;
     }
 
-    @Override
     public void enterStudentMode() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'enterStudentMode'");
+    }
+
+    public void setCurrentCourse(Course course) {
+        this.currentCourse = course;
     }
 
 }
