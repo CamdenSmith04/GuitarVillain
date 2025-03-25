@@ -1,6 +1,7 @@
 package com.model;
 
 /**
+ * @author Bradley Alford
  * This enumeration represents different musical experience levels
  */
 

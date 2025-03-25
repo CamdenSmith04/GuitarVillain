@@ -1,5 +1,10 @@
 package com.model;
 
+/**
+ * @author Camden Smith
+ * This enum represents the different genres that can be associated with a song
+ */
+
 public enum Genre {
     ROCK("Rock"),
     JAZZ("Jazz"),
@@ -8,16 +13,31 @@ public enum Genre {
     FUNK("Funk"),
     RAP("Rap"),
     CLASSICAL("Classical");
-    
+    /**
+     * the label representing the genre
+     */
     private final String label;
+    /**
+     * Constructor for the enum
+     * @param label The label representing the genre
+     */
     
     private Genre(String label) {
         this.label = label;
     }
 
+    /**
+     * accessor for the label
+     * @return label representing the genre
+     */
     public String getLabel() {
         return label;
     }
+      /**
+     * returns an object for each genre
+     * @param label label to be returned
+     * @return returns the genre associated with label parameter, if label does not match, returns null
+     */
     public static Genre getGenre(String label) {
         if (label.equals(ROCK.label))
             return ROCK;
