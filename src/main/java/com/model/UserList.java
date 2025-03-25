@@ -158,4 +158,17 @@ public class UserList {
         return null;
     }
 
+    /**
+     * Updates userList to reflect new User information
+     * @param user Updated user
+     */
+    public void updateUser(User user) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getId().equals(user.getId())) {
+                users.set(i, user);
+                return;
+            }
+        }
+    }
+
 }

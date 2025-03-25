@@ -1,10 +1,6 @@
-package com.drivers;
+package com.model;
 
 import java.util.UUID;
-
-import com.facade.Facade;
-import com.model.Lesson;
-import com.model.Student;
 
 public class Random {
 

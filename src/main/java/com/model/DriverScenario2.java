@@ -22,7 +22,8 @@ public class DriverScenario2 {
 
         facade.becomeTeacher();
 
-        Course newCourse = facade.makeCourse("Music for the Non-major");
+        facade.makeCourse("Music for the Non-major");
+        Course newCourse = facade.getCurrentCourse();
 
         ArrayList<User> users = facade.getUsers();
 
@@ -72,7 +73,7 @@ public class DriverScenario2 {
         
         facade.getCurrentSong().setCompleted(true);
 
-        facade.logout();
+        // facade.logout();
 
     }
 

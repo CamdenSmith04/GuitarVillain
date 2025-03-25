@@ -1,4 +1,4 @@
-package com.facade;
+package com.model;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

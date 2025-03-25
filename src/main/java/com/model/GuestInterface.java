@@ -1,8 +1,4 @@
-package com.facade;
-
-import com.model.Experience;
-import com.model.Lesson;
-import com.model.SecurityQuestion;
+package com.model;
 
 public interface GuestInterface {
     public boolean logIn(String username, String password);

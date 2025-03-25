@@ -1,16 +1,16 @@
 package com.model;
 import java.util.ArrayList;
 import java.util.UUID;
-import java.io.File;
+// import java.io.File;
 import java.io.FileReader;
-import java.lang.module.ModuleDescriptor;
-import java.util.jar.Attributes;
+// import java.lang.module.ModuleDescriptor;
+// import java.util.jar.Attributes;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import javafx.scene.image.Image;
+// import javafx.scene.image.Image;
 
 
 public class DataLoader extends DataConstants{
@@ -167,8 +167,31 @@ public class DataLoader extends DataConstants{
             UUID song = UUID.fromString((String) obj);
             songs.add(song);
         }
-
-        return new User(id, username, password, experience, points, streak, securityQuestion, securityAnswer, friends, songs);
+        User ret = new User(id, username, password, experience, points, streak, securityQuestion, securityAnswer, friends, songs);
+        String role = (String)userJSON.get(USER_ROLE);
+        if (role != null){
+            switch (role) {
+                case "User":{
+                    // do nothing
+                    break;
+                }
+                case "Student":{
+                    ret = new Student(ret, (ArrayList<UUID>)userJSON.get(USER_COURSES));
+                    break;
+                }
+                case "Teacher":{
+                    ret = new Teacher(ret, (ArrayList<UUID>)userJSON.get(USER_COURSES));
+                    break;
+                }
+                case "Admin":{
+                    ret = new Admin(ret);
+                    break;
+                }
+                default:
+                    break;
+            }
+        }
+        return ret;
     }
 
     public static Chord parseChord(JSONObject chordJSON){

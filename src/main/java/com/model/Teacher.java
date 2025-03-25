@@ -23,6 +23,7 @@ public class Teacher extends User {
         user.getPoints(), user.getStreak(), user.getSecurityQuestion(), user.getSecurityAnswer(), 
         user.getFriends(), user.getSongs());
         this.courses = courses;
+        this.role = "Teacher";
     }
 
     /**
@@ -33,14 +34,19 @@ public class Teacher extends User {
     public void makeCourse(ArrayList<UUID> teachers, String name) {
         Course newCourse = new Course(teachers, name);
         this.courses.add(newCourse.getId());
+        this.role = "Teacher";
     }
 
     /**
      * The teacher deletes a course.
      * @param course The course to be deleted.
      */
-    public void deleteCourse(UUID course) {
-        this.courses.remove(course);
+    public void deleteCourse(UUID id) {
+        this.courses.remove(id);
+    }
+
+    public void deleteCourse(Course course) {
+        this.courses.remove(course.getId());
     }
 
     // Remove? Do we need one seperate from User's?

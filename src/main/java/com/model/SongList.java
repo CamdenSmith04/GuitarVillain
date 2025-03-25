@@ -66,7 +66,7 @@ public class SongList {
      */
     public Song getSong(UUID id) {
         for (Song current: songs) {
-            if(current.idIsMatch(song)) {
+            if(current.idIsMatch(id)) {
                 return current;
             }
         }

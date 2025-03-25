@@ -7,14 +7,16 @@ public class DriverScenario5 {
         Facade facade = new Facade();
 
         // Log-in
-        User current_user = facade.logIn("bradleyalford", "dragonman@4929");
+        facade.logIn("bradleyalford", "dragonman@4929");
 
         // Get the user's songs and play each one
-        for (UUID song : current_user.getSongs()){
-            String songTitle = facade.getSongById(song).getTitle();
+        for (UUID song : facade.getCurrentUser().getSongs()){
+            String songTitle = facade.getSong(song).getTitle();
             System.out.println("Now playing: " + songTitle);
             facade.beginSong(songTitle);
         }
+
+        // facade.logout();
 
     }
 

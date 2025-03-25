@@ -3,8 +3,6 @@ package com.model;
 import java.util.ArrayList;
 import java.util.UUID;
 
-import org.jfugue.player.Player;
-
 /**
  * This class represents a Song.
  * @author Andrew Goad

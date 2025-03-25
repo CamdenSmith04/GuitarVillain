@@ -1,6 +1,4 @@
-package com.facade;
-
-import com.model.Course;
+package com.model;
 
 /**
  * Facade for Student - can do actions of basic user and Student

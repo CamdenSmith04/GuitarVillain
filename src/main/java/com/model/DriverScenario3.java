@@ -1,6 +1,5 @@
 package com.model;
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class DriverScenario3 {
 
@@ -8,22 +7,17 @@ public class DriverScenario3 {
         Facade facade = new Facade();
 
         // Log-in
-        User current_user = facade.logIn("camdensmith", "password123");
+        facade.logIn("camdensmith", "password123");
+        User current_user = facade.getCurrentUser();
 
         // See users friends
-        ArrayList<User> users = facade.getUsers();
-        for (UUID friend : current_user.getFriends()) {
-            for (User user : users) { 
-                if (user.idIsMatch(friend)) {
-                    System.out.println("Friend: " + user.getUsername());
-                }
-            }
-        }
+        facade.browseFriends();
 
         System.out.println("-----------------------");
 
         // Make a new song
-        Song newSong = facade.composeSong();
+        facade.composeSong();
+        Song newSong = facade.getCurrentSong();
         newSong.setAuthor(current_user.getUsername());
         newSong.setTitle("Cool New Song");
         newSong.setRating(5.00);
@@ -94,7 +88,7 @@ public class DriverScenario3 {
         System.out.println(newSong.toString());
 
         // Add song to songList
-        facade.addSong(newSong);
+        // facade.addSong(newSong);
 
         System.out.println();
 

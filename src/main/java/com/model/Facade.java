@@ -2,19 +2,11 @@ package com.model;
 import java.util.ArrayList;
 import java.util.UUID;
 
-<<<<<<< HEAD:src/main/java/com/model/Facade.java
-public class Facade {
-=======
-import com.dataManagers.*;
-import com.model.*;
-import com.model.Module;
-
 /**
  * Implementation of all facade actions
  * @author Abby Holdcraft
  */
-public class Facade implements AdminInterface {
->>>>>>> holdcraftbranch:src/main/java/com/facade/Facade.java
+public class Facade implements TeacherInterface {
 
     protected UserList userList;
     protected SongList songList;
@@ -73,8 +65,10 @@ public class Facade implements AdminInterface {
      */
     public boolean resetPassword(String username, String securityAnswer, String newPassword) {
         User temp = userList.resetPassword(username, securityAnswer, newPassword); 
-        if (temp != null)
+        if (temp != null){
             currentUser = temp;
+            userList.updateUser(currentUser);
+        }
         return temp != null;
     }
 
@@ -94,6 +88,7 @@ public class Facade implements AdminInterface {
                 }
             }
             this.currentUser = new Student(currentUser, courses);
+            userList.updateUser(currentUser);
         }
     }
 
@@ -115,7 +110,13 @@ public class Facade implements AdminInterface {
             }
 
             this.currentUser = new Teacher(currentUser, courses);
+            userList.updateUser(currentUser);
         }
+    }
+
+    public void becomeAdmin() {
+        currentUser = new Admin(currentUser);
+        userList.updateUser(currentUser);
     }
 
     /**
@@ -146,9 +147,13 @@ public class Facade implements AdminInterface {
         }
     }
 
+    /**
+     * Displays all of currentUser's friends
+     */
     public void browseFriends() {
+        System.out.println("Friends:");
         for (UUID friend : currentUser.getFriends()){
-            System.out.println(userList.getUser(friend));
+            System.out.println(userList.getUser(friend).getUsername());
         }
     }
 
@@ -169,6 +174,7 @@ public class Facade implements AdminInterface {
         Song newSong = new Song(currentUser.getId());
         currentUser.addSong(newSong.getId());
         this.songList.addSong(newSong);
+        currentSong = newSong;
     }
 
     public void makeCourse(String name) {
@@ -176,25 +182,26 @@ public class Facade implements AdminInterface {
         teachers.add(currentUser.getId());
         Course newCourse = new Course(teachers, name);
         this.courseList.addCourse(newCourse);
+        currentCourse = newCourse;
     }
    
-    public void deleteCourse(Course course) {
-        if (currentUser.getCourseList.contains(course.getId()))
-            courseList.remove(course);
+    public void deleteCourse(String name) {
+        currentCourse = courseList.getCourseByName(name);
+        courseList.deleteCourse(currentCourse);
     }
    
     public void addStudent(UUID student) {
-        this.currentCourse.addStudent(student);
+        currentCourse.addStudent(student);
 
     }
     
     public void removeStudent(UUID student) {
-        this.currentCourse.removeStudent(student);
+        currentCourse.removeStudent(student);
 
     }
     
     public void assignLesson(UUID lesson) {
-        this.currentCourse.addLesson(lesson);
+        currentCourse.addLesson(lesson);
 
     }
     
@@ -215,18 +222,20 @@ public class Facade implements AdminInterface {
     }
     // TODO: String name or course
     public void beginSong(String title) {
-        songList.getSongByTitle(title).play();
+        setCurrentSong(songList.getSongByTitle(title));
+        currentSong.play();
     }
 
     public void beginSong(UUID id) {
-        songList.getSong(id).play();
+        setCurrentSong(songList.getSong(id));
+        currentSong.play();
     }
 
     public ArrayList<User> getUsers() {
         return userList.getUsers();
     }
 
-    public User getUserById(UUID user) {
+    public User getUser(UUID user) {
         return userList.getUser(user);
     }
 
@@ -234,7 +243,7 @@ public class Facade implements AdminInterface {
         return songList.getSongs();
     }
 
-    public Song getSongById(UUID song) {
+    public Song getSong(UUID song) {
         return songList.getSong(song);
     }
 
@@ -284,11 +293,6 @@ public class Facade implements AdminInterface {
 
     public void setCurrentSong(Song song) {
         this.currentSong = song;
-    }
-
-    public void enterStudentMode() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'enterStudentMode'");
     }
 
     public void setCurrentCourse(Course course) {

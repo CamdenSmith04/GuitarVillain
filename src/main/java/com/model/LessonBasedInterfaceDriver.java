@@ -13,7 +13,8 @@ public class LessonBasedInterfaceDriver {
 
         facade.becomeTeacher();
 
-        Course newCourse = facade.makeCourse("Music for the Non-major");
+        facade.makeCourse("Music for the Non-major");
+        Course newCourse = facade.getCurrentCourse();
 
         ArrayList<User> users = facade.getUsers();
 
@@ -50,7 +51,7 @@ public class LessonBasedInterfaceDriver {
             }
         }
 
-        facade.addCourse(newCourse);
+        // facade.addCourse(newCourse);
 
         facade.logout();
 

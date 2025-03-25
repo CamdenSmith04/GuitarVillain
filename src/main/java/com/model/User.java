@@ -59,6 +59,8 @@ public class User {
      */
     protected final UUID id;
 
+    protected String role;
+
     /**
      * This constructor is used to instantiate an existing user from JSON files.
      * @param id is the user's id.
@@ -85,6 +87,7 @@ public class User {
         this.friends = friends;
         this.songs = songs;
         this.id = id;
+        this.role = "User";
     }
 
     /**
@@ -106,6 +109,7 @@ public class User {
         this.streak = 0;
         this.friends = new ArrayList<UUID>();
         this.songs = new ArrayList<UUID>();
+        this.role = "User";
     }
 
     /**
@@ -323,6 +327,33 @@ public class User {
      */
     public void setSecurityAnswer(String securityAnswer) {
         this.securityAnswer = securityAnswer;
+    }
+
+    public String getRole() {
+        return this.role;
+    }
+
+    public void setRole(String role) {
+        switch (role) {
+            case "User":{
+                this.role = role;
+                break;
+            }
+            case "Student":{
+                this.role = role;
+                break;
+            }
+            case "Teacher":{
+                this.role = role;
+                break;
+            }
+            case "Admin":{
+                this.role = role;
+                break;
+            }
+            default:
+                break;
+        }
     }
 
     @Override

@@ -1,22 +1,32 @@
-<<<<<<< HEAD:src/main/java/com/model/HoldcraftDriver.java
 package com.model;
-=======
-package com.drivers;
 
-import com.facade.*;
-import com.model.User;
->>>>>>> holdcraftbranch:src/main/java/com/drivers/HoldcraftDriver.java
+import java.util.ArrayList;
 
+/**
+ * Testing code by Abby
+ * @author Abby Holdcraft
+ */
 public class HoldcraftDriver {
     public static void main(String[] args) {
 
 
         Facade facade = new Facade();
-        // facade.beginSong("Fur Elise");
         facade.logIn("abbyholdcraft", "thegrasstoucher");
-        // System.out.println(facade.getCurrentUser());
         facade.becomeAdmin();
+        ArrayList<User> userList = facade.getUsers();
+        User user = userList.get(3);
+        System.out.println(user.getUsername());
+        System.out.println(user.getRole());
+        
+        
+        System.out.println(facade.getCurrentUser().getClass());
+        System.out.println(facade.getCurrentUser() instanceof Admin);
         facade.logout();
+
+        
+        facade.logIn("abbyholdcraft", "thegrasstoucher");
+        System.out.println(facade.getCurrentUser().getClass());
+        System.out.println(facade.getCurrentUser() instanceof Admin);
 
 
 

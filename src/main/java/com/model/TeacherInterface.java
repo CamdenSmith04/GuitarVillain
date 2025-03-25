@@ -1,7 +1,4 @@
-package com.facade;
-import java.util.UUID;
-
-import com.model.Course;
+package com.model;
 
 /**
  * Facade for Teacher - can do basic user, student, and teacher.
@@ -9,5 +6,5 @@ import com.model.Course;
  */
 public interface TeacherInterface extends StudentInterface {
     public void makeCourse(String name);
-    public void deleteCourse(Course course);
+    public void deleteCourse(String name);
 }

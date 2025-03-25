@@ -38,7 +38,8 @@ public class DataConstants {
     protected static final String USER_SECURITY_ANSWER = "securityAnswer";
     protected static final String USER_FRIENDS = "friends";
     protected static final String USER_SONGS = "songs";
-    
+    protected static final String USER_ROLE = "role";
+    protected static final String USER_COURSES = "courses";
     /**
      * These are the module constants.
      */

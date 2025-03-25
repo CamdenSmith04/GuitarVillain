@@ -1,9 +1,4 @@
-package com.facade;
-
-import java.util.UUID;
-
-import com.model.Song;
-import com.model.User;
+package com.model;
 
 /**
  * Facade for basic user - actions user can do ONLY when logged in.
