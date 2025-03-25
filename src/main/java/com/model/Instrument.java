@@ -1,5 +1,11 @@
 package com.model;
 
+/**
+ * @author Bradley Alford
+ * This enum represents the different instruments that can be used to play a song
+ */
+
+
 public enum Instrument {
     GUITAR("Guitar"),
     STEEL_STRING_GUITAR("Steel String Guitar"),
@@ -15,12 +21,24 @@ public enum Instrument {
     SLAP_BASS_1("Slap Bass"),
     SYNTH_BASS_1("Synth Bass");
 
+    /**
+     * label for the instrument
+     */
     private final String label;
 
+    /**
+     * Constructor for Instrument enum
+     * @param label label associated with instrument 
+     */
     private Instrument(String label) {
         this.label = label;
     }
 
+    /**
+     * static returns Instrument object associated with the label
+     * @param label label of the instrument object to be returned
+     * @return returns the instrument object associated with the label, null if label does not match any
+     */
     public static Instrument getInstrument(String label) {
         if(label.equals(GUITAR.label))
             return GUITAR;
