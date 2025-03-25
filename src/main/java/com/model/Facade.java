@@ -74,12 +74,12 @@ public class Facade {
      * Logs in existing user
      * @param username User's username
      * @param password User's password
-     * @return User if found
+     * @return true if login successful.
      */
-    public User logIn(String username, String password) {
+    public boolean logIn(String username, String password) {
         if (currentUser == null)
             currentUser = userList.getUser(username, password);
-        return currentUser;
+        return (currentUser != null);
     }
 
     /**
@@ -112,7 +112,7 @@ public class Facade {
     /**
      * This method makes a user a teacher class.
      */
-    public void becomeTeacher() {
+    public boolean becomeTeacher() {
         if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)) {
 
             ArrayList<UUID> courses = new ArrayList<>();
@@ -127,12 +127,13 @@ public class Facade {
 
             this.currentUser = new Teacher(currentUser, courses);
         }
+        return (this.currentUser.getClass().equals(Teacher.class));
     }
 
     /**
      * This method makes a user a student class.
      */
-    public void becomeStudent() {
+    public boolean becomeStudent() {
         if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)){
 
             ArrayList<UUID> courses = new ArrayList<>();
@@ -146,18 +147,26 @@ public class Facade {
             }
             this.currentUser = new Student(currentUser, courses);
         }
+        return (this.currentUser.getClass().equals(Student.class));
     }
 
     /**
      * This method logs the user out and clears all the stored information.
      */
-    public void logout() {
-        DataWriter.save();
-        this.currentUser = null;
-        this.currentLesson = null;
-        this.currentSong = null;
-        this.currentModule = null;
-        this.currentCourse = null;
+    public boolean logout() {
+        try {
+            DataWriter.save();
+            this.currentUser = null;
+            this.currentLesson = null;
+            this.currentSong = null;
+            this.currentModule = null;
+            this.currentCourse = null;
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
+        
     }
 
     /**
