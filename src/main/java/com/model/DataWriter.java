@@ -69,7 +69,10 @@ public class DataWriter extends DataConstants {
     private static void saveObjects(ArrayList<?> objectList, String OBJECT_FILE_NAME) {
         JSONArray jsonObjects = new JSONArray();
         visited = Collections.newSetFromMap(new IdentityHashMap<>());
+<<<<<<< HEAD:src/main/java/com/model/DataWriter.java
 
+=======
+>>>>>>> holdcraftbranch:src/main/java/com/dataManagers/DataWriter.java
         // Create all json objects
         for (int i = 0; i < objectList.size(); i++) {
             jsonObjects.add(objectToJson(objectList.get(i)));
@@ -95,7 +98,7 @@ public class DataWriter extends DataConstants {
     private static JSONObject objectToJson(Object object) {
         if (object == null)
             return null;
-
+        
         JSONObject jsonObject = new JSONObject();
 
         if (visited.contains(object)) {

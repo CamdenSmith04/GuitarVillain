@@ -64,7 +64,7 @@ public class SongList {
      * @param song the UUID of the song being searched for.
      * @return the song if it is found in the list of songs.
      */
-    public Song getSong(UUID song) {
+    public Song getSong(UUID id) {
         for (Song current: songs) {
             if(current.idIsMatch(song)) {
                 return current;

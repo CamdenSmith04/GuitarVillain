@@ -47,6 +47,8 @@ public class UserList {
      * @return the user that is created.
      */
     public User signUp(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
+        if (getUser(username) != null)
+            return null;
         User ret = new User(username, password, experience, securityQuestion, securityAnswer);
         UserList.getInstance().addUser(ret);
         return ret;
@@ -81,8 +83,20 @@ public class UserList {
      * @return the user if it is found in the list of users.
      */
     public User getUser(String username, String password){
+        User ret = getUser(username);
+        if (ret != null && ret.getPassword().equals(password))
+            return ret;
+        return null;
+    }
+
+    /**
+     * This method gets a User from the list of users by username. Private for security.
+     * @param username the username of the user being searched for.
+     * @return the user if it is found in the list of users.
+     */
+    private User getUser(String username){
         for(User current : users) {
-            if(current.getUsername().equals(username) && current.getPassword().equals(password)) {
+            if(current.getUsername().equals(username)) {
                 return current;
             }
         }
@@ -125,6 +139,13 @@ public class UserList {
         }
     }
 
+    /**
+     * This method resets a user's password if the user exists and inputs the correct answer to their security question
+     * @param username User's username
+     * @param securityAnswer User's answer to the security question
+     * @param newPassword The password the User wants to switch to
+     * @return The user object
+     */
     public User resetPassword(String username, String securityAnswer, String newPassword) {
         for (User user : users) {
             if (user.isMatch(username)) {
