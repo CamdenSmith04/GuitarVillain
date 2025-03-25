@@ -8,11 +8,11 @@ public class DriverScenario3 {
         Facade facade = new Facade();
 
         // Log-in
-        User current_user = facade.logIn("camdensmith", "password123");
+        facade.logIn("camdensmith", "password123");
 
         // See users friends
         ArrayList<User> users = facade.getUsers();
-        for (UUID friend : current_user.getFriends()) {
+        for (UUID friend : facade.getCurrentUser().getFriends()) {
             for (User user : users) { 
                 if (user.idIsMatch(friend)) {
                     System.out.println("Friend: " + user.getUsername());
@@ -24,7 +24,7 @@ public class DriverScenario3 {
 
         // Make a new song
         Song newSong = facade.composeSong();
-        newSong.setAuthor(current_user.getUsername());
+        newSong.setAuthor(facade.getCurrentUser().getUsername());
         newSong.setTitle("Cool New Song");
         newSong.setRating(5.00);
         newSong.addGenre(Genre.POP);
