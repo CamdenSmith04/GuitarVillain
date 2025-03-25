@@ -6,68 +6,99 @@ import com.dataManagers.*;
 import com.model.*;
 import com.model.Module;
 
-public class Facade {
+/**
+ * Implementation of all facade actions
+ * @author Abby Holdcraft
+ */
+public class Facade implements AdminInterface {
 
-    private UserList userList;
-    private SongList songList;
-    private ModuleList moduleList;
-    private LessonList lessonList;
-    private CourseList courseList;
+    protected UserList userList;
+    protected SongList songList;
+    protected ModuleList moduleList;
+    protected LessonList lessonList;
+    protected CourseList courseList;
     
-    private User currentUser;
-    private Course currentCourse;
-    private Lesson currentLesson;
-    private Song currentSong;
-    private Module currentModule;
+    protected User currentUser;
+    protected Course currentCourse;
+    protected Lesson currentLesson;
+    protected Song currentSong;
+    protected Module currentModule;
 
     // need to figure out how we want to do setters since this is facade
 
+    /**
+     * Initializes Facade and loads all data from json
+     */
     public Facade() {
         userList = UserList.getInstance();
         songList = SongList.getInstance();
         moduleList = ModuleList.getInstance();
         lessonList = LessonList.getInstance();
         courseList = CourseList.getInstance();
-    } 
+    }
 
     /**
-     * Logs in existing user
+     * Logs in existing user. Must be logged out before calling.
      * @param username User's username
      * @param password User's password
-     * @return User if found
      */
-    public User logIn(String username, String password) {
-        if (currentUser == null)
-            currentUser = userList.getUser(username, password);
-        return currentUser;
+    public boolean logIn(String username, String password) {
+        currentUser = userList.getUser(username, password);
+        return currentUser != null;
     }
 
     /**
-     * Creates new user and sets it to currentUser
+     * Creates new user and logs in as user. Must be logged out before calling.
+     * @param username User's username
+     * @param password User's password
+     * @param experience User's experience
+     * @param securityQuestion User's security question
+     * @param securityAnswer User's answer to selected security question
+     * @return True if user is logged in
      */
-    public User signUp(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
-        if (currentUser == null)
-            currentUser = userList.signUp(username, password, experience, securityQuestion, securityAnswer);
-        return currentUser;
+    public boolean signUp(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
+        currentUser = userList.signUp(username, password, experience, securityQuestion, securityAnswer);
+        return currentUser != null;
     }
 
     /**
-     * Resets password if user correctly answers security question
+     * Resets password if user correctly answers security question, then logs in as that user
      * @param securityAnswer Answer to security question
      * @param newPassword New password
      * @return True if operation is successful
      */
-    public void resetPassword(String username, String securityAnswer, String newPassword) {
+    public boolean resetPassword(String username, String securityAnswer, String newPassword) {
         User temp = userList.resetPassword(username, securityAnswer, newPassword); 
         if (temp != null)
             currentUser = temp;
+        return temp != null;
+    }
+
+    /**
+     * Makes user a new student
+     */
+    public void becomeStudent() {
+        if (!(currentUser instanceof Teacher) 
+            && !(currentUser instanceof Student)) {
+            ArrayList<UUID> courses = new ArrayList<>();
+
+            for (Course course : courseList.getCourses()) {
+                for (UUID match : course.getStudents()){
+                    if (currentUser.idIsMatch(match)){
+                        courses.add(course.getId());
+                    }
+                }
+            }
+            this.currentUser = new Student(currentUser, courses);
+        }
     }
 
     /**
      * Makes user a new teacher
      */
     public void becomeTeacher() {
-        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)) {
+        if (!(currentUser instanceof Teacher) 
+            && !(currentUser instanceof Student)) {
 
             ArrayList<UUID> courses = new ArrayList<>();
 
@@ -80,25 +111,6 @@ public class Facade {
             }
 
             this.currentUser = new Teacher(currentUser, courses);
-        }
-    }
-
-    /**
-     * Makes user a new student
-     */
-    public void becomeStudent() {
-        if (!(currentUser instanceof Teacher) && !(currentUser instanceof Student)){
-
-            ArrayList<UUID> courses = new ArrayList<>();
-
-            for (Course course : courseList.getCourses()) {
-                for (UUID match : course.getStudents()){
-                    if (currentUser.idIsMatch(match)){
-                        courses.add(course.getId());
-                    }
-                }
-            }
-            this.currentUser = new Student(currentUser, courses);
         }
     }
 
@@ -149,35 +161,22 @@ public class Facade {
         // display public friend user information by UUID?
     }
 
-    public Song composeSong() {
+    public void composeSong() {
         Song newSong = new Song(currentUser.getId());
         currentUser.addSong(newSong.getId());
-        return newSong;
+        this.songList.addSong(newSong);
     }
 
-    public void addSong(Song song) {
-        this.songList.addSong(song);
-    }
-
-    public Course makeCourse(String name) {
+    public void makeCourse(String name) {
         ArrayList<UUID> teachers = new ArrayList<>();
         teachers.add(currentUser.getId());
         Course newCourse = new Course(teachers, name);
-        return newCourse;
-    }
-
-    public void addCourse(Course course) {
-        for (Course match : this.courseList.getCourses()) {
-            if (match.getName().equals(course.getName())) {
-                System.out.println("Course with this name already exists.");
-                return;
-            }
-        }
-        this.courseList.addCourse(course);
+        this.courseList.addCourse(newCourse);
     }
    
     public void deleteCourse(Course course) {
-        //courseList.remove(course);
+        if (currentUser.getCourseList.contains(course.getId()))
+            courseList.remove(course);
     }
    
     public void addStudent(UUID student) {

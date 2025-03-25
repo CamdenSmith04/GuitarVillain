@@ -1,7 +1,13 @@
-package com.model;
+package com.drivers;
 
 import java.util.ArrayList;
 import java.util.UUID;
+
+import com.facade.Facade;
+import com.model.Course;
+import com.model.Lesson;
+import com.model.Song;
+import com.model.User;
 
 public class LessonBasedInterfaceDriver {
 

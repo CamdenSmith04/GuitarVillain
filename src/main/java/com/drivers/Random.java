@@ -1,8 +1,12 @@
-package com.model;
+package com.drivers;
 
 import java.util.UUID;
 
-public class random {
+import com.facade.Facade;
+import com.model.Lesson;
+import com.model.Student;
+
+public class Random {
 
     public static void main(String[] args) {
 
