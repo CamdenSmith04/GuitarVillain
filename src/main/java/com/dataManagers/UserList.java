@@ -1,7 +1,9 @@
-package com.model;
+package com.dataManagers;
 
 import java.util.ArrayList;
 import java.util.UUID;
+
+import com.model.*;
 
 
 public class UserList {
@@ -49,7 +51,7 @@ public class UserList {
         return null;
     }
 
-    public User getUserById(UUID id){
+    public User getUser(UUID id){
         for(User current : users) {
             if(current.idIsMatch(id)) {
                 return current;
@@ -73,6 +75,18 @@ public class UserList {
                 return;
             }
         }
+    }
+
+    public User resetPassword(String username, String securityAnswer, String newPassword) {
+        for (User user : users) {
+            if (user.isMatch(username)) {
+                if (user.resetPassword(securityAnswer, newPassword))
+                    return user;
+                else 
+                    return null;
+            }
+        }
+        return null;
     }
 
     public void save(){

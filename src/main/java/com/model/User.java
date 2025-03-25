@@ -1,7 +1,7 @@
 package com.model;
-
 import java.util.ArrayList;
 import java.util.UUID;
+
 
 public class User {
     
@@ -81,6 +81,10 @@ public class User {
 
     public boolean isMatch(User user) {
         return this.id.equals(user.getId());
+    }
+
+    public boolean isMatch(String username) {
+        return this.username.equals(username);
     }
 
     public boolean idIsMatch(UUID id){
