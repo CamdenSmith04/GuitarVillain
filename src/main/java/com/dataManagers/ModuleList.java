@@ -1,7 +1,9 @@
-package com.model;
+package com.dataManagers;
 
 import java.util.ArrayList;
 import java.util.UUID;
+
+import com.model.Module;
 
 /**
  * This class keeps track of all the modules in the program and represents the list of modules.

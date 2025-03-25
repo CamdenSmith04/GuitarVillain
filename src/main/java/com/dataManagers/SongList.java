@@ -1,7 +1,10 @@
-package com.model;
+package com.dataManagers;
 
 import java.util.ArrayList;
 import java.util.UUID;
+
+import com.model.Genre;
+import com.model.Song;
 
 public class SongList {
     
@@ -32,9 +35,9 @@ public class SongList {
         return null;
     }
 
-    public Song getSongById(UUID song) {
+    public Song getSong(UUID id) {
         for (Song current: songs) {
-            if(current.idIsMatch(song)) {
+            if(current.idIsMatch(id)) {
                 return current;
             }
         }
