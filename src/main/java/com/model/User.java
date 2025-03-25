@@ -325,6 +325,10 @@ public class User {
         this.securityAnswer = securityAnswer;
     }
 
+    /**
+     * This method converts the users data fields into strings.
+     * @return the string of all the data fields.
+     */
     @Override
     public String toString() {
         return ("Id: " + this.id + "\n" + 

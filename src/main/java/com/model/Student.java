@@ -42,12 +42,19 @@ public class Student extends User{
         song.play();
     }
 
-    // Remove? Do we need one seperate from User's?
-    public boolean isMatch(Course course) {
-        return this.id.equals(course.getId());
-    }
-
+    /**
+     * This is a getter for the student's courses.
+     * @return the courses the student has.
+     */
     public ArrayList<UUID> getCourses() {
         return this.courses;
+    }
+
+    /**
+     * This is a setter for the student's courses.
+     * @param courses the courses that will be set.
+     */
+    public void setCourses(ArrayList<UUID> courses) {
+        this.courses = courses;
     }
 }
