@@ -1,4 +1,4 @@
-package com.model;
+package com.dataManagers;
 import java.util.ArrayList;
 import java.util.UUID;
 import java.io.File;
@@ -9,6 +9,9 @@ import java.util.jar.Attributes;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
+import com.model.*;
+import com.model.Module;
 
 import javafx.scene.image.Image;
 

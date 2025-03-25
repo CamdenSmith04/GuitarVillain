@@ -1,4 +1,7 @@
-package com.model;
+package com.scenarios;
+
+import com.facade.*;
+import com.model.*;
 
 public class DriverScenario1 {
     

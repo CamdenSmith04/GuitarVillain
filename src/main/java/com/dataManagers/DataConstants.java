@@ -1,4 +1,4 @@
-package com.model;
+package com.dataManagers;
 /**
  * This class represents the Data Constants for json files.
  * @author Abby Holdcraft

@@ -1,7 +1,7 @@
 package com.model;
-
 import java.util.ArrayList;
 import java.util.UUID;
+
 
 /**
  * This class represents a User.
@@ -238,6 +238,10 @@ public class User {
      */
     public boolean isMatch(User user) {
         return this.id.equals(user.getId());
+    }
+
+    public boolean isMatch(String username) {
+        return this.username.equals(username);
     }
 
     /**

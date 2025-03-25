@@ -1,7 +1,9 @@
-package com.model;
+package com.dataManagers;
 
 import java.util.ArrayList;
 import java.util.UUID;
+
+import com.model.Course;
 
 /**
  * This class keeps track of all the courses in the program and represents the list of courses.

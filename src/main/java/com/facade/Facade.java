@@ -1,6 +1,10 @@
-package com.model;
+package com.facade;
 import java.util.ArrayList;
 import java.util.UUID;
+
+import com.dataManagers.*;
+import com.model.*;
+import com.model.Module;
 
 public class Facade {
 
@@ -27,31 +31,24 @@ public class Facade {
     } 
 
     /**
-     * Gives user options to log in or sign up
-     */
-    public void signIn() {
-        userList = UserList.getInstance();
-        songList = SongList.getInstance();
-        moduleList = ModuleList.getInstance();
-        courseList = CourseList.getInstance();
-        lessonList = LessonList.getInstance();
-    } 
-
-    /**
      * Logs in existing user
      * @param username User's username
      * @param password User's password
      * @return User if found
      */
     public User logIn(String username, String password) {
-        return currentUser = userList.getUser(username, password);
+        if (currentUser == null)
+            currentUser = userList.getUser(username, password);
+        return currentUser;
     }
 
     /**
-     * Creates new user
+     * Creates new user and sets it to currentUser
      */
     public User signUp(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
-        return currentUser = userList.signUp(username, password, experience, securityQuestion, securityAnswer);
+        if (currentUser == null)
+            currentUser = userList.signUp(username, password, experience, securityQuestion, securityAnswer);
+        return currentUser;
     }
 
     /**
@@ -60,8 +57,10 @@ public class Facade {
      * @param newPassword New password
      * @return True if operation is successful
      */
-    public boolean resetPassword(String securityAnswer, String newPassword) {
-        return currentUser.resetPassword(securityAnswer, newPassword);
+    public void resetPassword(String username, String securityAnswer, String newPassword) {
+        User temp = userList.resetPassword(username, securityAnswer, newPassword); 
+        if (temp != null)
+            currentUser = temp;
     }
 
     /**
@@ -117,22 +116,20 @@ public class Facade {
 
     public void browseLessons() {
         for (Lesson lesson : lessonList.getLessons()) {
-            System.out.println(lesson.toString());
+            System.out.println(lesson);
         }
     }
 
     public void browseMyCourses() {
         for (Course course : courseList.getCourses()) {
-            System.out.println(course.toString());
+            System.out.println(course);
         }
     }
 
     public void browseFriends() {
-        /*
-        for (User friend : currentUser.getFriends()){
-            System.out.println(friend.toString());
+        for (UUID friend : currentUser.getFriends()){
+            System.out.println(userList.getUser(friend));
         }
-            */
     }
 
     // public void playSong(UUID id) {
@@ -218,12 +215,16 @@ public class Facade {
         songList.getSongByTitle(title).play();
     }
 
+    public void beginSong(UUID id) {
+        songList.getSong(id).play();
+    }
+
     public ArrayList<User> getUsers() {
         return userList.getUsers();
     }
 
     public User getUserById(UUID user) {
-        return userList.getUserById(user);
+        return userList.getUser(user);
     }
 
     public ArrayList<Song> getSongs() {
@@ -231,7 +232,7 @@ public class Facade {
     }
 
     public Song getSongById(UUID song) {
-        return songList.getSongById(song);
+        return songList.getSong(song);
     }
 
     public ArrayList<Module> getModules() {
@@ -280,6 +281,11 @@ public class Facade {
 
     public void setCurrentSong(Song song) {
         this.currentSong = song;
+    }
+
+    public void enterStudentMode() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'enterStudentMode'");
     }
 
     public void setCurrentCourse(Course course) {

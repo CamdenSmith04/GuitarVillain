@@ -1,4 +1,4 @@
-package com.model;
+package com.dataManagers;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,6 +12,8 @@ import java.util.Set;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import com.model.*;
 
 /**
  * Writes data to json files

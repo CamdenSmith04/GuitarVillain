@@ -1,6 +1,9 @@
-package com.model;
+package com.scenarios;
 import java.util.ArrayList;
 import java.util.UUID;
+
+import com.facade.*;
+import com.model.*;
 
 public class DriverScenario3 {
 

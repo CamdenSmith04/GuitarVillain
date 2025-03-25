@@ -1,7 +1,13 @@
-package com.model;
+package com.dataManagers;
 
 import java.util.ArrayList;
 import java.util.UUID;
+
+import com.model.Genre;
+import com.model.Song;
+
+import com.model.Genre;
+import com.model.Song;
 
 /**
  * This class keeps track of all the songs in the program and represents the list of songs.
@@ -64,9 +70,9 @@ public class SongList {
      * @param song the UUID of the song being searched for.
      * @return the song if it is found in the list of songs.
      */
-    public Song getSongById(UUID song) {
+    public Song getSong(UUID song) {
         for (Song current: songs) {
-            if(current.idIsMatch(song)) {
+            if(current.idIsMatch(id)) {
                 return current;
             }
         }
