@@ -70,7 +70,7 @@ public class DataWriter extends DataConstants {
     @SuppressWarnings("unchecked")
     private static void saveObjects(ArrayList<?> objectList, String OBJECT_FILE_NAME) {
         JSONArray jsonObjects = new JSONArray();
-
+        visited = Collections.newSetFromMap(new IdentityHashMap<>());
         // Create all json objects
         for (int i = 0; i < objectList.size(); i++) {
             jsonObjects.add(objectToJson(objectList.get(i)));
@@ -85,7 +85,7 @@ public class DataWriter extends DataConstants {
         }
     }
 
-    private static Set<Object> visited = Collections.newSetFromMap(new IdentityHashMap<>());
+    private static Set<Object> visited;
 
     /**
      * Converts inputted object into JSONObject
@@ -96,7 +96,7 @@ public class DataWriter extends DataConstants {
     private static JSONObject objectToJson(Object object) {
         if (object == null)
             return null;
-
+        
         JSONObject jsonObject = new JSONObject();
 
         if (visited.contains(object)) {
