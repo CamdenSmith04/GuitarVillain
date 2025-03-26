@@ -14,11 +14,16 @@ import org.json.simple.parser.JSONParser;
 
 
 public class DataLoader extends DataConstants{
+    /**
+     * Parses module data extracted from modules.json
+     * @param moduleJSON JSONObject read from file
+     * @return Initialized Module
+     */
     public static Module parseModule(JSONObject moduleJSON){
         UUID id = UUID.fromString((String)moduleJSON.get(MODULE_ID));
         String title = (String)moduleJSON.get(MODULE_TITLE);
 
-      
+
         ArrayList<UUID> lessons = new ArrayList<>();
         JSONArray lessonsJSON = (JSONArray) moduleJSON.get(MODULE_LESSONS);
         for (Object obj: lessonsJSON) {
@@ -37,7 +42,11 @@ public class DataLoader extends DataConstants{
 
         return new Module(id, title, lessons, songs, progress);
     }
-
+    /**
+     * Parses course data extracted from courses.json
+     * @param courseJSON JSONObject read from file
+     * @return Initialized Course
+     */
     public static Course parseCourse(JSONObject courseJSON){
         UUID id = UUID.fromString((String) courseJSON.get(COURSE_ID));
         String name = (String)courseJSON.get(COURSE_NAME);
@@ -74,6 +83,11 @@ public class DataLoader extends DataConstants{
 
     }
 
+    /**
+     * Parses lesson data extracted from lessons.json
+     * @param lessonJSON JSONObject read from file
+     * @return Initialized lesson
+     */
     public static Lesson parseLesson(JSONObject lessonJSON){
         UUID id = UUID.fromString((String) lessonJSON.get(LESSON_ID));
         String title = (String) lessonJSON.get(LESSON_TITLE);
@@ -93,6 +107,11 @@ public class DataLoader extends DataConstants{
         return new Measure(measureLength, chords);
     }
 
+    /**
+     * Parses song data extracted from songs.json
+     * @param songJSON JSONObject read from file
+     * @return Initialized song
+     */
     public static Song parseSong(JSONObject songJSON){
         UUID songId = UUID.fromString((String) songJSON.get(SONG_ID));
         String songTitle = (String) songJSON.get(SONG_TITLE);
@@ -143,6 +162,11 @@ public class DataLoader extends DataConstants{
                     beatsPerMinute, timeSignature, measures, lyrics, speed, completed));
     }
 
+    /**
+     * Parses user data extracted from users.json
+     * @param userJSON JSONObject read from file
+     * @return Initialized user
+     */
     public static User parseUser(JSONObject userJSON){
         UUID id = UUID.fromString((String)userJSON.get(SONG_ID));
         String username = (String)userJSON.get(USER_USERNAME);
@@ -194,6 +218,11 @@ public class DataLoader extends DataConstants{
         return ret;
     }
 
+    /**
+     * Parses chord data extracted from songs.json
+     * @param chordJSON JSONObject read from file
+     * @return Initialized chord
+     */
     public static Chord parseChord(JSONObject chordJSON){
         ArrayList<Note> notes = new ArrayList<Note>();
         JSONArray notesArray = (JSONArray) chordJSON.get(CHORD_NOTES);
@@ -206,6 +235,11 @@ public class DataLoader extends DataConstants{
         return(new Chord(notes, chordShape, name));
     }
 
+    /**
+     * Parses note data extracted from songs.json
+     * @param noteJSON JSONObject read from file
+     * @return Initialized note
+     */
     public static Note parseNote(JSONObject noteJSON){
         int time = ((Number) noteJSON.get(NOTE_TIME)).intValue();
         String noteString = (String) noteJSON.get(NOTE_STRING);
@@ -214,6 +248,10 @@ public class DataLoader extends DataConstants{
         return new Note(time, string, fret);
     }
 
+    /**
+     * Returns an arraylist of initialized songs read from songs.json
+     * @return The stored arraylist of songs.
+     */
     public static ArrayList<Song> getSongs(){
         ArrayList<Song> songs = new ArrayList<Song>();
         try {
@@ -231,6 +269,10 @@ public class DataLoader extends DataConstants{
         return songs;
     }
 
+    /**
+     * Returns an arraylist of initialized users read from users.json
+     * @return The stored arraylist of users.
+     */
     public static ArrayList<User> getUsers(){
         ArrayList<User> users = new ArrayList<User>();
         try {
@@ -245,6 +287,11 @@ public class DataLoader extends DataConstants{
         }
         return users;
     }
+
+    /**
+     * Returns an arraylist of initialized modules read from modules.json
+     * @return The stored arraylist of modules.
+     */
     public static ArrayList<Module> getModules(){
         ArrayList<Module> modules = new ArrayList<Module>();
         try{
@@ -260,6 +307,11 @@ public class DataLoader extends DataConstants{
         }
         return modules;
     } 
+
+    /**
+     * Returns an arraylist of initialized courses read from courses.json
+     * @return The stored arraylist of courses.
+     */
     public static ArrayList<Course> getCourses() {
         ArrayList<Course> courses = new ArrayList<>();
         try {
@@ -276,6 +328,10 @@ public class DataLoader extends DataConstants{
         return courses;
     }
 
+    /**
+     * Returns an arraylist of initialized lessons read from lessons.json
+     * @return The stored arraylist of lessons.
+     */
     public static ArrayList<Lesson> getLessons() {
         ArrayList<Lesson> lessons = new ArrayList<>();
 

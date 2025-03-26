@@ -1,3 +1,7 @@
 ﻿
 *.class
 target
+.gitignore
+*Interface*
+*Admin*
+*Authorization*

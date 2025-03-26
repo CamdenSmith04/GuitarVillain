@@ -93,6 +93,12 @@ public class Note {
      * @param fret fret number note is played at
      */
 
+    /**
+     * This method constructs the note object.
+     * @param time the time of the note.
+     * @param string the string the note is on.
+     * @param fret the fret the note is on.
+     */
     public Note(int time, char string, int fret) {
         this.time = time;
         this.string = string;

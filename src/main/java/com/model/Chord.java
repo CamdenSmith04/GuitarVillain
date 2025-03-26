@@ -113,7 +113,6 @@ public class Chord {
      * name accessor
      * @return musical name of the chord
      */
-
     public String getName() {
         return this.name;
     }

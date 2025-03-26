@@ -2,6 +2,8 @@ package com.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
+import java.io.File;
+import java.io.FileWriter;
 
 /**
  * This class represents a Song.
@@ -125,6 +127,9 @@ public class Song {
         this.completed = completed;
     }
 
+    /**
+     * Plays a note
+     */
     public void play(){
         for(Measure measure : measures){
             for(Chord chord : measure.getChords()){
@@ -132,6 +137,97 @@ public class Song {
                     note.play();
                 }
             }
+        }
+    }
+
+    /**
+     * Adds a hyphen to the file
+     * @param tabTable Table being added to
+     * @return Table with addition
+     */
+    private ArrayList<ArrayList<String>> addHypenToFile(ArrayList<ArrayList<String>> tabTable){
+        for(int i = 1; i<7; i++){
+            //set first lines to guitar strings
+            tabTable.add(new ArrayList<String>());
+            tabTable.get(i).add("-");
+        }
+        return tabTable;
+    }
+
+    /**
+     * Adds a bar to the file
+     * @param tabTable Table being added to
+     * @return Table with addition
+     */
+    private ArrayList<ArrayList<String>> addBarToFile(ArrayList<ArrayList<String>> tabTable){
+        for(int i = 1; i<7; i++){
+            //set first lines to guitar strings
+            tabTable.add(new ArrayList<String>());
+            tabTable.get(i).add("|");
+        }
+        return tabTable;
+    }
+
+    /**
+     * Prints song to a file
+     * @param fileName Name of file
+     * @return True if successful
+     */
+    public boolean printToFile(String fileName){
+        FileWriter writer;
+        ArrayList<ArrayList<String>> tabTable = new ArrayList<ArrayList<String>>();
+        final String[] guitarStrings = {"e", "B", "G", "D", "A", "E"}; 
+       
+        //adding a blank line for chord names
+        tabTable.add(new ArrayList<String>());
+       tabTable.get(0).add(" ");
+        for(int i = 1; i<7; i++){
+            //set first lines to guitar strings
+            tabTable.add(new ArrayList<String>());
+            //guitarStrings is 1 element shorter due to blank line for chords
+            tabTable.get(i).add(guitarStrings[i-1]);
+        }
+        
+        for(Measure measure:measures){
+            tabTable = addBarToFile(tabTable);
+            for(Chord chord:measure.getChords()){
+                if(chord.getName() != null){
+                    tabTable.get(0).add(chord.getName());
+                }
+                else{
+                    tabTable.get(0).add("       ");
+                }
+                for(Note note:chord.getNotes()){
+                    for (int i = 1; i<7; i++){
+                        //this condition resolves to true if the iterator is on the right string to add the note...
+                        if(i-1 == java.util.Arrays.asList(guitarStrings).indexOf(Character.toString(note.getString()))){
+                            tabTable.get(i).add(Integer.toString(note.getFret()));
+                            if(note.getFret() < 10){
+                                tabTable.get(i).add("-");
+                            }
+                        }
+                        else{
+                            tabTable.get(i).add("--");
+                        }
+                    }
+                }
+            }
+        }
+
+        try{
+            writer = new FileWriter(fileName);
+            for(ArrayList<String> line:tabTable){
+                for(String character : line ){
+                    writer.append(character);
+                }
+                writer.append("\n");
+            }
+            writer.close();
+            return true;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return false;
         }
     }
 
@@ -417,6 +513,10 @@ public class Song {
         this.completed = completed;
     }
 
+    /**
+     * This method converts the songs data fields into strings.
+     * @return the string of all the data fields.
+     */
     @Override
     public String toString() {
         return ("Author: " + this.author + "\n" + 

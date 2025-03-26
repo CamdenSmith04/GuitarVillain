@@ -121,6 +121,11 @@ public class DataWriter extends DataConstants {
         return jsonObject;
     }
     
+    /**
+     * Directs object to different json converter classes depending on its type
+     * @param value Value to be converted
+     * @return Object as its correct type (string, int, JSONObject, etc)
+     */
     private static Object handleValue(Object value) {
         if (value == null || (isPrimitive(value) && value.getClass() != char.class)) {
             return value;
@@ -138,11 +143,21 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Checks list of items to ignore writing to json
+     * @param name Object checked
+     * @return True if object is in list
+     */
     private static boolean isIgnore(Object name) {
         return name.equals("NOTES") ||
                 name.equals("player");
     }
 
+    /**
+     * Checks if parameter object is primitive or wrapper primitive
+     * @param object Object checked
+     * @return True if object is primitive or wrapper
+     */
     private static boolean isPrimitive(Object object) {
         return object instanceof Integer ||
                 object instanceof Double ||
@@ -154,12 +169,22 @@ public class DataWriter extends DataConstants {
                 object.getClass().isPrimitive();
     }
 
+    /**
+     * Checks if a field is a nested object with its own fields.
+     * @param object Object checked
+     * @return True if field is a nested object.
+     */
     private static boolean isNestedObject(Object object) {
         return object instanceof Measure ||
                 object instanceof Chord ||
                 object instanceof Note;
     }
 
+    /**
+     * Converts an array to a JSONArray
+     * @param array Array being converted
+     * @return Array as JSONArray
+     */
     @SuppressWarnings("unchecked")
     private static JSONArray arrayToJsonArray(Object array) {
         JSONArray jsonArray = new JSONArray();
@@ -171,6 +196,11 @@ public class DataWriter extends DataConstants {
         return jsonArray;
     }
 
+    /**
+     * Converts a collection to a JSONArray
+     * @param array Collection being converted
+     * @return Collection as JSONArray
+     */
     @SuppressWarnings("unchecked")
     private static JSONArray collectionToJsonArray(Collection<?> collection) {
         JSONArray jsonArray = new JSONArray();
