@@ -62,6 +62,7 @@ public class UserList {
         users.add(user);
     }
 
+
     // /**
     //  * This method gets a User from the list of users.
     //  * @param user the user being searched for.
@@ -94,7 +95,7 @@ public class UserList {
      * @param username the username of the user being searched for.
      * @return the user if it is found in the list of users.
      */
-    private User getUser(String username){
+    public User getUser(String username){
         for(User current : users) {
             if(current.getUsername().equals(username)) {
                 return current;

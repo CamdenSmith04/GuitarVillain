@@ -356,6 +356,15 @@ public class Facade implements TeacherInterface {
     }
 
     /**
+     * Gets a user from userlist by username
+     * @param username Username of user
+     * @return User if found
+     */
+    public User getUser(String username) {
+        return userList.getUser(username);
+    }
+
+    /**
      * This is a getter for the list of songs.
      * @return the list of songs.
      */
