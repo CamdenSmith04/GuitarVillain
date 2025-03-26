@@ -52,10 +52,6 @@ public class Measure {
     public int getLength() {
         return this.length;
     }
-    /**
-     * accessor for chords arraylist
-     * @return ArrayList of chords in the measure
-     */
 
     /**
      * This method gets the array list of chords of a measure.
@@ -73,11 +69,7 @@ public class Measure {
     public void setLength(int length) {
         this.length = length;
     }
-    /**
-     * mutator for chords arraylist
-     * @param chords new chords arraylist
-     */
-
+   
     /**
      * This method sets the list of chords of a measure.
      * @param chords the list of chords that will be set.
