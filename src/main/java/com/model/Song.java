@@ -2,6 +2,8 @@ package com.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
+import java.io.File;
+import java.io.FileWriter;
 
 import org.jfugue.player.Player;
 
@@ -134,6 +136,32 @@ public class Song {
                     note.play();
                 }
             }
+        }
+    }
+
+    public boolean printToFile(String fileName){
+        FileWriter writer;
+        ArrayList<ArrayList<String>> tabTable = new ArrayList<ArrayList<String>>();
+        final String[] guitarStrings = {"e", "B", "G", "D", "A", "E"}; 
+
+        for(int i = 0; i<6; i++){
+            //set first lines to guitar strings
+            tabTable.get(i).set(0, guitarStrings[i]);
+        }
+
+        try{
+            writer = new FileWriter(fileName);
+            for(ArrayList<String> line:tabTable){
+                for(String character : line ){
+                    writer.append(character);
+                }
+            }
+            writer.close();
+            return true;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return false;
         }
     }
 
