@@ -181,7 +181,6 @@ public class Song {
                 }
                 for(Note note:chord.getNotes()){
                     for (int i = 1; i<7; i++){
-                        System.out.println(note.getString() + " " + note.getFret());
                         //this condition resolves to true if the iterator is on the right string to add the note...
                         if(i-1 == java.util.Arrays.asList(guitarStrings).indexOf(Character.toString(note.getString()))){
                             tabTable.get(i).add(Integer.toString(note.getFret()));
