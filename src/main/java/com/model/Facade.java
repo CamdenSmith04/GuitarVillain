@@ -40,6 +40,7 @@ public class Facade implements TeacherInterface {
      */
     public boolean logIn(String username, String password) {
         currentUser = userList.getUser(username, password);
+        if (currentUser != null) userList.updateUser(currentUser);
         return currentUser != null;
     }
 
@@ -54,6 +55,7 @@ public class Facade implements TeacherInterface {
      */
     public boolean signUp(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
         currentUser = userList.signUp(username, password, experience, securityQuestion, securityAnswer);
+        if (currentUser != null) userList.updateUser(currentUser);
         return currentUser != null;
     }
 

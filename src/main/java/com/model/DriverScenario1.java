@@ -19,16 +19,18 @@ public class DriverScenario1 {
         
         System.out.println(userCreated);
 
+        Scanner continueScenario = new Scanner(System.in);
+        continueScenario.nextLine();
+
         userCreated = facade.signUp("ffred", "theTwoFred!", Experience.BEGINNER, SecurityQuestion.ELEMENTARY_SCHOOL, "Bowman");
 
         System.out.println(userCreated);
 
         facade.logout();
 
-        Scanner continueScenario = new Scanner(System.in);
         continueScenario.nextLine();
 
-        boolean loggedIn = facade.logIn("ffred", "theTwoFred");
+        boolean loggedIn = facade.logIn("ffred", "theTwoFred!");
 
         System.out.println(loggedIn);
     }
