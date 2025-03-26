@@ -137,14 +137,56 @@ public class Song {
         }
     }
 
+    private ArrayList<ArrayList<String>> addHypenToFile(ArrayList<ArrayList<String>> tabTable){
+        for(int i = 1; i<7; i++){
+            //set first lines to guitar strings
+            tabTable.add(new ArrayList<String>());
+            tabTable.get(i).add("-");
+        }
+        return tabTable;
+    }
+
+    private ArrayList<ArrayList<String>> addBarToFile(ArrayList<ArrayList<String>> tabTable){
+        for(int i = 1; i<7; i++){
+            //set first lines to guitar strings
+            tabTable.add(new ArrayList<String>());
+            tabTable.get(i).add("|");
+        }
+        return tabTable;
+    }
+
     public boolean printToFile(String fileName){
         FileWriter writer;
         ArrayList<ArrayList<String>> tabTable = new ArrayList<ArrayList<String>>();
         final String[] guitarStrings = {"e", "B", "G", "D", "A", "E"}; 
-
-        for(int i = 0; i<6; i++){
+       
+        //adding a blank line for chord names
+        tabTable.add(new ArrayList<String>());
+       
+        for(int i = 1; i<7; i++){
             //set first lines to guitar strings
-            tabTable.get(i).set(0, guitarStrings[i]);
+            tabTable.add(new ArrayList<String>());
+            //guitarStrings is 1 element shorter due to blank line for chords
+            tabTable.get(i).add(guitarStrings[i-1]);
+        }
+        
+        for(Measure measure:measures){
+            tabTable = addBarToFile(tabTable);
+            for(Chord chord:measure.getChords()){
+                tabTable.get(0).add(chord.getName());
+                for(Note note:chord.getNotes()){
+                    for (int i = 1; i<7; i++){
+                        //this condition resolves to true if the iterator is on the right string to add the note...
+                        if(i - 1 == java.util.Arrays.asList(guitarStrings).indexOf(Character.toString(note.getString()))){
+                            tabTable.get(i).add(Integer.toString(note.getFret()));
+                        }
+                        //otherwise, just put a hypen
+                        else{
+                            tabTable.get(i).add("-");
+                        }
+                    }
+                }
+            }
         }
 
         try{
@@ -153,6 +195,7 @@ public class Song {
                 for(String character : line ){
                     writer.append(character);
                 }
+                writer.append("\n");
             }
             writer.close();
             return true;

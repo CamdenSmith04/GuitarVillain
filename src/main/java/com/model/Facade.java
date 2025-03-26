@@ -339,7 +339,28 @@ public class Facade {
     public void beginSong(String title) {
         songList.getSongByTitle(title).play();
     }
+
+    public void printSongToFile(String title, String fileName){
+        songList.getSongByTitle(title).printToFile(fileName);
+    }
     
+    public void printSongToFile(UUID id, String fileName){
+        songList.getSong(id).printToFile(fileName);
+    }
+
+    public void printSongToFile(String title){
+        Song song = songList.getSongByTitle(title);
+        song.printToFile(song.getTitle() + ".txt");
+    }
+    
+    public void printSongToFile(UUID id){
+        Song song = songList.getSong(id);
+        song.printToFile(song.getTitle() + ".txt");
+    }
+
+
+
+
     /**
      * This method allows the user to start a song by UUID.
      * @param id the id of the song that will be started.
