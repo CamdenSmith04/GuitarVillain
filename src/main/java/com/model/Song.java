@@ -162,7 +162,7 @@ public class Song {
        
         //adding a blank line for chord names
         tabTable.add(new ArrayList<String>());
-       
+       tabTable.get(0).add(" ");
         for(int i = 1; i<7; i++){
             //set first lines to guitar strings
             tabTable.add(new ArrayList<String>());
@@ -173,16 +173,40 @@ public class Song {
         for(Measure measure:measures){
             tabTable = addBarToFile(tabTable);
             for(Chord chord:measure.getChords()){
-                tabTable.get(0).add(chord.getName());
+                if(chord.getName() != null){
+                    tabTable.get(0).add(chord.getName());
+                }
+                else{
+                    tabTable.get(0).add("         ");
+                }
                 for(Note note:chord.getNotes()){
                     for (int i = 1; i<7; i++){
+                        System.out.println(note.getString() + " " + note.getFret());
                         //this condition resolves to true if the iterator is on the right string to add the note...
-                        if(i - 1 == java.util.Arrays.asList(guitarStrings).indexOf(Character.toString(note.getString()))){
+                        if(i == 1 && note.getString() == 'e'){
                             tabTable.get(i).add(Integer.toString(note.getFret()));
                         }
-                        //otherwise, just put a hypen
-                        else{
+                        else if(i == 2 && note.getString() == 'B'){
+                            tabTable.get(i).add(Integer.toString(note.getFret()));
+                        }
+                        else if(i == 3 && note.getString() == 'G'){
+                            tabTable.get(i).add(Integer.toString(note.getFret()));
+                        }
+                        else if(i == 4 && note.getString() == 'D'){
+                            tabTable.get(i).add(Integer.toString(note.getFret()));
+                        }
+                        else if(i == 5 && note.getString() == 'A'){
+                            tabTable.get(i).add(Integer.toString(note.getFret()));
+                        }
+                        else if(i == 6 && note.getString() == 'E'){
+                            tabTable.get(i).add(Integer.toString(note.getFret()));
+                        }
+
+                        if(note.getFret() >= 10){
                             tabTable.get(i).add("-");
+                        } 
+                        else {
+                        tabTable.get(i).add("--");
                         }
                     }
                 }
