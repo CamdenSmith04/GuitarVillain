@@ -153,6 +153,10 @@ public class Lesson {
         this.completed = completed;
     }
 
+    /**
+     * This method converts the lessons data fields into strings.
+     * @return the string of all the data fields.
+     */
     @Override
     public String toString() {
         return ("Title: " + this.title + "\n" + 

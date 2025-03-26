@@ -5,8 +5,6 @@ import java.util.UUID;
 import java.io.File;
 import java.io.FileWriter;
 
-import org.jfugue.player.Player;
-
 /**
  * This class represents a Song.
  * @author Andrew Goad
@@ -447,6 +445,10 @@ public class Song {
         this.completed = completed;
     }
 
+    /**
+     * This method converts the songs data fields into strings.
+     * @return the string of all the data fields.
+     */
     @Override
     public String toString() {
         return ("Author: " + this.author + "\n" + 

@@ -213,6 +213,10 @@ public class Module {
         this.progress = progress;
     }
 
+    /**
+     * This method converts the modules data fields into strings.
+     * @return the string of all the data fields.
+     */
     @Override
     public String toString() {
         return ("Title: " + this.title + "\n" + 
