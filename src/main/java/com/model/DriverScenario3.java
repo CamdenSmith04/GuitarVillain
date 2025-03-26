@@ -1,5 +1,6 @@
 package com.model;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class DriverScenario3 {
 
@@ -11,7 +12,14 @@ public class DriverScenario3 {
         User current_user = facade.getCurrentUser();
 
         // See users friends
-        facade.browseFriends();
+        ArrayList<User> users = facade.getUsers();
+        for (UUID friend : current_user.getFriends()) {
+            for (User user : users) { 
+                if (user.idIsMatch(friend)) {
+                    System.out.println("Friend: " + user.getUsername());
+                }
+            }
+        }
 
         System.out.println("-----------------------");
 
