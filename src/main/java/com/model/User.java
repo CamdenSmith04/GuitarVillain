@@ -329,10 +329,18 @@ public class User {
         this.securityAnswer = securityAnswer;
     }
 
+    /**
+     * Gets role of user
+     * @return User's role
+     */
     public String getRole() {
         return this.role;
     }
 
+    /**
+     * Sets the role to a string
+     * @param role String of role
+     */
     public void setRole(String role) {
         switch (role) {
             case "User":{
@@ -355,7 +363,11 @@ public class User {
                 break;
         }
     }
-
+    
+    /**
+     * This method converts the users data fields into strings.
+     * @return the string of all the data fields.
+     */
     @Override
     public String toString() {
         return ("Id: " + this.id + "\n" + 

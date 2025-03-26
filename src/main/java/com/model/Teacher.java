@@ -39,18 +39,17 @@ public class Teacher extends User {
 
     /**
      * The teacher deletes a course.
-     * @param course The course to be deleted.
+     * @param id The id of the course to be deleted.
      */
     public void deleteCourse(UUID id) {
         this.courses.remove(id);
     }
 
+    /**
+     * The teacher deletes a course.
+     * @param course The course to be deleted.
+     */
     public void deleteCourse(Course course) {
         this.courses.remove(course.getId());
-    }
-
-    // Remove? Do we need one seperate from User's?
-    public boolean isMatch(UUID course) {
-        return this.id.equals(course);
     }
 }

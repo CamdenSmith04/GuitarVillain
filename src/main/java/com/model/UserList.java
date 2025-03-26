@@ -140,11 +140,11 @@ public class UserList {
     }
 
     /**
-     * This method resets a user's password if the user exists and inputs the correct answer to their security question
-     * @param username User's username
-     * @param securityAnswer User's answer to the security question
-     * @param newPassword The password the User wants to switch to
-     * @return The user object
+     * This method will reset a users password.
+     * @param username the user of the user
+     * @param securityAnswer the answer the to user's security question
+     * @param newPassword the user's new password
+     * @return the user whose password was changed.
      */
     public User resetPassword(String username, String securityAnswer, String newPassword) {
         for (User user : users) {

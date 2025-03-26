@@ -1,7 +1,11 @@
 package com.model;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.UUID;
+
 
 public class LessonBasedInterfaceDriver {
 
@@ -9,9 +13,26 @@ public class LessonBasedInterfaceDriver {
         
         Facade facade = new Facade();
 
-        facade.logIn("camdensmith", "password123");
+        if(facade.logIn("camdensmith", "password123")){
+            writeToFile("\nSuccessfully logged in!\n");
+        }
 
-        facade.becomeTeacher();
+        writeToFile("Number of courses found: " + facade.getCourses().size());
+
+        writeToFile("-------");
+        writeToFile("Courses");
+        writeToFile("-------");
+
+        for (Course course : facade.getCourses()){
+            writeToFile(course.toString());
+            writeToFile("\n");
+        }
+
+
+
+        if(facade.becomeTeacher()){
+            writeToFile("\nSuccessfully became teacher!\n");
+        }
 
         facade.makeCourse("Music for the Non-major");
         Course newCourse = facade.getCurrentCourse();
@@ -53,23 +74,82 @@ public class LessonBasedInterfaceDriver {
 
         // facade.addCourse(newCourse);
 
-        facade.logout();
+        writeToFile("Number of courses found: " + facade.getCourses().size());
 
-        facade.logIn("abbyholdcraft", "thegrasstoucher");
+        writeToFile("-------");
+        writeToFile("Courses");
+        writeToFile("-------");
 
-        facade.becomeStudent();
+        for (Course course : facade.getCourses()){
+            writeToFile(course.toString());
+            writeToFile("\n");
+        }
+
+        if(facade.logout()){
+            writeToFile("\nSuccessfully logged out!\n");
+        }
+
+        if (facade.logIn("abbyholdcraft", "thegrasstoucher")) {
+            writeToFile("\nSuccessfully logged in!\n");
+        }
+
+        if(facade.becomeStudent()){
+            writeToFile("\nSuccessfully became student!\n");
+        }
+
+        for (UUID match : ((Student) facade.getCurrentUser()).getCourses()) {
+            if (facade.getCourseById(match).getName().equals("Music for the Non-major")) {
+                for (UUID lesson : facade.getCourseById(match).getAssignedLessons()) {
+                    if (facade.getLessonById(lesson).getCompleted()){
+                        writeToFile(facade.getLessonById(lesson).getTitle() + " is completed.");
+                    }
+                    else{
+                        writeToFile(facade.getLessonById(lesson).getTitle() + " is not completed.");
+                    }
+                }
+            }
+        }
+        writeToFile("\n");
 
         for (UUID match : ((Student) facade.getCurrentUser()).getCourses()) {
             if (facade.getCourseById(match).getName().equals("Music for the Non-major")) {
                 for (UUID lesson : facade.getCourseById(match).getAssignedLessons()) {
                     Lesson currLesson = facade.getLessonById(lesson);
                     ((Student) facade.getCurrentUser()).beginLesson(currLesson);
-                    System.out.println();
+                    writeToFile(facade.getLessonById(lesson).getEducationalMaterial());
+                    writeToFile(facade.getLessonById(lesson).getVisualAid());
+                    writeToFile("\n");
                 }
             }
         }
 
-        facade.logout();
+        for (UUID match : ((Student) facade.getCurrentUser()).getCourses()) {
+            if (facade.getCourseById(match).getName().equals("Music for the Non-major")) {
+                for (UUID lesson : facade.getCourseById(match).getAssignedLessons()) {
+                    if (facade.getLessonById(lesson).getCompleted()){
+                        writeToFile(facade.getLessonById(lesson).getTitle() + " is completed.");
+                    }
+                    else{
+                        writeToFile(facade.getLessonById(lesson).getTitle() + " is not completed.");
+                    }
+                }
+            }
+        }
+
+        if(facade.logout()) {
+            writeToFile("\nSuccessfully logged out!\n");
+        }
+
     }
     
+
+
+    public static void writeToFile(String text){
+        try (PrintWriter writer = new PrintWriter((new FileWriter("src/main/java/com/model/LessonBasedInterface.txt", true)))) {
+            writer.println(text);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

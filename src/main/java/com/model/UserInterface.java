@@ -5,7 +5,7 @@ package com.model;
  * @author Holdcraft
  */
 public interface UserInterface extends GuestInterface {
-    public void logout();
+    public boolean logout();
     public void browseFriends();
     public void viewFriendProfile(User user);
     public void composeSong();
