@@ -69,6 +69,9 @@ public class Module {
      * @return true if the modules are a match, otherwise false.
      */
     public boolean isMatch(Module module) {
+        if (module == null){
+            return false;
+        }
         return this.id.equals(module.getId());
     }
 
@@ -85,33 +88,71 @@ public class Module {
      * This method is used to add lessons to a module.
      * @param lesson the UUID of a lesson to be added to a course.
      */
-    public void addLesson(UUID lesson) {
+    public boolean addLesson(UUID lesson) {
+        if (lesson == null) {
+            return false;
+        }
+        for (UUID match : lessons) {
+            if (match.equals(lesson)){
+                return false;
+            }
+        }
         this.lessons.add(lesson);
+        return true;
+
     }
 
     /**
      * This method is used to remove a lesson from a course.
      * @param lesson the UUID of a lesson to be removed from a course.
      */
-    public void removeLesson(UUID lesson) {
-        this.lessons.remove(lesson);
+    public boolean removeLesson(UUID lesson) {
+        if (lesson == null) {
+            return false;
+        }
+        for (UUID match : lessons) {
+            if (match.equals(lesson)){
+                this.lessons.remove(lesson);
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
      * This method is used to add songs to a module.
      * @param song the UUID of a song to be added to a module.
      */
-    public void addSong(UUID song) {
+    public boolean addSong(UUID song) {
+        if (song == null) {
+            return false;
+        }
+        for (UUID match : songs) {
+            if (match.equals(song)){
+                return false;
+            }
+        }
         this.songs.add(song);
+        return true;
     }
 
     /**
      * This method is used to remove a song from a module.
      * @param song the UUID of a song to be removed from a module.
      */
-    public void removeSong(UUID song) {
-        this.songs.add(song);
+    public boolean removeSong(UUID song) {
+        if (song == null) {
+            return false;
+        }
+        for (UUID match : songs) {
+            if (match.equals(song)){
+                this.songs.remove(song);
+                return true;
+            }
+        }
+        return false;
     }
+
 
     /**
      * This is a getter for the title of the module.

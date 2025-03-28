@@ -327,7 +327,7 @@ public class CourseTest {
         ArrayList<Object> empty = new ArrayList<>();
         Course nullCourse = new Course(null, null);
         String result = nullCourse.toString();
-        assertEquals(result, "Teachers:" + empty + "\nName: null\nStudents: " + empty + "\nAssigned Lessons: " + empty + "\nAssigned Songs: " + empty + "\nId: " + nullCourse.getId()); 
+        assertEquals(result, "Teachers: " + empty + "\nName: null\nStudents: " + empty + "\nAssigned Lessons: " + empty + "\nAssigned Songs: " + empty + "\nId: " + nullCourse.getId()); 
     }
 
     @Test
