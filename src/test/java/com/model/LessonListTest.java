@@ -96,14 +96,14 @@ public class LessonListTest {
     public void testDeleteLessonExistingLesson() {
         Lesson lesson = lessonList.getLessonByTitle("Lesson 1");
         boolean success = lessonList.deleteLesson(lesson);
-        assertFalse(success);
+        assertTrue(success);
     }
 
     @Test
     public void testDeleteLessonNotFound() {
         Lesson lesson = new Lesson("Title", "Material", "Aid");
         boolean success = lessonList.deleteLesson(lesson);
-        assertTrue(success);
+        assertFalse(success);
     }
 
 

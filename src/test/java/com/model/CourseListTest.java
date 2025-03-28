@@ -119,7 +119,7 @@ public class CourseListTest {
     public void testDeleteCourseExistingCourse() {
         Course course = courseList.getCourseByName("Course 1");
         boolean success = courseList.deleteCourse(course);
-        assertFalse(success);
+        assertTrue(success);
     }
 
     @Test
@@ -129,7 +129,7 @@ public class CourseListTest {
         teacher4.add(user4.getId());
         Course course = new Course(teacher4, "Name");
         boolean success = courseList.deleteCourse(course);
-        assertTrue(success);
+        assertFalse(success);
     }
 
 

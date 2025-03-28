@@ -40,8 +40,17 @@ public class LessonList {
      * This method adds a lesson object to the list of lessons.
      * @param lesson a lesson to be added to the list of lessons.
      */
-    public void addLesson(Lesson lesson){
-        lessons.add(lesson);
+    public boolean addLesson(Lesson lesson){
+        if (lesson == null) {
+            return false;
+        }
+        for (Lesson match : lessons) {
+            if (match.equals(lesson)){
+                return false;
+            }
+        }
+        this.lessons.add(lesson);
+        return true;
     }
 
     /**
@@ -84,13 +93,17 @@ public class LessonList {
      * THis method deletes/removes a lesson from the lesson list if it is found.
      * @param lesson the lesson object to be deleted/removed.
      */
-    public void deleteLesson(Lesson lesson){
-        for(Lesson current : lessons) {
-            if(current.isMatch(lesson)) {
-                lessons.remove(current);
-                return;
+    public boolean deleteLesson(Lesson lesson){
+        if (lesson == null) {
+            return false;
+        }
+        for (Lesson match : lessons) {
+            if (match.equals(lesson)) {
+                this.lessons.remove(lesson);
+                return true;
             }
         }
+        return false;
     }
 
 }
