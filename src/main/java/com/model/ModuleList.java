@@ -41,8 +41,17 @@ public class ModuleList {
      * This method adds a Module object to the list of modules.
      * @param module a module to be added to the list of modules.
      */
-    public void addModule(Module module) {
-        modules.add(module);
+    public boolean addModule(Module module) {
+        if (module == null) {
+            return false;
+        }
+        for (Module match : modules) {
+            if (match.equals(module)){
+                return false;
+            }
+        }
+        this.modules.add(module);
+        return true;
     }
 
     /**
@@ -85,13 +94,17 @@ public class ModuleList {
      * This method deletes/removes a module from the module list if it is found
      * @param module the module object to be deleted/removed.
      */
-    public void deleteModule(Module module) {
-        for(Module current : modules) {
-            if(current.isMatch(module)) {
-                modules.remove(current);
-                return;
+    public boolean deleteModule(Module module) {
+        if (module == null) {
+            return false;
+        }
+        for (Module match : modules) {
+            if (match.equals(module)) {
+                this.modules.remove(module);
+                return true;
             }
         }
+        return false;
     }
 
 }
