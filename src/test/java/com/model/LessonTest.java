@@ -47,7 +47,7 @@ public class LessonTest {
     }
 
     @Test
-    public void toStringNull() {
+    public void testToStringNull() {
         Lesson nullLesson = new Lesson(null, null, null);
         String result = nullLesson.toString();
         assertEquals(result, "Title: null\nId: " + nullLesson.getId() + "\nEducational Material: null\nVisual Aid: null\nCompleted: false"); 
