@@ -41,8 +41,17 @@ public class CourseList {
      * This method adds a Course object to the list of courses.
      * @param course a course to be added to the list of courses.
      */
-    public void addCourse(Course course) {
-        courses.add(course);
+    public boolean addCourse(Course course) {
+        if (course == null) {
+            return false;
+        }
+        for (Course match : courses) {
+            if (match.equals(course)){
+                return false;
+            }
+        }
+        this.courses.add(course);
+        return true;
     }
 
     /**
@@ -85,13 +94,17 @@ public class CourseList {
      * This method deletes/removes a course from the course list if it is found.
      * @param course the course object to be deleted/removed.
      */
-    public void deleteCourse(Course course) {
-        for(Course current : courses) {
-            if(current.isMatch(course)) {
-                courses.remove(current);
-                return;
+    public boolean deleteCourse(Course course) {
+        if (course == null) {
+            return false;
+        }
+        for (Course match : courses) {
+            if (match.equals(course)) {
+                this.courses.remove(course);
+                return true;
             }
         }
+        return false;
     }
     
 }

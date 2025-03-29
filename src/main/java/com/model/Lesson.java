@@ -69,6 +69,9 @@ public class Lesson {
      * @return true if the lessons are a match, otherwise false.
      */
     public boolean isMatch(Lesson lesson) {
+        if (lesson == null){
+            return false;
+        }
         return this.id.equals(lesson.getId());
     }
 

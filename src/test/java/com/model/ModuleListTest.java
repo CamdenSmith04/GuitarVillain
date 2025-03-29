@@ -97,14 +97,14 @@ public class ModuleListTest {
     public void testDeleteModuleExistingModule() {
         Module module = moduleList.getModuleByTitle("Module 1");
         boolean success = moduleList.deleteModule(module);
-        assertFalse(success);
+        assertTrue(success);
     }
 
     @Test
     public void testDeleteModuleNotFound() {
         Module module = new Module("Title");
         boolean success = moduleList.deleteModule(module);
-        assertTrue(success);
+        assertFalse(success);
     }
 
 }

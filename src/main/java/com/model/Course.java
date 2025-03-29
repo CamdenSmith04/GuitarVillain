@@ -45,7 +45,12 @@ public class Course {
      * @param name the name of the course.
      */
     public Course(ArrayList<UUID> teachers, String name) {
-        this.teachers = teachers;
+        if (teachers == null) {
+            this.teachers = new ArrayList<>();
+        }
+        else{
+            this.teachers = teachers;
+        }
         this.name = name;
         this.students = new ArrayList<>();
         this.assignedLessons = new ArrayList<>();
@@ -75,16 +80,34 @@ public class Course {
      * This method is used to add a teacher to the course.
      * @param teacher the UUID of a teacher to be added to a course.
      */
-    public void addTeacher(UUID teacher) {
+    public boolean addTeacher(UUID teacher) {
+        if (teacher == null) {
+            return false;
+        }
+        for (UUID match : teachers) {
+            if (match.equals(teacher)){
+                return false;
+            }
+        }
         this.teachers.add(teacher);
+        return true;
     }
 
     /**
      * This method is used to remove a teacher from a course.
      * @param teacher the UUID of a user to be removed from a course.
      */
-    public void removeTeacher(UUID teacher) {
-        this.teachers.remove(teacher);
+    public boolean removeTeacher(UUID teacher) {
+        if (teacher == null) {
+            return false;
+        }
+        for (UUID match : teachers) {
+            if (match.equals(teacher)){
+                this.teachers.remove(teacher);
+                return true;
+            }
+        }
+        return false;
     }
 
      /**
@@ -105,16 +128,34 @@ public class Course {
      * This method is used to add students to a course.
      * @param student the UUID of a user to be added to a course.
      */
-    public void addStudent(UUID student) {
+    public boolean addStudent(UUID student) {
+        if (student == null) {
+            return false;
+        }
+        for (UUID match : students) {
+            if (match.equals(student)){
+                return false;
+            }
+        }
         this.students.add(student);
+        return true;
     }
 
     /**
      * This method is used to remove a student from a course.
      * @param student the UUID of a user to be removed from a course.
      */
-    public void removeStudent(UUID student) {
-        this.students.remove(student);
+    public boolean removeStudent(UUID student) {
+        if (student == null) {
+            return false;
+        }
+        for (UUID match : students) {
+            if (match.equals(student)){
+                this.students.remove(student);
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -135,16 +176,34 @@ public class Course {
      * This method is used to add lessons to a course.
      * @param lesson the UUID of a lesson to be added to a course.
      */
-    public void addLesson(UUID lesson) {
+    public boolean addLesson(UUID lesson) {
+        if (lesson == null) {
+            return false;
+        }
+        for (UUID match : assignedLessons) {
+            if (match.equals(lesson)){
+                return false;
+            }
+        }
         this.assignedLessons.add(lesson);
+        return true;
     }
 
     /**
      * This method is used to remove a lesson from a course.
      * @param lesson the UUID of a lesson to be removed from a course.
      */
-    public void removeLesson(UUID lesson) {
-        this.assignedLessons.remove(lesson);
+    public boolean removeLesson(UUID lesson) {
+        if (lesson == null) {
+            return false;
+        }
+        for (UUID match : assignedLessons) {
+            if (match.equals(lesson)){
+                this.assignedLessons.remove(lesson);
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -165,16 +224,34 @@ public class Course {
      * This method is used to add songs to a course.
      * @param song the UUID of a song to be added to a course.
      */
-    public void addSong(UUID song) {
+    public boolean addSong(UUID song) {
+        if (song == null) {
+            return false;
+        }
+        for (UUID match : assignedSongs) {
+            if (match.equals(song)){
+                return false;
+            }
+        }
         this.assignedSongs.add(song);
+        return true;
     }
 
     /**
      * This method is used to remove a song from a course.
      * @param song the UUID of a song to be removed from a course.
      */
-    public void removeSong(UUID song) {
-        this.assignedSongs.remove(song);
+    public boolean removeSong(UUID song) {
+        if (song == null) {
+            return false;
+        }
+        for (UUID match : assignedSongs) {
+            if (match.equals(song)){
+                this.assignedSongs.remove(song);
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -197,6 +274,9 @@ public class Course {
      * @return true if the courses are a match, otherwise false.
      */
     public boolean isMatch(Course course) {
+        if (course == null) {
+            return false;
+        }
         return this.id.equals(course.getId());
     }
 
