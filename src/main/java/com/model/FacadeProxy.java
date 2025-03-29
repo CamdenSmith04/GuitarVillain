@@ -8,7 +8,7 @@ import java.lang.reflect.Proxy;
  * Handles user authorization - e.g. Student cannot assign courses, etc.
  * @author Holdcraft
  */
-public class AuthorizationProxy implements InvocationHandler {
+public class FacadeProxy implements InvocationHandler {
 
     private final Object target;
     private final Class<?> userRole;
@@ -18,18 +18,30 @@ public class AuthorizationProxy implements InvocationHandler {
      * @param target Facade being targeted
      * @param userRole User's role (teacher, student, etc)
      */
-    public AuthorizationProxy(Object target, Class<?> userRole) {
+    public FacadeProxy(Object target, Class<?> userRole) {
         this.target = target;
         this.userRole = userRole;
     }
 
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        // System.out.println(target);
         try {
-            if (userRole.getDeclaredMethod(method.getName(), (Class<?>[])args) != null);
+            if (userRole.getDeclaredMethod(method.getName(), (Class<?>[])args) != null)
                 return method.invoke(method, args);
+            return null;
         } catch (NoSuchMethodException e) {
             throw new IllegalAccessException("Access denied for: " + method.getName());
         }
+    }
+
+    public static GuestInterface makeGuestFacade() {
+        GuestInterface facade = new Facade();
+        GuestInterface secureFacade = (GuestInterface) Proxy.newProxyInstance(
+            GuestInterface.class.getClassLoader(),
+            new Class[]{GuestInterface.class},
+            new FacadeProxy(facade, String.class)
+        );
+        return secureFacade;
     }
 
     /**
@@ -42,7 +54,7 @@ public class AuthorizationProxy implements InvocationHandler {
         return Proxy.newProxyInstance(
             target.getClass().getClassLoader(),
             target.getClass().getInterfaces(),
-            new AuthorizationProxy(target, userRole)
+            new FacadeProxy(target, userRole)
         );
     }
     
