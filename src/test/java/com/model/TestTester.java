@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Assert;
 import com.model.*;
 
-public class Test {
+public class TestTester {
     
     @Test
     public void testTesting() {

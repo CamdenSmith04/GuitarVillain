@@ -20,7 +20,12 @@ public class Metronome {
      * @param beatsPerMinute The tempo for the metronome.
      */
     public Metronome(int beatsPerMinute) {
-        this.beatsPerMinute = beatsPerMinute;
+        if (beatsPerMinute < 0)
+            this.beatsPerMinute = 90;
+        else if (beatsPerMinute > 300)
+            this.beatsPerMinute = 300;
+        else
+            this.beatsPerMinute = beatsPerMinute;
     }
 
     boolean quit = false;

@@ -14,8 +14,6 @@ import java.util.UUID;
 import org.junit.Assert;
 import org.junit.runners.Parameterized;
 
-import com.model.*;
-
 /**
  * @author Camden Smith
  */
