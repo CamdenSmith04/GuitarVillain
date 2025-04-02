@@ -46,6 +46,7 @@ public class DataWriterTest {
 
     @After
     public void teardown() {
+        
         // Empty all lists
         userList.getUsers().clear();
         courseList.getCourses().clear();
