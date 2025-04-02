@@ -29,8 +29,10 @@ public class DataLoaderTest {
     @Before
     public void setup() {
         try{
-            FileReader reader = new FileReader("modulees.json");
+            FileReader reader = new FileReader("modules.json");
             JSONArray modulesJSON = (JSONArray)new JSONParser().parse(reader);
+            ArrayList<Note> notes = new ArrayList<Note>();
+            
             module1 = DataLoader.parseModule((JSONObject)modulesJSON.get(0));
             song1 = DataLoader.parseSong((JSONObject)modulesJSON.get(0));
 
@@ -151,4 +153,6 @@ public class DataLoaderTest {
     public void testParseModuleProgress(){
         assertEquals(module1.getProgress(), 0.75, 0);
     }
+
+    //@Test public void testParseNote
 }
