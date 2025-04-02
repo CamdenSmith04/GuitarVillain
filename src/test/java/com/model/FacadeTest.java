@@ -120,8 +120,6 @@ public class FacadeTest {
 
     @Test
     public void makeCourseTest(){
-        facade1.logIn("andrewgoad", "2point9fourpointO");
-        facade1.makeCourse("Andrew's School of Music and Chicken Plant");
         assertEquals(facade1.getCurrentCourse().getName(), "Andrew's School of Music and Chicken Plant");
     }
 
@@ -130,5 +128,86 @@ public class FacadeTest {
         facade1.makeCourse("Andrew's School of Music and Chicken Plant");
         assertNull(facade1.getCurrentCourse().getTeachers());
     }
+
+    @Test
+    public void deleteCourseTest(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.makeCourse("Andrew's School of Music and Chicken Plant");
+        facade1.deleteCourse("Andrew's School of Music and Chicken Plant");
+        assertNull(facade1.getCurrentCourse());
+    }
+
+    @Test public void deleteWrongCourseTest(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.makeCourse("Andrew's School of Music and Chicken Plant");
+        facade1.deleteCourse("Ecoboost Mustang");
+        assertEquals(facade1.getCurrentCourse().getName(), "Andrew's School of Music and Chicken Plant");
+    }
+
+    @Test public void addStudent(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.makeCourse("Andrew's School of Music and Chicken Plant");
+        facade1.addStudent(UUID.fromString("b354918c-201a-4ac3-bcc9-98263774d43b"));
+        assertEquals(facade1.getCurrentCourse().getStudents().get(0), UUID.fromString("b354918c-201a-4ac3-bcc9-98263774d43b"));
+    }
+
+    @Test public void removeStudentTest(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.makeCourse("Andrew's School of Music and Chicken Plant");
+        facade1.addStudent(UUID.fromString("b354918c-201a-4ac3-bcc9-98263774d43b"));
+        assertNull(facade1.getCurrentCourse().getStudent(UUID.fromString("b354918c-201a-4ac3-bcc9-98263774d43b")));
+    }
+
+    @Test public void addLessonTest(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.makeCourse("Andrew's School of Music and Chicken Plant");
+        facade1.assignLesson(UUID.fromString("e8810e9c-9eed-4ee3-8c14-fc22a5bfc289"));
+        assertEquals(facade1.getCurrentCourse().getAssignedLessons().get(0), UUID.fromString("e8810e9c-9eed-4ee3-8c14-fc22a5bfc289"));
+    }
+
+    @Test public void removeLessonTest(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.makeCourse("Andrew's School of Music and Chicken Plant");
+        facade1.assignLesson(UUID.fromString("e8810e9c-9eed-4ee3-8c14-fc22a5bfc289"));
+        facade1.removeLesson(UUID.fromString("e8810e9c-9eed-4ee3-8c14-fc22a5bfc289"));
+        assertNull(facade1.getCurrentCourse().getAssignedLessons().get(0));
+    }
+
+    @Test public void assignSongTest(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.makeCourse("Andrew's School of Music and Chicken Plant");
+        facade1.assignSong(UUID.fromString("3617a6b9-7170-49db-945f-1cf6eb816c3f"));
+        assertEquals(facade1.getCurrentCourse().getAssignedLessons().get(0), UUID.fromString("3617a6b9-7170-49db-945f-1cf6eb816c3f"));
+    }
+
+    @Test public void RemoveLessonTest(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.makeCourse("Andrew's School of Music and Chicken Plant");
+        facade1.assignSong(UUID.fromString("3617a6b9-7170-49db-945f-1cf6eb816c3f"));
+        facade1.removeSong(UUID.fromString("3617a6b9-7170-49db-945f-1cf6eb816c3f"));
+        assertEquals(facade1.getCurrentCourse().getAssignedLessons().get(0), UUID.fromString("3617a6b9-7170-49db-945f-1cf6eb816c3f"));
+    }
+
+    @Test 
+    public void BeginSongTest(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.beginSong("3617a6b9-7170-49db-945f-1cf6eb816c3f");
+        assertEquals(facade1.getCurrentSong().getId(), "3617a6b9-7170-49db-945f-1cf6eb816c3f");
+    }
+
+    @Test 
+    public void BeginLessonTest(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.beginLesson("e8810e9c-9eed-4ee3-8c14-fc22a5bfc289");
+        assertEquals(facade1.getCurrentLesson().getId(), "e8810e9c-9eed-4ee3-8c14-fc22a5bfc289");
+    }
+
+    public void BeginLessonNull(){
+        facade1.logIn("andrewgoad", "2point9fourpointO");
+        facade1.beginLesson("Electric Guitar as a Melee Weapon, First Edition");
+        assertNull(facade1.getCurrentLesson());
+
+    }
+
 
 }
