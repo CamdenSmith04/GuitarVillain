@@ -1,6 +1,7 @@
 package com.model;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 import org.junit.After;
@@ -20,6 +21,8 @@ import javax.sound.midi.MidiUnavailableException;
  * Visibility
  * This class will only test metronome
  * @author Abby Holdcraft
+ * 
+ * NOTE: Metronome will infinitely loop. Most figure out how to set time (for example, while song is playing, or for x amt of seconds)
  */
 public class MetronomeTest {
 
@@ -41,7 +44,7 @@ public class MetronomeTest {
         System.out.println("Playing 90 BPM for 10 seconds");
         metronome = new Metronome(90);
         metronome.startMetronome();
-        Thread.sleep(10000);
+        // TimeUnit.SECONDS.sleep(10);
         metronome.stopMetronome();
         System.out.println("Success?");
         boolean success = Boolean.parseBoolean(keyboard.nextLine());
@@ -53,7 +56,7 @@ public class MetronomeTest {
         System.out.println("Playing 1 BPM, should play 1 tick.");
         metronome = new Metronome(1);
         metronome.startMetronome();
-        Thread.sleep(10000);
+        // TimeUnit.SECONDS.sleep(10);
         metronome.stopMetronome();
         System.out.println("Success?");
         boolean success;
@@ -70,7 +73,7 @@ public class MetronomeTest {
         System.out.println("Playing 0 BPM, should have no sound");
         metronome = new Metronome(0);
         metronome.startMetronome();
-        Thread.sleep(10000);
+        // TimeUnit.SECONDS.sleep(10);
         metronome.stopMetronome();
         System.out.println("Success?");
         boolean success;
@@ -87,7 +90,7 @@ public class MetronomeTest {
         System.out.println("Playing 1000 BPM, should cap at 300");
         metronome = new Metronome(1000);
         metronome.startMetronome();
-        Thread.sleep(10000);
+        // TimeUnit.SECONDS.sleep(10);
         metronome.stopMetronome();
         System.out.println("Success?");
         boolean success;
@@ -104,7 +107,7 @@ public class MetronomeTest {
         System.out.println("Playing -60 BPM, should default to 90 BPM");
         metronome = new Metronome(-60);
         metronome.startMetronome();
-        Thread.sleep(10000);
+        // TimeUnit.SECONDS.sleep(10);
         metronome.stopMetronome();
         System.out.println("Success?");
         boolean success;
@@ -121,7 +124,7 @@ public class MetronomeTest {
         System.out.println("Playing 1000000 BPM, should cap at 300");
         metronome = new Metronome(1000000);
         metronome.startMetronome();
-        Thread.sleep(10000);
+        // TimeUnit.SECONDS.sleep(10);
         metronome.stopMetronome();
         System.out.println("Success?");
         boolean success;

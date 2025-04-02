@@ -1,5 +1,7 @@
 package com.model;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.sound.midi.MidiUnavailableException;
 
 import org.jfugue.pattern.Pattern;
@@ -33,8 +35,9 @@ public class Metronome {
     /**
      * Starts the metronome and plays until stopped.
      * @throws MidiUnavailableException An exception for if the MIDI can not be found.
+     * @throws InterruptedException 
      */
-    public void startMetronome() throws MidiUnavailableException {
+    public void startMetronome() throws MidiUnavailableException, InterruptedException {
         RealtimePlayer player = new RealtimePlayer();
         Pattern pattern = new Pattern("C").setTempo(this.beatsPerMinute);
         quit = false;

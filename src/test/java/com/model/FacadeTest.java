@@ -27,7 +27,7 @@ public class FacadeTest {
     @Test
     public void LogInTest(){
         facade1.logIn("andrewgoad", "2point9fourpointO");
-        assertEquals(facade1.getCurrentUser(), facade1.getUser("andrewgoad"))
+        assertEquals(facade1.getCurrentUser(), facade1.getUser("andrewgoad"));
     }
 
     @Test
@@ -53,7 +53,7 @@ public class FacadeTest {
     @Test 
     public void SignUpLoggedin(){
         facade1.logIn("andrewgoad", "2point9fourpointO");
-        cade1.signUp("baileymccoy", "mclaren", Experience.valueOf("ADVANCED"), SecurityQuestion.valueOf("PET_NAME"), "Olive");
+        facade1.signUp("baileymccoy", "mclaren", Experience.valueOf("ADVANCED"), SecurityQuestion.valueOf("PET_NAME"), "Olive");
         assertEquals(facade1.getUser("andrewgoad"), facade1.getCurrentUser());
     }
 
@@ -78,13 +78,13 @@ public class FacadeTest {
     @Test
     public void logOutSong(){
         facade1.logIn("andrewgoad", "2point9fourpointO");
-        facade1.logout()
+        facade1.logout();
         assertNull(facade1.getCurrentSong());
     }
     @Test
     public void logOutModule(){
         facade1.logIn("andrewgoad", "2point9fourpointO");
-        facade1.logOut();
+        facade1.logout();
         assertNull(facade1.getCurrentModule());
     }
     @Test
