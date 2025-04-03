@@ -1,5 +1,7 @@
 package com.model;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.sound.midi.MidiUnavailableException;
 
 import org.jfugue.pattern.Pattern;
@@ -20,7 +22,12 @@ public class Metronome {
      * @param beatsPerMinute The tempo for the metronome.
      */
     public Metronome(int beatsPerMinute) {
-        this.beatsPerMinute = beatsPerMinute;
+        if (beatsPerMinute < 0)
+            this.beatsPerMinute = 90;
+        else if (beatsPerMinute > 300)
+            this.beatsPerMinute = 300;
+        else
+            this.beatsPerMinute = beatsPerMinute;
     }
 
     boolean quit = false;
@@ -28,8 +35,9 @@ public class Metronome {
     /**
      * Starts the metronome and plays until stopped.
      * @throws MidiUnavailableException An exception for if the MIDI can not be found.
+     * @throws InterruptedException 
      */
-    public void startMetronome() throws MidiUnavailableException {
+    public void startMetronome() throws MidiUnavailableException, InterruptedException {
         RealtimePlayer player = new RealtimePlayer();
         Pattern pattern = new Pattern("C").setTempo(this.beatsPerMinute);
         quit = false;
