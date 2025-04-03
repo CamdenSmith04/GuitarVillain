@@ -25,16 +25,29 @@ public class DataLoaderTest {
     DataLoader dataLoader1 = new DataLoader();
     Module module1;
     Song song1;
+    User user1;
+    Course course1;
 
     @Before
     public void setup() {
         try{
-            FileReader reader = new FileReader("modules.json");
-            JSONArray modulesJSON = (JSONArray)new JSONParser().parse(reader);
-            ArrayList<Note> notes = new ArrayList<Note>();
+            FileReader moduleReader = new FileReader("src/main/java/com/data/modules.json");
+            JSONArray modulesJSON = (JSONArray)new JSONParser().parse(moduleReader);
+
+            FileReader songReader = new FileReader("src/main/java/com/data/modules.json");
+            JSONArray songsJSON = (JSONArray)new JSONParser().parse(songReader);
+
+            FileReader userReader = new FileReader("src/main/java/com/data/modules.json");
+            JSONArray userJSON = (JSONArray)new JSONParser().parse(moduleReader);
+
+            FileReader courseReader = new FileReader("src/main/java/com/data/modules.json");
+            JSONArray courseJSON = (JSONArray)new JSONParser().parse(songReader);
             
             module1 = DataLoader.parseModule((JSONObject)modulesJSON.get(0));
-            song1 = DataLoader.parseSong((JSONObject)modulesJSON.get(0));
+            song1 = DataLoader.parseSong((JSONObject)songsJSON.get(0));
+            user1 = DataLoader.parseUser((JSONObject)userJSON.get(0));
+            course1 = DataLoader.parseCourse((JSONObject)courseJSON.get(0));
+            
 
         }
         catch(Exception e){
@@ -154,5 +167,43 @@ public class DataLoaderTest {
         assertEquals(module1.getProgress(), 0.75, 0);
     }
 
-    //@Test public void testParseNote
+    /*User(UUID id, String username, String password, Experience experience, 
+    int points, int streak, SecurityQuestion securityQuestion, String securityAnswer, 
+    ArrayList<UUID> friends, ArrayList<UUID> songs)
+ */
+    @Test
+    public void testParseUser(){
+        ArrayList<UUID> songs = new ArrayList<UUID>();
+        songs.add(UUID.fromString("c06aa7a7-1656-4df5-87cf-7e96e0765bf9"));
+        User user2 = new User(UUID.fromString("d0c52973-7f9b-483e-80e3-48681ea68674"), "camdensmith", "password123", Experience.valueOf("BEGINNER"),
+        100, 5, SecurityQuestion.valueOf("PET_NAME"), "Baxter", new ArrayList<UUID>(), songs);
+        assertEquals(user1, user2);
+    }
+
+    /*
+     * Course(ArrayList<UUID> teachers, String name, 
+     * ArrayList<UUID> students, ArrayList<UUID> assignedLessons, ArrayList<UUID> assignedSongs,
+     *  UUID id)
+     */
+    @Test
+    public void testParseCourse(){
+        ArrayList<UUID> teachers = new ArrayList<UUID>();
+        teachers.add(UUID.fromString("8d377a72-5657-4c13-a54e-d5e695c13bf6"));
+
+        ArrayList<UUID> lessons = new ArrayList<UUID>();
+        lessons.add(UUID.fromString("e8810e9c-9eed-4ee3-8c14-fc22a5bfc289"));
+        lessons.add(UUID.fromString("c09443ad-877e-4e4d-abd4-65d9e9dd1dee"));
+        lessons.add(UUID.fromString("9586960f-1bf0-465c-97c4-a1a980b7b52f"));
+        
+        ArrayList<UUID> students = new ArrayList<UUID>();
+        students.add(UUID.fromString("55decc95-e79f-4f38-8da6-1afd17e4375a"));
+
+        ArrayList<UUID> songs = new ArrayList<UUID>();
+        songs.add(UUID.fromString("3617a6b9-7170-49db-945f-1cf6eb816c3f"));
+        
+
+        Course course2 = new Course(teachers, "Mr. Goad", students, lessons, songs, UUID.fromString("adee4a06-f15c-4593-abde-6495f3c28cd6"));
+         
+        assertEquals(course1, course2);
+    }
 }
