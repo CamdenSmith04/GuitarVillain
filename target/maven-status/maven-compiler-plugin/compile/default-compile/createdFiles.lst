@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-com\music\SecondaryController.class
-com\music\PrimaryController.class
-module-info.class
-com\music\App.class
-=======
 com\model\DataConstants.class
 com\music\App.class
 com\model\Module.class
@@ -20,6 +14,7 @@ com\model\TeacherInterface.class
 com\model\DataLoader.class
 com\model\ModuleList.class
 com\model\DataLoaderDriver.class
+com\music\LogInController.class
 com\model\AndrewDriver.class
 com\model\Instrument.class
 com\model\UserList.class
@@ -40,6 +35,7 @@ com\model\Annotation.class
 com\model\Student.class
 com\model\LessonList.class
 com\model\Note.class
+com\music\HomeController.class
 com\model\DriverScenario2.class
 com\model\StudentInterface.class
 module-info.class
@@ -55,4 +51,3 @@ com\model\Facade.class
 com\music\SecondaryController.class
 com\model\Lesson.class
 com\model\UserInterface.class
->>>>>>> tempbranch
