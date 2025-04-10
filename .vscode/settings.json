@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
+=======
+    "java.debug.settings.onBuildFailureProceed": true,
+>>>>>>> tempbranch
     "java.configuration.updateBuildConfiguration": "interactive"
 }
