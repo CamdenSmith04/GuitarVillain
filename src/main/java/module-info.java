@@ -8,4 +8,6 @@ module com.music {
 
     opens com.music to javafx.fxml;
     exports com.music;
+
+    exports com.model to junit;
 }
