@@ -5,13 +5,7 @@ module com.music {
     requires jfugue;
     requires java.desktop;
     requires junit;
-    
 
-
-    opens com.program to javafx.fxml;
-    exports com.program;
-
-    opens com.model to javafx.fxml;
-    exports com.model;
-
+    opens com.music to javafx.fxml;
+    exports com.music;
 }
