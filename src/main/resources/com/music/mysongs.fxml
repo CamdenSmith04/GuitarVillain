@@ -82,6 +82,26 @@
         </items>
       </ToolBar>
 
-      <Text layoutX="255.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Songs" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff6b" height="543.0" layoutY="57.0" stroke="#ffffff00" strokeType="INSIDE" width="870.0" />
+      <Rectangle fill="#175ea1" height="543.0" layoutY="59.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" width="870.0" />
+
+      <ScrollPane fitToHeight="false" fitToWidth="true" hbarPolicy="NEVER" layoutX="35.0" layoutY="128.0" prefHeight="436.0" prefWidth="800.0" vbarPolicy="ALWAYS">
+      <content>
+          <GridPane fx:id="grid_mysongs" hgap="100.0" vgap="100.0">
+              <!-- Your dynamically added elements will go here -->
+          </GridPane>
+      </content>
+    </ScrollPane>
+      <Text fill="WHITE" layoutX="35.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Songs">
+         <font>
+            <Font name="Avenir Next Medium" size="36.0" />
+         </font>
+      </Text>
+      <Button layoutX="673.0" layoutY="68.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="162.0" text="Create New +">
+         <font>
+            <Font name="Avenir Next Medium" size="20.0" />
+         </font>
+      </Button>
+
    </children>
 </AnchorPane>

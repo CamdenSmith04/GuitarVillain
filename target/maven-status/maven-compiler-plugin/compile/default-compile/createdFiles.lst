@@ -46,6 +46,7 @@ com/model/Genre.class
 com/model/DriverScenario3.class
 com/model/Annotation.class
 com/music/HomeController.class
+com/music/TeacherCourseController.class
 com/model/Experience.class
 com/music/PrimaryController.class
 com/model/Instrument.class
@@ -55,6 +56,7 @@ com/model/TeacherInterface.class
 com/model/Random.class
 com/model/DriverScenario1.class
 com/music/ProfileController.class
+com/music/StudentCourseController.class
 com/model/SongList.class
 com/model/UI.class
 com/model/Measure.class

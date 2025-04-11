@@ -2,17 +2,62 @@ package com.music;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.UUID;
+
+import com.model.Facade;
+import com.model.Song;
+import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 
 public class MySongsController implements Initializable{
     
+    private Facade facade;
+    private User user;
+
+    @FXML private GridPane grid_mysongs;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("initialize called");
+        facade = Facade.getInstance();
+        user = facade.getCurrentUser();
+        displayUserItems(user);
     } 
+
+    private void displayUserItems(User user) {
+
+        int columnCount = 4;
+        int row = 0;
+        int col = 0;
+
+        ArrayList<UUID> songs = user.getSongs();
+        for (int i = 0; i < songs.size(); i++) {
+            Song song = facade.getSong(songs.get(i));
+            
+            VBox vbox = new VBox();
+            Label songTitle = new Label(song.getTitle());
+            songTitle.setFont(new Font(14));
+            
+            vbox.getChildren().add(songTitle);
+            vbox.getStyleClass().add("book-grid-item");
+    
+            grid_mysongs.add(vbox, col, row);
+
+            col++;
+
+            if (col == columnCount) {
+                col = 0;
+                row++;
+            }
+        }
+    }
 
     @FXML
     private void goToHome() throws IOException {

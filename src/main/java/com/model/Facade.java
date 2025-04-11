@@ -20,6 +20,8 @@ public class Facade implements TeacherInterface {
     protected Song currentSong;
     protected Module currentModule;
 
+    private static Facade instance;
+
     // need to figure out how we want to do setters since this is facade
 
     /**
@@ -31,6 +33,14 @@ public class Facade implements TeacherInterface {
         moduleList = ModuleList.getInstance();
         lessonList = LessonList.getInstance();
         courseList = CourseList.getInstance();
+        currentUser = null;
+    }
+
+    public static Facade getInstance() {
+        if (instance == null) {
+            instance = new Facade(); // Create the instance if it doesn't exist yet
+        }
+        return instance; // Return the single instance
     }
 
     /**
