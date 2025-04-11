@@ -42,7 +42,14 @@ public class MySongsController implements Initializable{
         addButton.setId("newSongButton");
         addButton.setFont(new Font(100));
         addButton.getStyleClass().add("add-button-item");
-        addButton.setOnAction(e -> handleNewSong());
+        addButton.setOnAction(e -> {
+            try {
+                handleNewSong();
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
 
 
         grid_mysongs.add(addButton, col, row);
@@ -71,8 +78,8 @@ public class MySongsController implements Initializable{
     }
 
     @FXML
-    private void handleNewSong() {
-        System.out.println("NEW SONG!!!");
+    private void handleNewSong() throws IOException {
+        App.setRoot("newsong");
     }
 
     @FXML
