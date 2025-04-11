@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.StudentCourseController">
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.SongLibraryController">
    <children>
 
       <ToolBar prefHeight="59.0" prefWidth="870.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -83,6 +83,6 @@
         </items>
       </ToolBar>
 
-      <Text layoutX="247.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Course" />
+      <Text layoutX="255.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Library" />
    </children>
 </AnchorPane>

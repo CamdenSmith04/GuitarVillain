@@ -1,13 +1,17 @@
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/AndrewDriver.java
+/Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/LessonListController.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/DriverScenario2.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/program/MusicPlayer.java
+/Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/SongLibraryController.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/Experience.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/HomeController.java
+/Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/MySongsController.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/DataConstants.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/UserInterface.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/GuestInterface.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/DataLoader.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/User.java
+/Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/StudentCourseController.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/Facade.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/FurElise.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/Visibility.java
@@ -24,6 +28,7 @@
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/App.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/module-info.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/LessonList.java
+/Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/ModuleLibraryController.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/Chord.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/DriverScenario5.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/SecurityQuestion.java
@@ -34,6 +39,7 @@
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/Metronome.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/FacadeProxy.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/SecondaryController.java
+/Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/MoreController.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/Module.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/DataLoaderDriver.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/Course.java
@@ -44,10 +50,13 @@
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/DriverScenario1.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/PrintToFileDriver.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/Measure.java
+/Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/TeacherCourseController.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/TeacherInterface.java
+/Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/ProfileController.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/Student.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/ModuleList.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/SongList.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/CourseList.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/Genre.java
+/Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/music/AboutController.java
 /Users/camdensmith/Desktop/Spring 2025/CSCE 247/ProjectRepo/GuitarVillain/src/main/java/com/model/LessonBasedInterfaceDriver.java

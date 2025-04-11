@@ -13,73 +13,67 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.HomeController">
    <children>
+
       <ToolBar prefHeight="59.0" prefWidth="870.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <Button mnemonicParsing="false" onAction="#logOut" text="Log Out" />
-            <Button contentDisplay="TOP" mnemonicParsing="false" text="Home" translateX="20.0"
-                    style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;">
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToHome" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Home" translateX="20.0">
                 <graphic>
-                    <ImageView fitWidth="24" fitHeight="24" preserveRatio="true">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
                         <image>
                             <Image url="@../images/home-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
             </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" text="My Songs" translateX="20.0"
-                    style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;">
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToMySongs" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="My Songs" translateX="20.0">
                 <graphic>
-                    <ImageView fitWidth="24" fitHeight="24" preserveRatio="true">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
                         <image>
                             <Image url="@../images/mysongs-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
             </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" text="Courses" translateX="20.0"
-                    style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;">
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToCourses" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Courses" translateX="20.0">
                 <graphic>
-                    <ImageView fitWidth="24" fitHeight="24" preserveRatio="true">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
                         <image>
                             <Image url="@../images/courses-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
             </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" text="Song Library" translateX="20.0"
-                    style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;">
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToSongLibrary" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Song Library" translateX="20.0">
                 <graphic>
-                    <ImageView fitWidth="24" fitHeight="24" preserveRatio="true">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
                         <image>
                             <Image url="@../images/songlibrary-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
             </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" text="Module Library" translateX="20.0"
-                    style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;">
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToModuleLibrary" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Module Library" translateX="20.0">
                 <graphic>
-                    <ImageView fitWidth="24" fitHeight="24" preserveRatio="true">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
                         <image>
                             <Image url="@../images/modulelibrary-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
             </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" text="More" translateX="400.0"
-                    style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;">
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToMore" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="More" translateX="400.0">
                 <graphic>
-                    <ImageView fitWidth="24" fitHeight="24" preserveRatio="true">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
                         <image>
                             <Image url="@../images/more-icon.png" />
                         </image>
                     </ImageView>
                 </graphic>
             </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" text="Profile" translateX="400.0"
-                    style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;">
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToProfile" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Profile" translateX="400.0">
                 <graphic>
-                    <ImageView fitWidth="24" fitHeight="24" preserveRatio="true">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
                         <image>
                             <Image url="@../images/profile-icon.png" />
                         </image>
@@ -88,6 +82,7 @@
             </Button>
         </items>
       </ToolBar>
+
       <ImageView fitHeight="543.0" fitWidth="870.0" layoutY="57.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0">
          <image>
             <Image url="@../images/homescreen.png" />
@@ -97,12 +92,12 @@
       <Rectangle fill="#175ea1" height="213.0" layoutY="388.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" width="870.0" />
       
      <ScrollPane fitToHeight="false" fitToWidth="true" hbarPolicy="ALWAYS" layoutX="22.0" layoutY="450.0" prefHeight="152.0" prefWidth="827.0" vbarPolicy="NEVER">
-    <content>
-        <GridPane fx:id="grid_latest_songs" hgap="100.0" vgap="50.0">
-            <!-- Your dynamically added elements will go here -->
-        </GridPane>
-    </content>
-</ScrollPane>
+      <content>
+          <GridPane fx:id="grid_latest_songs" hgap="100.0" vgap="50.0">
+              <!-- Your dynamically added elements will go here -->
+          </GridPane>
+      </content>
+    </ScrollPane>
 
       <Text fill="WHITE" layoutX="31.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your ideal music community">
          <font>
@@ -114,7 +109,7 @@
             <Font name="Avenir Next Medium" size="16.0" />
          </font>
       </Text>
-      <Button layoutX="31.0" layoutY="225.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="131.0" text="Learn More" textFill="WHITE">
+      <Button layoutX="31.0" layoutY="225.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="131.0" onAction="#goToAbout" text="Learn More" textFill="WHITE">
          <font>
             <Font name="Avenir Next Medium" size="16.0" />
          </font>
