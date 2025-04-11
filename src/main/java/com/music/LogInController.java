@@ -17,10 +17,15 @@ public class LogInController {
 
     @FXML
     private void logIn() throws IOException {
-        Facade facade = new Facade();
+        Facade facade = Facade.getInstance();
         
-        if (facade.logIn(username.getText(), password.getText()))
+        if (facade.logIn(username.getText(), password.getText())) {
             App.setRoot("home");
+        }
+
+        
     }
+
+    
 
 }

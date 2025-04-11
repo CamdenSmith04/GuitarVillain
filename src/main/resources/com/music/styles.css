@@ -25,6 +25,11 @@
     -fx-padding: 0;
 }
 
+.scroll-pane .scroll-bar:vertical {
+    -fx-opacity: 0;
+    -fx-padding: 0;
+}
+
 .scroll-pane {
     -fx-background-color: transparent;
     -fx-background: transparent;
