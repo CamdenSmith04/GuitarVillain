@@ -12,6 +12,7 @@ import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -37,6 +38,16 @@ public class MySongsController implements Initializable{
         int row = 0;
         int col = 0;
 
+        Button addButton = new Button("+");
+        addButton.setId("newSongButton");
+        addButton.setFont(new Font(100));
+        addButton.getStyleClass().add("add-button-item");
+        addButton.setOnAction(e -> handleNewSong());
+
+
+        grid_mysongs.add(addButton, col, row);
+        col++;
+
         ArrayList<UUID> songs = user.getSongs();
         for (int i = 0; i < songs.size(); i++) {
             Song song = facade.getSong(songs.get(i));
@@ -57,6 +68,11 @@ public class MySongsController implements Initializable{
                 row++;
             }
         }
+    }
+
+    @FXML
+    private void handleNewSong() {
+        System.out.println("NEW SONG!!!");
     }
 
     @FXML

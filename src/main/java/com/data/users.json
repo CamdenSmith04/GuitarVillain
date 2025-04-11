@@ -5,7 +5,7 @@
         "securityQuestion": "PET_NAME",
         "securityAnswer": "Baxter",
         "songs": [
-            "c06aa7a7-1656-4df5-87cf-7e96e0765bf9", "b170dc13-f46c-4b6f-b8c1-06eb5a46351b", "a38148fd-7efc-4ed6-912a-0aebccf2896e", "81f4f9dc-604d-4e5e-8675-dc59cc2e9a62", "3f92eb5c-4de4-4baf-bf30-018be877f3fc"
+            "c06aa7a7-1656-4df5-87cf-7e96e0765bf9"
         ],
         "streak": 5,
         "id": "d0c52973-7f9b-483e-80e3-48681ea68674",
@@ -40,8 +40,7 @@
         "securityQuestion": "MOTHER_MAIDEN_NAME",
         "securityAnswer": "Johnson",
         "songs": [
-            "ea55b926-8135-4bc5-ad34-374b0e4edccf",
-            "494a5d5c-fb16-4d7e-8593-0d875b51eab3"
+            "c06aa7a7-1656-4df5-87cf-7e96e0765bf9"
         ],
         "streak": 50,
         "id": "8d377a72-5657-4c13-a54e-d5e695c13bf6",
