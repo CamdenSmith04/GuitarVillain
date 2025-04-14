@@ -24,7 +24,7 @@ public class HomeController implements  Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        facade = new Facade();
+        facade = Facade.getInstance();
         displayUserItems();
     } 
 
@@ -45,6 +45,19 @@ public class HomeController implements  Initializable{
             vbox.getChildren().add(songTitle);
             vbox.getStyleClass().add("book-grid-item");
     
+            vbox.setOnMouseClicked(event -> {
+            try {
+                facade.setCurrentSong(song);
+                System.out.println(facade.getCurrentSong());
+                App.setRoot("song");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            });
+        
+
+
             grid_latest_songs.add(vbox, i, 0); // You can change row/col layout logic if needed
         }
     }

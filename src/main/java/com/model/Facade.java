@@ -34,6 +34,7 @@ public class Facade implements TeacherInterface {
         lessonList = LessonList.getInstance();
         courseList = CourseList.getInstance();
         currentUser = null;
+        currentSong = null;
     }
 
     public static Facade getInstance() {
