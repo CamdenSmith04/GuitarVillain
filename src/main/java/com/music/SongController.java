@@ -2,14 +2,17 @@ package com.music;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.model.Facade;
+import com.model.Genre;
 import com.model.Song;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
+
 
 public class SongController implements Initializable{
 
@@ -17,6 +20,12 @@ public class SongController implements Initializable{
     private Text songHeader;
     private Facade facade;
     private Song song;
+
+    @FXML private Text artist;
+    @FXML private Text instrument;
+    @FXML private Text genres;
+
+    @FXML private Text rating;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -27,6 +36,24 @@ public class SongController implements Initializable{
 
     public void setUpSong(Song song) {
         songHeader.setText(song.getTitle());
+        artist.setText(song.getAuthor());
+        instrument.setText(song.getInstrument().getLabel());
+        rating.setText(Double.toString(song.getRating()));
+
+        String genreString = "";
+        ArrayList<Genre> genresList = song.getGenres();
+        for (int i = 0; i < genresList.size(); i++) {
+            genreString += genresList.get(i).getLabel();
+            if (i < genresList.size() - 1) {
+                genreString += ", ";
+            }
+        }
+        genres.setText(genreString);
+    }
+
+    @FXML
+    public void playSong() throws IOException {
+        song.play();
     }
 
     @FXML
