@@ -49,8 +49,10 @@ public class UserList {
     public User signUp(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
         if (getUser(username) != null)
             return null;
+        if (username == null || password == null || experience == null || securityQuestion == null || securityAnswer == null)
+            return null;
         User ret = new User(username, password, experience, securityQuestion, securityAnswer);
-        UserList.getInstance().addUser(ret);
+        userList.addUser(ret);
         return ret;
     }
 
