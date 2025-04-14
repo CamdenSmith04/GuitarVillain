@@ -4,15 +4,61 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.model.Experience;
+import com.model.Facade;
+import com.model.User;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public class MoreController implements Initializable{
     
+    @FXML
+    private User user;
+    private Facade facade;
+    
+    @FXML private Text securityQuestionField;
+    @FXML private TextField securityAnswerField;
+    @FXML private TextField newPassword;
+    @FXML private TextField confirmPassword;
+    @FXML private ComboBox<Experience> experienceOptions;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("initialize called");
+        facade = Facade.getInstance();
+        user = facade.getCurrentUser();
+
+        experienceOptions.getItems().addAll(Experience.BEGINNER, Experience.INTERMEDIATE, Experience.ADVANCED);
+
+        securityQuestionField.setText(user.getSecurityQuestion().getLabel());
     } 
+
+    @FXML
+    private void resetPassword() throws IOException {
+
+        if (securityAnswerField.getText().equals(user.getSecurityAnswer())) {
+            if (newPassword.getText().equals(confirmPassword.getText())){
+                user.setPassword(newPassword.getText());
+                System.out.println("Password changed successfully!");
+            } 
+            else {
+                System.out.println("Passwords don't match.");
+            }
+        } 
+        else {
+            System.out.println("Incorrect security question answer.");
+        }
+    }
+
+    @FXML
+    private void changeExperience() throws IOException {
+        if (experienceOptions.getValue() != null) {
+            user.setExperience(experienceOptions.getValue());
+        }
+    }
 
     @FXML
     private void goToHome() throws IOException {
