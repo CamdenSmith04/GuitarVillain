@@ -1,39 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.SignUpController">
+<AnchorPane prefHeight="340.0" prefWidth="437.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.SignUpController">
    <children>
-      <Button layoutX="269.0" layoutY="307.0" mnemonicParsing="false" onAction="#signUp" text="Sign Up" />
-      <TextField fx:id="password" layoutX="285.0" layoutY="152.0" promptText="Password" />
-      <TextField fx:id="username" layoutX="286.0" layoutY="118.0" promptText="Username" />
-      <TextField fx:id="securityAnswer" layoutX="286.0" layoutY="257.0" promptText="Your Answer" />
-      <DropdownButton fx:id="experience" layoutX="286.0" layoutY="186.0" prefHeight="27.0" prefWidth="150.0">
-          <items>
-              <MenuItem text="Choose One" />
-            <MenuItem text="Beginner" />
-              <MenuItem text="Intermediate" />
-              <MenuItem text="Advanced" />
-          </items>
-      </DropdownButton>
-      <DropdownButton fx:id="securityQuestion" layoutX="286.0" layoutY="221.0" prefHeight="27.0" prefWidth="151.0">
-         <items>
-            <MenuItem text="Choose One" />
-            <MenuItem text="What was your first pet's name?" />
-            <MenuItem text="What is your mother's maiden name?" />
-            <MenuItem text="What was the name of your elementary school?" />
-         </items>
-      </DropdownButton>
-      <Text layoutX="206.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-      <Text layoutX="206.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-      <Text layoutX="166.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Experience Level" />
-      <Text layoutX="163.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Security Question" />
-      <Text layoutX="191.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Answer" />
-      <Text layoutX="238.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Your Account" />
+      <Button layoutX="187.0" layoutY="272.0" mnemonicParsing="false" onAction="#signUp" text="Sign Up" />
+      <TextField fx:id="password" layoutX="203.0" layoutY="117.0" promptText="Password" />
+      <TextField fx:id="username" layoutX="204.0" layoutY="83.0" promptText="Username" />
+      <TextField fx:id="securityAnswer" layoutX="204.0" layoutY="222.0" promptText="Your Answer" />
+      <Text layoutX="124.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text layoutX="124.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <Text layoutX="84.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Experience Level" />
+      <Text layoutX="81.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Security Question" />
+      <Text layoutX="109.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Answer" />
+      <Text layoutX="156.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Your Account" />
+      <ChoiceBox fx:id="experience" layoutX="204.0" layoutY="151.0" prefHeight="27.0" prefWidth="151.0" />
+      <!-- <ChoiceBox fx:id="securityQuestion" layoutX="204.0" layoutY="186.0" prefHeight="27.0" prefWidth="151.0" /> -->
    </children>
 </AnchorPane>

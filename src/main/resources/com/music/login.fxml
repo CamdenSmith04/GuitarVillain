@@ -6,17 +6,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.LogInController">
+<AnchorPane prefHeight="491.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.LogInController">
    <children>
-      <Button layoutX="225.0" layoutY="265.0" mnemonicParsing="false" onAction="#logIn" prefHeight="25.0" prefWidth="149.0" text="Log In" />
-      <TextField fx:id="username" layoutX="225.0" layoutY="198.0" promptText="Username" />
-      <TextField fx:id="password" layoutX="225.0" layoutY="232.0" promptText="Password" />
-      <Button layoutX="225.0" layoutY="323.0" mnemonicParsing="false" onAction="#signUp" prefHeight="25.0" prefWidth="149.0" text="Sign Up" />
-      <Text layoutX="294.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="or" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="31.0" pickOnBounds="true">
-         <image>
-            <Image url="@../images/guitar-villain-logo-plain.png" />
-         </image>
-      </ImageView>
+      <Button layoutX="231.0" layoutY="321.0" mnemonicParsing="false" onAction="#logIn" prefHeight="25.0" prefWidth="149.0" text="Log In" />
+      <TextField fx:id="username" layoutX="231.0" layoutY="254.0" promptText="Username" />
+      <TextField fx:id="password" layoutX="231.0" layoutY="288.0" promptText="Password" />
+      <Button layoutX="231.0" layoutY="379.0" mnemonicParsing="false" onAction="#signUp" prefHeight="25.0" prefWidth="149.0" text="Sign Up" />
+      <Text layoutX="300.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="or" />
    </children>
 </AnchorPane>
