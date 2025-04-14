@@ -65,6 +65,16 @@ public class MySongsController implements Initializable{
             
             vbox.getChildren().add(songTitle);
             vbox.getStyleClass().add("book-grid-item");
+
+            vbox.setOnMouseClicked(event -> {
+                try {
+                    facade.setCurrentSong(song);
+                    App.setRoot("song");
+    
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                });
     
             grid_mysongs.add(vbox, col, row);
 

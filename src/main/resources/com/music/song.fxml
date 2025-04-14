@@ -7,6 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.StackPane?>
+
 
 <AnchorPane prefHeight="502.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.SongController">   
    <children>
@@ -78,10 +81,68 @@
             </Button>
         </items>
       </ToolBar>
-      <Rectangle fill="DODGERBLUE" height="86.0" layoutX="-8.0" layoutY="59.0" stroke="#ffffff00" strokeType="INSIDE" width="889.0" />
+      <StackPane layoutX="0.0" layoutY="60.0" prefWidth="870.0" prefHeight="85.0">
+        <Rectangle fill="#87CEEB" height="85.0" width="870.0" stroke="#ffffff00" strokeType="INSIDE" />
+        
+        <Text fx:id="songHeader" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" textAlignment="CENTER">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="40.0" />
+            </font>
+        </Text>
+      </StackPane>
 
-      <Text fx:id = "songHeader" layoutX="370.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" textAlignment="CENTER" wrappingWidth="138.10848999023438" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="626.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+
+
+        <!--  -->
+        <Text layoutX="25.0" layoutY="225" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="artist" layoutX="175.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="artist" >
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="25.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instrument:" >
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="instrument" layoutX="175.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="instrument">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="25.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genres:" >
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="genres" layoutX="175.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="genres" >
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="25.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating:" >
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="rating" layoutX="175.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="rating" >
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+        <!--  -->
+
+
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="600.0" layoutY="185.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Button layoutX="90.0" onAction="#playSong" layoutY="420.0" mnemonicParsing="false" text="Play Song" styleClass="song-button"/>
+      <Button layoutX="470.0" layoutY="420.0" mnemonicParsing="false" text="View Tab" styleClass="song-button"/>
       
    </children>
 </AnchorPane>

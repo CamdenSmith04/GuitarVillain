@@ -48,7 +48,6 @@ public class HomeController implements  Initializable{
             vbox.setOnMouseClicked(event -> {
             try {
                 facade.setCurrentSong(song);
-                System.out.println(facade.getCurrentSong());
                 App.setRoot("song");
 
             } catch (IOException e) {

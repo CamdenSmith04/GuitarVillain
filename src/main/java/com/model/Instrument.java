@@ -34,6 +34,10 @@ public enum Instrument {
         this.label = label;
     }
 
+    public String getLabel() {
+        return this.label;
+    }
+
     /**
      * static returns Instrument object associated with the label
      * @param label label of the instrument object to be returned
