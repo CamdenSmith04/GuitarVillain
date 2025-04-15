@@ -32,8 +32,9 @@ public class HomeController implements  Initializable{
     } 
 
     @FXML
-    void logOut(ActionEvent event) {
-
+    void logOut(ActionEvent event) throws IOException {
+        facade.logout();
+        App.setRoot("login");
     }
 
     private void displayUserItems() {
