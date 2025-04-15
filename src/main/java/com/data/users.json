@@ -18,7 +18,7 @@
     },
     {
         "password": "dragonman@4929",
-        "role": "User",
+        "role": "Student",
         "securityQuestion": "ELEMENTARY_SCHOOL",
         "securityAnswer": "Denver Elementary",
         "songs": [
@@ -40,8 +40,7 @@
         "securityQuestion": "MOTHER_MAIDEN_NAME",
         "securityAnswer": "Johnson",
         "songs": [
-            "ea55b926-8135-4bc5-ad34-374b0e4edccf",
-            "494a5d5c-fb16-4d7e-8593-0d875b51eab3"
+            "c06aa7a7-1656-4df5-87cf-7e96e0765bf9"
         ],
         "streak": 50,
         "id": "8d377a72-5657-4c13-a54e-d5e695c13bf6",
