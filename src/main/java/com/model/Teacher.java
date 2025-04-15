@@ -8,10 +8,6 @@ import java.util.UUID;
  * @author Bradley Alford
  */
 public class Teacher extends User {
-    /**
-     * The list of courses the teacher is a member of.
-     */
-    private ArrayList<UUID> courses;
 
     /**
      * A constructor for a teacher.

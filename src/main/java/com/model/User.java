@@ -62,6 +62,11 @@ public class User {
     protected String role;
 
     /**
+     * The list of courses the teacher is a member of.
+     */
+    protected ArrayList<UUID> courses;
+
+    /**
      * This constructor is used to instantiate an existing user from JSON files.
      * @param id is the user's id.
      * @param username the user's username.
@@ -110,6 +115,20 @@ public class User {
         this.friends = new ArrayList<UUID>();
         this.songs = new ArrayList<UUID>();
         this.role = "User";
+    }
+
+    public User(Teacher teacher) {
+        this.id = UUID.randomUUID();
+        this.username = teacher.username;
+        this.password = teacher.password;
+        this.experience = teacher.experience;
+        this.securityQuestion = teacher.securityQuestion;
+        this.securityAnswer = teacher.securityAnswer;
+        this.points = teacher.points;
+        this.streak = teacher.streak;
+        this.friends = teacher.friends;
+        this.songs = teacher.songs;
+        this.role = "Teacher";
     }
 
     /**

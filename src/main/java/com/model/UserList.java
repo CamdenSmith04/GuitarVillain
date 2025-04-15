@@ -172,7 +172,6 @@ public class UserList {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getId().equals(user.getId())) {
                 users.set(i, user);
-                DataWriter.saveUsers();
                 return;
             }
         }

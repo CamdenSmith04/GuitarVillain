@@ -70,8 +70,11 @@ public class DataWriter extends DataConstants {
         JSONArray jsonObjects = new JSONArray();
         visited = Collections.newSetFromMap(new IdentityHashMap<>());
         // Create all json objects
-        for (int i = 0; i < objectList.size(); i++) {
-            jsonObjects.add(objectToJson(objectList.get(i)));
+        for (Object object : objectList) {
+            if (object instanceof Teacher)
+                jsonObjects.add(objectToJson(new User((Teacher)object)));
+            else
+                jsonObjects.add(objectToJson(object));
         }
 
         // Write JSON File

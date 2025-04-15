@@ -149,11 +149,6 @@ public class Facade implements TeacherInterface {
     public boolean logout() {
         try {
             DataWriter.save();
-            this.currentUser = null;
-            this.currentLesson = null;
-            this.currentSong = null;
-            this.currentModule = null;
-            this.currentCourse = null;
             return true;
         }
         catch(Exception e){
