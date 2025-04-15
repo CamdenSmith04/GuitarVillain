@@ -12,6 +12,7 @@ import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -40,6 +41,24 @@ public class TeacherCourseController implements Initializable{
         UUID currUserID = currentUser.getId();
 
         ArrayList<Course> courses = facade.getCourses();
+
+        Button addButton = new Button("+");
+        addButton.setId("newCourseButton");
+        addButton.setFont(new Font(100));
+        addButton.getStyleClass().add("add-button-item2");
+        // addButton.setOnAction(e -> {
+        //     try {
+        //         handleNewLesson();
+        //     } catch (IOException e1) {
+        //         // TODO Auto-generated catch block
+        //         e1.printStackTrace();
+        //     }
+        // });
+
+
+        grid_courses.add(addButton,col,row);
+
+        col ++;
 
         for (int i = 0; i < courses.size(); i++ ) {
             Course course = facade.getCourseById(courses.get(i).getId());
