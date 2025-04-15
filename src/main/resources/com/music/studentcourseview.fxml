@@ -10,6 +10,8 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.StackPane?>
+
 
 
 <AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.StudentCourseViewController">
@@ -83,7 +85,44 @@
         </items>
       </ToolBar>
 
-      <Text layoutX="294.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student course view" />
+      <StackPane layoutX="0.0" layoutY="60.0" prefWidth="870.0" prefHeight="85.0">
+        <Rectangle fill="#87CEEB" height="85.0" width="870.0" stroke="#ffffff00" strokeType="INSIDE" />
+        
+        <Text fx:id="courseHeader" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Name" textAlignment="CENTER">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="40.0" />
+            </font>
+        </Text>
+      </StackPane>
+
+      <Text fill="BLACK" layoutX="24.0" layoutY="200" strokeType="OUTSIDE" strokeWidth="0.0" text="Lessons">
+         <font>
+            <Font name="Avenir Next Medium" size="30.0" />
+         </font>
+      </Text>
+
+      <ScrollPane fitToHeight="false" fitToWidth="true" hbarPolicy="ALWAYS" layoutX="22.0" layoutY="225" prefHeight="152.0" prefWidth="827.0" vbarPolicy="NEVER">
+        <content>
+            <GridPane fx:id="grid_lessons" hgap="100.0" vgap="50.0">
+                <!-- Your dynamically added elements will go here -->
+            </GridPane>
+        </content>
+      </ScrollPane>
+
+      <Text fill="BLACK" layoutX="24.0" layoutY="400" strokeType="OUTSIDE" strokeWidth="0.0" text="Songs">
+         <font>
+            <Font name="Avenir Next Medium" size="30.0" />
+         </font>
+      </Text>
+
+      <ScrollPane fitToHeight="false" fitToWidth="true" hbarPolicy="ALWAYS" layoutX="22.0" layoutY="425" prefHeight="152.0" prefWidth="827.0" vbarPolicy="NEVER">
+        <content>
+            <GridPane fx:id="grid_songs" hgap="100.0" vgap="50.0">
+                <!-- Your dynamically added elements will go here -->
+            </GridPane>
+        </content>
+      </ScrollPane>
+
 
     </children>
 </AnchorPane>

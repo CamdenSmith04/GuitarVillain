@@ -32,7 +32,6 @@ public class LogInController {
             App.setRoot("home");
         else
             invalidUser.setVisible(true);
-
     }
 
     @FXML

@@ -58,8 +58,6 @@ public class HomeController implements  Initializable{
                 e.printStackTrace();
             }
             });
-        
-
 
             grid_latest_songs.add(vbox, i, 0); // You can change row/col layout logic if needed
         }
