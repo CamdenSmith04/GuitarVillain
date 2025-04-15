@@ -46,14 +46,14 @@ public class TeacherCourseController implements Initializable{
         addButton.setId("newCourseButton");
         addButton.setFont(new Font(100));
         addButton.getStyleClass().add("add-button-item2");
-        // addButton.setOnAction(e -> {
-        //     try {
-        //         handleNewLesson();
-        //     } catch (IOException e1) {
-        //         // TODO Auto-generated catch block
-        //         e1.printStackTrace();
-        //     }
-        // });
+        addButton.setOnAction(e -> {
+            try {
+                handleNewCourse();
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
 
 
         grid_courses.add(addButton,col,row);
@@ -93,6 +93,10 @@ public class TeacherCourseController implements Initializable{
 
         }
 
+    }
+
+    @FXML private void handleNewCourse() throws IOException {
+        App.setRoot("course");
     }
 
     @FXML
