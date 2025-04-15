@@ -65,7 +65,7 @@
         "points": 0
     },
     {
-        "password": "thegrasstoucher",
+        "password": "newPassword!",
         "role": "User",
         "securityQuestion": "PET_NAME",
         "securityAnswer": "Moxy",

@@ -49,8 +49,11 @@ public class UserList {
     public User signUp(String username, String password, Experience experience, SecurityQuestion securityQuestion, String securityAnswer) {
         if (getUser(username) != null)
             return null;
+        if (username == null || password == null || experience == null || securityQuestion == null || securityAnswer == null)
+            return null;
         User ret = new User(username, password, experience, securityQuestion, securityAnswer);
-        UserList.getInstance().addUser(ret);
+        userList.addUser(ret);
+        DataWriter.saveUsers();
         return ret;
     }
 
@@ -148,6 +151,8 @@ public class UserList {
      * @return the user whose password was changed.
      */
     public User resetPassword(String username, String securityAnswer, String newPassword) {
+        if (newPassword == null || newPassword.length() == 0)
+            return null;
         for (User user : users) {
             if (user.isMatch(username)) {
                 if (user.resetPassword(securityAnswer, newPassword))
@@ -167,6 +172,7 @@ public class UserList {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getId().equals(user.getId())) {
                 users.set(i, user);
+                DataWriter.saveUsers();
                 return;
             }
         }

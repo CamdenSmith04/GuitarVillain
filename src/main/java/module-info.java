@@ -6,6 +6,7 @@ module com.music {
     requires java.desktop;
     requires junit;
     requires javafx.graphics;
+    requires javafx.base;
 
     opens com.music to javafx.fxml;
     exports com.music;
