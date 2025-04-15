@@ -62,7 +62,7 @@ public class User {
     protected String role;
 
     /**
-     * The list of courses the teacher is a member of.
+     * The list of courses the User is a member of.
      */
     protected ArrayList<UUID> courses;
 
@@ -129,6 +129,20 @@ public class User {
         this.friends = teacher.friends;
         this.songs = teacher.songs;
         this.role = "Teacher";
+    }
+
+    public User(Student student) {
+        this.id = UUID.randomUUID();
+        this.username = student.username;
+        this.password = student.password;
+        this.experience = student.experience;
+        this.securityQuestion = student.securityQuestion;
+        this.securityAnswer = student.securityAnswer;
+        this.points = student.points;
+        this.streak = student.streak;
+        this.friends = student.friends;
+        this.songs = student.songs;
+        this.role = "student";
     }
 
     /**

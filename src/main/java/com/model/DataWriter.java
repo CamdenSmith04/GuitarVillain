@@ -73,6 +73,8 @@ public class DataWriter extends DataConstants {
         for (Object object : objectList) {
             if (object instanceof Teacher)
                 jsonObjects.add(objectToJson(new User((Teacher)object)));
+            else if (object instanceof Student)
+            jsonObjects.add(objectToJson(new User((Student)object)));
             else
                 jsonObjects.add(objectToJson(object));
         }
