@@ -10,7 +10,8 @@ import com.model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-public class SongLibraryController implements Initializable{
+
+public class TeacherCourseViewController implements Initializable{
     
     private Facade facade;
     private User user;
@@ -67,3 +68,4 @@ public class SongLibraryController implements Initializable{
     }
     
 }
+

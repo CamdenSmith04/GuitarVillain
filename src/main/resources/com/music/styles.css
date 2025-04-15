@@ -96,3 +96,21 @@
     -fx-border-width: 2px;
     -fx-pref-height: 40px;
 }
+
+.module-grid-item {
+    -fx-border-color: #2f3dfe;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+    -fx-background-color: #4A90E2;  
+    -fx-background-radius: 8px;  
+    -fx-pref-width: 120px;
+    -fx-pref-height: 120px;
+    -fx-min-width: 120px;
+    -fx-min-height: 120px;
+}
+
+.module-grid-item:hover {
+    -fx-background-color: #7DB8E2;
+}

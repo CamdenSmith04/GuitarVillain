@@ -4,14 +4,21 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.model.Facade;
+import com.model.User;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 public class NewSongController implements Initializable{
     
+    private Facade facade;
+    private User user;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("initialize called");
+        facade = Facade.getInstance();
+        user = facade.getCurrentUser();
     } 
 
     @FXML
@@ -26,7 +33,12 @@ public class NewSongController implements Initializable{
 
     @FXML
     private void goToCourses() throws IOException {
-        App.setRoot("teachercourse");
+        if (user.getRole().equals("Student")) {
+            App.setRoot("studentcourse");
+        }
+        else {
+            App.setRoot("teachercourse");
+        }
     }
 
     @FXML

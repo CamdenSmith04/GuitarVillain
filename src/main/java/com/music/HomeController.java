@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import com.model.Facade;
 import com.model.Song;
+import com.model.User;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,11 +21,13 @@ import javafx.scene.text.Font;
 public class HomeController implements  Initializable{
 
     private Facade facade;
+    private User user;
     @FXML private GridPane grid_latest_songs;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
+        user = facade.getCurrentUser();
         displayUserItems();
     } 
 
@@ -73,7 +76,12 @@ public class HomeController implements  Initializable{
 
     @FXML
     private void goToCourses() throws IOException {
-        App.setRoot("teachercourse");
+        if (user.getRole().equals("Student")) {
+            App.setRoot("studentcourse");
+        }
+        else {
+            App.setRoot("teachercourse");
+        }
     }
 
     @FXML

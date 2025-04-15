@@ -83,6 +83,19 @@
         </items>
       </ToolBar>
 
-      <Text layoutX="247.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Course" />
+    <ScrollPane fitToHeight="false" fitToWidth="true" hbarPolicy="NEVER" layoutX="35.0" layoutY="128.0" prefHeight="436.0" prefWidth="800.0" vbarPolicy="ALWAYS">
+      <content>
+          <GridPane fx:id="grid_courses" hgap="100.0" vgap="100.0">
+              <!-- Your dynamically added elements will go here -->
+          </GridPane>
+      </content>
+    </ScrollPane>
+
+      <Text fill="BLACK" layoutX="35.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Courses">
+         <font>
+            <Font name="Avenir Next Medium" size="36.0" />
+         </font>
+      </Text>
+
    </children>
 </AnchorPane>

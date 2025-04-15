@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import com.model.Facade;
 import com.model.Genre;
 import com.model.Song;
+import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,6 +21,7 @@ public class SongController implements Initializable{
     private Text songHeader;
     private Facade facade;
     private Song song;
+    private User user;
 
     @FXML private Text artist;
     @FXML private Text instrument;
@@ -31,6 +33,7 @@ public class SongController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
         song = facade.getCurrentSong();
+        user = facade.getCurrentUser();
         setUpSong(song);
     } 
 
@@ -68,7 +71,12 @@ public class SongController implements Initializable{
 
     @FXML
     private void goToCourses() throws IOException {
-        App.setRoot("teachercourse");
+        if (user.getRole().equals("Student")) {
+            App.setRoot("studentcourse");
+        }
+        else {
+            App.setRoot("teachercourse");
+        }
     }
 
     @FXML

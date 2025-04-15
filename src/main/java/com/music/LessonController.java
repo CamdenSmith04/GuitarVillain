@@ -5,22 +5,44 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.model.Facade;
+import com.model.Lesson;
 import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
-public class SongLibraryController implements Initializable{
-    
+
+public class LessonController implements Initializable{
+
+    @FXML
+    private Text lessonHeader;
     private Facade facade;
+    private Lesson lesson;
     private User user;
+
+    @FXML private Text educationalMaterialField;
+    @FXML private ImageView visualAidField;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
         user = facade.getCurrentUser();
+        lesson = facade.getCurrentLesson();
+        setUpLesson(lesson);
     } 
 
+    public void setUpLesson(Lesson lesson) {
+        lessonHeader.setText(lesson.getTitle());
+        educationalMaterialField.setText(lesson.getEducationalMaterial());
+        String imagePath = "/com/images/" + lesson.getVisualAid();
+        Image image = new Image(getClass().getResourceAsStream(imagePath));
+        visualAidField.setImage(image);
+    }
+
+    
     @FXML
     private void goToHome() throws IOException {
         App.setRoot("home");

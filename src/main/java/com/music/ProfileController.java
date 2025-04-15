@@ -83,7 +83,12 @@ public class ProfileController implements Initializable{
 
     @FXML
     private void goToCourses() throws IOException {
-        App.setRoot("teachercourse");
+        if (user.getRole().equals("Student")) {
+            App.setRoot("studentcourse");
+        }
+        else {
+            App.setRoot("teachercourse");
+        }
     }
 
     @FXML

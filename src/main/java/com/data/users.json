@@ -1,7 +1,7 @@
 [
     {
         "password": "password123",
-        "role": "User",
+        "role": "Teacher",
         "securityQuestion": "PET_NAME",
         "securityAnswer": "Baxter",
         "songs": [

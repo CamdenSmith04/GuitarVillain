@@ -2,17 +2,72 @@ package com.music;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import com.model.Facade;
+import com.model.Module;
+import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+
 
 public class ModuleLibraryController implements Initializable{
+
+    private Facade facade;
+    private User user;
+
+    @FXML private GridPane grid_modules;
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("initialize called");
+        facade = Facade.getInstance();
+        user = facade.getCurrentUser();
+        displayModules();
     } 
+
+    private void displayModules() {
+        int columnCount = 4;
+        int row = 0;
+        int col = 0;
+
+        ArrayList<Module> modules = facade.getModules();
+        for (int i = 0; i < modules.size(); i++ ) {
+            Module module = facade.getModuleById(modules.get(i).getId());
+            VBox vbox = new VBox();
+            Label moduleName = new Label(module.getTitle());
+            moduleName.setFont(new Font(14));
+
+            vbox.getChildren().add(moduleName);
+            vbox.getStyleClass().add("module-grid-item");
+
+            vbox.setOnMouseClicked(event -> {
+                try {
+                    facade.setCurrentModule(module);
+                    App.setRoot("module");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+
+            grid_modules.add(vbox, col, row);
+
+            col ++;
+
+            if (col == columnCount) {
+                col = 0;
+                row++;
+            }
+
+        }
+
+    }
 
     @FXML
     private void goToHome() throws IOException {
@@ -26,7 +81,12 @@ public class ModuleLibraryController implements Initializable{
 
     @FXML
     private void goToCourses() throws IOException {
-        App.setRoot("teachercourse");
+        if (user.getRole().equals("Student")) {
+            App.setRoot("studentcourse");
+        }
+        else {
+            App.setRoot("teachercourse");
+        }
     }
 
     @FXML
