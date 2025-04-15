@@ -140,14 +140,14 @@ public class TeacherCourseViewController implements Initializable{
         addButton.setId("newStudentButton");
         addButton.setFont(new Font(100));
         addButton.getStyleClass().add("add-button-item2");
-        // addButton.setOnAction(e -> {
-        //     try {
-        //         handleNewLesson();
-        //     } catch (IOException e1) {
-        //         // TODO Auto-generated catch block
-        //         e1.printStackTrace();
-        //     }
-        // });
+        addButton.setOnAction(e -> {
+            try {
+                App.setRoot("studentlibrary");
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
 
         grid_students.add(addButton,0,0);
 
