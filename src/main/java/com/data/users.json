@@ -1,5 +1,6 @@
 [
     {
+        "courses": null,
         "password": "password123",
         "role": "Teacher",
         "securityQuestion": "PET_NAME",
@@ -8,8 +9,8 @@
             "c06aa7a7-1656-4df5-87cf-7e96e0765bf9"
         ],
         "streak": 5,
-        "id": "d0c52973-7f9b-483e-80e3-48681ea68674",
-        "experience": "BEGINNER",
+        "id": "dd471ba5-e7bb-4125-9246-4cc89554bd0b",
+        "experience": "INTERMEDIATE",
         "friends": [
             "8d377a72-5657-4c13-a54e-d5e695c13bf6"
         ],
@@ -17,6 +18,7 @@
         "points": 100
     },
     {
+        "courses": null,
         "password": "dragonman@4929",
         "role": "Student",
         "securityQuestion": "ELEMENTARY_SCHOOL",
@@ -25,7 +27,7 @@
             "c6e8e20f-f010-44b5-91f6-2aec36629f83"
         ],
         "streak": 25,
-        "id": "f151895e-d2ac-42b1-826a-cfff30f9bd64",
+        "id": "de0254b8-162d-4fc9-a56d-781763dd1bf4",
         "experience": "ADVANCED",
         "friends": [
             "d0c52973-7f9b-483e-80e3-48681ea68674",
@@ -35,8 +37,9 @@
         "points": 50
     },
     {
+        "courses": null,
         "password": "2point9fourpointO",
-        "role": "User",
+        "role": "Student",
         "securityQuestion": "MOTHER_MAIDEN_NAME",
         "securityAnswer": "Johnson",
         "songs": [
@@ -52,8 +55,9 @@
         "points": 150
     },
     {
+        "courses": null,
         "password": "theOneFred!",
-        "role": "User",
+        "role": "Student",
         "securityQuestion": "PET_NAME",
         "securityAnswer": "Poodles",
         "songs": [],
@@ -65,19 +69,21 @@
         "points": 0
     },
     {
+        "courses": null,
         "password": "thegrasstoucher",
-        "role": "Student",
+        "role": "User",
         "securityQuestion": "PET_NAME",
         "securityAnswer": "Moxy",
         "songs": [],
         "streak": 0,
-        "id": "b354918c-201a-4ac3-bcc9-98263774d43b",
+        "id": "fd4ab3f4-d724-40e6-93f5-8b723fd431e6",
         "experience": "INTERMEDIATE",
         "friends": [],
         "username": "abbyholdcraft",
         "points": 0
     },
     {
+        "courses": null,
         "password": "mclaren",
         "role": "User",
         "securityQuestion": "PET_NAME",
