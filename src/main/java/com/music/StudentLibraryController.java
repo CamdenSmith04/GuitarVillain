@@ -11,6 +11,7 @@ import com.model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -18,6 +19,7 @@ import javafx.scene.text.Font;
 public class StudentLibraryController implements Initializable{
     
     @FXML private GridPane grid_students;
+    @FXML private TextField searchField;
 
     private Facade facade;
     private User user;
@@ -34,7 +36,9 @@ public class StudentLibraryController implements Initializable{
         ArrayList<User> students = new ArrayList<>();
         for (User currUser : users) {
             if(currUser.getRole().equals("Student")) {
-                students.add(currUser);
+                // if (currUser.getUsername().contains(searchField.getText())) {
+                    students.add(currUser);
+                // }
             }
         }
 
@@ -51,6 +55,10 @@ public class StudentLibraryController implements Initializable{
             
             vbox.getChildren().add(studentName);
             vbox.getStyleClass().add("module-grid-item");
+
+            // Go to student profile where there is an add
+            // or remove button depending on if they are in
+            // the class or not in the class
 
             // vbox.setOnMouseClicked(event -> {
             //     try {

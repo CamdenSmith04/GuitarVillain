@@ -60,9 +60,12 @@ public class CourseController implements Initializable{
         addButton.setId("newLessonButton");
         addButton.setFont(new Font(100));
         addButton.getStyleClass().add("add-button-item2");
+
+        // Once lesson library is established
+
         // addButton.setOnAction(e -> {
         //     try {
-        //         handleNewLesson();
+        //         App.setRoot("lessonlibrary");
         //     } catch (IOException e1) {
         //         // TODO Auto-generated catch block
         //         e1.printStackTrace();
@@ -102,11 +105,13 @@ public class CourseController implements Initializable{
         addButton.setId("newSongButton");
         addButton.setFont(new Font(100));
         addButton.getStyleClass().add("add-button-item2");
+
+        // Once song library is established
+
         // addButton.setOnAction(e -> {
         //     try {
-        //         handleNewLesson();
+        //         App.setRoot("songlibrary");
         //     } catch (IOException e1) {
-        //         // TODO Auto-generated catch block
         //         e1.printStackTrace();
         //     }
         // });
@@ -148,7 +153,6 @@ public class CourseController implements Initializable{
             try {
                 App.setRoot("studentlibrary");
             } catch (IOException e1) {
-                // TODO Auto-generated catch block
                 e1.printStackTrace();
             }
         });
@@ -164,6 +168,10 @@ public class CourseController implements Initializable{
 
             vbox.getChildren().add(studentTitle);
             vbox.getStyleClass().add("module-grid-item");
+
+            // This is responsible for letting the user see the
+            // profile of an existing student in the course
+            // profile
 
             // vbox.setOnMouseClicked(event -> {
             // try {
