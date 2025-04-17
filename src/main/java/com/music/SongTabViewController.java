@@ -15,7 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
 
 
-public class NewSongController implements Initializable{
+public class SongTabViewController implements Initializable{
 
     @FXML
     private Text songHeader;
@@ -34,8 +34,8 @@ public class NewSongController implements Initializable{
         facade = Facade.getInstance();
         song = facade.getCurrentSong();
         user = facade.getCurrentUser();
-        // setUpSong(song);
-    } 
+        setUpSong(song);
+    }
 
     public void setUpSong(Song song) {
         songHeader.setText(song.getTitle());

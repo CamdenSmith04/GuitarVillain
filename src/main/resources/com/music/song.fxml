@@ -5,11 +5,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Text?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.layout.StackPane?>
-
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="502.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.SongController">   
    <children>
@@ -81,8 +80,8 @@
             </Button>
         </items>
       </ToolBar>
-      <StackPane layoutX="0.0" layoutY="60.0" prefWidth="870.0" prefHeight="85.0">
-        <Rectangle fill="#87CEEB" height="85.0" width="870.0" stroke="#ffffff00" strokeType="INSIDE" />
+      <StackPane layoutX="0.0" layoutY="60.0" prefHeight="85.0" prefWidth="870.0">
+        <Rectangle fill="#87CEEB" height="85.0" stroke="#ffffff00" strokeType="INSIDE" width="881.0" />
         
         <Text fx:id="songHeader" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" textAlignment="CENTER">
             <font>
@@ -99,13 +98,13 @@
                 <Font name="Avenir Next Demi Bold" size="24.0" />
             </font>
         </Text>
-        <Text fx:id="artist" layoutX="175.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="artist" >
+        <Text fx:id="artist" layoutX="175.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="artist">
             <font>
                 <Font name="Avenir Next Medium" size="24.0" />
             </font>
         </Text>
 
-        <Text layoutX="25.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instrument:" >
+        <Text layoutX="25.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instrument:">
             <font>
                 <Font name="Avenir Next Demi Bold" size="24.0" />
             </font>
@@ -116,23 +115,23 @@
             </font>
         </Text>
 
-        <Text layoutX="25.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genres:" >
+        <Text layoutX="25.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genres:">
             <font>
                 <Font name="Avenir Next Demi Bold" size="24.0" />
             </font>
         </Text>
-        <Text fx:id="genres" layoutX="175.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="genres" >
+        <Text fx:id="genres" layoutX="175.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="genres">
             <font>
                 <Font name="Avenir Next Medium" size="24.0" />
             </font>
         </Text>
 
-        <Text layoutX="25.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating:" >
+        <Text layoutX="25.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating:">
             <font>
                 <Font name="Avenir Next Demi Bold" size="24.0" />
             </font>
         </Text>
-        <Text fx:id="rating" layoutX="175.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="rating" >
+        <Text fx:id="rating" layoutX="175.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="rating">
             <font>
                 <Font name="Avenir Next Medium" size="24.0" />
             </font>
@@ -141,8 +140,8 @@
 
 
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="600.0" layoutY="185.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Button layoutX="90.0" onAction="#playSong" layoutY="420.0" mnemonicParsing="false" text="Play Song" styleClass="song-button"/>
-      <Button layoutX="470.0" layoutY="420.0" mnemonicParsing="false" text="View Tab" styleClass="song-button"/>
+      <Button layoutX="90.0" layoutY="420.0" mnemonicParsing="false" onAction="#playSong" styleClass="song-button" text="Play Song" />
+      <Button layoutX="470.0" layoutY="420.0" mnemonicParsing="false" styleClass="song-button" text="View Tab" />
       
    </children>
 </AnchorPane>
