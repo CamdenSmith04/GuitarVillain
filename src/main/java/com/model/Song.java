@@ -56,9 +56,9 @@ public class Song {
     private TimeSignature timeSignature;
 
     /**
-     * This is the song's measures.
+     * This is the song's notes.
      */
-    private ArrayList<Measure> measures;
+    private ArrayList<Note> notes;
 
     /**
      * This is the song's lyrics.
@@ -89,7 +89,7 @@ public class Song {
         this.authorId = authorId;
         this.genres = new ArrayList<>();
         this.lyrics = new ArrayList<>();
-        this.measures = new ArrayList<>();
+        this.notes = new ArrayList<>();
     }
 
     /**
@@ -104,12 +104,12 @@ public class Song {
      * @param visibility the song's visibility.
      * @param beatsPerMinute the song's BPM.
      * @param timeSignature the song's time signature.
-     * @param measures the measures of the song.
+     * @param notes the notes of the song.
      * @param lyrics the song's lyrics.
      * @param speed the speed of the song.
      * @param completed the song's completion.
      */
-    public Song(UUID id, String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Measure> measures, ArrayList<String> lyrics, double speed, boolean completed) {
+    public Song(UUID id, String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Note> notes, ArrayList<String> lyrics, double speed, boolean completed) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -120,7 +120,7 @@ public class Song {
         this.visibility = visibility;
         this.beatsPerMinute = beatsPerMinute;
         this.timeSignature = timeSignature;
-        this.measures = measures;
+        this.notes = notes;
         this.lyrics = lyrics;
         this.speed = speed;
         this.completed = completed;
@@ -130,12 +130,8 @@ public class Song {
      * Plays a note
      */
     public void play(){
-        for(Measure measure : measures){
-            for(Chord chord : measure.getChords()){
-                for(Note note : chord.getNotes()){
-                    note.play();
-                }
-            }
+        for(Note note : notes){
+            note.play();
         }
     }
 
@@ -187,9 +183,9 @@ public class Song {
             tabTable.get(i).add(guitarStrings[i-1]);
         }
         
-        for(Measure measure:measures){
+        for(Note note:notes){
             tabTable = addBarToFile(tabTable);
-            for(Chord chord:measure.getChords()){
+            for(Chord chord:note.getChords()){
                 if(chord.getName() != null){
                     tabTable.get(0).add(chord.getName());
                 }
@@ -239,11 +235,11 @@ public class Song {
     }
 
     /**
-     * This method is used to add a measure to a song.
-     * @param measure the measure to be added.
+     * This method is used to add a note to a song.
+     * @param note the note to be added.
      */
-    public void addMeasure(Measure measure) {
-        this.measures.add(measure);
+    public void addNote(Note note) {
+        this.notes.add(note);
     }
 
     /**
@@ -263,11 +259,11 @@ public class Song {
     }
 
     /**
-     * This method is used to remove a measure from a song.
-     * @param measure the measure to be removed.
+     * This method is used to remove a note from a song.
+     * @param note the note to be removed.
      */
-    public void removeMeasure(Measure measure) {
-        this.measures.remove(measure);
+    public void removeNote(Note note) {
+        this.notes.remove(note);
     }
 
     /**
@@ -369,11 +365,11 @@ public class Song {
     }
 
     /**
-     * This is a getter for the song's measures.
-     * @return the song's measures.
+     * This is a getter for the song's notes.
+     * @return the song's notes.
      */
-    public ArrayList<Measure> getMeasures() {
-        return this.measures;
+    public ArrayList<Note> getNotes() {
+        return this.notes;
     }
 
     /**
@@ -481,11 +477,11 @@ public class Song {
     }
 
     /**
-     * This is a setter for the song's measures.
-     * @param measures the measures the song will have.
+     * This is a setter for the song's notes.
+     * @param notes the notes the song will have.
      */
-    public void setMeasures(ArrayList<Measure> measures) {
-        this.measures = measures;
+    public void setNotes(ArrayList<Note> notes) {
+        this.notes = notes;
     }
 
     /**
@@ -527,7 +523,7 @@ public class Song {
                 "Visibility: " + this.visibility +  "\n" +
                 "BPM: " + this.beatsPerMinute + "\n" + 
                 "Time Signature: " + this.timeSignature.toString() + "\n" +
-                "Measures: " + this.measures.toString() + "\n" + 
+                "Notes: " + this.notes.toString() + "\n" + 
                 "Lyrics: " + this.lyrics + "\n" + 
                 "Speed: " + this.speed + "\n" + 
                 "Completed: " + this.completed + "\n" +
