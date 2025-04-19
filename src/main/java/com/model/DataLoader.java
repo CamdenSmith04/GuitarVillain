@@ -150,16 +150,33 @@ public class DataLoader extends DataConstants{
             lyrics.add((String) lyricObj);
         }
 
-        ArrayList<Measure> measures = new ArrayList<>();
-        JSONArray measuresArray = (JSONArray) songJSON.get(SONG_MEASURES);
-        for (Object measureObj : measuresArray) {
-            JSONObject measureJSON = (JSONObject) measureObj;   
-            measures.add(parseMeasure(measureJSON));
+        // ArrayList<Measure> measures = new ArrayList<>();
+        // JSONArray measuresArray = (JSONArray) songJSON.get(SONG_MEASURES);
+        // for (Object measureObj : measuresArray) {
+        //     JSONObject measureJSON = (JSONObject) measureObj;   
+        //     measures.add(parseMeasure(measureJSON));
+        // }
+
+        // ArrayList<Note> notes = new ArrayList<>();
+        // for (Measure measure : measures) {
+        //     for (Chord chord : measure.getChords()) {
+        //         for (Note note : chord.getNotes()) {
+        //             notes.add(note);
+        //         }
+        //     }
+        // }
+
+        
+        ArrayList<Note> notes = new ArrayList<>();
+        JSONArray notesArray = (JSONArray) songJSON.get(SONG_NOTES);
+        for (Object noteObj : notesArray) {
+            JSONObject noteJSON = (JSONObject) noteObj;
+            notes.add(parseNote(noteJSON));
         }
     
 
         return(new Song(songId, songTitle, songAuthor, authorId, songRating, genres, instrument, visibility, 
-                    beatsPerMinute, timeSignature, measures, lyrics, speed, completed));
+                    beatsPerMinute, timeSignature, notes, lyrics, speed, completed));
     }
 
     /**
