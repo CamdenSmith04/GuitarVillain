@@ -1,5 +1,43 @@
 [
     {
+        "notes": [
+            {
+                "note": null,
+                "string": "e",
+                "time": 8,
+                "fret": 12
+            },
+            {
+                "note": null,
+                "string": "b",
+                "time": 16,
+                "fret": 8
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 8,
+                "fret": 10
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 8,
+                "fret": 16
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 16,
+                "fret": 14
+            },
+            {
+                "note": null,
+                "string": "c",
+                "time": 8,
+                "fret": 12
+            }
+        ],
         "visibility": "PRIVATE",
         "author": "DJ Android",
         "rating": 3.46,
@@ -9,66 +47,6 @@
         "authorId": null,
         "timeSignature": "4\/4",
         "speed": 1.0,
-        "measures": [
-            {
-                "length": 4,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 8,
-                                "fret": 12
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 16,
-                                "fret": 8
-                            },
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 8,
-                                "fret": 10
-                            }
-                        ],
-                        "chordShape": "chord1.png",
-                        "name": "E"
-                    }
-                ]
-            },
-            {
-                "length": 4,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 8,
-                                "fret": 16
-                            },
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 16,
-                                "fret": 14
-                            },
-                            {
-                                "note": null,
-                                "string": "c",
-                                "time": 8,
-                                "fret": 12
-                            }
-                        ],
-                        "chordShape": "chord1.png",
-                        "name": "Am"
-                    }
-                ]
-            }
-        ],
         "beatsPerMinute": 100,
         "genres": [
             "POP",
@@ -91,6 +69,44 @@
         ]
     },
     {
+        "notes": [
+            {
+                "note": null,
+                "string": "e",
+                "time": 8,
+                "fret": 12
+            },
+            {
+                "note": null,
+                "string": "b",
+                "time": 16,
+                "fret": 8
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 8,
+                "fret": 10
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 8,
+                "fret": 16
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 16,
+                "fret": 14
+            },
+            {
+                "note": null,
+                "string": "c",
+                "time": 8,
+                "fret": 12
+            }
+        ],
         "visibility": "PUBLIC",
         "author": "DJ Dauphin",
         "rating": 4.88,
@@ -100,66 +116,6 @@
         "authorId": null,
         "timeSignature": "4\/4",
         "speed": 1.25,
-        "measures": [
-            {
-                "length": 4,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 8,
-                                "fret": 12
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 16,
-                                "fret": 8
-                            },
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 8,
-                                "fret": 10
-                            }
-                        ],
-                        "chordShape": "chord1.png",
-                        "name": "E"
-                    }
-                ]
-            },
-            {
-                "length": 4,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 8,
-                                "fret": 16
-                            },
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 16,
-                                "fret": 14
-                            },
-                            {
-                                "note": null,
-                                "string": "c",
-                                "time": 8,
-                                "fret": 12
-                            }
-                        ],
-                        "chordShape": "chord2.png",
-                        "name": null
-                    }
-                ]
-            }
-        ],
         "beatsPerMinute": 120,
         "genres": [
             "RAP"
@@ -179,6 +135,242 @@
         ]
     },
     {
+        "notes": [
+            {
+                "note": "E",
+                "string": "e",
+                "time": 1,
+                "fret": 12
+            },
+            {
+                "note": "D",
+                "string": "d",
+                "time": 2,
+                "fret": 10
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 3,
+                "fret": 8
+            },
+            {
+                "note": "G",
+                "string": "g",
+                "time": 1,
+                "fret": 9
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 2,
+                "fret": 7
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 3,
+                "fret": 5
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 1,
+                "fret": 12
+            },
+            {
+                "note": "D",
+                "string": "d",
+                "time": 2,
+                "fret": 10
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 3,
+                "fret": 8
+            },
+            {
+                "note": "G",
+                "string": "g",
+                "time": 1,
+                "fret": 9
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 2,
+                "fret": 7
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 3,
+                "fret": 5
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 1,
+                "fret": 12
+            },
+            {
+                "note": "D",
+                "string": "d",
+                "time": 2,
+                "fret": 10
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 3,
+                "fret": 8
+            },
+            {
+                "note": "G",
+                "string": "g",
+                "time": 1,
+                "fret": 9
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 2,
+                "fret": 7
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 3,
+                "fret": 5
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 1,
+                "fret": 12
+            },
+            {
+                "note": "D",
+                "string": "d",
+                "time": 2,
+                "fret": 10
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 3,
+                "fret": 8
+            },
+            {
+                "note": "G",
+                "string": "g",
+                "time": 1,
+                "fret": 9
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 2,
+                "fret": 7
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 3,
+                "fret": 5
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 1,
+                "fret": 12
+            },
+            {
+                "note": "D",
+                "string": "d",
+                "time": 2,
+                "fret": 10
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 3,
+                "fret": 8
+            },
+            {
+                "note": "G",
+                "string": "g",
+                "time": 1,
+                "fret": 9
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 2,
+                "fret": 7
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 3,
+                "fret": 5
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 1,
+                "fret": 12
+            },
+            {
+                "note": "D",
+                "string": "d",
+                "time": 2,
+                "fret": 10
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 3,
+                "fret": 8
+            },
+            {
+                "note": "G",
+                "string": "g",
+                "time": 1,
+                "fret": 9
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 2,
+                "fret": 7
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 3,
+                "fret": 5
+            },
+            {
+                "note": "E",
+                "string": "e",
+                "time": 1,
+                "fret": 12
+            },
+            {
+                "note": "D",
+                "string": "d",
+                "time": 2,
+                "fret": 10
+            },
+            {
+                "note": "B",
+                "string": "b",
+                "time": 3,
+                "fret": 8
+            }
+        ],
         "visibility": "PUBLIC",
         "author": "Ludwig van Beethoven",
         "rating": 5.0,
@@ -188,385 +380,6 @@
         "authorId": null,
         "timeSignature": "3\/8",
         "speed": 1.0,
-        "measures": [
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 12
-                            },
-                            {
-                                "note": null,
-                                "string": "d",
-                                "time": 2,
-                                "fret": 10
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 3,
-                                "fret": 8
-                            }
-                        ],
-                        "chordShape": "am_shape.png",
-                        "name": "A Minor"
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "g",
-                                "time": 1,
-                                "fret": 9
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 2,
-                                "fret": 7
-                            },
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 3,
-                                "fret": 5
-                            }
-                        ],
-                        "chordShape": "e_shape.png",
-                        "name": null
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 12
-                            },
-                            {
-                                "note": null,
-                                "string": "d",
-                                "time": 2,
-                                "fret": 10
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 3,
-                                "fret": 8
-                            }
-                        ],
-                        "chordShape": "am_shape.png",
-                        "name": "A Minor"
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "g",
-                                "time": 1,
-                                "fret": 9
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 2,
-                                "fret": 7
-                            },
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 3,
-                                "fret": 5
-                            }
-                        ],
-                        "chordShape": "e_shape.png",
-                        "name": null
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 12
-                            },
-                            {
-                                "note": null,
-                                "string": "d",
-                                "time": 2,
-                                "fret": 10
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 3,
-                                "fret": 8
-                            }
-                        ],
-                        "chordShape": "am_shape.png",
-                        "name": "A Minor"
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "g",
-                                "time": 1,
-                                "fret": 9
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 2,
-                                "fret": 7
-                            },
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 3,
-                                "fret": 5
-                            }
-                        ],
-                        "chordShape": "e_shape.png",
-                        "name": null
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 12
-                            },
-                            {
-                                "note": null,
-                                "string": "d",
-                                "time": 2,
-                                "fret": 10
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 3,
-                                "fret": 8
-                            }
-                        ],
-                        "chordShape": "am_shape.png",
-                        "name": "A Minor"
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "g",
-                                "time": 1,
-                                "fret": 9
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 2,
-                                "fret": 7
-                            },
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 3,
-                                "fret": 5
-                            }
-                        ],
-                        "chordShape": "e_shape.png",
-                        "name": null
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 12
-                            },
-                            {
-                                "note": null,
-                                "string": "d",
-                                "time": 2,
-                                "fret": 10
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 3,
-                                "fret": 8
-                            }
-                        ],
-                        "chordShape": "am_shape.png",
-                        "name": "A Minor"
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "g",
-                                "time": 1,
-                                "fret": 9
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 2,
-                                "fret": 7
-                            },
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 3,
-                                "fret": 5
-                            }
-                        ],
-                        "chordShape": "e_shape.png",
-                        "name": null
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 12
-                            },
-                            {
-                                "note": null,
-                                "string": "d",
-                                "time": 2,
-                                "fret": 10
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 3,
-                                "fret": 8
-                            }
-                        ],
-                        "chordShape": "am_shape.png",
-                        "name": "A Minor"
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "g",
-                                "time": 1,
-                                "fret": 9
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 2,
-                                "fret": 7
-                            },
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 3,
-                                "fret": 5
-                            }
-                        ],
-                        "chordShape": "e_shape.png",
-                        "name": null
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 12
-                            },
-                            {
-                                "note": null,
-                                "string": "d",
-                                "time": 2,
-                                "fret": 10
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 3,
-                                "fret": 8
-                            }
-                        ],
-                        "chordShape": "am_shape.png",
-                        "name": "A Minor"
-                    }
-                ]
-            }
-        ],
         "beatsPerMinute": 120,
         "genres": [
             "CLASSICAL"
@@ -575,6 +388,44 @@
         "lyrics": []
     },
     {
+        "notes": [
+            {
+                "note": null,
+                "string": "c",
+                "time": 8,
+                "fret": 12
+            },
+            {
+                "note": null,
+                "string": "e",
+                "time": 16,
+                "fret": 8
+            },
+            {
+                "note": null,
+                "string": "g",
+                "time": 8,
+                "fret": 10
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 8,
+                "fret": 16
+            },
+            {
+                "note": null,
+                "string": "d",
+                "time": 16,
+                "fret": 14
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 8,
+                "fret": 12
+            }
+        ],
         "visibility": "PUBLIC",
         "author": "bradleyalford",
         "rating": 4.49,
@@ -584,66 +435,6 @@
         "authorId": "f151895e-d2ac-42b1-826a-cfff30f9bd64",
         "timeSignature": "4\/4",
         "speed": 1.0,
-        "measures": [
-            {
-                "length": 4,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "c",
-                                "time": 8,
-                                "fret": 12
-                            },
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 16,
-                                "fret": 8
-                            },
-                            {
-                                "note": null,
-                                "string": "g",
-                                "time": 8,
-                                "fret": 10
-                            }
-                        ],
-                        "chordShape": "chord1.png",
-                        "name": "C Major"
-                    }
-                ]
-            },
-            {
-                "length": 4,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 8,
-                                "fret": 16
-                            },
-                            {
-                                "note": null,
-                                "string": "d",
-                                "time": 16,
-                                "fret": 14
-                            },
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 8,
-                                "fret": 12
-                            }
-                        ],
-                        "chordShape": "chord1.png",
-                        "name": "A Major"
-                    }
-                ]
-            }
-        ],
         "beatsPerMinute": 120,
         "genres": [
             "POP",
@@ -659,6 +450,116 @@
         ]
     },
     {
+        "notes": [
+            {
+                "note": null,
+                "string": "a",
+                "time": 1,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "b",
+                "time": 2,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 1,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "c",
+                "time": 1,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "d",
+                "time": 2,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "c",
+                "time": 1,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 1,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "b",
+                "time": 2,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "a",
+                "time": 1,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "e",
+                "time": 1,
+                "fret": 2
+            },
+            {
+                "note": null,
+                "string": "f",
+                "time": 2,
+                "fret": 2
+            },
+            {
+                "note": null,
+                "string": "e",
+                "time": 1,
+                "fret": 2
+            },
+            {
+                "note": null,
+                "string": "c",
+                "time": 1,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "d",
+                "time": 2,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "c",
+                "time": 1,
+                "fret": 3
+            },
+            {
+                "note": null,
+                "string": "e",
+                "time": 1,
+                "fret": 4
+            },
+            {
+                "note": null,
+                "string": "f",
+                "time": 2,
+                "fret": 4
+            },
+            {
+                "note": null,
+                "string": "e",
+                "time": 1,
+                "fret": 4
+            }
+        ],
         "visibility": "PUBLIC",
         "author": "camdensmith",
         "rating": 5.0,
@@ -668,162 +569,6 @@
         "authorId": "d0c52973-7f9b-483e-80e3-48681ea68674",
         "timeSignature": "4\/4",
         "speed": 1.0,
-        "measures": [
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 1,
-                                "fret": 3
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 2,
-                                "fret": 3
-                            },
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 1,
-                                "fret": 3
-                            }
-                        ],
-                        "chordShape": "none",
-                        "name": "A major"
-                    },
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "c",
-                                "time": 1,
-                                "fret": 3
-                            },
-                            {
-                                "note": null,
-                                "string": "d",
-                                "time": 2,
-                                "fret": 3
-                            },
-                            {
-                                "note": null,
-                                "string": "c",
-                                "time": 1,
-                                "fret": 3
-                            }
-                        ],
-                        "chordShape": "none",
-                        "name": "C major"
-                    },
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 1,
-                                "fret": 3
-                            },
-                            {
-                                "note": null,
-                                "string": "b",
-                                "time": 2,
-                                "fret": 3
-                            },
-                            {
-                                "note": null,
-                                "string": "a",
-                                "time": 1,
-                                "fret": 3
-                            }
-                        ],
-                        "chordShape": "none",
-                        "name": "A major"
-                    }
-                ]
-            },
-            {
-                "length": 3,
-                "chords": [
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 2
-                            },
-                            {
-                                "note": null,
-                                "string": "f",
-                                "time": 2,
-                                "fret": 2
-                            },
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 2
-                            }
-                        ],
-                        "chordShape": "none",
-                        "name": "E major"
-                    },
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "c",
-                                "time": 1,
-                                "fret": 3
-                            },
-                            {
-                                "note": null,
-                                "string": "d",
-                                "time": 2,
-                                "fret": 3
-                            },
-                            {
-                                "note": null,
-                                "string": "c",
-                                "time": 1,
-                                "fret": 3
-                            }
-                        ],
-                        "chordShape": "none",
-                        "name": "C major"
-                    },
-                    {
-                        "notes": [
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 4
-                            },
-                            {
-                                "note": null,
-                                "string": "f",
-                                "time": 2,
-                                "fret": 4
-                            },
-                            {
-                                "note": null,
-                                "string": "e",
-                                "time": 1,
-                                "fret": 4
-                            }
-                        ],
-                        "chordShape": "none",
-                        "name": "E major"
-                    }
-                ]
-            }
-        ],
         "beatsPerMinute": 120,
         "genres": [
             "POP",
