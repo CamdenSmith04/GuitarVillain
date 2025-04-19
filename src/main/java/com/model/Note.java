@@ -13,6 +13,7 @@ public class Note {
     private int time;
     /**
      * String on the guitar associated with the note
+     * NOTE: e is for high e, E is for low e.
      */
     private char string;
     /**

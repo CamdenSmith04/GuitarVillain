@@ -28,6 +28,7 @@ public class Chord {
      * player object to play this chord
      */
     private Player player;
+    
 
     /**
      * Parameterized constructor

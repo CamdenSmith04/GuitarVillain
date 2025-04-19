@@ -5,13 +5,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.model.Chord;
 import com.model.Facade;
-import com.model.Genre;
+import com.model.Measure;
 import com.model.Song;
 import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 
@@ -23,12 +25,6 @@ public class SongTabViewController implements Initializable{
     private Song song;
     private User user;
 
-    @FXML private Text artist;
-    @FXML private Text instrument;
-    @FXML private Text genres;
-
-    @FXML private Text rating;
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
@@ -37,25 +33,28 @@ public class SongTabViewController implements Initializable{
         setUpSong(song);
     }
 
-    public void setUpSong(Song song) {
+    private void setUpSong(Song song) {
         songHeader.setText(song.getTitle());
-        artist.setText(song.getAuthor());
-        instrument.setText(song.getInstrument().getLabel());
-        rating.setText(Double.toString(song.getRating()));
+        displaySong();
+    }
 
-        String genreString = "";
-        ArrayList<Genre> genresList = song.getGenres();
-        for (int i = 0; i < genresList.size(); i++) {
-            genreString += genresList.get(i).getLabel();
-            if (i < genresList.size() - 1) {
-                genreString += ", ";
+    private void displaySong() {
+        ArrayList<Chord> chords = new ArrayList<>();
+        for (Measure measure : song.getMeasures()) {
+            for (Chord chord : measure.getChords()) {
+                chords.add(chord);
+                
             }
         }
-        genres.setText(genreString);
+        
+        for (Chord chord : chords) {
+            VBox vbox = new VBox();
+        }
+
     }
 
     @FXML
-    public void playSong() throws IOException {
+    private void playSong() throws IOException {
         song.play();
     }
 
