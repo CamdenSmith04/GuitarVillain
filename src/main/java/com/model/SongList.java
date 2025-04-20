@@ -73,6 +73,10 @@ public class SongList {
         return null;
     }
 
+    public void setSongs(ArrayList<Song> songs) {
+        this.songs = songs;
+    }
+
     /**
      * This method prints out the lyrics of all the songs.
      */
