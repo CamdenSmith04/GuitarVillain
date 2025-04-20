@@ -6,7 +6,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
@@ -92,21 +94,31 @@
             </font>
         </Text>
       </StackPane>
-      <Button layoutX="90.0" layoutY="420.0" mnemonicParsing="false" onAction="#goToMySongs" styleClass="song-button" text="Return" />
+      <Button layoutX="90.0" layoutY="420.0" mnemonicParsing="false" onAction="#goToSongLibrary" styleClass="song-button" text="Return" />
       <Button layoutX="470.0" layoutY="420.0" mnemonicParsing="false" onAction="#playSong" styleClass="song-button" text="Play Song" />
-      <ScrollPane layoutX="88.0" layoutY="182.0" visible="false">
-         <content>
-             <GridPane fx:id="grid_chords" hgap="100.0" prefHeight="188.0" prefWidth="719.0" vgap="50.0">
-              <!-- Your dynamically added elements will go here -->
-          </GridPane>
-         </content>
-      </ScrollPane>
       <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="-23.0" startX="110.62622833251953" startY="218.626220703125" />
       <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-23.0" layoutY="7.0" startX="110.62622833251953" startY="218.626220703125" />
       <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-21.0" layoutY="39.0" startX="110.62622833251953" startY="218.626220703125" />
       <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="72.0" startX="110.62622833251953" startY="218.626220703125" />
       <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="104.0" startX="110.62622833251953" startY="218.626220703125" />
       <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="137.0" startX="110.62622833251953" startY="218.626220703125" />
+      <ScrollPane layoutX="88.0" layoutY="177.0" prefHeight="204.0" prefWidth="726.0" style="-fx-background-color: transparent;">
+         <content>
+            <GridPane fx:id="grid_notes" maxHeight="189.0" maxWidth="723.0" prefHeight="189.0" prefWidth="723.0">
+               <columnConstraints>
+                  <ColumnConstraints maxWidth="322.00001398722327" minWidth="0.0" prefWidth="0.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" />
+               </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
       <Text layoutX="57.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E">
          <font>
             <Font size="20.0" />
@@ -137,6 +149,8 @@
             <Font size="20.0" />
          </font>
       </Text>
+      <Line endX="-82.33331298828125" endY="-20.999984741210938" layoutX="932.0" layoutY="300.0" startX="-97.66668701171875" startY="-5.333343505859375" strokeWidth="5.0" />
+      <Line endX="-82.99993896484375" endY="15.999969482421875" layoutX="933.0" layoutY="263.0" startX="-99.66668701171875" startY="1.666656494140625" strokeWidth="5.0" />
       
    </children>
 </AnchorPane>
