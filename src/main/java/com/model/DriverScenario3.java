@@ -43,55 +43,34 @@ public class DriverScenario3 {
         // Add notes
 
         // 1 Measure - 3 Chords - 9 Notes
-        ArrayList<Chord> chords = new ArrayList<>();
         ArrayList<Note> notes = new ArrayList<>();
 
-        notes.add(new Note(1, 'a', 3));
-        notes.add(new Note(2, 'b', 3));
-        notes.add(new Note(1, 'a', 3));
+        newSong.addNote(new Note(1, 'a', 3));
+        newSong.addNote(new Note(2, 'b', 3));
+        newSong.addNote(new Note(1, 'a', 3));
 
-        chords.add(new Chord(notes, "none", "A major"));
+        newSong.addNote(new Note(1, 'c', 3));
+        newSong.addNote(new Note(2, 'd', 3));
+        newSong.addNote(new Note(1, 'c', 3));
 
-        notes = new ArrayList<>();
-        notes.add(new Note(1, 'c', 3));
-        notes.add(new Note(2, 'd', 3));
-        notes.add(new Note(1, 'c', 3));
 
-        chords.add(new Chord(notes, "none", "C major"));
+        newSong.addNote(new Note(1, 'a', 3));
+        newSong.addNote(new Note(2, 'b', 3));
+        newSong.addNote(new Note(1, 'a', 3));
 
-        notes = new ArrayList<>();
-        notes.add(new Note(1, 'a', 3));
-        notes.add(new Note(2, 'b', 3));
-        notes.add(new Note(1, 'a', 3));
-
-        chords.add(new Chord(notes, "none", "A major"));
-
-        newSong.addMeasure(new Measure(3, chords));
-
-        // 1 Measure - 3 Chords - 9 Notes
-        chords = new ArrayList<>();
-        notes = new ArrayList<>();
-        notes.add(new Note(1, 'e', 2));
-        notes.add(new Note(2, 'f', 2));
-        notes.add(new Note(1, 'e', 2));
-
-        chords.add(new Chord(notes, "none", "E major"));
+        newSong.addNote(new Note(1, 'e', 2));
+        newSong.addNote(new Note(2, 'f', 2));
+        newSong.addNote(new Note(1, 'e', 2));
 
         notes = new ArrayList<>();
-        notes.add(new Note(1, 'c', 3));
-        notes.add(new Note(2, 'd', 3));
-        notes.add(new Note(1, 'c', 3));
-
-        chords.add(new Chord(notes, "none", "C major"));
+        newSong.addNote(new Note(1, 'c', 3));
+        newSong.addNote(new Note(2, 'd', 3));
+        newSong.addNote(new Note(1, 'c', 3));
 
         notes = new ArrayList<>();
-        notes.add(new Note(1, 'e', 4));
-        notes.add(new Note(2, 'f', 4));
-        notes.add(new Note(1, 'e', 4));
-
-        chords.add(new Chord(notes, "none", "E major"));
-
-        newSong.addMeasure(new Measure(3, chords));
+        newSong.addNote(new Note(1, 'e', 4));
+        newSong.addNote(new Note(2, 'f', 4));
+        newSong.addNote(new Note(1, 'e', 4));
 
         System.out.println(newSong.toString());
 

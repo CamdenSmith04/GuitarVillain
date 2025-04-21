@@ -75,7 +75,7 @@ public class DataLoaderDriver {
             System.out.println("Visibility: " + song.getVisibility());
             System.out.println("BPM: " + song.getBeatsPerMinute());
             System.out.println("TS: " + song.getTimeSignature());
-            System.out.println("Measures: " + song.getMeasures());
+            System.out.println("Notes: " + song.getNotes());
             System.out.println("Lyrics: " + song.getLyrics());
             System.out.println("Speed: " + song.getSpeed());
             System.out.println("Completed: " + song.getCompleted());
