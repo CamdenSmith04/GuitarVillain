@@ -7,25 +7,32 @@ import java.util.ResourceBundle;
 
 import com.model.Facade;
 import com.model.Genre;
+import com.model.Instrument;
 import com.model.Song;
 import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+
 
 
 public class NewSongController implements Initializable{
 
     @FXML
-    private Text songHeader;
+    // private Text songHeader;
     private Facade facade;
     private Song song;
     private User user;
 
-    @FXML private Text artist;
-    @FXML private Text instrument;
-    @FXML private Text genres;
+    @FXML private TextField artist;
+    @FXML private ChoiceBox instrument;
+    @FXML private ChoiceBox genres;
+    @FXML private TextField songNameBox;
+    @FXML private Button saveButton;
 
     @FXML private Text rating;
 
@@ -34,29 +41,16 @@ public class NewSongController implements Initializable{
         facade = Facade.getInstance();
         song = facade.getCurrentSong();
         user = facade.getCurrentUser();
-        // setUpSong(song);
+        instrument.getItems().addAll(Instrument.values());
+        genres.getItems().addAll(Genre.values());
+
     } 
 
-    public void setUpSong(Song song) {
-        songHeader.setText(song.getTitle());
-        artist.setText(song.getAuthor());
-        instrument.setText(song.getInstrument().getLabel());
-        rating.setText(Double.toString(song.getRating()));
-
-        String genreString = "";
-        ArrayList<Genre> genresList = song.getGenres();
-        for (int i = 0; i < genresList.size(); i++) {
-            genreString += genresList.get(i).getLabel();
-            if (i < genresList.size() - 1) {
-                genreString += ", ";
-            }
-        }
-        genres.setText(genreString);
-    }
-
     @FXML
-    public void playSong() throws IOException {
-        song.play();
+    public void saveButtonPressed(){
+        facade.composeSong();
+        Song newSong = facade.getCurrentSong();
+        newSong.setInstrument(Instrument.getInstrument(instrument.get));
     }
 
     @FXML
