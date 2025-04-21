@@ -50,7 +50,10 @@ public class NewSongController implements Initializable{
     public void saveButtonPressed(){
         facade.composeSong();
         Song newSong = facade.getCurrentSong();
-        newSong.setInstrument(Instrument.getInstrument(instrument.get));
+        newSong.setInstrument(Instrument.getInstrument(instrument.getValue().toString()));
+        newSong.addGenre(Genre.getGenre(genres.getValue().toString()));
+        newSong.setAuthor(artist.getText());
+        newSong.setTitle(songNameBox.getText());   
     }
 
     @FXML
