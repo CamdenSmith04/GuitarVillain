@@ -6,7 +6,7 @@ public class PrintToFileDriver {
 
         // Log-in
         facade.logIn("andrewgoad", "thegrasstoucher");
-        facade.printSongToFile("Fur Elise");
+        // facade.printSongToFile("Fur Elise");
         facade.logout();
     }   
 }

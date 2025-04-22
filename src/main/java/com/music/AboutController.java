@@ -9,11 +9,13 @@ import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 
 public class AboutController implements Initializable{
     
-    private Facade facade;
+    @FXML
     private User user;
+    private Facade facade;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
