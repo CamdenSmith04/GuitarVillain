@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,6 +16,114 @@
 
 <AnchorPane prefHeight="502.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.NewSongController">   
    <children>
+      <StackPane layoutX="0.0" layoutY="60.0" prefHeight="85.0" prefWidth="870.0">
+        <Rectangle fill="#87CEEB" height="85.0" stroke="#ffffff00" strokeType="INSIDE" width="881.0" />
+         <TextField fx:id="songNameBox" alignment="CENTER" prefHeight="50.0" prefWidth="304.0" promptText="Song Title">
+            <font>
+               <Font size="40.0" />
+            </font>
+         </TextField>
+      </StackPane>
+      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="-23.0" startX="110.62622833251953" startY="218.626220703125" />
+      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-23.0" layoutY="7.0" startX="110.62622833251953" startY="218.626220703125" />
+      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-21.0" layoutY="39.0" startX="110.62622833251953" startY="218.626220703125" />
+      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="72.0" startX="110.62622833251953" startY="218.626220703125" />
+      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="104.0" startX="110.62622833251953" startY="218.626220703125" />
+      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="137.0" startX="110.62622833251953" startY="218.626220703125" />
+      <Text layoutX="57.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="57.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="56.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="55.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="55.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="55.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+<AnchorPane fx:id="notesGrid" layoutX="-1.0" prefHeight="200.0" prefWidth="747.0">
+<!-- Row 1 -->
+<TextField layoutX="96.0" layoutY="182.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="191.0" layoutY="183.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="286.0" layoutY="181.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="381.0" layoutY="184.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="476.0" layoutY="185.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="564.0" layoutY="185.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="659.0" layoutY="186.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="754.0" layoutY="185.0" prefHeight="25.0" prefWidth="28.0" />
+
+   <!-- Row 2 -->
+<TextField layoutX="96.0" layoutY="213.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="191.0" layoutY="214.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="286.0" layoutY="214.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="381.0" layoutY="215.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="476.0" layoutY="216.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="564.0" layoutY="216.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="659.0" layoutY="217.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="754.0" layoutY="216.0" prefHeight="25.0" prefWidth="28.0" />
+
+   <!-- Row 3 -->
+<TextField layoutX="96.0" layoutY="244.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="191.0" layoutY="245.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="286.0" layoutY="245.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="381.0" layoutY="246.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="476.0" layoutY="247.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="564.0" layoutY="247.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="659.0" layoutY="248.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="754.0" layoutY="247.0" prefHeight="25.0" prefWidth="28.0" />
+
+   <!-- Row 4 -->
+<TextField layoutX="96.0" layoutY="276.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="191.0" layoutY="277.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="286.0" layoutY="277.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="381.0" layoutY="278.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="476.0" layoutY="279.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="564.0" layoutY="279.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="659.0" layoutY="280.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="754.0" layoutY="279.0" prefHeight="25.0" prefWidth="28.0" />
+
+   <!-- Row 5 -->
+<TextField layoutX="96.0" layoutY="310.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="191.0" layoutY="311.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="286.0" layoutY="311.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="381.0" layoutY="312.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="476.0" layoutY="313.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="564.0" layoutY="313.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="659.0" layoutY="314.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="754.0" layoutY="313.0" prefHeight="25.0" prefWidth="28.0" />
+
+   <!-- Row 6 -->
+<TextField layoutX="96.0" layoutY="343.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="191.0" layoutY="344.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="286.0" layoutY="344.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="381.0" layoutY="345.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="476.0" layoutY="346.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="564.0" layoutY="346.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="659.0" layoutY="347.0" prefHeight="25.0" prefWidth="28.0" />
+<TextField layoutX="754.0" layoutY="346.0" prefHeight="25.0" prefWidth="28.0" />
+</AnchorPane>
+      <Button fx:id="saveButton" layoutX="659.0" layoutY="404.0" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="50.0" prefWidth="139.0" text="Save!" />
+      <Text layoutX="90.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" />
+      <Text layoutX="87.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instrument" />
 
       <ToolBar prefHeight="59.0" prefWidth="870.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -82,58 +192,10 @@
             </Button>
         </items>
       </ToolBar>
-      <StackPane layoutX="0.0" layoutY="60.0" prefHeight="85.0" prefWidth="870.0">
-        <Rectangle fill="#87CEEB" height="85.0" stroke="#ffffff00" strokeType="INSIDE" width="881.0" />
-        
-        <Text fx:id="songHeader" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" textAlignment="CENTER">
-            <font>
-                <Font name="Avenir Next Demi Bold" size="40.0" />
-            </font>
-        </Text>
-      </StackPane>
-      <Button layoutX="90.0" layoutY="420.0" mnemonicParsing="false" onAction="#playSong" styleClass="song-button" text="Play Song" />
-      <Button layoutX="470.0" layoutY="420.0" mnemonicParsing="false" styleClass="song-button" text="View Tab" />
-      <ScrollPane layoutX="88.0" layoutY="195.0" prefHeight="209.0" prefWidth="722.0" visible="false">
-         <content>
-            <AnchorPane prefHeight="200.0" prefWidth="705.0" />
-         </content>
-      </ScrollPane>
-      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="-23.0" startX="110.62622833251953" startY="218.626220703125" />
-      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-23.0" layoutY="7.0" startX="110.62622833251953" startY="218.626220703125" />
-      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-21.0" layoutY="39.0" startX="110.62622833251953" startY="218.626220703125" />
-      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="72.0" startX="110.62622833251953" startY="218.626220703125" />
-      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="104.0" startX="110.62622833251953" startY="218.626220703125" />
-      <Line endX="832.0000610351562" endY="218.00001525878906" layoutX="-22.0" layoutY="137.0" startX="110.62622833251953" startY="218.626220703125" />
-      <Text layoutX="57.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="57.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="56.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="55.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="55.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="55.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      
+      <ChoiceBox fx:id="genres" layoutX="210.0" layoutY="398.0" prefHeight="27.0" prefWidth="151.0" />
+      <ChoiceBox fx:id="instrument" layoutX="210.0" layoutY="433.0" prefHeight="27.0" prefWidth="151.0" />
+      <TextField fx:id="artist" layoutX="476.0" layoutY="399.0" promptText="Artist Name" />
+      <Text layoutX="396.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist" />
+       <ScrollPane layoutX="88.0" layoutY="195.0" prefHeight="209.0" prefWidth="722.0" visible="false" />
    </children>
 </AnchorPane>
