@@ -168,63 +168,63 @@ public class Song {
      * @param fileName Name of file
      * @return True if successful
      */
-    public boolean printToFile(String fileName){
-        FileWriter writer;
-        ArrayList<ArrayList<String>> tabTable = new ArrayList<ArrayList<String>>();
-        final String[] guitarStrings = {"e", "B", "G", "D", "A", "E"}; 
+    // public boolean printToFile(String fileName){
+    //     FileWriter writer;
+    //     ArrayList<ArrayList<String>> tabTable = new ArrayList<ArrayList<String>>();
+    //     final String[] guitarStrings = {"e", "B", "G", "D", "A", "E"}; 
        
-        //adding a blank line for chord names
-        tabTable.add(new ArrayList<String>());
-       tabTable.get(0).add(" ");
-        for(int i = 1; i<7; i++){
-            //set first lines to guitar strings
-            tabTable.add(new ArrayList<String>());
-            //guitarStrings is 1 element shorter due to blank line for chords
-            tabTable.get(i).add(guitarStrings[i-1]);
-        }
+    //     //adding a blank line for chord names
+    //     tabTable.add(new ArrayList<String>());
+    //    tabTable.get(0).add(" ");
+    //     for(int i = 1; i<7; i++){
+    //         //set first lines to guitar strings
+    //         tabTable.add(new ArrayList<String>());
+    //         //guitarStrings is 1 element shorter due to blank line for chords
+    //         tabTable.get(i).add(guitarStrings[i-1]);
+    //     }
         
-        for(Note note:notes){
-            tabTable = addBarToFile(tabTable);
-            for(Chord chord:note.getChords()){
-                if(chord.getName() != null){
-                    tabTable.get(0).add(chord.getName());
-                }
-                else{
-                    tabTable.get(0).add("       ");
-                }
-                for(Note note:chord.getNotes()){
-                    for (int i = 1; i<7; i++){
-                        //this condition resolves to true if the iterator is on the right string to add the note...
-                        if(i-1 == java.util.Arrays.asList(guitarStrings).indexOf(Character.toString(note.getString()))){
-                            tabTable.get(i).add(Integer.toString(note.getFret()));
-                            if(note.getFret() < 10){
-                                tabTable.get(i).add("-");
-                            }
-                        }
-                        else{
-                            tabTable.get(i).add("--");
-                        }
-                    }
-                }
-            }
-        }
+    //     for(Note note:notes){
+    //         tabTable = addBarToFile(tabTable);
+    //         for(Chord chord:note.getChords()){
+    //             if(chord.getName() != null){
+    //                 tabTable.get(0).add(chord.getName());
+    //             }
+    //             else{
+    //                 tabTable.get(0).add("       ");
+    //             }
+    //             for(Note note:chord.getNotes()){
+    //                 for (int i = 1; i<7; i++){
+    //                     //this condition resolves to true if the iterator is on the right string to add the note...
+    //                     if(i-1 == java.util.Arrays.asList(guitarStrings).indexOf(Character.toString(note.getString()))){
+    //                         tabTable.get(i).add(Integer.toString(note.getFret()));
+    //                         if(note.getFret() < 10){
+    //                             tabTable.get(i).add("-");
+    //                         }
+    //                     }
+    //                     else{
+    //                         tabTable.get(i).add("--");
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
 
-        try{
-            writer = new FileWriter(fileName);
-            for(ArrayList<String> line:tabTable){
-                for(String character : line ){
-                    writer.append(character);
-                }
-                writer.append("\n");
-            }
-            writer.close();
-            return true;
-        }
-        catch(Exception e){
-            System.out.println(e);
-            return false;
-        }
-    }
+    //     try{
+    //         writer = new FileWriter(fileName);
+    //         for(ArrayList<String> line:tabTable){
+    //             for(String character : line ){
+    //                 writer.append(character);
+    //             }
+    //             writer.append("\n");
+    //         }
+    //         writer.close();
+    //         return true;
+    //     }
+    //     catch(Exception e){
+    //         System.out.println(e);
+    //         return false;
+    //     }
+    // }
 
     /**
      * This method is used to add a genre to the song's genres.

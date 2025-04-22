@@ -63,14 +63,14 @@ public class CourseController implements Initializable{
 
         // Once lesson library is established
 
-        // addButton.setOnAction(e -> {
-        //     try {
-        //         App.setRoot("lessonlibrary");
-        //     } catch (IOException e1) {
-        //         // TODO Auto-generated catch block
-        //         e1.printStackTrace();
-        //     }
-        // });
+        addButton.setOnAction(e -> {
+            try {
+                App.setRoot("lessonlibrary");
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
 
 
         grid_lessons.add(addButton,0,0);
