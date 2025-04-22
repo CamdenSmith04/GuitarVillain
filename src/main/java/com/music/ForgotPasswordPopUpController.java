@@ -41,6 +41,12 @@ public class ForgotPasswordPopUpController {
     private Text invalidAnswer;
 
     @FXML
+    private Text answerText;
+
+    @FXML 
+    private Text newPasswordText;
+
+    @FXML
     void enterUsername(ActionEvent event) {
         User temp = facade.getUser(username.getText());
         if (temp != null) {
@@ -51,6 +57,8 @@ public class ForgotPasswordPopUpController {
             securityAnswer.setVisible(true);
             password.setVisible(true);
             resetPassword.setVisible(true);
+            answerText.setVisible(true);
+            newPasswordText.setVisible(true);
         }
         else
             usernameNotFound.setVisible(true);
