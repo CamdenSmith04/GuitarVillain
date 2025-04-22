@@ -58,8 +58,8 @@ public class ProfileController implements Initializable{
         // System.out.println(friends);
 
         for (int i = 0; i < friends.size(); i++) {
-            User friend = facade.getUser(friends.get(i));
             
+            User friend = facade.getUser(friends.get(i));
             VBox vbox = new VBox();
             Label friendUsername = new Label(friend.getUsername());
             friendUsername.setFont(new Font(14));

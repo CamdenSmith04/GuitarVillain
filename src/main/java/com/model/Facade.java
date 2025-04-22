@@ -309,36 +309,36 @@ public class Facade implements TeacherInterface {
      * @param title Name of the song
      * @param fileName Name of the file
      */
-    public void printSongToFile(String title, String fileName){
-        songList.getSongByTitle(title).printToFile(fileName);
-    }
+    // public void printSongToFile(String title, String fileName){
+    //     songList.getSongByTitle(title).printToFile(fileName);
+    // }
     
         /**
      * Prints a song to a file
      * @param id UUID of the song
      * @param fileName Name of the file
      */
-    public void printSongToFile(UUID id, String fileName){
-        songList.getSong(id).printToFile(fileName);
-    }
+    // public void printSongToFile(UUID id, String fileName){
+    //     songList.getSong(id).printToFile(fileName);
+    // }
 
     /**
      * Prints a song to a file
      * @param title Name of the song
      */
-    public void printSongToFile(String title){
-        Song song = songList.getSongByTitle(title);
-        song.printToFile(song.getTitle() + ".txt");
-    }
+    // public void printSongToFile(String title){
+    //     Song song = songList.getSongByTitle(title);
+    //     song.printToFile(song.getTitle() + ".txt");
+    // }
     
     /**
      * Prints a song to a file
      * @param id Id of the song
      */
-    public void printSongToFile(UUID id){
-        Song song = songList.getSong(id);
-        song.printToFile(song.getTitle() + ".txt");
-    }
+    // public void printSongToFile(UUID id){
+    //     Song song = songList.getSong(id);
+    //     song.printToFile(song.getTitle() + ".txt");
+    // }
     
     /**
      * This method allows the user to start a song by UUID.
