@@ -108,13 +108,13 @@ public class CourseController implements Initializable{
 
         // Once song library is established
 
-        // addButton.setOnAction(e -> {
-        //     try {
-        //         App.setRoot("songlibrary");
-        //     } catch (IOException e1) {
-        //         e1.printStackTrace();
-        //     }
-        // });
+        addButton.setOnAction(e -> {
+            try {
+                App.setRoot("songlibrary");
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
 
         grid_songs.add(addButton,0,0);
 
