@@ -61,6 +61,11 @@ public class SongController implements Initializable{
             addSongButton.setVisible(true);
             addSongButton.setDisable(false);
         }
+
+        if (user.getRole().equals("Student")) {
+            addSongButton.setVisible(false);
+            addSongButton.setDisable(true);
+        }
     }
 
     @FXML

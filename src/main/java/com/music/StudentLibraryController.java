@@ -56,19 +56,18 @@ public class StudentLibraryController implements Initializable{
             vbox.getChildren().add(studentName);
             vbox.getStyleClass().add("module-grid-item");
 
-            // Go to student profile where there is an add
-            // or remove button depending on if they are in
-            // the class or not in the class
-
-            // vbox.setOnMouseClicked(event -> {
-            //     try {
-            //         facade.setCurrentSong(song);
-            //         App.setRoot("song");
-    
-            //     } catch (IOException e) {
-            //         e.printStackTrace();
-            //     }
-            //     });
+            vbox.setOnMouseClicked(event -> {
+                try {
+                    App.setRoot("friend", controller -> {
+                        if (controller instanceof FriendController) {
+                            ((FriendController) controller).setFriendUser(currUser);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            
     
             grid_students.add(vbox, col, row);
 
