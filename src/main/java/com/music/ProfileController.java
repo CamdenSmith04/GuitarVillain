@@ -14,6 +14,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -70,8 +75,11 @@ public class ProfileController implements Initializable{
             friendUsername.setFont(new Font(14));
             
             vbox.getChildren().add(friendUsername);
-            vbox.getStyleClass().add("book-grid-item");
-    
+            vbox.getStyleClass().add("friend-grid-item");
+            Image image = new Image(getClass().getResource("/com/images/" + friend.getProfilePic()).toExternalForm());
+            BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+            BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
+            vbox.setBackground(new Background(backgroundImage));
             grid_friends.add(vbox, i, 0);
         }
     }

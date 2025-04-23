@@ -34,6 +34,11 @@ public class Module {
      */
     private final UUID id;
 
+        /**
+     * Name of module cover's image
+     */
+    private String image;
+
     /**
      * This is a constructor for a new Module.
      * @param title the title of the module.
@@ -53,13 +58,15 @@ public class Module {
      * @param lessons the lessons in the module.
      * @param songs the songs in the module.
      * @param progress the progress of the module.
+     * @param image the name of the module's cover image
      */
-    public Module(UUID id, String title, ArrayList<UUID> lessons, ArrayList<UUID> songs, double progress) {
+    public Module(UUID id, String title, ArrayList<UUID> lessons, ArrayList<UUID> songs, double progress, String image) {
         this.id = id;
         this.title = title;
         this.lessons = lessons;
         this.songs = songs;
         this.progress = progress;
+        this.image = image;
     }
 
 
@@ -265,6 +272,22 @@ public class Module {
         "Lessons: " + this.lessons + "\n" + 
         "Songs: " + this.songs + "\n" + 
         "Progress: " + this.progress);
+    }
+
+        /**
+     * Mutator for image url
+     * @param image the url
+     */
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    /**
+     * Accessor for image url
+     * @return the image url name
+     */
+    public String getImage() {
+        return image;
     }
 
 }

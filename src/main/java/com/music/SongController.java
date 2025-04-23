@@ -12,6 +12,8 @@ import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 
@@ -29,6 +31,8 @@ public class SongController implements Initializable{
 
     @FXML private Text rating;
 
+    @FXML private ImageView image;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
@@ -38,6 +42,9 @@ public class SongController implements Initializable{
     } 
 
     public void setUpSong(Song song) {
+        Image songImage = new Image(getClass().getResource("/com/images/" + song.getImage()).toExternalForm());
+        image.setImage(songImage);
+        image.setPreserveRatio(false);
         songHeader.setText(song.getTitle());
         artist.setText(song.getAuthor());
         instrument.setText(song.getInstrument().getLabel());

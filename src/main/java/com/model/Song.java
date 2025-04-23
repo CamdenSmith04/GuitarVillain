@@ -2,14 +2,13 @@ package com.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
-import java.io.FileWriter;
 
 /**
  * This class represents a Song.
  * @author Andrew Goad
  */
 public class Song {
-    
+
     /**
      * This is the author of the song.
      */
@@ -81,6 +80,11 @@ public class Song {
     private final UUID id;
 
     /**
+     * Name of album cover's image
+     */
+    private String image;
+
+    /**
      * This is a constructor for a new Song.
      * @param authorId the UUID of the author.
      */
@@ -108,8 +112,9 @@ public class Song {
      * @param lyrics the song's lyrics.
      * @param speed the speed of the song.
      * @param completed the song's completion.
+     * @param image the song's album image name
      */
-    public Song(UUID id, String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Note> notes, ArrayList<String> lyrics, double speed, boolean completed) {
+    public Song(UUID id, String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Note> notes, ArrayList<String> lyrics, double speed, boolean completed, String image) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -124,6 +129,7 @@ public class Song {
         this.lyrics = lyrics;
         this.speed = speed;
         this.completed = completed;
+        this.image = image;
     }
 
     /**
@@ -530,5 +536,22 @@ public class Song {
                 "Id: " + this.id);
 
     }
+
+    /**
+     * Mutator for image url
+     * @param image the url
+     */
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    /**
+     * Accessor for image url
+     * @return the image url name
+     */
+    public String getImage() {
+        return image;
+    }
+    
 
 }

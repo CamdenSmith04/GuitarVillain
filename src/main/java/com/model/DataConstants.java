@@ -24,6 +24,7 @@ public class DataConstants {
     protected static final String SONG_SPEED = "speed";
     protected static final String SONG_COMPLETED = "completed";
     protected static final String SONG_ID = "id";
+    protected static final String SONG_IMAGE = "image";
     
     /**
      * These are the user constants.
@@ -51,6 +52,7 @@ public class DataConstants {
     protected static final String MODULE_LESSONS = "lessons";
     protected static final String MODULE_SONGS = "songs";
     protected static final String MODULE_PROGRESS = "progress";
+    protected static final String MODULE_IMAGE = "image";
     
     /**
      * These are the course constants.

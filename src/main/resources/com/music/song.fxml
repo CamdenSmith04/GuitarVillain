@@ -136,12 +136,9 @@
                 <Font name="Avenir Next Medium" size="24.0" />
             </font>
         </Text>
-        <!--  -->
-
-
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="600.0" layoutY="185.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
       <Button layoutX="90.0" layoutY="420.0" mnemonicParsing="false" onAction="#playSong" styleClass="song-button" text="Play Song" />
       <Button layoutX="470.0" layoutY="420.0" mnemonicParsing="false" onAction="#goToTabView" styleClass="song-button" text="View Tab" />
+      <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" layoutX="600.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" />
       
    </children>
 </AnchorPane>

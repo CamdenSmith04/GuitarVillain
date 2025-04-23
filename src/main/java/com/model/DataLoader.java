@@ -40,7 +40,9 @@ public class DataLoader extends DataConstants{
 
         double progress = ((Number) moduleJSON.get(MODULE_PROGRESS)).doubleValue();
 
-        return new Module(id, title, lessons, songs, progress);
+        String image = (String)moduleJSON.get(MODULE_IMAGE);
+
+        return new Module(id, title, lessons, songs, progress, image);
     }
     /**
      * Parses course data extracted from courses.json
@@ -173,10 +175,11 @@ public class DataLoader extends DataConstants{
             JSONObject noteJSON = (JSONObject) noteObj;
             notes.add(parseNote(noteJSON));
         }
-    
+        
+        String image = (String)songJSON.get(SONG_IMAGE);
 
         return(new Song(songId, songTitle, songAuthor, authorId, songRating, genres, instrument, visibility, 
-                    beatsPerMinute, timeSignature, notes, lyrics, speed, completed));
+                    beatsPerMinute, timeSignature, notes, lyrics, speed, completed, image));
     }
 
     /**

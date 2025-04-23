@@ -19,7 +19,7 @@ public class Student extends User{
      * @param courses The list of courses for the student.
      */
     public Student(User user, ArrayList<UUID> courses) {
-        super(user.getId(), user.getUsername(), user.getPassword(), user.getExperience(), user.getPoints(), user.getStreak(), user.getSecurityQuestion(), user.getSecurityAnswer(), user.getFriends(), user.getSongs());
+        super(user.getId(), user.getUsername(), user.getPassword(), user.getExperience(), user.getPoints(), user.getStreak(), user.getSecurityQuestion(), user.getSecurityAnswer(), user.getFriends(), user.getSongs(), user.getProfilePic());
         this.courses = courses;
         this.role = "Student";
     }

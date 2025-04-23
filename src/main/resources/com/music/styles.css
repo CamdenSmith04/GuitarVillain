@@ -20,6 +20,23 @@
     -fx-min-height: 120px;
 }
 
+.friend-grid-item {
+    -fx-border-color: #ffffff;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 120px;
+    -fx-min-width: 120px;
+    -fx-min-height: 120px;
+}
+
+.friend-grid-item .text {
+    -fx-text-fill: black;
+    -fx-effect: dropshadow(gaussian, white, 3, 5, 0, 0);
+}
+
 .book-grid-item:hover {
     -fx-background-color: #7DB8E2;
 }

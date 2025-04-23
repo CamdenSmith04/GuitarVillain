@@ -13,6 +13,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -47,7 +53,11 @@ public class HomeController implements  Initializable{
             songTitle.setFont(new Font(14));
             
             vbox.getChildren().add(songTitle);
-            vbox.getStyleClass().add("book-grid-item");
+            vbox.getStyleClass().add("friend-grid-item");
+            Image image = new Image(getClass().getResource("/com/images/" + song.getImage()).toExternalForm());
+            BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, true);
+            BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
+            vbox.setBackground(new Background(backgroundImage));
     
             vbox.setOnMouseClicked(event -> {
             try {
