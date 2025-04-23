@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import java.util.UUID;
 
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.Song;
 import com.model.User;
 
@@ -64,7 +65,12 @@ public class MySongsController implements Initializable{
             songTitle.setFont(new Font(14));
             
             vbox.getChildren().add(songTitle);
-            vbox.getStyleClass().add("book-grid-item");
+            if (song.getImage()!= null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                grid_mysongs.add(ImageHelper.getImage(song.getImage(), getClass()), col, row);
+            }
+            else 
+                vbox.getStyleClass().add("book-grid-item");
 
             vbox.setOnMouseClicked(event -> {
                 try {
