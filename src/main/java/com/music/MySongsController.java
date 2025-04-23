@@ -65,7 +65,7 @@ public class MySongsController implements Initializable{
             songTitle.setFont(new Font(14));
             
             vbox.getChildren().add(songTitle);
-            if (song.getImage()!= null) {
+            if (song.getImage() != null) {
                 vbox.getStyleClass().add("friend-grid-item");
                 grid_mysongs.add(ImageHelper.getImage(song.getImage(), getClass()), col, row);
             }
