@@ -78,9 +78,11 @@ public class SongController implements Initializable{
     }
 
     public void setUpSong(Song song) {
-        Image songImage = new Image(getClass().getResource("/com/images/" + song.getImage()).toExternalForm());
-        image.setImage(songImage);
-        image.setPreserveRatio(false);
+        if (getClass().getResource("/com/images/" + song.getImage()) != null) {
+            Image songImage = new Image(getClass().getResource("/com/images/" + song.getImage()).toExternalForm());
+            image.setImage(songImage);
+            image.setPreserveRatio(false);
+        }
         songHeader.setText(song.getTitle());
         artist.setText(song.getAuthor());
         instrument.setText(song.getInstrument().getLabel());
