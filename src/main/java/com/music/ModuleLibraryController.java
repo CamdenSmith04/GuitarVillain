@@ -13,12 +13,7 @@ import com.model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -53,6 +48,9 @@ public class ModuleLibraryController implements Initializable{
 
             vbox.getChildren().add(moduleName);
             vbox.getStyleClass().add("friend-grid-item");
+            ImageView image = ImageHelper.getImage(module.getImage(), getClass());
+            vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+            vbox.setOnMouseExited(e -> image.setOpacity(1));
 
             vbox.setOnMouseClicked(event -> {
                 try {
@@ -63,7 +61,7 @@ public class ModuleLibraryController implements Initializable{
                 }
             });
 
-            grid_modules.add(ImageHelper.getImage(module.getImage(), getClass()), col, row);
+            grid_modules.add(image, col, row);
             grid_modules.add(vbox, col, row);
 
             col ++;

@@ -81,7 +81,9 @@ public class DataLoader extends DataConstants{
             songs.add(songId);
         }
 
-        return new Course(teachers, name, students, lessons, songs, id);
+        String image = (String)courseJSON.get(COURSE_IMAGE);
+
+        return new Course(teachers, name, students, lessons, songs, id, image);
 
     }
 
@@ -96,7 +98,8 @@ public class DataLoader extends DataConstants{
         String educationalMaterial = (String) lessonJSON.get(LESSON_EDUCATIONAL_MATERIAL);
         String visualAidPath = (String) lessonJSON.get(LESSON_VISUAL_AID);
         boolean completed = (boolean) lessonJSON.get(LESSON_COMPLETED);
-        return new Lesson(title, educationalMaterial, visualAidPath, id, completed);
+        String image = (String)lessonJSON.get(LESSON_IMAGE);
+        return new Lesson(title, educationalMaterial, visualAidPath, id, completed, image);
     }
 
     public static Measure parseMeasure(JSONObject measureJSON){

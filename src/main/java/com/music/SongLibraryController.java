@@ -13,12 +13,7 @@ import com.model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -54,7 +49,10 @@ public class SongLibraryController implements Initializable{
             vbox.getChildren().add(songName);
             if (song.getImage() != null) {
                 vbox.getStyleClass().add("friend-grid-item");
-                grid_songs.add(ImageHelper.getImage(song.getImage(), getClass()), col, row);
+                ImageView image = ImageHelper.getImage(song.getImage(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_songs.add(image, col, row);
             }
             else 
                 vbox.getStyleClass().add("book-grid-item");
@@ -67,7 +65,6 @@ public class SongLibraryController implements Initializable{
                     e.printStackTrace();
                 }
             });
-            // grid_songs.add(ImageHelper.getImage(song.getImage(), getClass()), col, row);
             grid_songs.add(vbox, col, row);
 
             col ++;

@@ -15,15 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -80,7 +73,10 @@ public class ProfileController implements Initializable{
             vbox.getChildren().add(friendUsername);
             if (friend.getProfilePic() != null) {
                 vbox.getStyleClass().add("friend-grid-item");
-                grid_friends.add(ImageHelper.getImage(friend.getProfilePic(), getClass()), i, 0);
+                ImageView image = ImageHelper.getImage(friend.getProfilePic(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_friends.add(image, i, 0);
             }
             else 
                 vbox.getStyleClass().add("book-grid-item");
@@ -96,8 +92,6 @@ public class ProfileController implements Initializable{
                     e.printStackTrace();
                 }
             });
-
-            grid_friends.add(ImageHelper.getImage(friend.getProfilePic(), getClass()), i, 0);
             grid_friends.add(vbox, i, 0);
         }
     }

@@ -64,6 +64,7 @@ public class DataConstants {
     protected static final String COURSE_STUDENTS = "students";
     protected static final String COURSE_ASSIGNED_LESSONS = "assignedLessons";
     protected static final String COURSE_ASSIGNED_SONGS = "assignedSongs"; 
+    protected static final String COURSE_IMAGE = "image";
     
     /**
      * These are the lesson constants.
@@ -74,6 +75,7 @@ public class DataConstants {
     protected static final String LESSON_EDUCATIONAL_MATERIAL = "educationalMaterial";
     protected static final String LESSON_VISUAL_AID = "visualAid";
     protected static final String LESSON_COMPLETED = "completed"; 
+    protected static final String LESSON_IMAGE = "image";
 
     /**
      * These are the measure constants.

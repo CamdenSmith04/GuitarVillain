@@ -9,7 +9,6 @@ import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class AboutController implements Initializable{

@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -68,7 +69,10 @@ public class MySongsController implements Initializable{
             System.out.println(song.getImage());
             if (song.getImage() != null) {
                 vbox.getStyleClass().add("friend-grid-item");
-                grid_mysongs.add(ImageHelper.getImage(song.getImage(), getClass()), col, row);
+                ImageView image = ImageHelper.getImage(song.getImage(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_mysongs.add(image, col, row);
             }
             else 
                 vbox.getStyleClass().add("book-grid-item");

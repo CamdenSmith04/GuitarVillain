@@ -34,8 +34,8 @@ public class Module {
      */
     private final UUID id;
 
-        /**
-     * Name of module cover's image
+    /**
+     * Name of module's cover image
      */
     private String image;
 
@@ -274,7 +274,7 @@ public class Module {
         "Progress: " + this.progress);
     }
 
-        /**
+    /**
      * Mutator for image url
      * @param image the url
      */

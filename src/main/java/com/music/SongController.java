@@ -9,9 +9,7 @@ import java.util.UUID;
 import com.model.Course;
 import com.model.Facade;
 import com.model.Genre;
-import com.model.LessonBasedInterfaceDriver;
 import com.model.Song;
-import com.model.SongList;
 import com.model.User;
 
 import javafx.fxml.FXML;

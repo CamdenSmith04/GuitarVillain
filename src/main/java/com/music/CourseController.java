@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import com.model.Course;
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.Lesson;
 import com.model.Song;
 import com.model.User;
@@ -17,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -27,7 +29,7 @@ public class CourseController implements Initializable{
     @FXML
     private TextField courseHeaderField;
     private Facade facade;
-    private Song song;
+    // private Song song;
     private User user;
     private Course course;
 
@@ -39,7 +41,7 @@ public class CourseController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
-        song = facade.getCurrentSong();
+        // song = facade.getCurrentSong();
         user = facade.getCurrentUser();
         course = facade.getCurrentCourse();
         if (course == null) {
@@ -92,7 +94,15 @@ public class CourseController implements Initializable{
             lessonTitle.setFont(new Font(14));
 
             vbox.getChildren().add(lessonTitle);
-            vbox.getStyleClass().add("module-grid-item");
+            if (lesson.getImage() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(lesson.getImage(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_lessons.add(image, i+1, 0);
+            }
+            else 
+                vbox.getStyleClass().add("module-grid-item");
 
             vbox.setOnMouseClicked(event -> {
             try {
@@ -135,7 +145,15 @@ public class CourseController implements Initializable{
             songTitle.setFont(new Font(14));
 
             vbox.getChildren().add(songTitle);
-            vbox.getStyleClass().add("module-grid-item");
+            if (song.getImage() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(song.getImage(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_songs.add(image, i+1, 0);
+            }
+            else 
+                vbox.getStyleClass().add("module-grid-item");
 
             vbox.setOnMouseClicked(event -> {
             try {
@@ -176,7 +194,15 @@ public class CourseController implements Initializable{
             studentTitle.setFont(new Font(14));
 
             vbox.getChildren().add(studentTitle);
-            vbox.getStyleClass().add("module-grid-item");
+            if (user.getProfilePic() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(user.getProfilePic(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_students.add(image, i+1, 0);
+            }
+            else 
+                vbox.getStyleClass().add("module-grid-item");
 
             // This is responsible for letting the user see the
             // profile of an existing student in the course

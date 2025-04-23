@@ -40,6 +40,11 @@ public class Course {
     private final UUID id;
 
     /**
+     * Name of Course's cover image
+     */
+    private String image;
+
+    /**
      * This is a constructor for a new Course. 
      * @param teachers the list of UUIDs of the teachers.
      * @param name the name of the course.
@@ -67,13 +72,14 @@ public class Course {
      * @param assignedSongs the songs in the course.
      * @param id the course's UUID.
      */
-    public Course(ArrayList<UUID> teachers, String name, ArrayList<UUID> students, ArrayList<UUID> assignedLessons, ArrayList<UUID> assignedSongs, UUID id){
+    public Course(ArrayList<UUID> teachers, String name, ArrayList<UUID> students, ArrayList<UUID> assignedLessons, ArrayList<UUID> assignedSongs, UUID id, String image){
         this.teachers = teachers;
         this.name = name;
         this.students = students;
         this.assignedLessons = assignedLessons;
         this.assignedSongs = assignedSongs;
         this.id = id;
+        this.image = image;
     }
 
     /**
@@ -382,6 +388,22 @@ public class Course {
                 "Assigned Songs: " + this.assignedSongs + "\n" +
                 "Id: " + this.id);
 
+    }
+
+    /**
+     * Mutator for image url
+     * @param image the url
+     */
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    /**
+     * Accessor for image url
+     * @return the image url name
+     */
+    public String getImage() {
+        return image;
     }
 }
 

@@ -20,7 +20,7 @@
     },
     {
         "courses": null,
-        "role": "student",
+        "role": "Student",
         "securityQuestion": "ELEMENTARY_SCHOOL",
         "securityAnswer": "Denver Elementary",
         "streak": 25,

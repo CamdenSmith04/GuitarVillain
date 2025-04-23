@@ -32,6 +32,11 @@ public class Lesson {
      * This is the UUID of the lesson.
      */
     private final UUID id;
+        
+    /**
+     * Name of Lesson's cover image
+     */
+    private String image;
 
     /**
      * This is a constructor for a new Lesson.
@@ -55,12 +60,13 @@ public class Lesson {
      * @param id the lesson's UUID.
      * @param completed the completion status of the lesson.
      */
-    public Lesson(String title, String educationalMaterial, String visualAid, UUID id, boolean completed) {
+    public Lesson(String title, String educationalMaterial, String visualAid, UUID id, boolean completed, String image) {
         this.title = title;
         this.educationalMaterial = educationalMaterial;
         this.visualAid = visualAid;
         this.id = id;
         this.completed = completed;
+        this.image = image;
     }
 
     /**
@@ -168,6 +174,22 @@ public class Lesson {
         "Visual Aid: " + this.visualAid + "\n" + 
         "Completed: " + this.completed);
 
+    }
+
+    /**
+     * Mutator for image url
+     * @param image the url
+     */
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    /**
+     * Accessor for image url
+     * @return the image url name
+     */
+    public String getImage() {
+        return image;
     }
 
 }
