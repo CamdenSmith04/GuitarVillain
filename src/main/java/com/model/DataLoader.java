@@ -208,7 +208,8 @@ public class DataLoader extends DataConstants{
             UUID song = UUID.fromString((String) obj);
             songs.add(song);
         }
-        User ret = new User(id, username, password, experience, points, streak, securityQuestion, securityAnswer, friends, songs);
+        String profilePicture = (String)userJSON.get(USER_PROFILE_PICTURE);
+        User ret = new User(id, username, password, experience, points, streak, securityQuestion, securityAnswer, friends, songs, profilePicture);
         String role = (String)userJSON.get(USER_ROLE);
         if (role != null){
             switch (role) {

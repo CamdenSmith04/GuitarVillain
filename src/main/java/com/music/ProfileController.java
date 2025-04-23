@@ -12,6 +12,8 @@ import com.model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -20,7 +22,6 @@ import javafx.scene.text.Text;
 
 
 public class ProfileController implements Initializable{
-    
 
     private Facade facade;
     private User user;
@@ -32,6 +33,8 @@ public class ProfileController implements Initializable{
     @FXML private Text streakText;
 
     @FXML private GridPane grid_friends;
+
+    @FXML private ImageView profilePic;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -50,6 +53,8 @@ public class ProfileController implements Initializable{
         songsText.setText(Integer.toString(user.getSongs().size()));
         pointsText.setText(Integer.toString(user.getPoints()));
         streakText.setText(Integer.toString(user.getStreak()));
+        profilePic.setImage(new Image(getClass().getResource("/com/images/" + user.getProfilePic()).toExternalForm()));
+        profilePic.setPreserveRatio(false);
     }
 
     private void displayFriends(User user) {

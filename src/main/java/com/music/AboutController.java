@@ -10,12 +10,17 @@ import com.model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class AboutController implements Initializable{
-    
+
     @FXML
     private User user;
+
     private Facade facade;
+
+    @FXML
+    private ImageView profilePic;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
