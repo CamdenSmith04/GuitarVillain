@@ -191,23 +191,26 @@ public class CourseController implements Initializable{
         courseHeader.setText(course.getName());
     }
 
-    @FXML
-    public void playSong() throws IOException {
-        song.play();
-    }
+    // @FXML
+    // public void playSong() throws IOException {
+    //     song.play();
+    // }
 
     @FXML
     private void goToHome() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("home");
     }
 
     @FXML
     private void goToMySongs() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("mysongs");
     }
 
     @FXML
     private void goToCourses() throws IOException {
+        facade.setCurrentCourse(null);
         if (user.getRole().equals("Student")) {
             App.setRoot("studentcourse");
         }
@@ -218,26 +221,31 @@ public class CourseController implements Initializable{
 
     @FXML
     private void goToSongLibrary() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("songlibrary");
     }
 
     @FXML
     private void goToModuleLibrary() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("modulelibrary");
     }
 
     @FXML
     private void goToMore() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("more");
     }
 
     @FXML
     private void goToProfile() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("profile");
     }
 
     @FXML
     private void goToAbout() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("about");
     }
     
