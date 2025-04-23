@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import com.model.Song;
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.User;
 
 import javafx.fxml.FXML;
@@ -52,12 +53,7 @@ public class SongLibraryController implements Initializable{
 
             vbox.getChildren().add(songName);
             vbox.getStyleClass().add("friend-grid-item");
-            Image image = new Image(getClass().getResource("/com/images/" + song.getImage()).toExternalForm());
-            BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, true);
-            BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
-            vbox.setBackground(new Background(backgroundImage));
             
-
             vbox.setOnMouseClicked(event -> {
                 try {
                     facade.setCurrentSong(song);
@@ -66,7 +62,7 @@ public class SongLibraryController implements Initializable{
                     e.printStackTrace();
                 }
             });
-
+            grid_songs.add(ImageHelper.getImage(song.getImage(), getClass()), col, row);
             grid_songs.add(vbox, col, row);
 
             col ++;

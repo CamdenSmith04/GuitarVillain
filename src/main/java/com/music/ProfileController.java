@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import java.util.UUID;
 
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.User;
 
 import javafx.fxml.FXML;
@@ -20,7 +21,9 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -76,10 +79,8 @@ public class ProfileController implements Initializable{
             
             vbox.getChildren().add(friendUsername);
             vbox.getStyleClass().add("friend-grid-item");
-            Image image = new Image(getClass().getResource("/com/images/" + friend.getProfilePic()).toExternalForm());
-            BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
-            BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
-            vbox.setBackground(new Background(backgroundImage));
+
+            grid_friends.add(ImageHelper.getImage(friend.getProfilePic(), getClass()), i, 0);
             grid_friends.add(vbox, i, 0);
         }
     }

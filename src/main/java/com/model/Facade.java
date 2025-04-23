@@ -134,15 +134,6 @@ public class Facade implements TeacherInterface {
     }
 
     /**
-     * Makes user an instance of Admin
-     */
-    public boolean becomeAdmin() {
-        currentUser = new Admin(currentUser);
-        userList.updateUser(currentUser);
-        return true;
-    }
-
-    /**
      * This method logs the user out and clears all the stored information.
      * @return true or false if logout was successful or not.
      */

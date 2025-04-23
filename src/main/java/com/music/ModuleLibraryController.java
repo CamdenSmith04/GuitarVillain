@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.Module;
 import com.model.User;
 
@@ -52,10 +53,6 @@ public class ModuleLibraryController implements Initializable{
 
             vbox.getChildren().add(moduleName);
             vbox.getStyleClass().add("friend-grid-item");
-            Image image = new Image(getClass().getResource("/com/images/" + module.getImage()).toExternalForm());
-            BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, true);
-            BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
-            vbox.setBackground(new Background(backgroundImage));
 
             vbox.setOnMouseClicked(event -> {
                 try {
@@ -66,6 +63,7 @@ public class ModuleLibraryController implements Initializable{
                 }
             });
 
+            grid_modules.add(ImageHelper.getImage(module.getImage(), getClass()), col, row);
             grid_modules.add(vbox, col, row);
 
             col ++;

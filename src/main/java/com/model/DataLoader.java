@@ -228,10 +228,6 @@ public class DataLoader extends DataConstants{
                     ret = new Teacher(ret, (ArrayList<UUID>)userJSON.get(USER_COURSES));
                     break;
                 }
-                case "Admin":{
-                    ret = new Admin(ret);
-                    break;
-                }
                 default:
                     break;
             }
