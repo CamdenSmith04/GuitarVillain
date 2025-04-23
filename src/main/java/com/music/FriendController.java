@@ -133,7 +133,7 @@ public class FriendController implements Initializable{
 
     @FXML
     private void goToCourses() throws IOException {
-        if (user.getRole().equals("Student")) {
+        if (facade.getCurrentUser().getRole().equals("Student")) {
             App.setRoot("studentcourse");
         }
         else {

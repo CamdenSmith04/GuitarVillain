@@ -80,6 +80,18 @@ public class ProfileController implements Initializable{
             vbox.getChildren().add(friendUsername);
             vbox.getStyleClass().add("friend-grid-item");
 
+            vbox.setOnMouseClicked(event -> {
+                try {
+                    App.setRoot("friend", controller -> {
+                        if (controller instanceof FriendController) {
+                            ((FriendController) controller).setFriendUser(friend);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+
             grid_friends.add(ImageHelper.getImage(friend.getProfilePic(), getClass()), i, 0);
             grid_friends.add(vbox, i, 0);
         }
