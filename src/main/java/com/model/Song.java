@@ -2,14 +2,13 @@ package com.model;
 
 import java.util.ArrayList;
 import java.util.UUID;
-import java.io.FileWriter;
 
 /**
  * This class represents a Song.
  * @author Andrew Goad
  */
 public class Song {
-    
+
     /**
      * This is the author of the song.
      */
@@ -81,6 +80,11 @@ public class Song {
     private final UUID id;
 
     /**
+     * Name of album cover's image
+     */
+    private String image;
+
+    /**
      * This is a constructor for a new Song.
      * @param authorId the UUID of the author.
      */
@@ -108,8 +112,9 @@ public class Song {
      * @param lyrics the song's lyrics.
      * @param speed the speed of the song.
      * @param completed the song's completion.
+     * @param image the song's album image name
      */
-    public Song(UUID id, String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Note> notes, ArrayList<String> lyrics, double speed, boolean completed) {
+    public Song(UUID id, String title, String author, UUID authorId, double rating, ArrayList<Genre> genres, Instrument instrument, Visibility visibility, int beatsPerMinute, TimeSignature timeSignature, ArrayList<Note> notes, ArrayList<String> lyrics, double speed, boolean completed, String image) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -124,6 +129,7 @@ public class Song {
         this.lyrics = lyrics;
         this.speed = speed;
         this.completed = completed;
+        this.image = image;
     }
 
     /**
@@ -168,63 +174,63 @@ public class Song {
      * @param fileName Name of file
      * @return True if successful
      */
-    public boolean printToFile(String fileName){
-        FileWriter writer;
-        ArrayList<ArrayList<String>> tabTable = new ArrayList<ArrayList<String>>();
-        final String[] guitarStrings = {"e", "B", "G", "D", "A", "E"}; 
+    // public boolean printToFile(String fileName){
+    //     FileWriter writer;
+    //     ArrayList<ArrayList<String>> tabTable = new ArrayList<ArrayList<String>>();
+    //     final String[] guitarStrings = {"e", "B", "G", "D", "A", "E"}; 
        
-        //adding a blank line for chord names
-        tabTable.add(new ArrayList<String>());
-       tabTable.get(0).add(" ");
-        for(int i = 1; i<7; i++){
-            //set first lines to guitar strings
-            tabTable.add(new ArrayList<String>());
-            //guitarStrings is 1 element shorter due to blank line for chords
-            tabTable.get(i).add(guitarStrings[i-1]);
-        }
+    //     //adding a blank line for chord names
+    //     tabTable.add(new ArrayList<String>());
+    //    tabTable.get(0).add(" ");
+    //     for(int i = 1; i<7; i++){
+    //         //set first lines to guitar strings
+    //         tabTable.add(new ArrayList<String>());
+    //         //guitarStrings is 1 element shorter due to blank line for chords
+    //         tabTable.get(i).add(guitarStrings[i-1]);
+    //     }
         
-        for(Note note:notes){
-            tabTable = addBarToFile(tabTable);
-            for(Chord chord:note.getChords()){
-                if(chord.getName() != null){
-                    tabTable.get(0).add(chord.getName());
-                }
-                else{
-                    tabTable.get(0).add("       ");
-                }
-                for(Note note:chord.getNotes()){
-                    for (int i = 1; i<7; i++){
-                        //this condition resolves to true if the iterator is on the right string to add the note...
-                        if(i-1 == java.util.Arrays.asList(guitarStrings).indexOf(Character.toString(note.getString()))){
-                            tabTable.get(i).add(Integer.toString(note.getFret()));
-                            if(note.getFret() < 10){
-                                tabTable.get(i).add("-");
-                            }
-                        }
-                        else{
-                            tabTable.get(i).add("--");
-                        }
-                    }
-                }
-            }
-        }
+    //     for(Note note:notes){
+    //         tabTable = addBarToFile(tabTable);
+    //         for(Chord chord:note.getChords()){
+    //             if(chord.getName() != null){
+    //                 tabTable.get(0).add(chord.getName());
+    //             }
+    //             else{
+    //                 tabTable.get(0).add("       ");
+    //             }
+    //             for(Note note:chord.getNotes()){
+    //                 for (int i = 1; i<7; i++){
+    //                     //this condition resolves to true if the iterator is on the right string to add the note...
+    //                     if(i-1 == java.util.Arrays.asList(guitarStrings).indexOf(Character.toString(note.getString()))){
+    //                         tabTable.get(i).add(Integer.toString(note.getFret()));
+    //                         if(note.getFret() < 10){
+    //                             tabTable.get(i).add("-");
+    //                         }
+    //                     }
+    //                     else{
+    //                         tabTable.get(i).add("--");
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
 
-        try{
-            writer = new FileWriter(fileName);
-            for(ArrayList<String> line:tabTable){
-                for(String character : line ){
-                    writer.append(character);
-                }
-                writer.append("\n");
-            }
-            writer.close();
-            return true;
-        }
-        catch(Exception e){
-            System.out.println(e);
-            return false;
-        }
-    }
+    //     try{
+    //         writer = new FileWriter(fileName);
+    //         for(ArrayList<String> line:tabTable){
+    //             for(String character : line ){
+    //                 writer.append(character);
+    //             }
+    //             writer.append("\n");
+    //         }
+    //         writer.close();
+    //         return true;
+    //     }
+    //     catch(Exception e){
+    //         System.out.println(e);
+    //         return false;
+    //     }
+    // }
 
     /**
      * This method is used to add a genre to the song's genres.
@@ -530,5 +536,22 @@ public class Song {
                 "Id: " + this.id);
 
     }
+
+    /**
+     * Mutator for image url
+     * @param image the url
+     */
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    /**
+     * Accessor for image url
+     * @return the image url name
+     */
+    public String getImage() {
+        return image;
+    }
+    
 
 }

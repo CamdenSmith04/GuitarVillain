@@ -109,7 +109,7 @@
             <Font name="Avenir Next Medium" size="16.0" />
          </font>
       </Text>
-      <Button layoutX="31.0" layoutY="225.0" mnemonicParsing="false" onAction="#goToAbout" prefHeight="35.0" prefWidth="131.0" text="Learn More" textFill="WHITE">
+      <Button layoutX="31.0" layoutY="225.0" mnemonicParsing="false" onAction="#goToAbout" prefHeight="35.0" prefWidth="131.0" text="Learn More" textFill="#175ea1">
          <font>
             <Font name="Avenir Next Medium" size="16.0" />
          </font>

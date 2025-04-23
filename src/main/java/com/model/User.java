@@ -59,12 +59,20 @@ public class User {
      */
     protected final UUID id;
 
+    /**
+     * User's role: User, Teacher, Student
+     */
     protected String role;
 
     /**
      * The list of courses the User is a member of.
      */
     protected ArrayList<UUID> courses;
+
+    /**
+     * Name of the image used as User's profile picture.
+     */
+    protected String profilePicture;
 
     /**
      * This constructor is used to instantiate an existing user from JSON files.
@@ -78,10 +86,11 @@ public class User {
      * @param securityAnswer the user's answer to the security question.
      * @param friends the user's friends.
      * @param songs the user's songs.
+     * @param profilePicture
      */
     public User(UUID id, String username, String password, Experience experience, int points, 
                     int streak, SecurityQuestion securityQuestion, String securityAnswer, 
-                    ArrayList<UUID> friends, ArrayList<UUID> songs) {
+                    ArrayList<UUID> friends, ArrayList<UUID> songs, String profilePicture) {
         this.username = username;
         this.password = password;
         this.experience = experience;
@@ -93,6 +102,7 @@ public class User {
         this.songs = songs;
         this.id = id;
         this.role = "User";
+        this.profilePicture = profilePicture;
     }
 
     /**
@@ -129,6 +139,7 @@ public class User {
         this.friends = teacher.friends;
         this.songs = teacher.songs;
         this.role = "Teacher";
+        this.profilePicture = teacher.profilePicture;
     }
 
     public User(Student student) {
@@ -143,6 +154,15 @@ public class User {
         this.friends = student.friends;
         this.songs = student.songs;
         this.role = "student";
+        this.profilePicture = student.profilePicture;
+    }
+
+    public String getProfilePic() {
+        return profilePicture;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePicture = profilePic;
     }
 
     /**

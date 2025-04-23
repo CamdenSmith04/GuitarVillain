@@ -8,12 +8,14 @@ import java.util.UUID;
 
 import com.model.Course;
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -23,12 +25,14 @@ import javafx.scene.text.Font;
 public class TeacherCourseController implements Initializable{
     
     private Facade facade;
+    private User user;
 
     @FXML private GridPane grid_courses;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
+        user = facade.getCurrentUser();
         displayCourses();
     } 
 
@@ -70,7 +74,15 @@ public class TeacherCourseController implements Initializable{
                 moduleName.setFont(new Font(14));
 
                 vbox.getChildren().add(moduleName);
-                vbox.getStyleClass().add("module-grid-item");
+                if (course.getImage() != null) {
+                    vbox.getStyleClass().add("friend-grid-item");
+                    ImageView image = ImageHelper.getImage(course.getImage(), getClass());
+                    vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                    vbox.setOnMouseExited(e -> image.setOpacity(1));
+                    grid_courses.add(image, col, row);
+                }
+                else 
+                    vbox.getStyleClass().add("book-grid-item");
 
                 vbox.setOnMouseClicked(event -> {
                     try {
@@ -96,6 +108,7 @@ public class TeacherCourseController implements Initializable{
     }
 
     @FXML private void handleNewCourse() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("course");
     }
 
@@ -111,7 +124,12 @@ public class TeacherCourseController implements Initializable{
 
     @FXML
     private void goToCourses() throws IOException {
-        App.setRoot("teachercourse");
+        if (user.getRole().equals("Student")) {
+            App.setRoot("studentcourse");
+        }
+        else {
+            App.setRoot("teachercourse");
+        }
     }
 
     @FXML

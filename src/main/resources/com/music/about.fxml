@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.AboutController">
+<AnchorPane prefHeight="507.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.AboutController">
    <children>
 
       <ToolBar prefHeight="59.0" prefWidth="870.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -82,6 +80,38 @@
         </items>
       </ToolBar>
 
-      <Text layoutX="288.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About" />
+        
+      <Text layoutX="40.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Us">  
+        <font>
+            <Font name="Avenir Next Medium" size="24.0" />
+        </font>
+      </Text>
+      <Text layoutX="40.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Guitar Villain, your go-to guitar learning app designed to make mastering the guitar fun and accessible. Whether you're a complete beginner or looking to refine your skills, we’ve got you covered with step-by-step lessons, interactive features, and a community of fellow musicians. This app was created by four passionate guitarists and educators: Camden Smith, Andrew Goad, Abby Holdcraft, and Bradley Alford. Each of us brings our unique expertise—from teaching techniques to music theory and performance—so that you can learn the guitar at your own pace, wherever you are. We're here to guide you on your musical journey and help you unlock your full potential on the guitar." wrappingWidth="800.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="35.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our Patreon: " wrappingWidth="800.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="35.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our GitHub:" wrappingWidth="800.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Hyperlink layoutX="145.0" layoutY="337.0" text="www.patreon.com">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink layoutX="137.0" layoutY="365.0" text="github.com/CamdenSmith04/GuitarVillain">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Hyperlink>
+    
+    
    </children>
 </AnchorPane>

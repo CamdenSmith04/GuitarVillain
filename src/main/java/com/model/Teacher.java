@@ -17,7 +17,7 @@ public class Teacher extends User {
     public Teacher(User user, ArrayList<UUID> courses){
         super(user.getId(), user.getUsername(), user.getPassword(), user.getExperience(), 
         user.getPoints(), user.getStreak(), user.getSecurityQuestion(), user.getSecurityAnswer(), 
-        user.getFriends(), user.getSongs());
+        user.getFriends(), user.getSongs(), user.getProfilePic());
         this.courses = courses;
         this.role = "Teacher";
     }

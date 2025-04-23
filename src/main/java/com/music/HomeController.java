@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.Song;
 import com.model.User;
 
@@ -13,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -47,7 +49,15 @@ public class HomeController implements  Initializable{
             songTitle.setFont(new Font(14));
             
             vbox.getChildren().add(songTitle);
-            vbox.getStyleClass().add("book-grid-item");
+            if (song.getImage() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(song.getImage(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_latest_songs.add(image, i, 0);
+            }
+            else 
+                vbox.getStyleClass().add("book-grid-item");
     
             vbox.setOnMouseClicked(event -> {
             try {
@@ -59,6 +69,7 @@ public class HomeController implements  Initializable{
             }
             });
 
+            // grid_latest_songs.add(ImageHelper.getImage(song.getImage(), getClass()), i, 0);
             grid_latest_songs.add(vbox, i, 0); // You can change row/col layout logic if needed
         }
     }

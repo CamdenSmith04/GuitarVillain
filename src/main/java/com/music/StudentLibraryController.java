@@ -6,12 +6,14 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -54,21 +56,28 @@ public class StudentLibraryController implements Initializable{
             studentName.setFont(new Font(14));
             
             vbox.getChildren().add(studentName);
-            vbox.getStyleClass().add("module-grid-item");
+            if (currUser.getProfilePic() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(currUser.getProfilePic(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_students.add(image, col, row);
+            }
+            else 
+                vbox.getStyleClass().add("book-grid-item");
 
-            // Go to student profile where there is an add
-            // or remove button depending on if they are in
-            // the class or not in the class
-
-            // vbox.setOnMouseClicked(event -> {
-            //     try {
-            //         facade.setCurrentSong(song);
-            //         App.setRoot("song");
-    
-            //     } catch (IOException e) {
-            //         e.printStackTrace();
-            //     }
-            //     });
+            vbox.setOnMouseClicked(event -> {
+                try {
+                    App.setRoot("friend", controller -> {
+                        if (controller instanceof FriendController) {
+                            ((FriendController) controller).setFriendUser(currUser);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            
     
             grid_students.add(vbox, col, row);
 

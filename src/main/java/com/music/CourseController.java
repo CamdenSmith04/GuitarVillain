@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import com.model.Course;
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.Lesson;
 import com.model.Song;
 import com.model.User;
@@ -16,18 +17,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 
 
 public class CourseController implements Initializable{
 
     @FXML
-    private Text courseHeader;
+    private TextField courseHeaderField;
     private Facade facade;
-    private Song song;
+    // private Song song;
     private User user;
     private Course course;
 
@@ -39,7 +41,7 @@ public class CourseController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
-        song = facade.getCurrentSong();
+        // song = facade.getCurrentSong();
         user = facade.getCurrentUser();
         course = facade.getCurrentCourse();
         if (course == null) {
@@ -52,6 +54,15 @@ public class CourseController implements Initializable{
         displayStudents();
     } 
 
+    @FXML
+    private void handleCourseNameUpdate() {
+        String updatedName = courseHeaderField.getText();
+
+                if (facade.getCurrentCourse() != null) {
+            facade.getCurrentCourse().setName(updatedName);
+        }
+    }
+
     private void displayLessons() {
 
         ArrayList<UUID> lessons = course.getAssignedLessons();
@@ -63,14 +74,14 @@ public class CourseController implements Initializable{
 
         // Once lesson library is established
 
-        // addButton.setOnAction(e -> {
-        //     try {
-        //         App.setRoot("lessonlibrary");
-        //     } catch (IOException e1) {
-        //         // TODO Auto-generated catch block
-        //         e1.printStackTrace();
-        //     }
-        // });
+        addButton.setOnAction(e -> {
+            try {
+                App.setRoot("lessonlibrary");
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
 
 
         grid_lessons.add(addButton,0,0);
@@ -83,7 +94,15 @@ public class CourseController implements Initializable{
             lessonTitle.setFont(new Font(14));
 
             vbox.getChildren().add(lessonTitle);
-            vbox.getStyleClass().add("module-grid-item");
+            if (lesson.getImage() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(lesson.getImage(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_lessons.add(image, i+1, 0);
+            }
+            else 
+                vbox.getStyleClass().add("module-grid-item");
 
             vbox.setOnMouseClicked(event -> {
             try {
@@ -108,13 +127,13 @@ public class CourseController implements Initializable{
 
         // Once song library is established
 
-        // addButton.setOnAction(e -> {
-        //     try {
-        //         App.setRoot("songlibrary");
-        //     } catch (IOException e1) {
-        //         e1.printStackTrace();
-        //     }
-        // });
+        addButton.setOnAction(e -> {
+            try {
+                App.setRoot("songlibrary");
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
 
         grid_songs.add(addButton,0,0);
 
@@ -126,7 +145,15 @@ public class CourseController implements Initializable{
             songTitle.setFont(new Font(14));
 
             vbox.getChildren().add(songTitle);
-            vbox.getStyleClass().add("module-grid-item");
+            if (song.getImage() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(song.getImage(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_songs.add(image, i+1, 0);
+            }
+            else 
+                vbox.getStyleClass().add("module-grid-item");
 
             vbox.setOnMouseClicked(event -> {
             try {
@@ -167,20 +194,31 @@ public class CourseController implements Initializable{
             studentTitle.setFont(new Font(14));
 
             vbox.getChildren().add(studentTitle);
-            vbox.getStyleClass().add("module-grid-item");
+            if (user.getProfilePic() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(user.getProfilePic(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_students.add(image, i+1, 0);
+            }
+            else 
+                vbox.getStyleClass().add("module-grid-item");
 
             // This is responsible for letting the user see the
             // profile of an existing student in the course
             // profile
 
-            // vbox.setOnMouseClicked(event -> {
-            // try {
-            //     facade.setCurrentUser();
-            //     App.setRoot("lesson");
-            // } catch (IOException e) {
-            //     e.printStackTrace();;
-            // }
-            // });
+            vbox.setOnMouseClicked(event -> {
+                try {
+                    App.setRoot("friend", controller -> {
+                        if (controller instanceof FriendController) {
+                            ((FriendController) controller).setFriendUser(user);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
 
             grid_students.add(vbox,i+1,0);
         }
@@ -188,26 +226,29 @@ public class CourseController implements Initializable{
     }
 
     private void setUpCourse(Course course) {
-        courseHeader.setText(course.getName());
+        courseHeaderField.setText(course.getName());
     }
 
-    @FXML
-    public void playSong() throws IOException {
-        song.play();
-    }
+    // @FXML
+    // public void playSong() throws IOException {
+    //     song.play();
+    // }
 
     @FXML
     private void goToHome() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("home");
     }
 
     @FXML
     private void goToMySongs() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("mysongs");
     }
 
     @FXML
     private void goToCourses() throws IOException {
+        facade.setCurrentCourse(null);
         if (user.getRole().equals("Student")) {
             App.setRoot("studentcourse");
         }
@@ -218,26 +259,31 @@ public class CourseController implements Initializable{
 
     @FXML
     private void goToSongLibrary() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("songlibrary");
     }
 
     @FXML
     private void goToModuleLibrary() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("modulelibrary");
     }
 
     @FXML
     private void goToMore() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("more");
     }
 
     @FXML
     private void goToProfile() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("profile");
     }
 
     @FXML
     private void goToAbout() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("about");
     }
     

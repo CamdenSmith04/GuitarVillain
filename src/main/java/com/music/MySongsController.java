@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import java.util.UUID;
 
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.Song;
 import com.model.User;
 
@@ -14,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -64,7 +66,16 @@ public class MySongsController implements Initializable{
             songTitle.setFont(new Font(14));
             
             vbox.getChildren().add(songTitle);
-            vbox.getStyleClass().add("book-grid-item");
+            System.out.println(song.getImage());
+            if (song.getImage() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(song.getImage(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_mysongs.add(image, col, row);
+            }
+            else 
+                vbox.getStyleClass().add("book-grid-item");
 
             vbox.setOnMouseClicked(event -> {
                 try {

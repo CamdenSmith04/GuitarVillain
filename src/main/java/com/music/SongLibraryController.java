@@ -2,24 +2,81 @@ package com.music;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.model.Song;
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+
 
 public class SongLibraryController implements Initializable{
-    
+
     private Facade facade;
     private User user;
 
+    @FXML private GridPane grid_songs;
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
         user = facade.getCurrentUser();
+        displaySongs();
     } 
+
+    private void displaySongs() {
+        int columnCount = 4;
+        int row = 0;
+        int col = 0;
+
+        ArrayList<Song> songs = facade.getSongs();
+        for (int i = 0; i < songs.size(); i++ ) {
+            Song song = songs.get(i);
+            VBox vbox = new VBox();
+            Label songName = new Label(song.getTitle());
+            songName.setFont(new Font(14));
+
+            vbox.getChildren().add(songName);
+            if (song.getImage() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(song.getImage(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_songs.add(image, col, row);
+            }
+            else 
+                vbox.getStyleClass().add("book-grid-item");
+            
+            vbox.setOnMouseClicked(event -> {
+                try {
+                    facade.setCurrentSong(song);
+                    App.setRoot("song");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            grid_songs.add(vbox, col, row);
+
+            col ++;
+
+            if (col == columnCount) {
+                col = 0;
+                row++;
+            }
+
+        }
+
+    }
 
     @FXML
     private void goToHome() throws IOException {

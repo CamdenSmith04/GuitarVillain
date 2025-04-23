@@ -6,12 +6,14 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.Module;
 import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -45,7 +47,10 @@ public class ModuleLibraryController implements Initializable{
             moduleName.setFont(new Font(14));
 
             vbox.getChildren().add(moduleName);
-            vbox.getStyleClass().add("module-grid-item");
+            vbox.getStyleClass().add("friend-grid-item");
+            ImageView image = ImageHelper.getImage(module.getImage(), getClass());
+            vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+            vbox.setOnMouseExited(e -> image.setOpacity(1));
 
             vbox.setOnMouseClicked(event -> {
                 try {
@@ -56,6 +61,7 @@ public class ModuleLibraryController implements Initializable{
                 }
             });
 
+            grid_modules.add(image, col, row);
             grid_modules.add(vbox, col, row);
 
             col ++;

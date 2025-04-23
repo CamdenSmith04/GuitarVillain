@@ -24,6 +24,7 @@ public class DataConstants {
     protected static final String SONG_SPEED = "speed";
     protected static final String SONG_COMPLETED = "completed";
     protected static final String SONG_ID = "id";
+    protected static final String SONG_IMAGE = "image";
     
     /**
      * These are the user constants.
@@ -41,6 +42,7 @@ public class DataConstants {
     protected static final String USER_SONGS = "songs";
     protected static final String USER_ROLE = "role";
     protected static final String USER_COURSES = "courses";
+    protected static final String USER_PROFILE_PICTURE = "profilePicture";
     /**
      * These are the module constants.
      */
@@ -50,6 +52,7 @@ public class DataConstants {
     protected static final String MODULE_LESSONS = "lessons";
     protected static final String MODULE_SONGS = "songs";
     protected static final String MODULE_PROGRESS = "progress";
+    protected static final String MODULE_IMAGE = "image";
     
     /**
      * These are the course constants.
@@ -61,6 +64,7 @@ public class DataConstants {
     protected static final String COURSE_STUDENTS = "students";
     protected static final String COURSE_ASSIGNED_LESSONS = "assignedLessons";
     protected static final String COURSE_ASSIGNED_SONGS = "assignedSongs"; 
+    protected static final String COURSE_IMAGE = "image";
     
     /**
      * These are the lesson constants.
@@ -71,6 +75,7 @@ public class DataConstants {
     protected static final String LESSON_EDUCATIONAL_MATERIAL = "educationalMaterial";
     protected static final String LESSON_VISUAL_AID = "visualAid";
     protected static final String LESSON_COMPLETED = "completed"; 
+    protected static final String LESSON_IMAGE = "image";
 
     /**
      * These are the measure constants.

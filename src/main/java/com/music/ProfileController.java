@@ -7,11 +7,14 @@ import java.util.ResourceBundle;
 import java.util.UUID;
 
 import com.model.Facade;
+import com.model.ImageHelper;
 import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -20,7 +23,6 @@ import javafx.scene.text.Text;
 
 
 public class ProfileController implements Initializable{
-    
 
     private Facade facade;
     private User user;
@@ -32,6 +34,8 @@ public class ProfileController implements Initializable{
     @FXML private Text streakText;
 
     @FXML private GridPane grid_friends;
+
+    @FXML private ImageView profilePic;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -50,6 +54,8 @@ public class ProfileController implements Initializable{
         songsText.setText(Integer.toString(user.getSongs().size()));
         pointsText.setText(Integer.toString(user.getPoints()));
         streakText.setText(Integer.toString(user.getStreak()));
+        profilePic.setImage(new Image(getClass().getResource("/com/images/" + user.getProfilePic()).toExternalForm()));
+        profilePic.setPreserveRatio(false);
     }
 
     private void displayFriends(User user) {
@@ -58,15 +64,34 @@ public class ProfileController implements Initializable{
         // System.out.println(friends);
 
         for (int i = 0; i < friends.size(); i++) {
-            User friend = facade.getUser(friends.get(i));
             
+            User friend = facade.getUser(friends.get(i));
             VBox vbox = new VBox();
             Label friendUsername = new Label(friend.getUsername());
             friendUsername.setFont(new Font(14));
             
             vbox.getChildren().add(friendUsername);
-            vbox.getStyleClass().add("book-grid-item");
-    
+            if (friend.getProfilePic() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                ImageView image = ImageHelper.getImage(friend.getProfilePic(), getClass());
+                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                vbox.setOnMouseExited(e -> image.setOpacity(1));
+                grid_friends.add(image, i, 0);
+            }
+            else 
+                vbox.getStyleClass().add("book-grid-item");
+
+            vbox.setOnMouseClicked(event -> {
+                try {
+                    App.setRoot("friend", controller -> {
+                        if (controller instanceof FriendController) {
+                            ((FriendController) controller).setFriendUser(friend);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
             grid_friends.add(vbox, i, 0);
         }
     }

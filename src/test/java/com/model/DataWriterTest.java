@@ -29,8 +29,8 @@ public class DataWriterTest {
     User user2 = new User("user2", "AmongUs2020!", Experience.ADVANCED, SecurityQuestion.ELEMENTARY_SCHOOL, "Space");
     Course course1 = new Course(null, "new Course!");
     Lesson lesson1 = new Lesson("lesson 1", "teaching material 1", "visAid.png");
-    Song song1 = new Song(UUID.randomUUID(), "new song", "user1", user1.getId(), 3.4, null, Instrument.GUITAR, Visibility.FRIENDS_ONLY, 60, new TimeSignature(4, 4), null, null, 1, false);
-    Module module1 = new Module(UUID.randomUUID(), "new module", null, null, 0);
+    Song song1 = new Song(UUID.randomUUID(), "new song", "user1", user1.getId(), 3.4, null, Instrument.GUITAR, Visibility.FRIENDS_ONLY, 60, new TimeSignature(4, 4), null, null, 1, false, null);
+    Module module1 = new Module(UUID.randomUUID(), "new module", null, null, 0, null);
 
     @Before
     public void setup() {
