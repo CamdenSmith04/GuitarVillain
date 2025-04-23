@@ -23,12 +23,14 @@ import javafx.scene.text.Font;
 public class TeacherCourseController implements Initializable{
     
     private Facade facade;
+    private User user;
 
     @FXML private GridPane grid_courses;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
+        user = facade.getCurrentUser();
         displayCourses();
     } 
 
@@ -112,7 +114,12 @@ public class TeacherCourseController implements Initializable{
 
     @FXML
     private void goToCourses() throws IOException {
-        App.setRoot("teachercourse");
+        if (user.getRole().equals("Student")) {
+            App.setRoot("studentcourse");
+        }
+        else {
+            App.setRoot("teachercourse");
+        }
     }
 
     @FXML

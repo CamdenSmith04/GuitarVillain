@@ -173,14 +173,17 @@ public class CourseController implements Initializable{
             // profile of an existing student in the course
             // profile
 
-            // vbox.setOnMouseClicked(event -> {
-            // try {
-            //     facade.setCurrentUser();
-            //     App.setRoot("lesson");
-            // } catch (IOException e) {
-            //     e.printStackTrace();;
-            // }
-            // });
+            vbox.setOnMouseClicked(event -> {
+                try {
+                    App.setRoot("friend", controller -> {
+                        if (controller instanceof FriendController) {
+                            ((FriendController) controller).setFriendUser(user);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
 
             grid_students.add(vbox,i+1,0);
         }

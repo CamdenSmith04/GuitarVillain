@@ -55,6 +55,11 @@ public class LessonController implements Initializable{
             addLessonButton.setVisible(true);
             addLessonButton.setDisable(false);
         }
+
+        if (user.getRole().equals("Student")) {
+            addLessonButton.setVisible(false);
+            addLessonButton.setDisable(true);
+        }
     }
 
     @FXML

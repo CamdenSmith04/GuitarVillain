@@ -1,1 +1,86 @@
-[{"teachers":["8d377a72-5657-4c13-a54e-d5e695c13bf6"],"name":"Class 1","assignedSongs":[],"students":["d0c52973-7f9b-483e-80e3-48681ea68674"],"id":"957cf533-4a4e-419b-8f33-de59e3da3be8","assignedLessons":["e8810e9c-9eed-4ee3-8c14-fc22a5bfc289"]},{"teachers":["d0c52973-7f9b-483e-80e3-48681ea68674","8d377a72-5657-4c13-a54e-d5e695c13bf6"],"name":"Class 2","assignedSongs":[],"students":["d0c52973-7f9b-483e-80e3-48681ea68674"],"id":"cf9faf84-8c7b-43a2-817d-ed8c5d87b2d8","assignedLessons":[]},{"teachers":["d0c52973-7f9b-483e-80e3-48681ea68674","8d377a72-5657-4c13-a54e-d5e695c13bf6"],"name":"Andrew's School of Music and Chicken Plant","assignedSongs":[],"students":[],"id":"e9e64cec-15e0-42be-9e59-3f7ce76219af","assignedLessons":[]},{"teachers":["8d377a72-5657-4c13-a54e-d5e695c13bf6"],"name":"Andrew's School of Music and Chicken Plant","assignedSongs":[],"students":[],"id":"fed6aebd-fe8b-4532-acc1-6825cb30e956","assignedLessons":[]},{"teachers":["8d377a72-5657-4c13-a54e-d5e695c13bf6"],"name":"Andrew's School of Music and Chicken Plant","assignedSongs":[],"students":["b354918c-201a-4ac3-bcc9-98263774d43b"],"id":"3c7288be-562a-4a46-9b19-de2211030236","assignedLessons":[]},{"teachers":["8d377a72-5657-4c13-a54e-d5e695c13bf6"],"name":"Andrew's School of Music and Chicken Plant","assignedSongs":[],"students":["b354918c-201a-4ac3-bcc9-98263774d43b"],"id":"54eb8391-e463-4c13-a456-f3628b5eb8fd","assignedLessons":[]},{"teachers":["8d377a72-5657-4c13-a54e-d5e695c13bf6"],"name":"Andrew's School of Music and Chicken Plant","assignedSongs":[],"students":[],"id":"b56fe71a-45dd-4b1a-a624-77ef37e4ad41","assignedLessons":[]}]
+[
+    {
+        "teachers": [
+            "8d377a72-5657-4c13-a54e-d5e695c13bf6"
+        ],
+        "name": "Class 1",
+        "assignedSongs": [],
+        "students": [
+            "d0c52973-7f9b-483e-80e3-48681ea68674",
+            "145320f2-e97c-4c4d-a494-f2b4693ca8ea"
+        ],
+        "id": "957cf533-4a4e-419b-8f33-de59e3da3be8",
+        "assignedLessons": [
+            "e8810e9c-9eed-4ee3-8c14-fc22a5bfc289"
+        ]
+    },
+    {
+        "teachers": [
+            "d0c52973-7f9b-483e-80e3-48681ea68674",
+            "8d377a72-5657-4c13-a54e-d5e695c13bf6"
+        ],
+        "name": "Class 2",
+        "assignedSongs": [],
+        "students": [
+            "d0c52973-7f9b-483e-80e3-48681ea68674",
+            "145320f2-e97c-4c4d-a494-f2b4693ca8ea"
+        ],
+        "id": "cf9faf84-8c7b-43a2-817d-ed8c5d87b2d8",
+        "assignedLessons": []
+    },
+    {
+        "teachers": [
+            "d0c52973-7f9b-483e-80e3-48681ea68674",
+            "8d377a72-5657-4c13-a54e-d5e695c13bf6"
+        ],
+        "name": "Andrew's School of Music and Chicken Plant",
+        "assignedSongs": [],
+        "students": ["145320f2-e97c-4c4d-a494-f2b4693ca8ea"],
+        "id": "e9e64cec-15e0-42be-9e59-3f7ce76219af",
+        "assignedLessons": []
+    },
+    {
+        "teachers": [
+            "8d377a72-5657-4c13-a54e-d5e695c13bf6"
+        ],
+        "name": "Andrew's School of Music and Chicken Plant",
+        "assignedSongs": [],
+        "students": [],
+        "id": "fed6aebd-fe8b-4532-acc1-6825cb30e956",
+        "assignedLessons": []
+    },
+    {
+        "teachers": [
+            "8d377a72-5657-4c13-a54e-d5e695c13bf6"
+        ],
+        "name": "Andrew's School of Music and Chicken Plant",
+        "assignedSongs": [],
+        "students": [
+            "b354918c-201a-4ac3-bcc9-98263774d43b"
+        ],
+        "id": "3c7288be-562a-4a46-9b19-de2211030236",
+        "assignedLessons": []
+    },
+    {
+        "teachers": [
+            "8d377a72-5657-4c13-a54e-d5e695c13bf6"
+        ],
+        "name": "Andrew's School of Music and Chicken Plant",
+        "assignedSongs": [],
+        "students": [
+            "b354918c-201a-4ac3-bcc9-98263774d43b"
+        ],
+        "id": "54eb8391-e463-4c13-a456-f3628b5eb8fd",
+        "assignedLessons": []
+    },
+    {
+        "teachers": [
+            "8d377a72-5657-4c13-a54e-d5e695c13bf6"
+        ],
+        "name": "Andrew's School of Music and Chicken Plant",
+        "assignedSongs": [],
+        "students": [],
+        "id": "b56fe71a-45dd-4b1a-a624-77ef37e4ad41",
+        "assignedLessons": []
+    }
+]
