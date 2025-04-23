@@ -6,8 +6,10 @@ import javafx.scene.shape.Rectangle;
 
 public class ImageHelper {
     public static ImageView getImage(String url, Class c) {
+        if (url == null)
+            return null;
         Image image = new Image(c.getResource("/com/images/" + url).toExternalForm());
-            
+
         ImageView backgroundImage = new ImageView(image);
         backgroundImage.setFitWidth(120);
         backgroundImage.setFitHeight(120);

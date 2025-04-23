@@ -54,7 +54,12 @@ public class HomeController implements  Initializable{
             songTitle.setFont(new Font(14));
             
             vbox.getChildren().add(songTitle);
-            vbox.getStyleClass().add("friend-grid-item");
+            if (song.getImage() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                grid_latest_songs.add(ImageHelper.getImage(song.getImage(), getClass()), i, 0);
+            }
+            else 
+                vbox.getStyleClass().add("book-grid-item");
     
             vbox.setOnMouseClicked(event -> {
             try {
@@ -66,7 +71,7 @@ public class HomeController implements  Initializable{
             }
             });
 
-            grid_latest_songs.add(ImageHelper.getImage(song.getImage(), getClass()), i, 0);
+            // grid_latest_songs.add(ImageHelper.getImage(song.getImage(), getClass()), i, 0);
             grid_latest_songs.add(vbox, i, 0); // You can change row/col layout logic if needed
         }
     }
