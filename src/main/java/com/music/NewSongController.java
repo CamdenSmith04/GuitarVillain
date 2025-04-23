@@ -92,17 +92,12 @@ public class NewSongController implements Initializable{
 
     @FXML
     public void saveButtonPressed(){
-        //song.setInstrument(Instrument.getInstrument(instrument.getValue().toString()));
-        song.setInstrument(Instrument.ACOUSTIC_BASS);
-        //song.addGenre(Genre.getGenre(genres.getValue().toString()));
-        song.addGenre(Genre.HIP_HOP);
+        song.setInstrument(Instrument.valueOf(instrument.getValue().toString()));
+        // song.setInstrument(Instrument.ACOUSTIC_BASS);
+        song.addGenre(Genre.valueOf(genres.getValue().toString()));
+        //song.addGenre(Genre.HIP_HOP);
         song.setAuthor(artist.getText());
         song.setTitle(songNameBox.getText());
-        //Song(UUID id, String title, String author, UUID authorId, 
-        //double rating, ArrayList<Genre> genres, Instrument instrument, 
-        //Visibility visibility, int beatsPerMinute, 
-        //TimeSignature timeSignature, ArrayList<Note> notes, 
-        //ArrayList<String> lyrics, double speed, boolean completed
         song.setUserCreated(facade.getCurrentUser().getId());
         song.setRating(2.5);
         song.setVisibility(Visibility.PRIVATE);
