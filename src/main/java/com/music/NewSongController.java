@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 import com.model.Facade;
 import com.model.Genre;
