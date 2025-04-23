@@ -78,9 +78,12 @@ public class ProfileController implements Initializable{
             friendUsername.setFont(new Font(14));
             
             vbox.getChildren().add(friendUsername);
-            vbox.getStyleClass().add("friend-grid-item");
-
-            grid_friends.add(ImageHelper.getImage(friend.getProfilePic(), getClass()), i, 0);
+            if (friend.getProfilePic() != null) {
+                vbox.getStyleClass().add("friend-grid-item");
+                grid_friends.add(ImageHelper.getImage(friend.getProfilePic(), getClass()), i, 0);
+            }
+            else 
+                vbox.getStyleClass().add("book-grid-item");
             grid_friends.add(vbox, i, 0);
         }
     }
