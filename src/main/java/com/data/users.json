@@ -15,12 +15,12 @@
         "songs": [
             "c06aa7a7-1656-4df5-87cf-7e96e0765bf9"
         ],
-        "id": "145320f2-e97c-4c4d-a494-f2b4693ca8ea",
+        "id": "21d59fe8-95d5-4c59-a0a6-ac4b7695a975",
         "username": "camdensmith"
     },
     {
         "courses": null,
-        "role": "Student",
+        "role": "student",
         "securityQuestion": "ELEMENTARY_SCHOOL",
         "securityAnswer": "Denver Elementary",
         "streak": 25,
@@ -35,7 +35,7 @@
         "songs": [
             "c6e8e20f-f010-44b5-91f6-2aec36629f83"
         ],
-        "id": "fd28d120-0528-4a87-8a41-3e802d86f680",
+        "id": "36640572-a495-4970-bc39-d7a3d8e0b073",
         "username": "bradleyalford"
     },
     {

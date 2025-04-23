@@ -16,16 +16,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 
 
 public class TeacherCourseViewController implements Initializable{
 
     @FXML
-    private Text courseHeader;
+    private TextField courseHeaderField;
     private Facade facade;
     private Song song;
     private User user;
@@ -51,6 +51,16 @@ public class TeacherCourseViewController implements Initializable{
         displaySongs();
         displayStudents();
     } 
+
+    @FXML
+    private void handleCourseNameUpdate() {
+        String updatedName = courseHeaderField.getText();
+
+                if (facade.getCurrentCourse() != null) {
+            facade.getCurrentCourse().setName(updatedName);
+        }
+    }
+    
 
     private void displayLessons() {
 
@@ -191,7 +201,7 @@ public class TeacherCourseViewController implements Initializable{
     }
 
     private void setUpCourse(Course course) {
-        courseHeader.setText(course.getName());
+        courseHeaderField.setText(course.getName());
     }
 
     // @FXML
