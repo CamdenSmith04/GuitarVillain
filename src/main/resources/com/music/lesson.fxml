@@ -101,5 +101,7 @@
          </font>
     </Text>
 
+    <Button fx:id="addLessonButton" text="Add Lesson to Course" layoutX="360.0" layoutY="520.0" prefWidth="150.0" prefHeight="30.0" visible="false" disable="true" onAction="#handleAddLesson"/>
+
     </children>
 </AnchorPane>

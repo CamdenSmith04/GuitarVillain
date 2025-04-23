@@ -2,17 +2,22 @@ package com.music;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.UUID;
 
+import com.model.Course;
 import com.model.Facade;
 import com.model.Lesson;
 import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+
 
 
 public class LessonController implements Initializable{
@@ -22,17 +27,46 @@ public class LessonController implements Initializable{
     private Facade facade;
     private Lesson lesson;
     private User user;
+    private Course course;
+    private ArrayList<UUID> lessons;
 
     @FXML private Text educationalMaterialField;
     @FXML private ImageView visualAidField;
+    @FXML private Button addLessonButton;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = Facade.getInstance();
         user = facade.getCurrentUser();
         lesson = facade.getCurrentLesson();
+        course = facade.getCurrentCourse();
+        if (course != null) {
+            lessons = course.getAssignedLessons();
+        }
         setUpLesson(lesson);
+        updateAddLessonButton();
     } 
+
+    private void updateAddLessonButton() {
+        if (course != null) {
+            if (lessons.contains(lesson.getId())) {
+                addLessonButton.setText("Remove Lesson");
+            }
+            addLessonButton.setVisible(true);
+            addLessonButton.setDisable(false);
+        }
+    }
+
+    @FXML
+    private void handleAddLesson() throws IOException{
+        if (lessons.contains(lesson.getId())) {
+            course.removeLesson(lesson.getId());
+        }
+        else {
+            course.addLesson(lesson.getId());
+        }
+        App.setRoot("course");
+    }
 
     public void setUpLesson(Lesson lesson) {
         lessonHeader.setText(lesson.getTitle());

@@ -4,14 +4,19 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.UUID;
 
+import com.model.Course;
 import com.model.Facade;
 import com.model.Genre;
+import com.model.LessonBasedInterfaceDriver;
 import com.model.Song;
+import com.model.SongList;
 import com.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -24,13 +29,15 @@ public class SongController implements Initializable{
     private Facade facade;
     private Song song;
     private User user;
+    private Course course;
+    private ArrayList<UUID> songs;
 
     @FXML private Text artist;
     @FXML private Text instrument;
     @FXML private Text genres;
 
     @FXML private Text rating;
-
+    @FXML private Button addSongButton;
     @FXML private ImageView image;
 
     @Override
@@ -38,8 +45,34 @@ public class SongController implements Initializable{
         facade = Facade.getInstance();
         song = facade.getCurrentSong();
         user = facade.getCurrentUser();
+        course = facade.getCurrentCourse();
+        if (course != null) {
+            songs = course.getAssignedSongs();
+        }
         setUpSong(song);
+        updateAddSongButton();
     } 
+
+    private void updateAddSongButton() {
+        if (course != null) {
+            if (songs.contains(song.getId())) {
+                addSongButton.setText("Remove Song");
+            }
+            addSongButton.setVisible(true);
+            addSongButton.setDisable(false);
+        }
+    }
+
+    @FXML
+    private void handleAddSong() throws IOException{
+        if (songs.contains(song.getId())) {
+            course.removeSong(song.getId());
+        }
+        else {
+            course.addSong(song.getId());
+        }
+        App.setRoot("course");
+    }
 
     public void setUpSong(Song song) {
         Image songImage = new Image(getClass().getResource("/com/images/" + song.getImage()).toExternalForm());

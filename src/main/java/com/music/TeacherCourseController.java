@@ -96,6 +96,7 @@ public class TeacherCourseController implements Initializable{
     }
 
     @FXML private void handleNewCourse() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("course");
     }
 
