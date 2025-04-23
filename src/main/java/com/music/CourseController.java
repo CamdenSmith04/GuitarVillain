@@ -173,14 +173,17 @@ public class CourseController implements Initializable{
             // profile of an existing student in the course
             // profile
 
-            // vbox.setOnMouseClicked(event -> {
-            // try {
-            //     facade.setCurrentUser();
-            //     App.setRoot("lesson");
-            // } catch (IOException e) {
-            //     e.printStackTrace();;
-            // }
-            // });
+            vbox.setOnMouseClicked(event -> {
+                try {
+                    App.setRoot("friend", controller -> {
+                        if (controller instanceof FriendController) {
+                            ((FriendController) controller).setFriendUser(user);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
 
             grid_students.add(vbox,i+1,0);
         }
@@ -191,23 +194,26 @@ public class CourseController implements Initializable{
         courseHeader.setText(course.getName());
     }
 
-    @FXML
-    public void playSong() throws IOException {
-        song.play();
-    }
+    // @FXML
+    // public void playSong() throws IOException {
+    //     song.play();
+    // }
 
     @FXML
     private void goToHome() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("home");
     }
 
     @FXML
     private void goToMySongs() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("mysongs");
     }
 
     @FXML
     private void goToCourses() throws IOException {
+        facade.setCurrentCourse(null);
         if (user.getRole().equals("Student")) {
             App.setRoot("studentcourse");
         }
@@ -218,26 +224,31 @@ public class CourseController implements Initializable{
 
     @FXML
     private void goToSongLibrary() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("songlibrary");
     }
 
     @FXML
     private void goToModuleLibrary() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("modulelibrary");
     }
 
     @FXML
     private void goToMore() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("more");
     }
 
     @FXML
     private void goToProfile() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("profile");
     }
 
     @FXML
     private void goToAbout() throws IOException {
+        facade.setCurrentCourse(null);
         App.setRoot("about");
     }
     

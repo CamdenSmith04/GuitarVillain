@@ -1,6 +1,7 @@
 package com.music;
 
 import java.io.IOException;
+import java.util.function.Consumer;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,16 @@ public class App extends Application {
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+    }
+
+    static void setRoot(String fxml, Consumer<Object> controllerInitializer) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        Parent root = fxmlLoader.load();
+
+        Object controller = fxmlLoader.getController();
+        controllerInitializer.accept(controller);
+
+        scene.setRoot(root);
     }
 
     private static Parent loadFXML(String fxml) throws IOException {

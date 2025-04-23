@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="507.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.LessonController">
+<AnchorPane prefHeight="362.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.FriendController">
    <children>
 
       <ToolBar prefHeight="59.0" prefWidth="870.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -81,27 +82,83 @@
         </items>
       </ToolBar>
 
-      <StackPane layoutX="0.0" layoutY="60.0" prefHeight="85.0" prefWidth="870.0">
-        <Rectangle fill="#87CEEB" height="85.0" stroke="#ffffff00" strokeType="INSIDE" width="870.0" />
-        
-        <Text fx:id="lessonHeader" strokeType="OUTSIDE" strokeWidth="0.0" text="Lesson Name" textAlignment="CENTER">
+        <Text layoutX="25.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
             <font>
-                <Font name="Avenir Next Demi Bold" size="40.0" />
+                <Font name="Avenir Next Demi Bold" size="24.0" />
             </font>
         </Text>
-      </StackPane>
+        <Text fx:id="usernameText" layoutX="175.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
 
-    <StackPane style="-fx-border-color: black; -fx-border-width: 2;" layoutX="480.0" layoutY="200.0">
-      <ImageView fx:id="visualAidField" fitHeight="300.0" fitWidth="300.0" layoutX="480.0" layoutY="200.0" pickOnBounds="true" preserveRatio="false"/>
-    </StackPane>
+        <Text layoutX="25.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Experience:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="experienceText" layoutX="175.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
 
-    <Text fx:id="educationalMaterialField" fill="BLACK" layoutX="120.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="300.0">
-         <font>
-            <Font name="Avenir Next Medium" size="18.0" />
-         </font>
-    </Text>
+        <Text layoutX="25.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Songs:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="songsText" layoutX="175.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
 
-    <Button fx:id="addLessonButton" text="Add Lesson to Course" layoutX="360.0" layoutY="520.0" prefWidth="150.0" prefHeight="30.0" visible="false" disable="true" onAction="#handleAddLesson"/>
+        <Text layoutX="25.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Points:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="pointsText" layoutX="175.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
 
-    </children>
+        <Text layoutX="25.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Streak:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="streakText" layoutX="175.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+    <!-- Include the following if you want friends to be displayed for a friends profile/student profile -->
+
+        <!-- <Rectangle fill="#175ea1" height="213.0" layoutY="388.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" width="870.0" /> -->
+        
+
+        <!-- <ScrollPane fitToHeight="false" fitToWidth="true" hbarPolicy="ALWAYS" layoutX="22.0" layoutY="450.0" prefHeight="152.0" prefWidth="827.0" vbarPolicy="NEVER">
+        <content>
+            <GridPane fx:id="grid_friends" hgap="100.0" vgap="50.0">
+
+            </GridPane>
+        </content>
+        </ScrollPane>
+
+        <Text fill="WHITE" layoutX="24.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friends">
+            <font>
+                <Font name="Avenir Next Medium" size="25.0" />
+            </font>
+        </Text> -->
+
+      <ImageView fx:id="profilePic" fitHeight="181.0" fitWidth="199.0" layoutX="633.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+
+    <Button fx:id="addStudentButton" text="Add Student to Course" layoutX="360.0" layoutY="400.0" prefWidth="150.0" prefHeight="30.0" visible="false" disable="true" onAction="#handleAddStudent"/>
+
+   </children>
 </AnchorPane>

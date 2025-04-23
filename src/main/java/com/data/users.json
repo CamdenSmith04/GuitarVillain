@@ -1,1 +1,109 @@
-[{"courses":null,"role":"User","securityQuestion":"PET_NAME","securityAnswer":"Baxter","streak":5,"experience":"INTERMEDIATE","friends":["fd28d120-0528-4a87-8a41-3e802d86f680"],"points":100,"profilePicture":"Camden.png","password":"password123","songs":["c06aa7a7-1656-4df5-87cf-7e96e0765bf9"],"id":"145320f2-e97c-4c4d-a494-f2b4693ca8ea","username":"camdensmith"},{"courses":null,"role":"User","securityQuestion":"ELEMENTARY_SCHOOL","securityAnswer":"Denver Elementary","streak":25,"experience":"ADVANCED","friends":["145320f2-e97c-4c4d-a494-f2b4693ca8ea","fd28d120-0528-4a87-8a41-3e802d86f680"],"points":50,"profilePicture":"Bradley.png","password":"dragonman@4929","songs":["c6e8e20f-f010-44b5-91f6-2aec36629f83"],"id":"fd28d120-0528-4a87-8a41-3e802d86f680","username":"bradleyalford"},{"courses":null,"role":"User","securityQuestion":"MOTHER_MAIDEN_NAME","securityAnswer":"Johnson","streak":50,"experience":"INTERMEDIATE","friends":["145320f2-e97c-4c4d-a494-f2b4693ca8ea"],"points":150,"profilePicture":"Andrew.png","password":"2point9fourpointO","songs":["c06aa7a7-1656-4df5-87cf-7e96e0765bf9"],"id":"55513850-4c32-4dab-9483-04ca94dc7369","username":"andrewgoad"},{"courses":null,"role":"User","securityQuestion":"PET_NAME","securityAnswer":"Poodles","streak":0,"experience":"ADVANCED","friends":[],"points":0,"profilePicture":"Fredrick.png","password":"theOneFred!","songs":[],"id":"8976a36a-2e54-4e23-b8b0-a746c5d61e00","username":"ffredrickson"},{"courses":null,"role":"User","securityQuestion":"PET_NAME","securityAnswer":"Moxy","streak":0,"experience":"INTERMEDIATE","friends":["145320f2-e97c-4c4d-a494-f2b4693ca8ea"],"points":0,"profilePicture":"Holdcraft.png","password":"thegrasstoucher","songs":[],"id":"1d8391c6-b0bd-46d6-9561-ac31180a4a73","username":"abbyholdcraft"},{"courses":null,"role":"User","securityQuestion":"PET_NAME","securityAnswer":"Olive","streak":0,"experience":"ADVANCED","friends":["145320f2-e97c-4c4d-a494-f2b4693ca8ea"],"points":0,"profilePicture":"Baileymccoy.png","password":"mclaren","songs":[],"id":"896727b5-2121-4db3-ac01-49d62e719b31","username":"baileymccoy"}]
+[
+    {
+        "courses": null,
+        "role": "Teacher",
+        "securityQuestion": "PET_NAME",
+        "securityAnswer": "Baxter",
+        "streak": 5,
+        "experience": "INTERMEDIATE",
+        "friends": [
+            "fd28d120-0528-4a87-8a41-3e802d86f680"
+        ],
+        "points": 100,
+        "profilePicture": "Camden.png",
+        "password": "password123",
+        "songs": [
+            "c06aa7a7-1656-4df5-87cf-7e96e0765bf9"
+        ],
+        "id": "145320f2-e97c-4c4d-a494-f2b4693ca8ea",
+        "username": "camdensmith"
+    },
+    {
+        "courses": null,
+        "role": "Student",
+        "securityQuestion": "ELEMENTARY_SCHOOL",
+        "securityAnswer": "Denver Elementary",
+        "streak": 25,
+        "experience": "ADVANCED",
+        "friends": [
+            "145320f2-e97c-4c4d-a494-f2b4693ca8ea",
+            "fd28d120-0528-4a87-8a41-3e802d86f680"
+        ],
+        "points": 50,
+        "profilePicture": "Bradley.png",
+        "password": "dragonman@4929",
+        "songs": [
+            "c6e8e20f-f010-44b5-91f6-2aec36629f83"
+        ],
+        "id": "fd28d120-0528-4a87-8a41-3e802d86f680",
+        "username": "bradleyalford"
+    },
+    {
+        "courses": null,
+        "role": "User",
+        "securityQuestion": "MOTHER_MAIDEN_NAME",
+        "securityAnswer": "Johnson",
+        "streak": 50,
+        "experience": "INTERMEDIATE",
+        "friends": [
+            "145320f2-e97c-4c4d-a494-f2b4693ca8ea"
+        ],
+        "points": 150,
+        "profilePicture": "Andrew.png",
+        "password": "2point9fourpointO",
+        "songs": [
+            "c06aa7a7-1656-4df5-87cf-7e96e0765bf9"
+        ],
+        "id": "55513850-4c32-4dab-9483-04ca94dc7369",
+        "username": "andrewgoad"
+    },
+    {
+        "courses": null,
+        "role": "User",
+        "securityQuestion": "PET_NAME",
+        "securityAnswer": "Poodles",
+        "streak": 0,
+        "experience": "ADVANCED",
+        "friends": [],
+        "points": 0,
+        "profilePicture": "Fredrick.png",
+        "password": "theOneFred!",
+        "songs": [],
+        "id": "8976a36a-2e54-4e23-b8b0-a746c5d61e00",
+        "username": "ffredrickson"
+    },
+    {
+        "courses": null,
+        "role": "User",
+        "securityQuestion": "PET_NAME",
+        "securityAnswer": "Moxy",
+        "streak": 0,
+        "experience": "INTERMEDIATE",
+        "friends": [
+            "145320f2-e97c-4c4d-a494-f2b4693ca8ea"
+        ],
+        "points": 0,
+        "profilePicture": "Holdcraft.png",
+        "password": "thegrasstoucher",
+        "songs": [],
+        "id": "1d8391c6-b0bd-46d6-9561-ac31180a4a73",
+        "username": "abbyholdcraft"
+    },
+    {
+        "courses": null,
+        "role": "User",
+        "securityQuestion": "PET_NAME",
+        "securityAnswer": "Olive",
+        "streak": 0,
+        "experience": "ADVANCED",
+        "friends": [
+            "145320f2-e97c-4c4d-a494-f2b4693ca8ea"
+        ],
+        "points": 0,
+        "profilePicture": "Baileymccoy.png",
+        "password": "mclaren",
+        "songs": [],
+        "id": "896727b5-2121-4db3-ac01-49d62e719b31",
+        "username": "baileymccoy"
+    }
+]
