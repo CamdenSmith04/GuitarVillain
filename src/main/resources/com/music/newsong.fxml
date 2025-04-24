@@ -52,7 +52,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fx:id="notesSaved" layoutX="165.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes Added Succesfully">
+      <Text fx:id="notesSaved" fill="#058d00" layoutX="165.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes Added Succesfully">
          <font>
             <Font size="14.0" />
          </font>
