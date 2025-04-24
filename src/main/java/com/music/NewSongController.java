@@ -45,7 +45,7 @@ public class NewSongController implements Initializable{
     @FXML private TextField artist;
     @FXML private ChoiceBox<String> instrument;
     @FXML private ChoiceBox<String> genres;
-    @FXML private ChoiceBox visibility;
+    @FXML private ChoiceBox<String> visibility;
     @FXML private TextField songNameBox;
     @FXML private Button saveButton;
     @FXML private Button addNotesButton;
@@ -70,10 +70,14 @@ public class NewSongController implements Initializable{
             genreLabels.add(g.getLabel());
         }
         genres.getItems().addAll(genreLabels);
-        instrument.setValue(Instrument.GUITAR);
-        genres.setValue(Genre.ROCK);
-        visibility.getItems().addAll(Visibility.values());
-        visibility.setValue(Visibility.PRIVATE);
+        instrument.setValue(Instrument.GUITAR.getLabel());
+        genres.setValue(Genre.ROCK.getLabel());
+        ArrayList<String> visibilityLabels = new ArrayList<>();
+        for(Visibility v : Visibility.values()) {
+            visibilityLabels.add(v.getLabel());
+        }
+        visibility.getItems().addAll(visibilityLabels);
+        visibility.setValue(Visibility.PRIVATE.getLabel());
     
         noteFields = notesGrid.getChildren().stream()
             .filter(n -> n instanceof TextField)
@@ -119,7 +123,7 @@ public class NewSongController implements Initializable{
         song.setTitle(songNameBox.getText());
         song.setUserCreated(facade.getCurrentUser().getId());
         song.setRating(2.5);
-        song.setVisibility(Visibility.valueOf(visibility.getValue().toString()));
+        song.setVisibility(Visibility.getVisibility(visibility.getValue()));
         song.setBeatsPerMinute(100);
         song.setTimeSignature(new TimeSignature(4, 4));
         song.setLyrics(new ArrayList<String>());
