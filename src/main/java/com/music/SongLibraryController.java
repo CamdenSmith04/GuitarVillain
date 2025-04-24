@@ -44,26 +44,21 @@ public class SongLibraryController implements Initializable{
         for (int i = 0; i < songs.size(); i++ ) {
             if (songs.get(i).getVisibility().equals(Visibility.PUBLIC)) {
 
-            vbox.getChildren().add(songName);
-            if (song.getImage() != null) {
-                vbox.getStyleClass().add("friend-grid-item-blue");
-                ImageView image = ImageHelper.getImage(song.getImage(), getClass());
-                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
-                vbox.setOnMouseExited(e -> image.setOpacity(1));
-                grid_songs.add(image, col, row);
-            }
-            else 
-                vbox.getStyleClass().add("module-grid-item");
-            
-            vbox.setOnMouseClicked(event -> {
-                try {
-                    facade.setCurrentSong(song);
-                    App.setRoot("song");
-                } catch (IOException e) {
-                    e.printStackTrace();
+                Song song = songs.get(i);
+                VBox vbox = new VBox();
+                Label songName = new Label(song.getTitle());
+                songName.setFont(new Font(14));
+
+                vbox.getChildren().add(songName);
+                if (song.getImage() != null) {
+                    vbox.getStyleClass().add("friend-grid-item-blue");
+                    ImageView image = ImageHelper.getImage(song.getImage(), getClass());
+                    vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                    vbox.setOnMouseExited(e -> image.setOpacity(1));
+                    grid_songs.add(image, col, row);
                 }
                 else 
-                    vbox.getStyleClass().add("book-grid-item");
+                    vbox.getStyleClass().add("module-grid-item");
                 
                 vbox.setOnMouseClicked(event -> {
                     try {
