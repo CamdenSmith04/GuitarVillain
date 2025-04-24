@@ -15,12 +15,12 @@
         "songs": [
             "c06aa7a7-1656-4df5-87cf-7e96e0765bf9"
         ],
-        "id": "fb9bc2f6-dc8c-4bfe-8ad4-cc465c34946f",
+        "id": "21d59fe8-95d5-4c59-a0a6-ac4b7695a975",
         "username": "camdensmith"
     },
     {
         "courses": null,
-        "role": "User",
+        "role": "Student",
         "securityQuestion": "ELEMENTARY_SCHOOL",
         "securityAnswer": "Denver Elementary",
         "streak": 25,

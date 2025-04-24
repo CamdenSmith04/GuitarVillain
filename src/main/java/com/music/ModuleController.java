@@ -59,7 +59,7 @@ public class ModuleController implements Initializable{
 
             vbox.getChildren().add(lessonTitle);
             if (lesson.getImage() != null) {
-                vbox.getStyleClass().add("friend-grid-item");
+                vbox.getStyleClass().add("friend-grid-item-blue");
                 ImageView image = ImageHelper.getImage(lesson.getImage(), getClass());
                 vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
                 vbox.setOnMouseExited(e -> image.setOpacity(1));
@@ -91,7 +91,7 @@ public class ModuleController implements Initializable{
 
             vbox.getChildren().add(songTitle);
             if (song.getImage() != null) {
-                vbox.getStyleClass().add("friend-grid-item");
+                vbox.getStyleClass().add("friend-grid-item-blue");
                 ImageView image = ImageHelper.getImage(song.getImage(), getClass());
                 vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
                 vbox.setOnMouseExited(e -> image.setOpacity(1));
@@ -128,9 +128,11 @@ public class ModuleController implements Initializable{
         if (user.getRole().equals("Student")) {
             App.setRoot("studentcourse");
         }
-        else {
+        else if (user.getRole().equals("Teacher")) {
             App.setRoot("teachercourse");
         }
+        else
+            App.setRoot("becomerole");
     }
 
     @FXML

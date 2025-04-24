@@ -48,14 +48,14 @@ public class LessonLibraryController implements Initializable{
 
             vbox.getChildren().add(lessonName);
             if (lesson.getImage() != null) {
-                vbox.getStyleClass().add("friend-grid-item");
+                vbox.getStyleClass().add("friend-grid-item-blue");
                 ImageView image = ImageHelper.getImage(lesson.getImage(), getClass());
                 vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
                 vbox.setOnMouseExited(e -> image.setOpacity(1));
                 grid_modules.add(image, col, row);
             }
             else 
-                vbox.getStyleClass().add("book-grid-item");
+                vbox.getStyleClass().add("module-grid-item");
 
             vbox.setOnMouseClicked(event -> {
                 try {
@@ -94,9 +94,11 @@ public class LessonLibraryController implements Initializable{
         if (user.getRole().equals("Student")) {
             App.setRoot("studentcourse");
         }
-        else {
+        else if (user.getRole().equals("Teacher")) {
             App.setRoot("teachercourse");
         }
+        else
+            App.setRoot("becomerole");
     }
 
     @FXML
