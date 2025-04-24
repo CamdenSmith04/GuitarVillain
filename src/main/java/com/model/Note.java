@@ -1,4 +1,5 @@
 package com.model;
+import org.jfugue.pattern.Pattern;
 import org.jfugue.player.Player;
 
 /**
@@ -85,8 +86,10 @@ public class Note {
     /**
      * plays note from name, using JFugue
      */
-    public void play(){
-        player.play(this.getNoteName());
+    public void play(Instrument instrument){
+        String noteString = this.getNoteName();
+        Pattern pattern = new Pattern("I[" + instrument + "] " + noteString);
+        player.play(pattern);
     }
     /**
      * Note constructor

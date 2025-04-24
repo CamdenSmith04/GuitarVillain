@@ -18,6 +18,7 @@ import com.model.TimeSignature;
 import com.model.User;
 import com.model.Visibility;
 
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
@@ -40,11 +41,14 @@ public class NewSongController implements Initializable{
     private Song song;
     private User user;
 
+    @FXML private Text notesSaved;
     @FXML private TextField artist;
-    @FXML private ChoiceBox instrument;
-    @FXML private ChoiceBox genres;
+    @FXML private ChoiceBox<String> instrument;
+    @FXML private ChoiceBox<String> genres;
+    @FXML private ChoiceBox<String> visibility;
     @FXML private TextField songNameBox;
     @FXML private Button saveButton;
+    @FXML private Button addNotesButton;
 
     @FXML private Text rating;
 
@@ -56,8 +60,24 @@ public class NewSongController implements Initializable{
         facade = Facade.getInstance();
         song   = facade.getCurrentSong();
         user   = facade.getCurrentUser();
-        instrument.getItems().addAll(Instrument.values());
-        genres.getItems().addAll(Genre.values());
+        ArrayList<String> instrumentLabels = new ArrayList<>();
+        for(Instrument i : Instrument.values()) {
+            instrumentLabels.add(i.getLabel());
+        }
+        instrument.getItems().addAll(instrumentLabels);
+        ArrayList<String> genreLabels = new ArrayList<>();
+        for(Genre g : Genre.values()) {
+            genreLabels.add(g.getLabel());
+        }
+        genres.getItems().addAll(genreLabels);
+        instrument.setValue(Instrument.GUITAR.getLabel());
+        genres.setValue(Genre.ROCK.getLabel());
+        ArrayList<String> visibilityLabels = new ArrayList<>();
+        for(Visibility v : Visibility.values()) {
+            visibilityLabels.add(v.getLabel());
+        }
+        visibility.getItems().addAll(visibilityLabels);
+        visibility.setValue(Visibility.PRIVATE.getLabel());
     
         noteFields = notesGrid.getChildren().stream()
             .filter(n -> n instanceof TextField)
@@ -73,6 +93,7 @@ public class NewSongController implements Initializable{
         for (TextField tf : noteFields) {
             tf.setTextFormatter(new TextFormatter<>(twoDigitFilter));
         }
+        notesSaved.setVisible(false);
     }
     
 
@@ -86,21 +107,23 @@ public class NewSongController implements Initializable{
                 System.out.println(i);
                 song.addNote(new Note(0, guitarString, Integer.parseInt(noteFields.get(i).getText())));
             }
+            noteFields.get(i).setText("");
         }
+        notesSaved.setVisible(true);
     }
 
 
     @FXML
     public void saveButtonPressed(){
-        song.setInstrument(Instrument.valueOf(instrument.getValue().toString()));
+        song.setInstrument(Instrument.getInstrument(instrument.getValue()));
         // song.setInstrument(Instrument.ACOUSTIC_BASS);
-        song.addGenre(Genre.valueOf(genres.getValue().toString()));
+        song.addGenre(Genre.getGenre(genres.getValue()));
         //song.addGenre(Genre.HIP_HOP);
         song.setAuthor(artist.getText());
         song.setTitle(songNameBox.getText());
         song.setUserCreated(facade.getCurrentUser().getId());
         song.setRating(2.5);
-        song.setVisibility(Visibility.PRIVATE);
+        song.setVisibility(Visibility.getVisibility(visibility.getValue()));
         song.setBeatsPerMinute(100);
         song.setTimeSignature(new TimeSignature(4, 4));
         song.setLyrics(new ArrayList<String>());
