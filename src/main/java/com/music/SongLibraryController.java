@@ -96,9 +96,11 @@ public class SongLibraryController implements Initializable{
         if (user.getRole().equals("Student")) {
             App.setRoot("studentcourse");
         }
-        else {
+        else if (user.getRole().equals("Teacher")) {
             App.setRoot("teachercourse");
         }
+        else
+            App.setRoot("becomerole");
     }
 
     @FXML

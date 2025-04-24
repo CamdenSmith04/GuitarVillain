@@ -128,7 +128,7 @@ public class User {
     }
 
     public User(Teacher teacher) {
-        this.id = UUID.randomUUID();
+        this.id = teacher.id;
         this.username = teacher.username;
         this.password = teacher.password;
         this.experience = teacher.experience;
@@ -143,7 +143,7 @@ public class User {
     }
 
     public User(Student student) {
-        this.id = UUID.randomUUID();
+        this.id = student.id;
         this.username = student.username;
         this.password = student.password;
         this.experience = student.experience;
