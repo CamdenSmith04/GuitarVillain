@@ -18,6 +18,10 @@ import org.json.simple.JSONObject;
  * @author Holdcraft
  */
 public class DataWriter extends DataConstants {
+    public static void main(String[] args) {
+        SongList.getInstance().getSongs();
+        saveSongs();
+    }
     /**
      * Updates JSON file to reflect current CourseList
      */
@@ -155,7 +159,8 @@ public class DataWriter extends DataConstants {
      */
     private static boolean isIgnore(Object name) {
         return name.equals("NOTES") ||
-                name.equals("player");
+                name.equals("player") ||
+                name.equals("GUITAR_STRINGS");
     }
 
     /**

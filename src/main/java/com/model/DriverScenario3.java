@@ -5,7 +5,7 @@ import java.util.UUID;
 public class DriverScenario3 {
 
     public static void main(String[] args) {
-        Facade facade = new Facade();
+        Facade facade = Facade.getInstance();
 
         // Log-in
         facade.logIn("camdensmith", "password123");

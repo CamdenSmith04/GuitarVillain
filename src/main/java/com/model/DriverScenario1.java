@@ -13,7 +13,7 @@ public class DriverScenario1 {
      */
     @SuppressWarnings("resource")
     public static void main(String[] args) {
-        Facade facade = new Facade();
+        Facade facade = Facade.getInstance();
 
         boolean userCreated = facade.signUp("ffredrickson", "theTwoFred!", Experience.BEGINNER, SecurityQuestion.ELEMENTARY_SCHOOL, "Bowman");
         

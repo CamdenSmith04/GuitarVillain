@@ -138,9 +138,10 @@
         </Text>
       <Button layoutX="90.0" layoutY="420.0" mnemonicParsing="false" onAction="#playSong" styleClass="song-button" text="Play Song" />
       <Button layoutX="470.0" layoutY="420.0" mnemonicParsing="false" onAction="#goToTabView" styleClass="song-button" text="View Tab" />
+      <Button layoutX="293.0" layoutY="467.0" mnemonicParsing="false" onAction="#goToLyricsView" styleClass="song-button" text="View Lyrics" />
       <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" layoutX="600.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" />
       
-      <Button fx:id="addSongButton" text="Add Song to Course" layoutX="360.0" layoutY="520.0" prefWidth="150.0" prefHeight="30.0" visible="false" disable="true" onAction="#handleAddSong"/>
+      <Button fx:id="addSongButton" disable="true" layoutX="335.0" layoutY="520.0" onAction="#handleAddSong" prefHeight="30.0" prefWidth="154.0" text="Add Song to Course" visible="false" />
 
 
    </children>

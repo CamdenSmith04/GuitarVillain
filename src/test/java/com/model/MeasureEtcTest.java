@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.After;
 import org.junit.Before;
 import static org.junit.Assert.assertTrue;
+import com.model.Instrument;
 
 import java.util.ArrayList;
 
@@ -41,21 +42,21 @@ public class MeasureEtcTest {
     
     @Test
     public void playNoteBasic() {
-        note1.play();
+        note1.play(Instrument.GUITAR);
         assertTrue(true);
     }
 
     @Test
     public void playNoteUpdated() {
         note1.setString('d');
-        note1.play();
+        note1.play(Instrument.GUITAR);
         assertTrue(true);
     }
     
     @Test
     public void playNoteNull() {
         note1 = null;
-        note1.play();
+        note1.play(Instrument.GUITAR);
         assertTrue(true);
     }
 
@@ -64,7 +65,7 @@ public class MeasureEtcTest {
         note1.setString(' ');
         note1.setFret(-1);
         note1.setTime(-1);
-        note1.play();
+        note1.play(Instrument.GUITAR);
         assertTrue(true);
     }
     
