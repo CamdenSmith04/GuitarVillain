@@ -111,6 +111,12 @@ public class SongController implements Initializable{
     }
 
     @FXML
+    private void goToLyricsView() throws IOException {
+        if (facade.getCurrentSong() != null)
+            App.setRoot("songtabview");
+    }
+
+    @FXML
     private void goToHome() throws IOException {
         App.setRoot("home");
     }
