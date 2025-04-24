@@ -105,10 +105,10 @@
     -fx-alignment: center;
     -fx-background-color: #4A90E2;  
     -fx-background-radius: 8px;  
-    -fx-pref-width: 300px;
+    -fx-pref-width: 240px;
     -fx-pref-height: 40px; 
     -fx-min-width: 180px;
-    -fx-min-height: 50px;
+    -fx-min-height: 30px;
     -fx-text-alignment: center;
     -fx-text-fill: #000000;
     -fx-content-display: center;
