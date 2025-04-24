@@ -21,7 +21,7 @@ public class FacadeTest {
 
     @Before
     public void setup(){
-        facade1 = new Facade();
+        facade1 = Facade.getInstance();
     }
 
     @Test

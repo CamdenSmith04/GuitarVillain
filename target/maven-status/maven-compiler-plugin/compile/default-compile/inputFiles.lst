@@ -6,7 +6,6 @@ C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guit
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\TeacherCourseViewController.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Genre.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\MoreController.java
-C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\PrintToFileDriver.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\MySongsController.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\LessonListController.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Instrument.java
@@ -20,10 +19,8 @@ C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guit
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\program\MusicPlayer.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\FurElise.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\TimeSignature.java
-C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\StudentInterface.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Lesson.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\DriverScenario1.java
-C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\GuestInterface.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\ImageHelper.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Metronome.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\UI.java
@@ -42,14 +39,12 @@ C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guit
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Measure.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\Music.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\DriverScenario2.java
-C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Random.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\TeacherCourseController.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\DataConstants.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\SongController.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Note.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Student.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\NewSongController.java
-C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\UserInterface.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\LessonController.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\LogInController.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Course.java
@@ -65,8 +60,6 @@ C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guit
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\ModuleLibraryController.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Teacher.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\Annotation.java
-C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\FacadeProxy.java
-C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\TeacherInterface.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\StudentCourseController.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\music\SongTabViewController.java
 C:\Users\abiga\OneDrive - University of South Carolina\Software Engineering\guitarvillain\src\main\java\com\model\DriverScenario3.java

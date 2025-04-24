@@ -11,7 +11,7 @@ public class LessonBasedInterfaceDriver {
 
     public static void main(String[] args) {
         
-        Facade facade = new Facade();
+        Facade facade = Facade.getInstance();
 
         if(facade.logIn("camdensmith", "password123")){
             writeToFile("\nSuccessfully logged in!\n");

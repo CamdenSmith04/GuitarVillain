@@ -6,7 +6,7 @@ import java.util.UUID;
  * Implementation of all facade actions
  * @author Abby Holdcraft
  */
-public class Facade implements TeacherInterface {
+public class Facade {
 
     protected UserList userList;
     protected SongList songList;
@@ -27,7 +27,7 @@ public class Facade implements TeacherInterface {
     /**
      * Initializes Facade and loads all data from json
      */
-    public Facade() {
+    private Facade() {
         userList = UserList.getInstance();
         songList = SongList.getInstance();
         moduleList = ModuleList.getInstance();

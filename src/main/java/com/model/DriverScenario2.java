@@ -16,7 +16,7 @@ public class DriverScenario2 {
 
     public static void main(String[] args) {
         
-        Facade facade = new Facade();
+        Facade facade = Facade.getInstance();
 
         facade.logIn("camdensmith", "password123");
 

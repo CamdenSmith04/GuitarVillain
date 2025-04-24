@@ -8,7 +8,7 @@ package com.model;
 
 public class DataLoaderDriver {
     public static void main(String[] args) {
-        Facade facade = new Facade();
+        Facade facade = Facade.getInstance();
         
         System.out.println("---------------------------");
         System.out.println("*******");

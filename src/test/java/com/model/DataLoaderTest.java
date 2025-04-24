@@ -204,7 +204,7 @@ public class DataLoaderTest {
         songs.add(UUID.fromString("3617a6b9-7170-49db-945f-1cf6eb816c3f"));
         
 
-        Course course2 = new Course(teachers, "Mr. Goad", students, lessons, songs, UUID.fromString("adee4a06-f15c-4593-abde-6495f3c28cd6"));
+        Course course2 = new Course(teachers, "Mr. Goad", students, lessons, songs, UUID.fromString("adee4a06-f15c-4593-abde-6495f3c28cd6"), null);
          
         assertEquals(course1, course2);
     }
