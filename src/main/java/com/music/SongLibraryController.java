@@ -5,10 +5,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import com.model.Song;
 import com.model.Facade;
 import com.model.ImageHelper;
+import com.model.Song;
 import com.model.User;
+import com.model.Visibility;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,10 +42,7 @@ public class SongLibraryController implements Initializable{
 
         ArrayList<Song> songs = facade.getSongs();
         for (int i = 0; i < songs.size(); i++ ) {
-            Song song = songs.get(i);
-            VBox vbox = new VBox();
-            Label songName = new Label(song.getTitle());
-            songName.setFont(new Font(14));
+            if (songs.get(i).getVisibility().equals(Visibility.PUBLIC)) {
 
             vbox.getChildren().add(songName);
             if (song.getImage() != null) {
@@ -64,16 +62,26 @@ public class SongLibraryController implements Initializable{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            });
-            grid_songs.add(vbox, col, row);
+                else 
+                    vbox.getStyleClass().add("book-grid-item");
+                
+                vbox.setOnMouseClicked(event -> {
+                    try {
+                        facade.setCurrentSong(song);
+                        App.setRoot("song");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+                grid_songs.add(vbox, col, row);
 
-            col ++;
+                col ++;
 
-            if (col == columnCount) {
-                col = 0;
-                row++;
+                if (col == columnCount) {
+                    col = 0;
+                    row++;
+                }
             }
-
         }
 
     }

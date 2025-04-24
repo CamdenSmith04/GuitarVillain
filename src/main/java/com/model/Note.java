@@ -32,7 +32,8 @@ public class Note {
     /**
      * Array of all possible note names
      */
-    private static final String[] NOTES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
+    public static final String[] NOTES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
+    public static final String[] GUITAR_STRINGS = {"E", "A", "D", "G", "B", "e"};
     /**
      * Gets name of note, generated from fret and string
      * @return musical name of the note
