@@ -43,6 +43,7 @@ public class NewSongController implements Initializable{
     @FXML private TextField artist;
     @FXML private ChoiceBox instrument;
     @FXML private ChoiceBox genres;
+    @FXML private ChoiceBox visibility;
     @FXML private TextField songNameBox;
     @FXML private Button saveButton;
 
@@ -58,6 +59,7 @@ public class NewSongController implements Initializable{
         user   = facade.getCurrentUser();
         instrument.getItems().addAll(Instrument.values());
         genres.getItems().addAll(Genre.values());
+        visibility.getItems().addAll(Visibility.values());
     
         noteFields = notesGrid.getChildren().stream()
             .filter(n -> n instanceof TextField)
