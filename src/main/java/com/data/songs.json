@@ -5,36 +5,84 @@
             {
                 "note": null,
                 "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 12
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 16,
                 "fret": 8
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 10
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 16
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 16,
                 "fret": 14
             },
             {
                 "note": null,
                 "string": "C",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 12
             }
@@ -75,36 +123,84 @@
             {
                 "note": null,
                 "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 12
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 16,
                 "fret": 8
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 10
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 16
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 16,
                 "fret": 14
             },
             {
                 "note": null,
                 "string": "C",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 12
             }
@@ -142,234 +238,546 @@
             {
                 "note": null,
                 "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 12
             },
             {
                 "note": null,
                 "string": "D",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 10
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 3,
                 "fret": 8
             },
             {
                 "note": null,
                 "string": "G",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 9
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 7
             },
             {
                 "note": null,
                 "string": "e",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 3,
                 "fret": 5
             },
             {
                 "note": null,
                 "string": "e",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 12
             },
             {
                 "note": null,
                 "string": "D",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 10
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 3,
                 "fret": 8
             },
             {
                 "note": null,
                 "string": "G",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 9
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 7
             },
             {
                 "note": null,
                 "string": "e",
-                "time": 3,
-                "fret": 5
-            },
-            {
-                "note": null,
-                "string": "E",
-                "time": 1,
-                "fret": 12
-            },
-            {
-                "note": null,
-                "string": "D",
-                "time": 2,
-                "fret": 10
-            },
-            {
-                "note": null,
-                "string": "B",
-                "time": 3,
-                "fret": 8
-            },
-            {
-                "note": null,
-                "string": "G",
-                "time": 1,
-                "fret": 9
-            },
-            {
-                "note": null,
-                "string": "B",
-                "time": 2,
-                "fret": 7
-            },
-            {
-                "note": null,
-                "string": "e",
-                "time": 3,
-                "fret": 5
-            },
-            {
-                "note": null,
-                "string": "E",
-                "time": 1,
-                "fret": 12
-            },
-            {
-                "note": null,
-                "string": "D",
-                "time": 2,
-                "fret": 10
-            },
-            {
-                "note": null,
-                "string": "B",
-                "time": 3,
-                "fret": 8
-            },
-            {
-                "note": null,
-                "string": "G",
-                "time": 1,
-                "fret": 9
-            },
-            {
-                "note": null,
-                "string": "B",
-                "time": 2,
-                "fret": 7
-            },
-            {
-                "note": null,
-                "string": "E",
-                "time": 3,
-                "fret": 5
-            },
-            {
-                "note": null,
-                "string": "e",
-                "time": 1,
-                "fret": 12
-            },
-            {
-                "note": null,
-                "string": "D",
-                "time": 2,
-                "fret": 10
-            },
-            {
-                "note": null,
-                "string": "B",
-                "time": 3,
-                "fret": 8
-            },
-            {
-                "note": null,
-                "string": "G",
-                "time": 1,
-                "fret": 9
-            },
-            {
-                "note": null,
-                "string": "B",
-                "time": 2,
-                "fret": 7
-            },
-            {
-                "note": null,
-                "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 3,
                 "fret": 5
             },
             {
                 "note": null,
                 "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 12
             },
             {
                 "note": null,
                 "string": "D",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 10
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 3,
                 "fret": 8
             },
             {
                 "note": null,
                 "string": "G",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 9
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 7
             },
             {
                 "note": null,
                 "string": "e",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 3,
                 "fret": 5
             },
             {
                 "note": null,
-                "string": "e",
+                "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 12
             },
             {
                 "note": null,
                 "string": "D",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 10
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 3,
+                "fret": 8
+            },
+            {
+                "note": null,
+                "string": "G",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 1,
+                "fret": 9
+            },
+            {
+                "note": null,
+                "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 2,
+                "fret": 7
+            },
+            {
+                "note": null,
+                "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 3,
+                "fret": 5
+            },
+            {
+                "note": null,
+                "string": "e",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 1,
+                "fret": 12
+            },
+            {
+                "note": null,
+                "string": "D",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 2,
+                "fret": 10
+            },
+            {
+                "note": null,
+                "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 3,
+                "fret": 8
+            },
+            {
+                "note": null,
+                "string": "G",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 1,
+                "fret": 9
+            },
+            {
+                "note": null,
+                "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 2,
+                "fret": 7
+            },
+            {
+                "note": null,
+                "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 3,
+                "fret": 5
+            },
+            {
+                "note": null,
+                "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 1,
+                "fret": 12
+            },
+            {
+                "note": null,
+                "string": "D",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 2,
+                "fret": 10
+            },
+            {
+                "note": null,
+                "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 3,
+                "fret": 8
+            },
+            {
+                "note": null,
+                "string": "G",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 1,
+                "fret": 9
+            },
+            {
+                "note": null,
+                "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 2,
+                "fret": 7
+            },
+            {
+                "note": null,
+                "string": "e",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 3,
+                "fret": 5
+            },
+            {
+                "note": null,
+                "string": "e",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 1,
+                "fret": 12
+            },
+            {
+                "note": null,
+                "string": "D",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
+                "time": 2,
+                "fret": 10
+            },
+            {
+                "note": null,
+                "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 3,
                 "fret": 8
             }
@@ -396,36 +804,84 @@
             {
                 "note": null,
                 "string": "C",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 12
             },
             {
                 "note": null,
                 "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 16,
                 "fret": 8
             },
             {
                 "note": null,
                 "string": "G",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 10
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 16
             },
             {
                 "note": null,
                 "string": "D",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 16,
                 "fret": 14
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 8,
                 "fret": 12
             }
@@ -459,108 +915,252 @@
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "C",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "D",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "C",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "B",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "A",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "e",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 2
             },
             {
                 "note": null,
                 "string": "F",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 2
             },
             {
                 "note": null,
                 "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 2
             },
             {
                 "note": null,
                 "string": "C",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "D",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "C",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 3
             },
             {
                 "note": null,
                 "string": "E",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 4
             },
             {
                 "note": null,
                 "string": "F",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 2,
                 "fret": 4
             },
             {
                 "note": null,
                 "string": "e",
+                "GUITAR_STRINGS": [
+                    "E",
+                    "A",
+                    "D",
+                    "G",
+                    "B",
+                    "e"
+                ],
                 "time": 1,
                 "fret": 4
             }

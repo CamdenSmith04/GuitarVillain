@@ -5,10 +5,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import com.model.Song;
 import com.model.Facade;
 import com.model.ImageHelper;
+import com.model.Song;
 import com.model.User;
+import com.model.Visibility;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,39 +42,41 @@ public class SongLibraryController implements Initializable{
 
         ArrayList<Song> songs = facade.getSongs();
         for (int i = 0; i < songs.size(); i++ ) {
-            Song song = songs.get(i);
-            VBox vbox = new VBox();
-            Label songName = new Label(song.getTitle());
-            songName.setFont(new Font(14));
+            if (songs.get(i).getVisibility().equals(Visibility.PUBLIC)) {
 
-            vbox.getChildren().add(songName);
-            if (song.getImage() != null) {
-                vbox.getStyleClass().add("friend-grid-item");
-                ImageView image = ImageHelper.getImage(song.getImage(), getClass());
-                vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
-                vbox.setOnMouseExited(e -> image.setOpacity(1));
-                grid_songs.add(image, col, row);
-            }
-            else 
-                vbox.getStyleClass().add("book-grid-item");
-            
-            vbox.setOnMouseClicked(event -> {
-                try {
-                    facade.setCurrentSong(song);
-                    App.setRoot("song");
-                } catch (IOException e) {
-                    e.printStackTrace();
+                Song song = songs.get(i);
+                VBox vbox = new VBox();
+                Label songName = new Label(song.getTitle());
+                songName.setFont(new Font(14));
+
+                vbox.getChildren().add(songName);
+                if (song.getImage() != null) {
+                    vbox.getStyleClass().add("friend-grid-item-blue");
+                    ImageView image = ImageHelper.getImage(song.getImage(), getClass());
+                    vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
+                    vbox.setOnMouseExited(e -> image.setOpacity(1));
+                    grid_songs.add(image, col, row);
                 }
-            });
-            grid_songs.add(vbox, col, row);
+                else 
+                    vbox.getStyleClass().add("module-grid-item");
+                
+                vbox.setOnMouseClicked(event -> {
+                    try {
+                        facade.setCurrentSong(song);
+                        App.setRoot("song");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+                grid_songs.add(vbox, col, row);
 
-            col ++;
+                col ++;
 
-            if (col == columnCount) {
-                col = 0;
-                row++;
+                if (col == columnCount) {
+                    col = 0;
+                    row++;
+                }
             }
-
         }
 
     }
@@ -93,9 +96,11 @@ public class SongLibraryController implements Initializable{
         if (user.getRole().equals("Student")) {
             App.setRoot("studentcourse");
         }
-        else {
+        else if (user.getRole().equals("Teacher")) {
             App.setRoot("teachercourse");
         }
+        else
+            App.setRoot("becomerole");
     }
 
     @FXML
