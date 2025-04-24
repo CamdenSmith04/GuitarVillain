@@ -48,14 +48,14 @@ public class SongLibraryController implements Initializable{
 
             vbox.getChildren().add(songName);
             if (song.getImage() != null) {
-                vbox.getStyleClass().add("friend-grid-item");
+                vbox.getStyleClass().add("friend-grid-item-blue");
                 ImageView image = ImageHelper.getImage(song.getImage(), getClass());
                 vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
                 vbox.setOnMouseExited(e -> image.setOpacity(1));
                 grid_songs.add(image, col, row);
             }
             else 
-                vbox.getStyleClass().add("book-grid-item");
+                vbox.getStyleClass().add("module-grid-item");
             
             vbox.setOnMouseClicked(event -> {
                 try {

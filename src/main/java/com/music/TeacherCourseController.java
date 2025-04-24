@@ -75,14 +75,14 @@ public class TeacherCourseController implements Initializable{
 
                 vbox.getChildren().add(moduleName);
                 if (course.getImage() != null) {
-                    vbox.getStyleClass().add("friend-grid-item");
+                    vbox.getStyleClass().add("friend-grid-item-blue");
                     ImageView image = ImageHelper.getImage(course.getImage(), getClass());
                     vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
                     vbox.setOnMouseExited(e -> image.setOpacity(1));
                     grid_courses.add(image, col, row);
                 }
                 else 
-                    vbox.getStyleClass().add("book-grid-item");
+                    vbox.getStyleClass().add("module-grid-item");
 
                 vbox.setOnMouseClicked(event -> {
                     try {

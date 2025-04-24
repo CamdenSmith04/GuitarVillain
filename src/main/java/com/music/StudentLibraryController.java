@@ -57,14 +57,14 @@ public class StudentLibraryController implements Initializable{
             
             vbox.getChildren().add(studentName);
             if (currUser.getProfilePic() != null) {
-                vbox.getStyleClass().add("friend-grid-item");
+                vbox.getStyleClass().add("friend-grid-item-blue");
                 ImageView image = ImageHelper.getImage(currUser.getProfilePic(), getClass());
                 vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
                 vbox.setOnMouseExited(e -> image.setOpacity(1));
                 grid_students.add(image, col, row);
             }
             else 
-                vbox.getStyleClass().add("book-grid-item");
+                vbox.getStyleClass().add("module-grid-item");
 
             vbox.setOnMouseClicked(event -> {
                 try {

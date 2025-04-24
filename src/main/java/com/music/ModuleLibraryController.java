@@ -47,7 +47,7 @@ public class ModuleLibraryController implements Initializable{
             moduleName.setFont(new Font(14));
 
             vbox.getChildren().add(moduleName);
-            vbox.getStyleClass().add("friend-grid-item");
+            vbox.getStyleClass().add("friend-grid-item-blue");
             ImageView image = ImageHelper.getImage(module.getImage(), getClass());
             vbox.setOnMouseEntered(e -> image.setOpacity(0.8));
             vbox.setOnMouseExited(e -> image.setOpacity(1));
