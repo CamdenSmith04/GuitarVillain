@@ -101,7 +101,7 @@ public class NewSongController implements Initializable{
         song.setTitle(songNameBox.getText());
         song.setUserCreated(facade.getCurrentUser().getId());
         song.setRating(2.5);
-        song.setVisibility(Visibility.PRIVATE);
+        song.setVisibility(Visibility.valueOf(visibility.getValue().toString()));
         song.setBeatsPerMinute(100);
         song.setTimeSignature(new TimeSignature(4, 4));
         song.setLyrics(new ArrayList<String>());
