@@ -43,6 +43,7 @@ public class NewSongController implements Initializable{
     @FXML private TextField artist;
     @FXML private ChoiceBox<String> instrument;
     @FXML private ChoiceBox<String> genres;
+    @FXML private ChoiceBox visibility;
     @FXML private TextField songNameBox;
     @FXML private Button saveButton;
 
@@ -66,6 +67,7 @@ public class NewSongController implements Initializable{
             genreLabels.add(g.getLabel());
         }
         genres.getItems().addAll(genreLabels);
+        visibility.getItems().addAll(Visibility.values());
     
         noteFields = notesGrid.getChildren().stream()
             .filter(n -> n instanceof TextField)
@@ -97,7 +99,6 @@ public class NewSongController implements Initializable{
         }
     }
 
-
     @FXML
     public void saveButtonPressed(){
         song.setInstrument(Instrument.getInstrument(instrument.getValue()));
@@ -108,7 +109,7 @@ public class NewSongController implements Initializable{
         song.setTitle(songNameBox.getText());
         song.setUserCreated(facade.getCurrentUser().getId());
         song.setRating(2.5);
-        song.setVisibility(Visibility.PRIVATE);
+        song.setVisibility(Visibility.valueOf(visibility.getValue().toString()));
         song.setBeatsPerMinute(100);
         song.setTimeSignature(new TimeSignature(4, 4));
         song.setLyrics(new ArrayList<String>());

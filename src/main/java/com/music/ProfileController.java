@@ -54,8 +54,11 @@ public class ProfileController implements Initializable{
         songsText.setText(Integer.toString(user.getSongs().size()));
         pointsText.setText(Integer.toString(user.getPoints()));
         streakText.setText(Integer.toString(user.getStreak()));
-        profilePic.setImage(new Image(getClass().getResource("/com/images/" + user.getProfilePic()).toExternalForm()));
-        profilePic.setPreserveRatio(false);
+        if (getClass().getResource("/com/images/" + user.getProfilePic()) != null) {
+            profilePic.setImage(new Image(getClass().getResource("/com/images/" + user.getProfilePic()).toExternalForm()));
+            profilePic.setPreserveRatio(false);
+        }
+    
     }
 
     private void displayFriends(User user) {
