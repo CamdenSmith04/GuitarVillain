@@ -91,7 +91,6 @@ public class NewSongController implements Initializable{
         }
     }
 
-
     @FXML
     public void saveButtonPressed(){
         song.setInstrument(Instrument.valueOf(instrument.getValue().toString()));
