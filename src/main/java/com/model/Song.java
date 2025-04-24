@@ -137,7 +137,7 @@ public class Song {
      */
     public void play(){
         for(Note note : notes){
-            note.play();
+            note.play(this.instrument);
         }
     }
 
