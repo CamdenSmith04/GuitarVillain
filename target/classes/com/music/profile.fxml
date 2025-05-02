@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="362.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.ProfileController">
+   <children>
+
+      <ToolBar prefHeight="59.0" prefWidth="870.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToHome" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Home" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/home-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToMySongs" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="My Songs" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/mysongs-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToCourses" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Courses" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/courses-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToSongLibrary" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Song Library" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/songlibrary-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToModuleLibrary" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Module Library" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/modulelibrary-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToMore" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="More" translateX="400.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/more-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToProfile" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Profile" translateX="400.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/profile-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </items>
+      </ToolBar>
+
+        <Text layoutX="25.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="usernameText" layoutX="175.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="25.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Experience:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="experienceText" layoutX="175.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="25.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Songs:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="songsText" layoutX="175.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="25.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Points:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="pointsText" layoutX="175.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="25.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Streak:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="streakText" layoutX="175.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+      <Rectangle fill="#175ea1" height="213.0" layoutY="388.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" width="870.0" />
+      
+
+    <ScrollPane fitToHeight="false" fitToWidth="true" hbarPolicy="ALWAYS" layoutX="22.0" layoutY="450.0" prefHeight="152.0" prefWidth="827.0" vbarPolicy="NEVER">
+      <content>
+          <GridPane fx:id="grid_friends" hgap="100.0" vgap="50.0">
+
+          </GridPane>
+      </content>
+    </ScrollPane>
+
+    <Text fill="WHITE" layoutX="24.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friends">
+         <font>
+            <Font name="Avenir Next Medium" size="25.0" />
+         </font>
+    </Text>
+      <ImageView fx:id="profilePic" fitHeight="181.0" fitWidth="199.0" layoutX="633.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+
+   </children>
+</AnchorPane>

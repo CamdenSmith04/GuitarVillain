@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="502.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.SongController">   
+   <children>
+
+      <ToolBar prefHeight="59.0" prefWidth="870.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToHome" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Home" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/home-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToMySongs" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="My Songs" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/mysongs-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToCourses" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Courses" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/courses-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToSongLibrary" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Song Library" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/songlibrary-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToModuleLibrary" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Module Library" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/modulelibrary-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToMore" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="More" translateX="400.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/more-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToProfile" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Profile" translateX="400.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/profile-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </items>
+      </ToolBar>
+      <StackPane layoutX="0.0" layoutY="60.0" prefHeight="85.0" prefWidth="870.0">
+        <Rectangle fill="#87CEEB" height="85.0" stroke="#ffffff00" strokeType="INSIDE" width="881.0" />
+        
+        <Text fx:id="songHeader" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name" textAlignment="CENTER">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="40.0" />
+            </font>
+        </Text>
+      </StackPane>
+
+
+
+        <!--  -->
+        <Text layoutX="25.0" layoutY="225" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="artist" layoutX="175.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="artist">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="25.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instrument:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="instrument" layoutX="175.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="instrument">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="25.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genres:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="genres" layoutX="175.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="genres">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="25.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating:">
+            <font>
+                <Font name="Avenir Next Demi Bold" size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="rating" layoutX="175.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="rating">
+            <font>
+                <Font name="Avenir Next Medium" size="24.0" />
+            </font>
+        </Text>
+      <Button layoutX="90.0" layoutY="420.0" mnemonicParsing="false" onAction="#playSong" styleClass="song-button" text="Play Song" />
+      <Button layoutX="470.0" layoutY="420.0" mnemonicParsing="false" onAction="#goToTabView" styleClass="song-button" text="View Tab" />
+      <Button layoutX="293.0" layoutY="467.0" mnemonicParsing="false" onAction="#goToLyricsView" styleClass="song-button" text="View Lyrics" />
+      <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" layoutX="600.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" />
+      
+      <Button fx:id="addSongButton" disable="true" layoutX="335.0" layoutY="520.0" onAction="#handleAddSong" prefHeight="30.0" prefWidth="154.0" text="Add Song to Course" visible="false" />
+
+
+   </children>
+</AnchorPane>

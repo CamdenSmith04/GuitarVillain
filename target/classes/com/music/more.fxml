@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="507.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.MoreController">
+   <children>
+
+      <ToolBar prefHeight="59.0" prefWidth="870.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToHome" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Home" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/home-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToMySongs" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="My Songs" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/mysongs-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToCourses" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Courses" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/courses-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToSongLibrary" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Song Library" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/songlibrary-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToModuleLibrary" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Module Library" translateX="20.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/modulelibrary-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToMore" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="More" translateX="400.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/more-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#goToProfile" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 10px; -fx-graphic-text-gap: 4;" text="Profile" translateX="400.0">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/profile-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </items>
+      </ToolBar>
+
+        
+      <Text layoutX="40.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">  
+        <font>
+            <Font name="Avenir Next Medium" size="24.0" />
+        </font>
+      </Text>
+
+        <Text layoutX="40.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set Experience">
+            <font>
+                <Font name="Avenir Next Medium" size="20.0" />
+            </font>
+        </Text>
+
+        <ComboBox fx:id="experienceOptions" layoutX="38.0" layoutY="152.0" prefWidth="150.0" />
+
+        <Text layoutX="40.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset Password">
+            <font>
+                <Font name="Avenir Next Medium" size="20.0" />
+            </font>
+        </Text>
+
+        <Text fx:id="securityQuestionField" layoutX="40.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Security Question">
+            <font>
+                <Font name="Avenir Next Medium" size="16.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="40.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New password">
+            <font>
+                <Font name="Avenir Next Medium" size="16.0" />
+            </font>
+        </Text>
+
+        <Text layoutX="40.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Repeat password">
+            <font>
+                <Font name="Avenir Next Medium" size="16.0" />
+            </font>
+        </Text>
+
+        <TextField fx:id="securityAnswerField" layoutX="40.0" layoutY="294.0" />
+        <TextField fx:id="newPassword" layoutX="40.0" layoutY="352.0" />
+        <TextField fx:id="confirmPassword" layoutX="40.0" layoutY="411.0" />
+
+        <Button layoutX="40.0" layoutY="448.0" mnemonicParsing="false" onAction="#resetPassword" text="Reset Password" />
+        <Button layoutX="40.0" layoutY="188.0" mnemonicParsing="false" onAction="#changeExperience" text="Change Experience" />
+
+
+    
+    
+   </children>
+</AnchorPane>
